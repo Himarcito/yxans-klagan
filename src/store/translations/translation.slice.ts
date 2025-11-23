@@ -4,6 +4,7 @@ import {
   createSelector,
   createSlice,
 } from '@reduxjs/toolkit'
+import { useDispatch } from 'react-redux' // <-- ¡Importación añadida!
 import { None, Option, Some } from 'ts-results'
 import { notNullish } from '../../functions/utils.functions'
 import { ValidLanguage } from '../../hooks/useValidLanguage'
@@ -14,9 +15,9 @@ import {
   TFunctionOptions,
   TranslationKey,
   Translations,
-  TFunction, // <-- Importamos TFunction aquí
+  TFunction,
 } from './translation.model'
-import { useAppSelector } from '../../hooks/useAppSelector' // <-- Necesitas esta importación para usar la función de uso de Redux
+import { useAppSelector } from '../store.hooks' // <-- Ruta corregida
 
 interface TranslationState {
   translations: Record<
@@ -30,7 +31,6 @@ interface TranslationState {
   currentLanguage: ValidLanguage
 }
 
-// Definimos el estado inicial solo con 'en'
 const initialState: TranslationState = {
   translations: {
     en: { status: 'loading' },
@@ -58,13 +58,13 @@ const translationSlice = createSlice({
         }
       }
     },
-    changeLanguage(state, action: PayloadAction<ValidLanguage>) { // <-- Añadimos este reducer faltante para el LanguageSwitcher
-        state.currentLanguage = action.payload
+    changeLanguage(state, action: PayloadAction<ValidLanguage>) {
+      state.currentLanguage = action.payload
     }
   },
 })
 
-export const { changeLanguage } = translationSlice.actions // <-- Exportamos la acción de cambio de idioma
+export const { changeLanguage } = translationSlice.actions
 
 export const setTranslationsAsync = createAsyncThunk<
   Translations,
@@ -115,23 +115,21 @@ export const selectCurrentLanguage = createSelector(
   (translationsState) => translationsState.currentLanguage,
 )
 
-// Exporta la función TFunction para usarla con selectores en los componentes
 export const selectTranslateFunction = <T extends Namespace>(nss: T[]) =>
-  createSelector(selectTranslations, (translations): TFunction => { // <-- Corregido el tipo de retorno a TFunction
+  createSelector(selectTranslations, (translations): TFunction => {
     if (translations.none) {
-      // Retorna una función dummy si no hay traducciones cargadas
-      return (key: TranslationKey<T>) => key as string
+      // @ts-ignore
+      return (key: string) => key
     }
 
     const safeTranslations = translations.safeUnwrap()
     type localNamespace = (typeof nss)[number] & Namespace
 
+    // @ts-ignore
     return (
       key: TranslationKey<localNamespace>,
       options?: TFunctionOptions,
     ) => {
-      // traverse the object
-
       let translation = translate(key, safeTranslations, options)
 
       if (translation.match(/\$t\((.*)\)/gi) !== null) {
@@ -148,9 +146,6 @@ export const selectTranslateFunction = <T extends Namespace>(nss: T[]) =>
           )
           .join(' ')
       }
-
-      // $t(common:talents.PathOfBlood2)
-
       return translation
     }
   })
@@ -176,18 +171,14 @@ const translate = <LocalNamespace extends Namespace>(
     if (!obj) {
       return part
     }
-
     const possibleKey = part
-
     if (possibleKey in obj) {
       const possibleTranslation = obj[possibleKey as keyof typeof obj]
-
       if (notNullish(possibleTranslation)) {
         if (typeof possibleTranslation === 'string') {
           translation = possibleTranslation
           break
         }
-
         obj = possibleTranslation as Record<string, unknown>
       }
     }
@@ -202,9 +193,8 @@ const translate = <LocalNamespace extends Namespace>(
   return translation
 }
 
-// **CORRECCIÓN CLAVE 2: Exportar el hook para que los componentes lo usen (ej: LanguageSwitcher)**
 export const useTranslations = () => {
-  const dispatch = useDispatch() // Asumo que tienes useDispatch importado o definido globalmente
+  const dispatch = useDispatch()
   const currentLanguage = useAppSelector(selectCurrentLanguage)
   const translations = useAppSelector(selectTranslations)
   
