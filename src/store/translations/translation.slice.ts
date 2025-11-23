@@ -28,11 +28,10 @@ interface TranslationState {
   currentLanguage: ValidLanguage
 }
 
-// Define the initial state using that type
+// Definimos el estado inicial solo con 'en'
 const initialState: TranslationState = {
   translations: {
-    en: { status: 'loading' },
-    sv: { status: 'loading' },
+    en: { status: 'loading' }, // <-- Dejamos solo 'en'
   },
   currentLanguage: 'en',
 }
