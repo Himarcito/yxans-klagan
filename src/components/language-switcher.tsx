@@ -1,20 +1,30 @@
-import useTranslations from '../store/translations/translation.slice'
-import { useValidLanguage } from '../hooks/useValidLanguage'
+import { useAppDispatch } from '../hooks/useAppDispatch'
+import { useValidLanguage, ValidLanguage } from '../hooks/useValidLanguage'
+import { changeLanguage } from '../store/translations/translation.slice'
 import { Link } from 'react-router-dom'
-import { ValidLanguage } from '../hooks/useValidLanguage' // Importar la definición limpia
 
 const LanguageSwitcher = () => {
   const language = useValidLanguage()
-  const { changeLanguage } = useTranslations()
+  const dispatch = useAppDispatch()
 
-  // Lista de idiomas válidos (sólo 'en')
+  // Solo inglés disponible
   const validLanguages: ValidLanguage[] = ['en']
 
+  const handleChange = (lang: ValidLanguage) => {
+    dispatch(changeLanguage(lang))
+  }
+
   return (
-    <div className='language-switcher'>
+    <div className='language-switcher flex gap-2'>
       {validLanguages.map((lang) => (
-        <Link to={`/${lang}`} key={lang} onClick={() => changeLanguage(lang)}>
-          <button className={language === lang ? 'active' : ''}>
+        <Link 
+          to={`/${lang}`} 
+          key={lang} 
+          onClick={() => handleChange(lang)}
+        >
+          <button 
+            className={`px-2 py-1 rounded ${language === lang ? 'font-bold underline' : ''}`}
+          >
             {lang.toUpperCase()}
           </button>
         </Link>
