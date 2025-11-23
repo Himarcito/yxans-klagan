@@ -6,7 +6,7 @@ import { Menu, appRoutes, menuRoutes } from './Menu'
 import { ParchmentButton } from './components/ParchmentButton'
 import Stack from './components/Stack'
 import { DayCounter } from './components/day-counter'
-import { LanguageSwitcher } from './components/language-switcher'
+import LanguageSwitcher from './components/language-switcher'
 import {
   nextDay,
   previousDay,
