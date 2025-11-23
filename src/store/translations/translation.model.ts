@@ -13,19 +13,21 @@ export type Namespace =
   | 'names'
   | 'encounter'
   | 'gear'
-  | 'finds'   // <-- Nuevo
-  | 'home'    // <-- Nuevo
-  | 'npc'     // <-- Nuevo
-  | 'typical' // <-- Nuevo
-  | 'map'     // <-- Nuevo
-  | 'session' // <-- Nuevo
+  | 'finds'
+  | 'home'
+  | 'npc'
+  | 'typical'
+  | 'map'
+  | 'session'
+  | 'village' // <-- ¡AÑADIDO!
 
 export type TFunctionOptions = {
   context?: Record<string, string>
 }
 
+// Ajuste técnico para evitar errores de genéricos
 export type TFunction<T extends Namespace = Namespace> = (
-  key: TranslationKey<T>, 
+  key: TranslationKey<T> | string, 
   options?: TFunctionOptions
 ) => string
 
