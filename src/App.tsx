@@ -71,6 +71,50 @@ const App = () => {
           </main>
         </Suspense>
       </div>
+
+      {/* --- INICIO CÓDIGO DE GUARDADO (HACK) --- */}
+      <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        <button 
+          onClick={() => {
+            const data = JSON.stringify(localStorage);
+            const blob = new Blob([data], {type: "application/json"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "backup_yxans_klagan.json";
+            a.click();
+          }} 
+          style={{ background: '#22c55e', color: 'white', padding: '10px 15px', borderRadius: '8px', cursor: 'pointer', border: '2px solid white', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
+          💾 Guardar Partida
+        </button>
+
+        <button 
+          onClick={() => {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'application/json';
+            input.onchange = (e: any) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = (ev: any) => {
+                    if(window.confirm("⚠️ ¿Seguro? Esto borrará lo que tienes en pantalla y cargará el archivo.")) {
+                        const data = JSON.parse(ev.target.result);
+                        localStorage.clear();
+                        Object.keys(data).forEach(k => localStorage.setItem(k, data[k]));
+                        alert("¡Datos cargados! La página se recargará.");
+                        window.location.reload();
+                    }
+                };
+                reader.readAsText(file);
+            };
+            input.click();
+          }} 
+          style={{ background: '#3b82f6', color: 'white', padding: '10px 15px', borderRadius: '8px', cursor: 'pointer', border: '2px solid white', fontWeight: 'bold', boxShadow: '0 4px 6px rgba(0,0,0,0.3)' }}>
+          📂 Cargar Partida
+        </button>
+      </div>
+      {/* --- FIN CÓDIGO DE GUARDADO --- */}
+
     </div>
   )
 }
