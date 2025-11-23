@@ -9,7 +9,7 @@ export type Namespace =
   | 'dice'
   | 'party'
   | 'skills'
-  | 'monsters' // <-- Usamos el plural 'monsters' (como ya está)
+  | 'monsters'
   | 'names'
   | 'encounter'
   | 'gear'
@@ -18,10 +18,12 @@ export type TFunctionOptions = {
   context?: Record<string, string>
 }
 
-// **CORRECCIÓN CLAVE 1: Agregamos TFunction para resolver TS2305**
-export type TFunction = (key: TranslationKey<Namespace>, options?: TFunctionOptions) => string
+// CORRECCIÓN: Ahora TFunction acepta un genérico <T>
+export type TFunction<T extends Namespace = Namespace> = (
+  key: TranslationKey<T>, 
+  options?: TFunctionOptions
+) => string
 
-// Tipos de traducción
 export type Translations = Record<
   ValidLanguage,
   Record<Namespace, Record<string, string>>
