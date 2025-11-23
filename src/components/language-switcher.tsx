@@ -1,38 +1,26 @@
-import { ValidLanguage } from '../hooks/useValidLanguage'
-import { useAppDispatch, useAppSelector } from '../store/store.hooks'
-import {
-  selectCurrentLanguage,
-  selectTranslateFunction,
-  setTranslationsAsync,
-} from '../store/translations/translation.slice'
-import Stack from './Stack'
-import { LanguageButton } from './language-button'
+import { useTranslations } from '../store/translations/translation.slice'
+import { useValidLanguage } from '../hooks/useValidLanguage'
+import { Link } from 'react-router-dom'
+import { ValidLanguage } from '../hooks/useValidLanguage' // Importar la definición limpia
 
-export const LanguageSwitcher = () => {
-  const lang = useAppSelector(selectCurrentLanguage)
-  const t = useAppSelector(selectTranslateFunction(['core']))
-  const dispatch = useAppDispatch()
+const LanguageSwitcher = () => {
+  const language = useValidLanguage()
+  const { changeLanguage } = useTranslations()
 
-  const changeLanguage = async (lng: ValidLanguage) => {
-    await dispatch(setTranslationsAsync({ language: lng, source: 'user' }))
-  }
+  // Lista de idiomas válidos (sólo 'en')
+  const validLanguages: ValidLanguage[] = ['en']
 
   return (
-    <div>
-      <Stack.Horizontal center>
-        <LanguageButton
-          onPress={() => changeLanguage('sv')}
-          isDisabled={lang === 'sv'}
-        >
-          {t('core:language.swedish')}
-        </LanguageButton>
-        <LanguageButton
-          onPress={() => changeLanguage('en')}
-          isDisabled={lang === 'en'}
-        >
-          {t('core:language.english')}
-        </LanguageButton>
-      </Stack.Horizontal>
+    <div className='language-switcher'>
+      {validLanguages.map((lang) => (
+        <Link to={`/${lang}`} key={lang} onClick={() => changeLanguage(lang)}>
+          <button className={language === lang ? 'active' : ''}>
+            {lang.toUpperCase()}
+          </button>
+        </Link>
+      ))}
     </div>
   )
 }
+
+export default LanguageSwitcher
