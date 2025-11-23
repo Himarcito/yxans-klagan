@@ -15,9 +15,9 @@ export type TFunctionOptions = {
   context?: Record<string, string>
 }
 
-// Eliminamos la referencia a sv en el objeto de idiomas
+// Ahora la aplicación entiende que el único idioma es el que definimos
 export type Translations = Record<
-  Exclude<ValidLanguage, 'sv'>, // <--- CAMBIO CLAVE
+  ValidLanguage,
   Record<Namespace, Record<string, string>>
 >
 
