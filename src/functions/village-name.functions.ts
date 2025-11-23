@@ -7,7 +7,6 @@ type LanguageVillageNameModelMap = { [VL in ValidLanguage]: VillageNameData }
 
 const languageVillageNameModelMap: LanguageVillageNameModelMap = {
   en: villageNamesEn,
-  // Se ha eliminado 'sv' para evitar el error
 }
 
 export interface VillageNameData {
@@ -40,4 +39,6 @@ const formatVillageName = (
   const separator = lang === 'en' ? ' ' : ''
 
   return prefixAndSuffix
-    .map((fix
+    .map((fix) => (lang === 'en' ? capitalize(fix) : fix))
+    .join(separator)
+}
