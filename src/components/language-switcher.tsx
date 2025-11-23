@@ -1,4 +1,4 @@
-import { useTranslations } from '../store/translations/translation.slice'
+import useTranslations from '../store/translations/translation.slice'
 import { useValidLanguage } from '../hooks/useValidLanguage'
 import { Link } from 'react-router-dom'
 import { ValidLanguage } from '../hooks/useValidLanguage' // Importar la definición limpia
