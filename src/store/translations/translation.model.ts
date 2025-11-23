@@ -10,12 +10,15 @@ export type Namespace =
   | 'party'
   | 'skills'
   | 'monsters'
+  | 'names'    // <-- ¡Agregado!
+  | 'encounter' // <-- ¡Agregado!
+  | 'gear'     // <-- ¡Agregado!
 
 export type TFunctionOptions = {
   context?: Record<string, string>
 }
 
-// Ahora la aplicación entiende que el único idioma es el que definimos
+// Corregimos un error de tipo en el módulo de monstruos
 export type Translations = Record<
   ValidLanguage,
   Record<Namespace, Record<string, string>>
