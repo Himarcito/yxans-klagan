@@ -1,10 +1,10 @@
-import { en } from '../data/translations/en' // <-- ¡Ruta corregida!
+import { en } from './translation.data.en' // <-- ¡Ruta e nombre de archivo corregidos!
 
 const translationFiles = {
-  en,
+  en,
 }
 
 export const loadTranslations = async (lang: string) => {
-  // @ts-ignore
-  return translationFiles[lang]
+  // @ts-ignore
+  return translationFiles[lang]
 }
