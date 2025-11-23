@@ -14,7 +14,9 @@ import {
   TFunctionOptions,
   TranslationKey,
   Translations,
+  TFunction, // <-- Importamos TFunction aquí
 } from './translation.model'
+import { useAppSelector } from '../../hooks/useAppSelector' // <-- Necesitas esta importación para usar la función de uso de Redux
 
 interface TranslationState {
   translations: Record<
@@ -31,7 +33,7 @@ interface TranslationState {
 // Definimos el estado inicial solo con 'en'
 const initialState: TranslationState = {
   translations: {
-    en: { status: 'loading' }, // <-- Dejamos solo 'en'
+    en: { status: 'loading' },
   },
   currentLanguage: 'en',
 }
@@ -56,8 +58,13 @@ const translationSlice = createSlice({
         }
       }
     },
+    changeLanguage(state, action: PayloadAction<ValidLanguage>) { // <-- Añadimos este reducer faltante para el LanguageSwitcher
+        state.currentLanguage = action.payload
+    }
   },
 })
+
+export const { changeLanguage } = translationSlice.actions // <-- Exportamos la acción de cambio de idioma
 
 export const setTranslationsAsync = createAsyncThunk<
   Translations,
@@ -108,10 +115,12 @@ export const selectCurrentLanguage = createSelector(
   (translationsState) => translationsState.currentLanguage,
 )
 
+// Exporta la función TFunction para usarla con selectores en los componentes
 export const selectTranslateFunction = <T extends Namespace>(nss: T[]) =>
-  createSelector(selectTranslations, (translations) => {
+  createSelector(selectTranslations, (translations): TFunction => { // <-- Corregido el tipo de retorno a TFunction
     if (translations.none) {
-      return (key: TranslationKey<T>) => key
+      // Retorna una función dummy si no hay traducciones cargadas
+      return (key: TranslationKey<T>) => key as string
     }
 
     const safeTranslations = translations.safeUnwrap()
@@ -179,7 +188,7 @@ const translate = <LocalNamespace extends Namespace>(
           break
         }
 
-        obj = possibleTranslation
+        obj = possibleTranslation as Record<string, unknown>
       }
     }
   }
@@ -191,4 +200,17 @@ const translate = <LocalNamespace extends Namespace>(
   }
 
   return translation
+}
+
+// **CORRECCIÓN CLAVE 2: Exportar el hook para que los componentes lo usen (ej: LanguageSwitcher)**
+export const useTranslations = () => {
+  const dispatch = useDispatch() // Asumo que tienes useDispatch importado o definido globalmente
+  const currentLanguage = useAppSelector(selectCurrentLanguage)
+  const translations = useAppSelector(selectTranslations)
+  
+  return {
+      currentLanguage,
+      translations,
+      changeLanguage: (language: ValidLanguage) => dispatch(changeLanguage(language))
+  }
 }
