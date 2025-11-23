@@ -1,4 +1,4 @@
-import { en } from '../../data/translations/en'
+import { en } from '../data/translations/en' // <-- ¡Ruta corregida!
 
 const translationFiles = {
   en,
