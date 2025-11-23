@@ -10,7 +10,7 @@ import { ValidLanguage } from '../../hooks/useValidLanguage'
 import { TranslationKey } from '../../store/translations/translation.model'
 
 export type Inn = {
-  name: { [L in ValidLanguage]: string }
+  name: { [L in ValidLanguage]: string } // Ahora solo acepta 'en'
   id: string
   oddity: InnOddity
   speciality: InnSpecialty
@@ -20,8 +20,7 @@ export type Inn = {
 
 export const createRandomInn = ({ owner }: VillageInstitution): Inn => {
   const name = {
-    sv: createRandomInnName('sv'),
-    en: createRandomInnName('en'),
+    en: createRandomInnName('en'), // Solo generamos EN
   }
   const { oddity, guest, speciality } =
     weightedRandom(innQuirksWithWeights).value
@@ -270,96 +269,14 @@ const innQuirksWithWeights: WeightedChoice<InnQuirk>[] = [
 ]
 
 export const createRandomInnName = (lang: ValidLanguage): string => {
-  const prefix = choose(lang === 'en' ? innNamePrefixesEn : innNamePrefixesSv)
-  const suffix = choose(lang === 'en' ? innNameSuffixesEn : innNameSuffixesSv)
+  // Ya no se necesita el switch de idioma, solo devolvemos EN
+  const prefix = choose(innNamePrefixesEn)
+  const suffix = choose(innNameSuffixesEn)
 
   return `${prefix} ${suffix}`
 }
 
-const innNamePrefixesSv = [
-  'Tredje',
-  'Lilla',
-  'Röda',
-  'Dimmiga',
-  'Blodiga',
-  'Gamla',
-  'Gyllene',
-  'Svala',
-  'Svalkande',
-  'Goda',
-  'Andra',
-  'Sista',
-  'Stegrande',
-  'Glada',
-  'Sjungande',
-  'Rullande',
-  'Hoppande',
-  'Klagande',
-  'Snikna',
-  'Runda',
-  'Flammande',
-  'Sista',
-  'Silver',
-  'Svarta',
-  'Döda',
-  'Stora',
-  'Vrålande',
-  'Skålande',
-  'Lallande',
-  'Magra',
-  'Tjocka',
-  'Feta',
-  'Trinda',
-  'Söta',
-  'Larmande',
-  'Griniga',
-  'Lätta',
-  'Stora',
-  'Gula',
-  'Grymma',
-  'Gröna',
-]
-
-const innNameSuffixesSv = [
-  'Lyktan',
-  'Svinet',
-  'Hjulet',
-  'Stopet',
-  'Sparven',
-  'Geten',
-  'Pilen',
-  'Krukan',
-  'Lammet',
-  'Pigan',
-  'Gubben',
-  'Draken',
-  'Gripen',
-  'Galten',
-  'Hjälten',
-  'Tunnan',
-  'Hoppet',
-  'Barden',
-  'Hunden',
-  'Hästen',
-  'Jungfrun',
-  'Ulven',
-  'Björnen',
-  'Gasten',
-  'Råttan',
-  'Kruset',
-  'Muggen',
-  'Bägaren',
-  'Örnen',
-  'Korpen',
-  'Hammaren',
-  'Spiken',
-  'Kråkan',
-  'Druiden',
-  'Riddaren',
-  'Rövaren',
-  'Vildsvinet',
-  'Jägaren',
-]
+// Se eliminaron innNamePrefixesSv y innNameSuffixesSv
 
 const innNamePrefixesEn = [
   'The Third',
