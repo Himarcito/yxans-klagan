@@ -13,12 +13,17 @@ export type Namespace =
   | 'names'
   | 'encounter'
   | 'gear'
+  | 'finds'   // <-- Nuevo
+  | 'home'    // <-- Nuevo
+  | 'npc'     // <-- Nuevo
+  | 'typical' // <-- Nuevo
+  | 'map'     // <-- Nuevo
+  | 'session' // <-- Nuevo
 
 export type TFunctionOptions = {
   context?: Record<string, string>
 }
 
-// CORRECCIÓN: Ahora TFunction acepta un genérico <T>
 export type TFunction<T extends Namespace = Namespace> = (
   key: TranslationKey<T>, 
   options?: TFunctionOptions
