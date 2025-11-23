@@ -1,4 +1,4 @@
-import { villageNamesEn, villageNamesSv } from '../data/village-name.data'
+import { villageNamesEn } from '../data/village-name.data'
 import { ValidLanguage } from '../hooks/useValidLanguage'
 import { choose } from './dice.functions'
 import { capitalize } from './utils.functions'
@@ -6,8 +6,8 @@ import { capitalize } from './utils.functions'
 type LanguageVillageNameModelMap = { [VL in ValidLanguage]: VillageNameData }
 
 const languageVillageNameModelMap: LanguageVillageNameModelMap = {
-  sv: villageNamesSv,
   en: villageNamesEn,
+  // Se ha eliminado 'sv' para evitar el error
 }
 
 export interface VillageNameData {
@@ -40,6 +40,4 @@ const formatVillageName = (
   const separator = lang === 'en' ? ' ' : ''
 
   return prefixAndSuffix
-    .map((fix) => (lang === 'en' ? capitalize(fix) : fix))
-    .join(separator)
-}
+    .map((fix
