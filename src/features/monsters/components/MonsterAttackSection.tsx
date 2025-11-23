@@ -15,7 +15,7 @@ type MonsterAttackSectionProps = {
   como: CommunityMonsterViewModel | RandomMonsterViewModel
 }
 export const MonsterAttackSection = ({ como }: MonsterAttackSectionProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   const [selectedAttack, setSeletecAttack] = useState<number | undefined>(
     undefined,

@@ -344,7 +344,7 @@ export const monsterTraits: WeightedChoice<MonsterTrait>[] = [
           1: 'monster:poisons.lethal',
           2: 'monster:poisons.paralyzing',
           3: 'monster:poisons.sleeping',
-        }[rollD3()] as TranslationKey<'monster'>,
+        }[rollD3()] as TranslationKey<'monsters'>,
         count: rollD6() + 2,
       }),
       apply: identity,
@@ -451,7 +451,7 @@ export const monsterTraits: WeightedChoice<MonsterTrait>[] = [
       description: () => ({
         key: (rollD2() === 1
           ? 'monster:trait.can_speak.description'
-          : 'monster:trait.intelligent.telepathy') as TranslationKey<'monster'>,
+          : 'monster:trait.intelligent.telepathy') as TranslationKey<'monsters'>,
         count: 0, //'Trait.Intelligent.SkillValues'
       }),
       apply: (rm) => ({

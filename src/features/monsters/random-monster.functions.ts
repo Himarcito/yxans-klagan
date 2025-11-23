@@ -161,9 +161,9 @@ const rollForMonsterLimbs = (
 
 const getLimbsDescription = (
   limbs: MonsterLimbs,
-  tail: TranslationKey<'monster'> | undefined,
+  tail: TranslationKey<'monsters'> | undefined,
 ): MonsterDescriptionItemViewModel[] => {
-  const actualLimbs: [TranslationKey<'monster'>, number][] = Object.entries(
+  const actualLimbs: [TranslationKey<'monsters'>, number][] = Object.entries(
     limbs,
   ).reduce(
     (acc, [limbName, amountOfLimb]) =>
@@ -171,12 +171,12 @@ const getLimbsDescription = (
         ? [
             ...acc,
             [
-              `monster:limbs.${limbName}` as TranslationKey<'monster'>,
+              `monster:limbs.${limbName}` as TranslationKey<'monsters'>,
               amountOfLimb,
             ],
           ]
         : acc,
-    [] as [TranslationKey<'monster'>, number][],
+    [] as [TranslationKey<'monsters'>, number][],
   )
 
   const limbsDescriptions: MonsterDescriptionItemViewModel[] =
@@ -279,7 +279,7 @@ export const getMonsterSkillListItems = (
     skills.melee > 0
       ? [
           {
-            name: `monster:skills.melee` as TranslationKey<'monster'>,
+            name: `monster:skills.melee` as TranslationKey<'monsters'>,
             value: skills.melee,
           },
         ]
@@ -287,7 +287,7 @@ export const getMonsterSkillListItems = (
     skills.move > 0
       ? [
           {
-            name: `monster:skills.move` as TranslationKey<'monster'>,
+            name: `monster:skills.move` as TranslationKey<'monsters'>,
             value: skills.move,
           },
         ]
@@ -295,7 +295,7 @@ export const getMonsterSkillListItems = (
     skills.scouting > 0
       ? [
           {
-            name: `monster:skills.scouting` as TranslationKey<'monster'>,
+            name: `monster:skills.scouting` as TranslationKey<'monsters'>,
             value: skills.scouting,
           },
         ]
@@ -303,7 +303,7 @@ export const getMonsterSkillListItems = (
     skills.stealth > 0
       ? [
           {
-            name: `monster:skills.stealth` as TranslationKey<'monster'>,
+            name: `monster:skills.stealth` as TranslationKey<'monsters'>,
             value: skills.scouting,
           },
         ]
@@ -430,7 +430,7 @@ const createDescription = ({
   limbs,
   tail,
 }: MonsterDescription): MonsterDescriptionViewModel => {
-  const tailDescription: TranslationKey<'monster'> | undefined =
+  const tailDescription: TranslationKey<'monsters'> | undefined =
     tail.key === 'spiked_tail'
       ? 'monster:tail.spiked_tail'
       : tail.key === 'tail'
@@ -439,7 +439,7 @@ const createDescription = ({
 
   return {
     head: heads.map(({ key, count }) => ({
-      key: `monster:head.${key}` as TranslationKey<'monster'>,
+      key: `monster:head.${key}` as TranslationKey<'monsters'>,
       count,
     })),
     tail: tailDescription,

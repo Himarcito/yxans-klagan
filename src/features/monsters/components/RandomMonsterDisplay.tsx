@@ -26,7 +26,7 @@ export const RandomMonsterDisplay = ({
   rm,
   bookPart,
 }: RandomMonsterDisplayProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   const describeMonsterHeads = (
     heads: MonsterDescriptionItemViewModel[],
@@ -70,7 +70,7 @@ export const RandomMonsterDisplay = ({
     )} & ${lastLimb}.`
   }
 
-  const describeHome = (monsterHome: TranslationKey<'monster'>): string =>
+  const describeHome = (monsterHome: TranslationKey<'monsters'>): string =>
     `${t('monster:lives_in', {
       context: {
         home: t(monsterHome),

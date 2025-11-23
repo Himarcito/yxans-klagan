@@ -55,7 +55,7 @@ type NavigationLibrary = { [key: string]: Omit<BookNavigation, 'current'> }
 export const MonstersPage = () => {
   const { section, monster } = useParams()
 
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
   const currentLanguage = useAppSelector(selectCurrentLanguage)
   const monsters = bookMonsters
     .map(createMonstersViewModel)
@@ -246,7 +246,7 @@ export const MonstersPage = () => {
 export default MonstersPage
 
 const MonsterTableOfContents = () => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
   const monsters = bookMonsters
     .map(createMonstersViewModel)
     .sort(monsterComparer(t))

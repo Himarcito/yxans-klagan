@@ -24,7 +24,7 @@ export const MonsterAttack = ({
   counter,
   selected = false,
 }: MonsterAttackProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   const [options] = useState({
     baseFrequency: getRandomInt(1, 10) / 100,
@@ -106,7 +106,7 @@ type MonsterAttackStatsProps = {
 const MonsterAttackStats = ({
   monster: { attack, damage, range },
 }: MonsterAttackStatsProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   return (
     <Train distribute wrap>

@@ -21,7 +21,7 @@ export const CommunityMonsterDisplay = ({
   como,
   bookPart,
 }: CommunityMonsterDisplayProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   return (
     <div>

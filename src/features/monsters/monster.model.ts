@@ -35,7 +35,7 @@ export type ArmorTypeLabel =
   | 'armoredHide'
 export const monsterArmorTypeTranslationDict: Record<
   ArmorTypeLabel,
-  TranslationKey<'monster'>
+  TranslationKey<'monsters'>
 > = {
   skin: 'monster:armor.skin',
   softFur: 'monster:armor.soft_fur',
@@ -76,7 +76,7 @@ export const createMonsterSizeTranslationDict = (monsterType: MonsterType) =>
         isDefinitiveArticle[monsterType] ? '_def' : ''
       }`,
     }),
-    {} as TranslationDict<MonsterSize, 'monster', 'size.'>,
+    {} as TranslationDict<MonsterSize, 'monsters', 'size.'>,
   )
 
 const isDefinitiveArticle: Record<MonsterType, boolean> = {
@@ -100,7 +100,7 @@ export type MonsterType = (typeof monsterTypes)[number]
 
 export const monsterTypeTranslationDict = translationDict(
   monsterTypes,
-  'monster',
+  'monsters',
   'type.',
 )
 
@@ -158,7 +158,7 @@ const movementTypes = [
 export type MovementType = (typeof movementTypes)[number]
 export const movementTypeTranslationDict = translationDict(
   movementTypes,
-  'monster',
+  'monsters',
   'movement.',
 )
 
@@ -175,7 +175,7 @@ export type MonsterHome =
 
 export const monsterHomeLabels: Record<
   MonsterHome,
-  TranslationKey<'monster'>
+  TranslationKey<'monsters'>
 > = {
   burrow: 'monster:homes.burrow',
   ruin: 'monster:homes.ruin',
@@ -187,23 +187,23 @@ export const monsterHomeLabels: Record<
 }
 
 export type MonsterSkillListItem = {
-  name: TranslationKey<'monster'>
+  name: TranslationKey<'monsters'>
   value: number
 }
 
 export type MonsterTrait = {
-  name: TranslationKey<'monster'>
+  name: TranslationKey<'monsters'>
   description: () => MonsterDescriptionItemViewModel
   apply: (rm: RandomMonster) => RandomMonster
 }
 
 export type MonsterTraitViewModel = {
-  name: TranslationKey<'monster'>
+  name: TranslationKey<'monsters'>
   description: MonsterDescriptionItemViewModel
 }
 export type MonsterWeakness = Definition<
-  TranslationKey<'monster'>,
-  TranslationKey<'monster'>
+  TranslationKey<'monsters'>,
+  TranslationKey<'monsters'>
 >
 export type MonsterMotivation =
   | 'territory'
@@ -278,7 +278,7 @@ export type MonsterAttackType =
   | 'generic'
 export const monsterAttackTypeTranslationDict: Record<
   CommunityMonsterAttackType,
-  TranslationKey<'monster'>
+  TranslationKey<'monsters'>
 > = {
   slash: 'monster:attack.slash.type',
   eyeGourge: 'monster:attack.eye_gourge.type',
@@ -377,7 +377,7 @@ export const poisonTypes = [
 export type PoisonType = (typeof poisonTypes)[number]
 export const poisonTypeTranslationDict: Record<
   PoisonType,
-  TranslationKey<'monster'>
+  TranslationKey<'monsters'>
 > = {
   lethal: 'monster:poisons.lethal',
   paralyzing: 'monster:poisons.paralyzing',
@@ -410,7 +410,7 @@ export type MonsterAttack<T = MonsterAttackType> = {
   attack?: (rm: MonsterAttackMinimalContext) => number
   damage?: (rm: MonsterAttackMinimalContext) => MonsterDamage
   range: MonsterAttackRange
-  description: TranslationKey<'monster'>
+  description: TranslationKey<'monsters'>
   descriptionExtras?: (rm: MonsterAttackMinimalContext) => { count: number }
   valid: (rm: MonsterAttackMinimalContext) => boolean
   singleUse: boolean
@@ -422,7 +422,7 @@ export type MonsterAttackViewModel<T = MonsterAttackType> = {
   attack?: number
   damage?: MonsterDamage
   range: TranslationKey<'common'>
-  description: TranslationKey<'monster'>
+  description: TranslationKey<'monsters'>
   descriptionExtras?: { count: number }
 }
 
@@ -460,7 +460,7 @@ export type MonsterDescription = {
 }
 
 export type MonsterDescriptionItemViewModel = {
-  key: TranslationKey<'monster'>
+  key: TranslationKey<'monsters'>
   count?: number
 }
 

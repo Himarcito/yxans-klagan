@@ -12,7 +12,7 @@ export type MonsterDisplayProps = {
 }
 
 export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
-  const t = useAppSelector(selectTranslateFunction(['monster', 'common']))
+  const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   return (
     <Stack.Vertical full>
