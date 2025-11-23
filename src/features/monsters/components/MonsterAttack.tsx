@@ -101,55 +101,55 @@ export const MonsterAttack = ({
 }
 
 type MonsterAttackStatsProps = {
-  monster: MonsterAttackViewModel<CommunityMonsterAttackType>
+  monsters: MonsterAttackViewModel<CommunityMonsterAttackType>
 }
 const MonsterAttackStats = ({
-  monster: { attack, damage, range },
+  monsters: { attack, damage, range },
 }: MonsterAttackStatsProps) => {
   const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
 
   return (
     <Train distribute wrap>
-      <Stat label={t(`monster:attack.attack`)} size="small">
+      <Stat label={t(`monsters:attack.attack`)} size="small">
         {attack ? attack : '–'}
       </Stat>
 
       {!damage ? (
-        <Stat label={t('monster:attack.damage.damage')}>–</Stat>
+        <Stat label={t('monsters:attack.damage.damage')}>–</Stat>
       ) : (
         <>
           {damage.blunt && (
-            <Stat label={t('monster:attack.damage.blunt')} size="small">
+            <Stat label={t('monsters:attack.damage.blunt')} size="small">
               {damage.blunt}
             </Stat>
           )}
           {damage.slash && (
-            <Stat label={t('monster:attack.damage.slash')} size="small">
+            <Stat label={t('monsters:attack.damage.slash')} size="small">
               {damage.slash}
             </Stat>
           )}
           {damage.stab && (
-            <Stat label={t('monster:attack.damage.stab')} size="small">
+            <Stat label={t('monsters:attack.damage.stab')} size="small">
               {damage.stab}
             </Stat>
           )}
           {damage.fear && (
-            <Stat label={t('monster:attack.damage.damage')} size="small">
-              {t('monster:attack.damage.fear')}
+            <Stat label={t('monsters:attack.damage.damage')} size="small">
+              {t('monsters:attack.damage.fear')}
             </Stat>
           )}
           {damage.disease && (
-            <Stat label={t('monster:attack.damage.disease')} size="small">
+            <Stat label={t('monsters:attack.damage.disease')} size="small">
               {damage.disease}
             </Stat>
           )}
           {damage.non_typical && (
-            <Stat label={t('monster:attack.damage.non_typical')} size="small">
+            <Stat label={t('monsters:attack.damage.non_typical')} size="small">
               {damage.non_typical}
             </Stat>
           )}
           {damage.poison && (
-            <Stat label={t('monster:attack.damage.poison')} size="small">
+            <Stat label={t('monsters:attack.damage.poison')} size="small">
               <>
                 {t(poisonTypeTranslationDict[damage.poison.type])} (
                 {damage.poison.potency})
@@ -157,13 +157,13 @@ const MonsterAttackStats = ({
             </Stat>
           )}
           {damage.weapon && (
-            <Stat label={t('monster:attack.damage.damage')} size="small">
+            <Stat label={t('monsters:attack.damage.damage')} size="small">
               {damage.weapon}
             </Stat>
           )}
         </>
       )}
-      <Stat label={t(`monster:attack.range`)}>{t(range)}</Stat>
+      <Stat label={t(`monsters:attack.range`)}>{t(range)}</Stat>
     </Train>
   )
 }

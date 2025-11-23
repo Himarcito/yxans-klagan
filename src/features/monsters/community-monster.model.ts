@@ -113,7 +113,7 @@ const deflim: MonsterLimbs = {
 }
 
 const createCommunityMonsterAttackViewModel = (
-  monster: CommunityMonster,
+  monsters: CommunityMonster,
 ): MonsterAttackViewModel<CommunityMonsterAttackType>[] => {
   const minimalContext: MonsterAttackMinimalContext = {
     attributes: monster.attributes,

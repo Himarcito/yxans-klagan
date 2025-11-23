@@ -115,8 +115,8 @@ export const createRandomMonsterViewModelFromRandomMonster = (
     })),
     skills: getMonsterSkillListItems(rm.skills),
     motivation: {
-      name: `monster:motivation.${rm.motivation}.name`,
-      description: `monster:motivation.${rm.motivation}.description`,
+      name: `monsters:motivation.${rm.motivation}.name`,
+      description: `monsters:motivation.${rm.motivation}.description`,
     },
     attacks: createMonsterAttacks(monsterAttacks, { ...rm, movement }),
   }
@@ -171,7 +171,7 @@ const getLimbsDescription = (
         ? [
             ...acc,
             [
-              `monster:limbs.${limbName}` as TranslationKey<'monsters'>,
+              `monsters:limbs.${limbName}` as TranslationKey<'monsters'>,
               amountOfLimb,
             ],
           ]
@@ -181,7 +181,7 @@ const getLimbsDescription = (
 
   const limbsDescriptions: MonsterDescriptionItemViewModel[] =
     actualLimbs.length === 0
-      ? [{ key: 'monster:limbs.none' }]
+      ? [{ key: 'monsters:limbs.none' }]
       : actualLimbs.map(([key, value]) => ({
           key,
           count: value,
@@ -239,10 +239,10 @@ export const getTraitListBasedOnMotivation = (
   }
 
   const hurt = monsterTraits.find(
-    (t) => t.value.name === 'monster:trait.hurt.name',
+    (t) => t.value.name === 'monsters:trait.hurt.name',
   )
   const traitList = monsterTraits.filter(
-    (t) => t.value.name !== 'monster:trait.hurt.name',
+    (t) => t.value.name !== 'monsters:trait.hurt.name',
   )
 
   return [
@@ -279,7 +279,7 @@ export const getMonsterSkillListItems = (
     skills.melee > 0
       ? [
           {
-            name: `monster:skills.melee` as TranslationKey<'monsters'>,
+            name: `monsters:skills.melee` as TranslationKey<'monsters'>,
             value: skills.melee,
           },
         ]
@@ -287,7 +287,7 @@ export const getMonsterSkillListItems = (
     skills.move > 0
       ? [
           {
-            name: `monster:skills.move` as TranslationKey<'monsters'>,
+            name: `monsters:skills.move` as TranslationKey<'monsters'>,
             value: skills.move,
           },
         ]
@@ -295,7 +295,7 @@ export const getMonsterSkillListItems = (
     skills.scouting > 0
       ? [
           {
-            name: `monster:skills.scouting` as TranslationKey<'monsters'>,
+            name: `monsters:skills.scouting` as TranslationKey<'monsters'>,
             value: skills.scouting,
           },
         ]
@@ -303,7 +303,7 @@ export const getMonsterSkillListItems = (
     skills.stealth > 0
       ? [
           {
-            name: `monster:skills.stealth` as TranslationKey<'monsters'>,
+            name: `monsters:skills.stealth` as TranslationKey<'monsters'>,
             value: skills.scouting,
           },
         ]
@@ -318,8 +318,8 @@ const createAttackRequirements = (
   limbs: MonsterLimbs,
 ): MonsterAttackRequirements => {
   return {
-    acidGlands: traits.some((t) => t.name === 'monster:trait.acid_glands.name'),
-    fireGlands: traits.some((t) => t.name === 'monster:trait.fire_glands.name'),
+    acidGlands: traits.some((t) => t.name === 'monsters:trait.acid_glands.name'),
+    fireGlands: traits.some((t) => t.name === 'monsters:trait.fire_glands.name'),
     tail: tailKey !== 'none',
     spikedTail: tailKey === 'spiked_tail',
     claws: limbs.arms > 0,
@@ -329,7 +329,7 @@ const createAttackRequirements = (
     ),
     legs: limbs.legs > 0,
     tentacles: limbs.tentacles > 0,
-    undead: traits.some((t) => t.name === 'monster:trait.undead.name'),
+    undead: traits.some((t) => t.name === 'monsters:trait.undead.name'),
     wings: limbs.wings > 0,
     hasLimbs:
       limbs.arms > 0 ||
@@ -339,11 +339,11 @@ const createAttackRequirements = (
     hasBeak: heads.some((h) => h === 'beak'),
     canSpeak: traits.some(
       (t) =>
-        t.name === 'monster:trait.intelligent.name' ||
-        t.name === 'monster:trait.can_speak.name',
+        t.name === 'monsters:trait.intelligent.name' ||
+        t.name === 'monsters:trait.can_speak.name',
     ),
-    isPoisonous: traits.some((t) => t.name === 'monster:trait.poisonous.name'),
-    isSick: traits.some((t) => t.name === 'monster:trait.hurt.name'),
+    isPoisonous: traits.some((t) => t.name === 'monsters:trait.poisonous.name'),
+    isSick: traits.some((t) => t.name === 'monsters:trait.hurt.name'),
   }
 }
 
@@ -432,14 +432,14 @@ const createDescription = ({
 }: MonsterDescription): MonsterDescriptionViewModel => {
   const tailDescription: TranslationKey<'monsters'> | undefined =
     tail.key === 'spiked_tail'
-      ? 'monster:tail.spiked_tail'
+      ? 'monsters:tail.spiked_tail'
       : tail.key === 'tail'
-        ? 'monster:tail.tail'
+        ? 'monsters:tail.tail'
         : undefined
 
   return {
     head: heads.map(({ key, count }) => ({
-      key: `monster:head.${key}` as TranslationKey<'monsters'>,
+      key: `monsters:head.${key}` as TranslationKey<'monsters'>,
       count,
     })),
     tail: tailDescription,

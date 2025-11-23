@@ -3,7 +3,7 @@ import { createAttributesViewModel } from '../../functions/attributes.functions'
 import { Monster, MonsterViewModel } from './monster.model'
 
 export const createMonstersViewModel = (
-  monster: Monster,
+  monsters: Monster,
 ): MonsterViewModel => ({
   ...monster,
   attributes: createAttributesViewModel(monster.attributes),

@@ -36,7 +36,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (ctx) => ctx.attributes.agility + 4,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.bite.description',
+        description: 'monsters:attack.bite.description',
         chance: 1,
       },
       {
@@ -52,7 +52,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (ctx) => ctx.attributes.agility + 5,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.stab.description',
+        description: 'monsters:attack.stab.description',
         chance: 1,
       },
       {
@@ -64,7 +64,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (ctx) => ctx.attributes.agility + 5,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.pounce.description',
+        description: 'monsters:attack.pounce.description',
         chance: 1,
       },
       {
@@ -79,7 +79,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (_ctx) => 7,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.webshot.description',
+        description: 'monsters:attack.webshot.description',
         chance: 1,
       },
       {
@@ -91,7 +91,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (_ctx) => 5,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.piercing_shriek.description',
+        description: 'monsters:attack.piercing_shriek.description',
         chance: 1,
       },
       {
@@ -99,7 +99,7 @@ export const communityMonsters: CommunityMonster[] = [
         range: 'short',
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.call_the_brood.description',
+        description: 'monsters:attack.call_the_brood.description',
         chance: 1,
       },
     ],
@@ -142,7 +142,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (ctx) => ctx.attributes.agility,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.bite.description',
+        description: 'monsters:attack.bite.description',
         chance: 1,
       },
     ],
@@ -181,7 +181,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: () => 9,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.clay_smash.description',
+        description: 'monsters:attack.clay_smash.description',
         chance: 1,
       },
       {
@@ -193,7 +193,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: () => 10,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.clay_punch.description',
+        description: 'monsters:attack.clay_punch.description',
         chance: 1,
       },
       {
@@ -203,7 +203,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: () => 0,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.hasty_reaction.description',
+        description: 'monsters:attack.hasty_reaction.description',
         chance: 1,
       },
       {
@@ -215,7 +215,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (_ctx) => 8,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.earth_rumble.description',
+        description: 'monsters:attack.earth_rumble.description',
         chance: 1,
       },
       {
@@ -227,7 +227,7 @@ export const communityMonsters: CommunityMonster[] = [
         attack: (_ctx) => 7,
         singleUse: false,
         valid: (_ctx) => true,
-        description: 'monster:attack.ground_quake.description',
+        description: 'monsters:attack.ground_quake.description',
         chance: 1,
       },
       {
@@ -239,7 +239,7 @@ export const communityMonsters: CommunityMonster[] = [
           blunt: 2,
         }),
         valid: (_ctx) => true,
-        description: 'monster:attack.golem_rampage.description',
+        description: 'monsters:attack.golem_rampage.description',
         chance: 1,
       },
     ],

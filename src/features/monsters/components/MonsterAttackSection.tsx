@@ -31,7 +31,7 @@ export const MonsterAttackSection = ({ como }: MonsterAttackSectionProps) => {
   return (
     <Stack.Vertical>
       <div className="flex items-center gap-2">
-        <Typography variant="h3">{t(`monster:attack.attacks`)}</Typography>
+        <Typography variant="h3">{t(`monsters:attack.attacks`)}</Typography>
 
         <ParchmentButton buttonType="ghost" small onPress={() => rollAttack()}>
           <ArrowPathIcon
@@ -39,7 +39,7 @@ export const MonsterAttackSection = ({ como }: MonsterAttackSectionProps) => {
     ${selectedAttack ? 'animate-[spin_250ms_ease-in-out_0.5]' : ''}
                 `}
           />
-          {t('monster:attack.roll')}
+          {t('monsters:attack.roll')}
         </ParchmentButton>
       </div>
       <div className="grid gap-2 2xl:grid-cols-2">

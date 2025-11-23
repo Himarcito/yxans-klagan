@@ -8,7 +8,7 @@ export const BackToAllMonsters = () => {
   return (
     <div>
       <LinkWithIcon to="/monsters" icon="back">
-        {t('monster:back_to_all_monsters')}
+        {t('monsters:back_to_all_monsters')}
       </LinkWithIcon>
     </div>
   )

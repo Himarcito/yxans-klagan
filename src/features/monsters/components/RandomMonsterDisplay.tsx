@@ -39,12 +39,12 @@ export const RandomMonsterDisplay = ({
     )
 
     if (translatedHeads.length === 1) {
-      return `${t('monster:the_monster_has')} ${translatedHeads.join('')}.`
+      return `${t('monsters:the_monster_has')} ${translatedHeads.join('')}.`
     }
 
     const [lastHead, ...restOfHeads] = translatedHeads
 
-    return `${t('monster:the_monster_has')} ${restOfHeads.join(
+    return `${t('monsters:the_monster_has')} ${restOfHeads.join(
       ', ',
     )} & ${lastHead}.`
   }
@@ -60,18 +60,18 @@ export const RandomMonsterDisplay = ({
     )
 
     if (translatedLimbs.length === 1) {
-      return `${t('monster:the_monster_has')} ${translatedLimbs.join('')}.`
+      return `${t('monsters:the_monster_has')} ${translatedLimbs.join('')}.`
     }
 
     const [lastLimb, ...restOfLimbs] = [...translatedLimbs].reverse()
 
-    return `${t('monster:the_monster_has')} ${restOfLimbs.join(
+    return `${t('monsters:the_monster_has')} ${restOfLimbs.join(
       ', ',
     )} & ${lastLimb}.`
   }
 
   const describeHome = (monsterHome: TranslationKey<'monsters'>): string =>
-    `${t('monster:lives_in', {
+    `${t('monsters:lives_in', {
       context: {
         home: t(monsterHome),
       },
@@ -104,21 +104,21 @@ export const RandomMonsterDisplay = ({
           <div className="grid grid-cols-2 gap-4">
             <div>
               <Typography variant="h3">
-                {t(`monster:movement.movement`)}
+                {t(`monsters:movement.movement`)}
               </Typography>
               <div>
                 {t(movementTypeTranslationDict[rm.movement.type])}{' '}
                 {rm.movement.distance}{' '}
                 {t(
                   rm.movement.distance === 1
-                    ? 'monster:movement.zones_one'
-                    : 'monster:movement.zones_other',
+                    ? 'monsters:movement.zones_one'
+                    : 'monsters:movement.zones_other',
                 )}
               </div>
             </div>
             {rm.armor && (
               <div>
-                <Typography variant="h3">{t('monster:armor_label')}</Typography>
+                <Typography variant="h3">{t('monsters:armor_label')}</Typography>
 
                 <div>
                   <span className="font-medium">
@@ -133,9 +133,9 @@ export const RandomMonsterDisplay = ({
 
         <section className="flex flex-wrap gap-x-8 gap-y-4 4xl:flex-col">
           <div className="md:w-full">
-            <Typography variant="h3">{t(`monster:skill`)}</Typography>
+            <Typography variant="h3">{t(`monsters:skill`)}</Typography>
             {rm.skills.length === 0 ? (
-              <div>{t('monster:skills.none')}</div>
+              <div>{t('monsters:skills.none')}</div>
             ) : (
               <SkillList
                 skills={
@@ -156,7 +156,7 @@ export const RandomMonsterDisplay = ({
 
         <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
-            <Typography variant="h3">{t(`monster:trait.traits`)}</Typography>
+            <Typography variant="h3">{t(`monsters:trait.traits`)}</Typography>
             <DefinitionList
               definitions={rm.traits.map((trait) => ({
                 name: t(trait.name),
@@ -175,7 +175,7 @@ export const RandomMonsterDisplay = ({
           </div>
           <div>
             <Typography variant="h3">
-              {t(`monster:weakness.weakness`)}
+              {t(`monsters:weakness.weakness`)}
             </Typography>
             <DefinitionList
               definitions={[rm.weakness].map((w) => ({
@@ -186,7 +186,7 @@ export const RandomMonsterDisplay = ({
           </div>
           <div>
             <Typography variant="h3">
-              {t(`monster:motivation.motivation`)}
+              {t(`monsters:motivation.motivation`)}
             </Typography>
             <DefinitionList
               definitions={[rm.motivation].map((m) => ({
