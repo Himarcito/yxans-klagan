@@ -1,4 +1,4 @@
-import { useAppDispatch } from '../store/store.hooks' // <-- Ruta corregida
+import { useAppDispatch } from '../store/store.hooks' // Ruta corregida
 import { useValidLanguage, ValidLanguage } from '../hooks/useValidLanguage'
 import { changeLanguage } from '../store/translations/translation.slice'
 import { Link } from 'react-router-dom'
@@ -7,7 +7,6 @@ const LanguageSwitcher = () => {
   const language = useValidLanguage()
   const dispatch = useAppDispatch()
 
-  // Solo inglés disponible
   const validLanguages: ValidLanguage[] = ['en']
 
   const handleChange = (lang: ValidLanguage) => {
