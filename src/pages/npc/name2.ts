@@ -38,10 +38,10 @@ export const getLastname = (
   return getNamesFromMap(names, lang)[index]
 }
 
-// 3. Funciones helper corregidas
-// CORRECCIÓN: Ahora devuelve un objeto LanguageNameMap, no un string simple
+// 3. Funciones helper corregidas para ES
+// CORRECCIÓN 1: Cambiar 'en' por 'es'
 export const getHumanName = (): LanguageNameMap => {
-  return { en: ['Human Name Placeholder'] }
+  return { es: ['Human Name Placeholder'] } 
 }
 
 export const randomGender = (): 'male' | 'female' => {
@@ -50,12 +50,14 @@ export const randomGender = (): 'male' | 'female' => {
 
 export const getLanguageNames = (): LanguageNameMap => {
   return {
-    en: ['Ania', 'Elara', 'Lyssa', 'Zane', 'Cain', 'Torvin'],
+    // CORRECCIÓN 2: Cambiar 'en' por 'es' (nombres propios pueden quedarse en inglés si quieres)
+    es: ['Ania', 'Elara', 'Lyssa', 'Zane', 'Cain', 'Torvin'],
   }
 }
 
 export const getLanguageNamesLast = (): LanguageNameMap => {
   return {
-    en: ['Strongbow', 'Shadowalker', 'Ironhand', 'Blackwood'],
+    // CORRECCIÓN 3: Cambiar 'en' por 'es' (apellidos pueden quedarse en inglés)
+    es: ['Strongbow', 'Shadowalker', 'Ironhand', 'Blackwood'],
   }
 }
