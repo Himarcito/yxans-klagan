@@ -20,12 +20,13 @@ export type Inn = {
 }
 
 export const createRandomInn = ({ owner }: VillageInstitution): Inn => {
-  const name = {
-    // CORRECCIÓN 1: Cambiar 'en' por 'es'
-    es: createRandomInnName().es, 
-  }
+  // CORRECCIÓN DE USO: La función createRandomInnName ya devuelve el objeto { es: 'Nombre' }
+  const name = createRandomInnName() 
+  
   const { oddity, guest, speciality } =
     weightedRandom(innQuirksWithWeights).value
+
+// ... resto del código...
 
   return {
     id: nanoid(),
