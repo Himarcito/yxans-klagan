@@ -268,8 +268,8 @@ const innQuirksWithWeights: WeightedChoice<InnQuirk>[] = [
   },
 ]
 
-export const createRandomInnName = (lang: ValidLanguage): string => {
-  // Ya no se necesita el switch de idioma, solo devolvemos EN
+// Función corregida: Sin argumentos
+export const createRandomInnName = (): string => {
   const prefix = choose(innNamePrefixesEn)
   const suffix = choose(innNameSuffixesEn)
 
