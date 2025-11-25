@@ -40,7 +40,7 @@ export const InnView = ({ inn }: { inn: Inn }) => {
             {t(innGuestTranslationDict[inn.guest])}
           </LabelValue>
           <LabelValue label={t('village:institutions.owner')}>
-            <Name name={inn.owner.name}></Name>
+            <Name names={inn.owner.name}></Name>
           </LabelValue>
         </div>
       </div>
