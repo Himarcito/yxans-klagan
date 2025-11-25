@@ -1,5 +1,5 @@
 import { LabelValue } from '../../components/LabelValue'
-import { Name } from '../../components/Name'
+import Name from '../../components/Name'
 import Stack from '../../components/Stack'
 import { Typography } from '../../components/Typography'
 import { ParchmentCard } from '../../components/card'
