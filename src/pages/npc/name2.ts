@@ -1,7 +1,15 @@
 import { ValidLanguage } from '../../hooks/useValidLanguage'
 import { rollGender } from '../../functions/names.functions'
 
-// Este tipo debe ser exportado.
+// 1. Exportar la interfaz Name (necesaria para npc.ts y Name.tsx)
+export interface Name {
+  firstName: string
+  familyName: string
+  homeName: string
+  nickName: string
+}
+
+// 2. Exportar el tipo LanguageNameMap (necesaria para village-generator)
 export type LanguageNameMap = Record<ValidLanguage, readonly string[]>
 
 export type LanguageStringMap = { [VL in ValidLanguage]: string }
@@ -30,50 +38,23 @@ export const getLastname = (
   return getNamesFromMap(names, lang)[index]
 }
 
-export const getLanguageNames = (
-  // Se eliminó la variable 'lang' ya que no se usa para evitar TS6133
-): LanguageNameMap => {
-  return {
-    en: [
-      'Ania',
-      'Elara',
-      'Lyssa',
-      'Thalia',
-      'Zane',
-      'Cain',
-      'Orin',
-      'Roric',
-      'Silas',
-      'Torvin',
-    ],
-  }
-}
-
-export const getLanguageNamesLast = (
-  // Se eliminó la variable 'lang' ya que no se usa para evitar TS6133
-): LanguageNameMap => {
-  return {
-    en: [
-      'Strongbow',
-      'Shadowalker',
-      'Ironhand',
-      'Swiftfoot',
-      'Brightblade',
-      'Stonefist',
-      'Windrunner',
-      'Blackwood',
-      'Frostbeard',
-      'Deepdelver',
-    ],
-  }
-}
-
-// Funciones añadidas para resolver los errores de importación en otros archivos
+// 3. Funciones helper necesarias para village-generator
 export const getHumanName = (): string => {
-    // Implementación mínima para evitar errores de compilación.
-    return 'Placeholder Name'
+  return 'Human Name Placeholder'
 }
 
 export const randomGender = (): 'male' | 'female' => {
-    return rollGender(1) === 'male' ? 'male' : 'female'
+  return rollGender(Math.random() * 6)
+}
+
+export const getLanguageNames = (): LanguageNameMap => {
+  return {
+    en: ['Ania', 'Elara', 'Lyssa', 'Zane', 'Cain', 'Torvin'],
+  }
+}
+
+export const getLanguageNamesLast = (): LanguageNameMap => {
+  return {
+    en: ['Strongbow', 'Shadowalker', 'Ironhand', 'Blackwood'],
+  }
 }
