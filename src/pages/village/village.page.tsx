@@ -70,7 +70,7 @@ export const VillagePage = () => {
               <section>
                 {t('village:leader.leader')}
                 <Typography variant="h3" parchment>
-                  <Name name={village.leader.name}></Name>
+                  <Name names={village.leader.name}></Name>
                 </Typography>
                 <div className="flex flex-wrap gap-6">
                   <Stat label={t('village:leader.type.type')}>
@@ -130,7 +130,7 @@ export const VillagePage = () => {
                               )}
                             </div>
                             <LabelValue label={t('village:institutions.owner')}>
-                              <Name name={institution.owner.name} />
+                              <Name names={institution.owner.name} />
                             </LabelValue>
                           </Stack.Vertical>
                         </div>
