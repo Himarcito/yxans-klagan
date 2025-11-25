@@ -4,7 +4,7 @@ import {
   createSelector,
   createSlice,
 } from '@reduxjs/toolkit'
-import { useDispatch } from 'react-redux' // <-- ¡Importación añadida!
+import { useDispatch } from 'react-redux'
 import { None, Option, Some } from 'ts-results'
 import { notNullish } from '../../functions/utils.functions'
 import { ValidLanguage } from '../../hooks/useValidLanguage'
@@ -17,7 +17,7 @@ import {
   Translations,
   TFunction,
 } from './translation.model'
-import { useAppSelector } from '../store.hooks' // <-- Ruta corregida
+import { useAppSelector } from '../store.hooks'
 
 interface TranslationState {
   translations: Record<
@@ -132,75 +132,4 @@ export const selectTranslateFunction = <T extends Namespace>(nss: T[]) =>
     ) => {
       let translation = translate(key, safeTranslations, options)
 
-      if (translation.match(/\$t\((.*)\)/gi) !== null) {
-        translation = translation
-          .split(' ')
-          .map((p) =>
-            p.replace(/\$t\((.*)\)/gi, (_match, key) =>
-              translate(
-                key as TranslationKey<localNamespace>,
-                safeTranslations,
-                options,
-              ),
-            ),
-          )
-          .join(' ')
-      }
-      return translation
-    }
-  })
-
-const translate = <LocalNamespace extends Namespace>(
-  key: TranslationKey<LocalNamespace>,
-  safeTranslations: Translations,
-  options?: TFunctionOptions,
-): string => {
-  const [ns, ...rest] = key.split(':')
-  const keys = rest.join().split('.')
-
-  const as = ns in safeTranslations
-
-  if (!as) {
-    return key
-  }
-
-  let obj = safeTranslations[ns as Namespace]
-  let translation: string = key
-
-  for (const part of keys) {
-    if (!obj) {
-      return part
-    }
-    const possibleKey = part
-    if (possibleKey in obj) {
-      const possibleTranslation = obj[possibleKey as keyof typeof obj]
-      if (notNullish(possibleTranslation)) {
-        if (typeof possibleTranslation === 'string') {
-          translation = possibleTranslation
-          break
-        }
-        obj = possibleTranslation as Record<string, unknown>
-      }
-    }
-  }
-
-  if (options?.context) {
-    for (const [ctxKey, ctxValue] of Object.entries(options.context)) {
-      translation = translation.replaceAll(`{{${ctxKey}}}`, ctxValue)
-    }
-  }
-
-  return translation
-}
-
-export const useTranslations = () => {
-  const dispatch = useDispatch()
-  const currentLanguage = useAppSelector(selectCurrentLanguage)
-  const translations = useAppSelector(selectTranslations)
-  
-  return {
-      currentLanguage,
-      translations,
-      changeLanguage: (language: ValidLanguage) => dispatch(changeLanguage(language))
-  }
-}
+      if (translation.match(/\$
