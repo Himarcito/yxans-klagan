@@ -38,9 +38,10 @@ export const getLastname = (
   return getNamesFromMap(names, lang)[index]
 }
 
-// 3. Funciones helper necesarias para village-generator
-export const getHumanName = (): string => {
-  return 'Human Name Placeholder'
+// 3. Funciones helper corregidas
+// CORRECCIÓN: Ahora devuelve un objeto LanguageNameMap, no un string simple
+export const getHumanName = (): LanguageNameMap => {
+  return { en: ['Human Name Placeholder'] }
 }
 
 export const randomGender = (): 'male' | 'female' => {
