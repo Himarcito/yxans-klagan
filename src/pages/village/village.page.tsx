@@ -1,6 +1,6 @@
 import { useCallback, useState } from 'react'
 import { LabelValue } from '../../components/LabelValue'
-iimport Name from '../../components/Name'
+import Name from '../../components/Name'
 import { ParchmentButton } from '../../components/ParchmentButton'
 import Stack from '../../components/Stack'
 import { Stat } from '../../components/Stat'
