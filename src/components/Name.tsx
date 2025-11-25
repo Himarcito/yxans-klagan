@@ -1,25 +1,31 @@
-import { LanguageNameMap } from '../pages/npc/name2'
-import { useAppSelector } from '../store/store.hooks'
-import {
-  selectCurrentLanguage,
-  selectTranslateFunction,
-} from '../store/translations/translation.slice'
+import { useMemo } from 'react'
+import { Name } from '../pages/npc/name2'
 
-interface NameProps {
-  name: LanguageNameMap
+// Aceptamos que 'names' pueda ser el objeto Name O un array de strings
+interface Props {
+  names: Name | readonly string[]
 }
-export const Name = ({ name }: NameProps) => {
-  const t = useAppSelector(selectTranslateFunction(['names']))
-  const currentLang = useAppSelector(selectCurrentLanguage)
 
-  return (
-    <div>
-      {name[currentLang].firstName}
-      {name[currentLang]?.familyName && ` ${name[currentLang].familyName}`}
-      {name[currentLang]?.homeName &&
-        ` ${t('names:of')} ${name[currentLang].homeName}`}
-      {name[currentLang]?.nickName &&
-        ` ${t('names:the')} ${name[currentLang].nickName}`}
-    </div>
-  )
+const NameDisplay = ({ names }: Props) => {
+  const name = useMemo(() => {
+    if (!names) return ''
+
+    // Si es un array (readonly string[])
+    if (Array.isArray(names)) {
+      return names.filter(Boolean).join(' ')
+    }
+
+    // Si es el objeto Name
+    const { firstName, familyName, homeName, nickName } = names as Name
+    let fullName = firstName || ''
+    if (familyName) fullName += ` ${familyName}`
+    if (homeName) fullName += ` of ${homeName}`
+    if (nickName) fullName += ` "${nickName}"`
+    
+    return fullName
+  }, [names])
+
+  return <span className='font-bold'>{name}</span>
 }
+
+export default NameDisplay
