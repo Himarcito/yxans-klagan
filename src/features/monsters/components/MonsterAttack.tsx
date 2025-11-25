@@ -63,7 +63,8 @@ export const MonsterAttack = ({
             )}
           </div>
 
-          <MonsterAttackStats monsters={monster} />
+          {/* CORRECCIÓN AQUÍ: Usamos 'm' en lugar de 'monster' */}
+          <MonsterAttackStats monsters={m} />
         </div>
       </div>
       <svg
