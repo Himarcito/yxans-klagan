@@ -20,7 +20,7 @@ export type Inn = {
 
 export const createRandomInn = ({ owner }: VillageInstitution): Inn => {
   const name = {
-    en: createRandomInnName('en'), // Solo generamos EN
+    en: createRandomInnName(), // Solo generamos EN
   }
   const { oddity, guest, speciality } =
     weightedRandom(innQuirksWithWeights).value
