@@ -7,7 +7,7 @@ const LanguageSwitcher = () => {
   const language = useValidLanguage()
   const dispatch = useAppDispatch()
 
-  const validLanguages: ValidLanguage[] = ['en']
+  const validLanguages: ValidLanguage[] = ['es']
 
   const handleChange = (lang: ValidLanguage) => {
     dispatch(changeLanguage(lang))
