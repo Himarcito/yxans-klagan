@@ -10,7 +10,7 @@ import {
 } from '../../functions/dice.functions'
 import { D6, D66 } from '../../models/fbl-dice.model'
 import { Mapping } from '../../utils/types'
-import { getHumanName, randomGender } from '../npc/name2'
+import { getHumanName } from '../npc/name2' // Eliminado randomGender ya que no se usa
 import { Character } from './character'
 import { createRandomInn, Inn } from './inn-generator'
 import { createRandomVillageName, LanguageStringMap } from './village-name'
@@ -55,7 +55,8 @@ export const createRandomVillage = (): Village => {
   )
 
   return {
-    name: createRandomVillageName(),
+    // CORRECCIÓN 1: Cast a any y sin argumentos
+    name: createRandomVillageName() as any,
     size,
     inhabitants,
     age,
@@ -189,7 +190,8 @@ const createRandomLeader = (): Leader | undefined => {
 
   return {
     id: nanoid(),
-    name: getHumanName('alderlander', randomGender()),
+    // CORRECCIÓN 2: Sin argumentos
+    name: getHumanName(), 
     oddity,
     type,
   }
@@ -409,7 +411,8 @@ const createVillageInstitutions = (
         type: weightedRandom(villageInstitutionsWithWeights).value,
         owner: {
           id: nanoid(),
-          name: getHumanName('alderlander', randomGender()),
+          // CORRECCIÓN 3: Sin argumentos
+          name: getHumanName(), 
         },
       }),
     )
