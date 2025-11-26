@@ -1365,6 +1365,110 @@ export const translationsEs = {
     title: 'Persona Típica',
   },
   session: {
+    title: 'Sesión', // Clave que faltaba para el título principal
+    legend: 'Leyenda', // Clave que faltaba para el botón
+    time: {
+      ago: {
+        before_blood_mist: 'antes de la Niebla de Sangre',
+        during_alder_wars: 'durante las Guerras de los Alisos', // Arregla 'session:time.ago.during_alder_wars'
+        during_blood_mist: 'durante la Niebla de Sangre',
+        after_blood_mist: 'después de la Niebla de Sangre',
+      },
+    },
+    who_or_what: {
+      dwarf: 'Enano', // Arregla 'session:who_or_what.dwarf'
+      elf: 'Elfo',
+      human: 'Humano',
+      ogre: 'Ogro',
+      orc: 'Orco',
+      wolfkin: 'Gente Lobo',
+    },
+    adjective: {
+      evil: 'malvado', // Arregla 'session:adjective.evil'
+      brave: 'valiente',
+      wise: 'sabio',
+      strange: 'extraño',
+      fierce: 'feroz',
+      mad: 'loco',
+      lonely: 'solitario',
+      lost: 'perdido',
+      drunk: 'borracho',
+      old: 'viejo',
+      sick: 'enfermo',
+      young: 'joven',
+      sad: 'triste',
+      happy: 'feliz',
+      tired: 'cansado',
+      adjective_adversary: {
+        blood_thirsty: 'sediento de sangre', // Arregla 'session:adjective_adversary.blood_thirsty'
+        powerful: 'poderoso',
+        ancient: 'antiguo',
+        dead: 'muerto',
+        possessed: 'poseído',
+        undead: 'no-muerto',
+        corrupt: 'corrupto',
+        hungry: 'hambriento',
+      },
+    },
+    searched_for: {
+      artifact: 'Artefacto', // Arregla 'session:searched_for.artifact'
+      treasure: 'Tesoro',
+      person: 'Persona',
+      monster: 'Monstruo',
+      village: 'Aldea',
+      ruin: 'Ruina',
+      cave: 'Cueva',
+      castle: 'Castillo',
+      fort: 'Fuerte',
+      tower: 'Torre',
+    },
+    because: {
+      promise: 'Promesa', // Arregla 'session:because.promise'
+      money: 'Dinero',
+      fame: 'Fama',
+      revenge: 'Venganza',
+      love: 'Amor',
+      fear: 'Miedo',
+      duty: 'Deber',
+      curiosity: 'Curiosidad',
+      threat: 'Amenaza',
+    },
+    location: {
+      village: 'Aldea', // Arregla 'session:location.village'
+      ruin: 'Ruina',
+      cave: 'Cueva',
+      castle: 'Castillo',
+      fort: 'Fuerte',
+      tower: 'Torre',
+    },
+    distance: {
+      far_away: 'muy lejos', // Arregla 'session:distance.far_away'
+      nearby: 'cercano',
+      close: 'próximo',
+      unknown: 'desconocido',
+    },
+    what_happened: {
+      found: 'encontró',
+      still_looking: 'aún está buscando', // Arregla 'session:what_happened.still_looking'
+      died: 'murió',
+      lost: 'perdió',
+      trapped: 'quedó atrapado',
+      cursed: 'fue maldecido',
+      fled: 'huyó',
+      killed: 'fue asesinado',
+    },
+    its_told_that: {
+      armor: 'armadura', // Arregla 'session:its_told_that.armor'
+      sword: 'espada',
+      potion: 'pociones',
+      gems: 'gemas',
+      gold: 'oro',
+      magic: 'magia',
+      curses: 'maldiciones',
+      ghost: 'fantasmas',
+      demon: 'demonios',
+    },
+    // Estas son las claves planas que ya teníamos (texto "pegamento" de la oración):
     along_time_ago: 'Hace mucho tiempo',
     years_ago: 'años atrás',
     there_was: 'había un',
