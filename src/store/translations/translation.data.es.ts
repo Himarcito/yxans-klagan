@@ -1364,27 +1364,28 @@ export const translationsEs = {
   typical: {
     title: 'Persona Típica',
   },
-  session: {
-    title: 'Sesión', // Clave que faltaba para el título principal
-    legend: 'Leyenda', // Clave que faltaba para el botón
+ session: {
+    title: 'Sesión', 
+    legend: 'Leyenda', 
     time: {
       ago: {
         before_blood_mist: 'antes de la Niebla de Sangre',
-        during_alder_wars: 'durante las Guerras de los Alisos', // Arregla 'session:time.ago.during_alder_wars'
-        during_blood_mist: 'durante la Niebla de Sangre',
+        during_alder_wars: 'durante las Guerras de los Alisos',
+        during_blood_mist: 'durante la Niebla de Sangre', // Nueva
         after_blood_mist: 'después de la Niebla de Sangre',
       },
     },
     who_or_what: {
-      dwarf: 'Enano', // Arregla 'session:who_or_what.dwarf'
+      dwarf: 'Enano', 
       elf: 'Elfo',
       human: 'Humano',
       ogre: 'Ogro',
       orc: 'Orco',
       wolfkin: 'Gente Lobo',
+      warrior: 'guerrero', // Nueva
     },
     adjective: {
-      evil: 'malvado', // Arregla 'session:adjective.evil'
+      evil: 'malvado', 
       brave: 'valiente',
       wise: 'sabio',
       strange: 'extraño',
@@ -1399,8 +1400,8 @@ export const translationsEs = {
       sad: 'triste',
       happy: 'feliz',
       tired: 'cansado',
+      blood_thirsty: 'sediento de sangre', // Reubicada para corregir 'session:adjective.blood_thirsty'
       adjective_adversary: {
-        blood_thirsty: 'sediento de sangre', // Arregla 'session:adjective_adversary.blood_thirsty'
         powerful: 'poderoso',
         ancient: 'antiguo',
         dead: 'muerto',
@@ -1408,10 +1409,12 @@ export const translationsEs = {
         undead: 'no-muerto',
         corrupt: 'corrupto',
         hungry: 'hambriento',
+        saurians: 'Saurios', // Nueva
+        horrible: 'horrible', // Inferencia
       },
     },
     searched_for: {
-      artifact: 'Artefacto', // Arregla 'session:searched_for.artifact'
+      artifact: 'Artefacto', 
       treasure: 'Tesoro',
       person: 'Persona',
       monster: 'Monstruo',
@@ -1421,44 +1424,48 @@ export const translationsEs = {
       castle: 'Castillo',
       fort: 'Fuerte',
       tower: 'Torre',
+      family_member: 'miembro de la familia', // Nueva
     },
     because: {
-      promise: 'Promesa', // Arregla 'session:because.promise'
+      promise: 'Promesa', 
       money: 'Dinero',
       fame: 'Fama',
       revenge: 'Venganza',
-      love: 'Amor',
+      love: 'Amor', // Ya estaba
       fear: 'Miedo',
       duty: 'Deber',
       curiosity: 'Curiosidad',
       threat: 'Amenaza',
     },
     location: {
-      village: 'Aldea', // Arregla 'session:location.village'
+      village: 'Aldea', 
       ruin: 'Ruina',
       cave: 'Cueva',
       castle: 'Castillo',
       fort: 'Fuerte',
       tower: 'Torre',
+      farm: 'granja', // Nueva
     },
     distance: {
-      far_away: 'muy lejos', // Arregla 'session:distance.far_away'
+      far_away: 'muy lejos', 
       nearby: 'cercano',
       close: 'próximo',
       unknown: 'desconocido',
+      one_days_march: 'una marcha de un día', // Nueva
     },
     what_happened: {
       found: 'encontró',
-      still_looking: 'aún está buscando', // Arregla 'session:what_happened.still_looking'
+      still_looking: 'aún está buscando',
       died: 'murió',
       lost: 'perdió',
       trapped: 'quedó atrapado',
       cursed: 'fue maldecido',
       fled: 'huyó',
       killed: 'fue asesinado',
+      betrayed: 'fue traicionado', // Nueva
     },
     its_told_that: {
-      armor: 'armadura', // Arregla 'session:its_told_that.armor'
+      armor: 'armadura', 
       sword: 'espada',
       potion: 'pociones',
       gems: 'gemas',
@@ -1467,8 +1474,9 @@ export const translationsEs = {
       curses: 'maldiciones',
       ghost: 'fantasmas',
       demon: 'demonios',
+      treasure: 'tesoro', // Nueva
     },
-    // Estas son las claves planas que ya teníamos (texto "pegamento" de la oración):
+    // Claves planas (texto "pegamento")
     along_time_ago: 'Hace mucho tiempo',
     years_ago: 'años atrás',
     there_was: 'había un',
