@@ -33,9 +33,9 @@ interface TranslationState {
 
 const initialState: TranslationState = {
   translations: {
-    en: { status: 'loading' },
+    es: { status: 'loading' },
   },
-  currentLanguage: 'en',
+  currentLanguage: 'es',
 }
 
 const translationSlice = createSlice({
