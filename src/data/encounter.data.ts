@@ -185,7 +185,7 @@ export const encounterTable: TerrainEncounterMap = {
 }
 
 export const allEncounters: EncounterData = {
-  en: {
+  es: {
     '0': { title: 'No Encounter', page: 142 },
     '1': { title: 'The Blood Mist', page: 143 },
     '2': { title: 'Duel in the Woods', page: 144 },
