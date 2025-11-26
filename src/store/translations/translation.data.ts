@@ -1,8 +1,8 @@
-// CORRECCIÓN 1: Importar el archivo de traducción como 'es' (desde el nuevo nombre)
-import es from './translation.data.es' 
+// CORRECCIÓN: Usamos llaves {} para importar la exportación con nombre
+// y la renombramos a 'es' con 'as es'.
+import { translationsEs as es } from './translation.data.es'
 
 const translationFiles = {
-  // CORRECCIÓN 2: Usar 'es' como la única clave de idioma soportada
   es,
 }
 
