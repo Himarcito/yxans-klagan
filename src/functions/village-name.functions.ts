@@ -6,7 +6,7 @@ import { capitalize } from './utils.functions'
 type LanguageVillageNameModelMap = { [VL in ValidLanguage]: VillageNameData }
 
 const languageVillageNameModelMap: LanguageVillageNameModelMap = {
-  en: villageNamesEn,
+  es: villageNamesEn,
 }
 
 export interface VillageNameData {
@@ -36,9 +36,9 @@ const formatVillageName = (
   prefixAndSuffix: [string, string],
   lang: ValidLanguage,
 ) => {
-  const separator = lang === 'en' ? ' ' : ''
+  const separator = lang === 'es' ? ' ' : ''
 
   return prefixAndSuffix
-    .map((fix) => (lang === 'en' ? capitalize(fix) : fix))
+    .map((fix) => (lang === 'es' ? capitalize(fix) : fix))
     .join(separator)
 }
