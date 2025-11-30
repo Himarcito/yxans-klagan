@@ -1134,14 +1134,44 @@ export const translationsEs = {
       after_blood_mist: 'Después de la Niebla de Sangre',
     },
   },
-  monsters: {
+  monster: { // CAMBIO CLAVE: "monsters" -> "monster" (SINGULAR)
     random_monster: {
       title: 'Monstruo Aleatorio',
       generate: 'Generar',
     },
     community_monster: {
-      title: '',
+      title: '', // Título vacío
     },
+    // NOMBRES DE MONSTRUOS (Movidos a la raíz "monster" para que el listado los detecte)
+    giant: 'Gigante',
+    abyss_worm: 'Gusano abisal',
+    bloodling: 'Sanguino',
+    dragon_small: 'Dragón, pequeño',
+    dragon_large: 'Dragón, grande',
+    drakewyrm: 'Dracosierpe',
+    death_knight: 'Caballero de la Muerte',
+    ent: 'Ent',
+    wyvern: 'Guiverno',
+    ghost: 'Fantasma',
+    gryphon: 'Grifo',
+    gray_bear: 'Osogrís',
+    harpies: 'Arpías',
+    hydra: 'Hidra',
+    insectoid: 'Insectoide',
+    giant_squid: 'Calamar Gigante',
+    manticore: 'Mantícora',
+    minotaur: 'Minotauro',
+    night_warg: 'Noctargo',
+    restless_dead: 'Muertos Inquietos',
+    skeleton: 'Esqueleto',
+    ghoul: 'Ghoul',
+    sea_serpent: 'Serpiente Marina',
+    strangling_vine: 'Estranguladera',
+    troll: 'Trol',
+    dragon: 'Dragón',
+    demon: 'Demonio',
+    
+    // RESTO DE PROPIEDADES DE MONSTRUOS
     armor: {
       skin: 'Piel',
       soft_fur: 'Pelaje suave',
