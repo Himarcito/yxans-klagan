@@ -181,7 +181,7 @@ export const translationsEs = {
       mountain: 'en una montaña',
       lake: 'en un lago',
       swamp: 'en un pantano',
-      mire: 'en una ciénaga', // CORREGIDO: Lodazal -> Ciénaga
+      mire: 'en una ciénaga',
       ruin_city: 'en ruinas',
     },
     terrain: {
@@ -193,7 +193,7 @@ export const translationsEs = {
       mountain: 'Montañas',
       lake: 'Lago',
       swamp: 'Pantano',
-      mire: 'Ciénaga', // CORREGIDO: Lodazal -> Ciénaga
+      mire: 'Ciénaga',
       ruin_city: 'Ruinas',
     },
     monster: {
@@ -259,9 +259,9 @@ export const translationsEs = {
     },
     attribute: 'Características',
     attributes: {
-      strength: 'Fortaleza', // CORREGIDO
-      agility: 'Destreza',   // CORREGIDO
-      wits: 'Intelecto',     // CORREGIDO
+      strength: 'Fortaleza',
+      agility: 'Destreza',
+      wits: 'Intelecto',
       empathy: 'Empatía',
     },
     description: {
@@ -273,14 +273,14 @@ export const translationsEs = {
     },
     skills: {
       skills: 'Habilidades',
-      might: 'Brío',           // CORREGIDO
+      might: 'Brío',
       endurance: 'Resistencia',
-      melee: 'Pelea',          // CORREGIDO
+      melee: 'Pelea',
       crafting: 'Artesanía',
-      stealth: 'Discreción',   // CORREGIDO
+      stealth: 'Discreción',
       sleight_of_hand: 'Juego de manos',
-      move: 'Atletismo',       // CORREGIDO
-      markmanship: 'Puntería', // CORREGIDO
+      move: 'Atletismo',
+      markmanship: 'Puntería',
       scouting: 'Exploración',
       lore: 'Saber',
       survival: 'Supervivencia',
@@ -648,6 +648,323 @@ export const translationsEs = {
         'Capa Bien Confeccionada con Hebilla de Plata',
     },
   },
+  gear: {
+    title: 'Equipo',
+    craft: 'Artesanía',
+    filters: {
+      search: 'Buscar',
+      max_price: 'Precio Máx.',
+    },
+    supply: {
+      supply: 'Suministro',
+      reroll: 'Volver a tirar suministro',
+      common: 'Común',
+      uncommon: 'Poco Común',
+      rare: 'Raro',
+    },
+    market_type: {
+      market_type: 'Tipo de Mercado',
+      daily_living: 'Vida Diaria',
+      trade_goods: 'Bienes Comerciales',
+      luxury_goods: 'Artículos de Lujo',
+      war: 'Guerra',
+      food: 'Comida',
+    },
+    category: {
+      cateogory: 'Categoría',
+      trade_goods: 'Bienes Comerciales',
+      services: 'Servicios',
+    },
+    gear: {
+      trade_goods: 'Bienes Comerciales',
+      backpack: {
+        name: 'Mochila',
+        effect: '-1 Peso. Ej. añade 1 a la capacidad de carga',
+      },
+      bandages: {
+        name: 'Vendas',
+        effect: 'Bonificación de Equipo +1 a Curación.',
+      },
+      barrel: {
+        name: 'Barril',
+        effect: 'Contiene 33 unidades (100 porciones) de Agua u otro líquido',
+      },
+      bear_trap: {
+        name: 'Trampa para Osos',
+        effect: 'Bonificación de Equipo +2 a Caza durante viajes.',
+      },
+      blanket: {
+        name: 'Manta',
+        effect: 'Bonificación de Equipo +1 contra el frío.',
+      },
+      book: {
+        name: 'Libro',
+        effect:
+          'Si está escribiendo, +1 a Manipulación/Interpretación final por cada 7CD dedicados a escribir. Si se lee, +1 a Saber sobre el tema que describe el libro',
+      },
+      cauldron: {
+        name: 'Caldero',
+        effect: 'Permite al Cocinero preparar 1 unidad de Comida (3 comidas) por Cuarto de Día.',
+      },
+      chalk: {
+        name: 'Tiza',
+        effect: 'Puede ser usada por Simbolistas.',
+      },
+      chest: {
+        name: 'Cofre',
+        effect: 'Puede almacenar 100 unidades.',
+      },
+      clay_jug: {
+        name: 'Jarra de Arcilla',
+        effect: 'Contiene una unidad de Agua u otro líquido.',
+      },
+      clay_pot: {
+        name: 'Olla de Arcilla',
+        effect: '.5 de peso cuando está lleno',
+      },
+      crystal_ball: {
+        name: 'Bola de Cristal',
+        effect: 'Puede ser usada como ingrediente en hechizos.',
+      },
+      drum: {
+        name: 'Tambor',
+        effect: 'Bonificación de Equipo +1 a Interpretación.',
+      },
+      field_kitchen: {
+        name: 'Cocina de Campaña',
+        effect: 'Permite cocinar 2D6 unidades de Comida en un Cuarto de Día.',
+      },
+      field_ration: {
+        name: 'Ración de Campo',
+        effect: 'Una unidad de Comida. Aumenta el Dado de Recurso de Comida un paso',
+      },
+      fishing_hook_and_line: {
+        name: 'Anzuelo y sedal',
+        effect: 'Bonificación de Equipo +1 a Pesca durante viajes.',
+      },
+      fishing_net: {
+        name: 'Red de Pesca',
+        effect: 'Bonificación de Equipo +2 a Pesca durante viajes.',
+      },
+      flint_and_steel: {
+        name: 'Pedernal y Esabón',
+        effect: 'Bonificación de Equipo +1 a Montar Campamento durante viajes.',
+      },
+      flute: {
+        name: 'Flauta',
+        effect: 'Bonificación de Equipo +1 a Interpretación.',
+      },
+      food_knife: {
+        name: 'Cuchillo de Comida',
+        effect: '–',
+      },
+      grappling_hook: {
+        name: 'Garra de Escalada',
+        effect: 'Bonificación de Equipo +1 al escalar.',
+      },
+      hallucinogenic_poison_or_antidote: {
+        name: 'Veneno Alucinógeno (dosis)',
+        effect: 'Potencia 3. Cada aumento de Potencia duplica el precio.',
+      },
+      harp: {
+        name: 'Arpa',
+        effect: 'Bonificación de Equipo +2 a Interpretación.',
+      },
+      holy_symbol: {
+        name: 'Símbolo Sagrado',
+        effect: 'Puede ser usado como ingrediente en hechizos.',
+      },
+      horn: {
+        name: 'Cuerno',
+        effect: 'Bonificación de Equipo +1 a Interpretación.',
+      },
+      hourglass: {
+        name: 'Reloj de Arena',
+        effect: 'Puede ser usado como ingrediente en hechizos.',
+      },
+      ink_and_quill: {
+        name: 'Pluma y tinta',
+        effect: 'Puede ser usado para escribir hechizos.',
+      },
+      lamp_oil: {
+        name: 'Aceite para Lámpara',
+        effect: 'Dura un Cuarto de Día.',
+      },
+      lantern: {
+        name: 'Linterna',
+        effect:
+          'Ilumina dentro del rango Cercano durante un Cuarto de Día. Requiere Aceite para Lámpara',
+      },
+      large_tent: {
+        name: 'Tienda Grande',
+        effect: 'Espacio para seis. Bonificación de Equipo +2 a Montar Campamento',
+      },
+      lethal_poison_or_antidote: {
+        name: 'Veneno Letal (dosis)',
+        effect: 'Potencia 3. Cada aumento de Potencia duplica el precio.',
+      },
+      lockpicks: {
+        name: 'Ganzúas',
+        effect: 'Bonificación de Equipo +1 a Juego de Manos al abrir cerraduras.',
+      },
+      lyre: {
+        name: 'Lira',
+        effect: 'Bonificación de Equipo +1 a Interpretación.',
+      },
+      magnifying_glass: {
+        name: 'Lupa',
+        effect: 'Puede ser usada como ingrediente en hechizos.',
+      },
+      map: {
+        name: 'Mapa',
+        effect: 'Puede ser usado como ingrediente en hechizos.',
+      },
+      metal_chalice: {
+        name: 'Cáliz de Metal',
+        effect: '–',
+      },
+      metal_plate: {
+        name: 'Plato de Metal',
+        effect: '–',
+      },
+      oil_lamp: {
+        name: 'Lámpara de Aceite',
+        effect:
+          'Ilumina dentro del rango Cercano durante un Cuarto de Día. Solo se puede usar en interiores. Requiere Aceite para Lámpara',
+      },
+      paralyzing_poison_or_antidote: {
+        name: 'Veneno Paralizante (dosis)',
+        effect: 'Potencia 3. Cada aumento de Potencia duplica el precio.',
+      },
+      parchment: {
+        name: 'Pergamino',
+        effect: 'Puede ser usado para escribir hechizos.',
+      },
+      perfume: {
+        name: 'Perfume',
+        effect: 'Bonificación de Equipo +1 a Manipulación. Dura un Cuarto de Día.',
+      },
+      quiver: {
+        name: 'Carjaj',
+        effect: 'No estorba al portador.',
+      },
+      rope_ten_meters: {
+        name: 'Cuerda, 10 Metros',
+        effect: 'Bonificación de Equipo +1 al escalar.',
+      },
+      scales: {
+        name: 'Balanza',
+        effect: 'Puede ser usada como ingrediente en hechizos.',
+      },
+      sleeping_fur: {
+        name: 'Piel para Dormir',
+        effect: 'Bonificación de Equipo +2 contra el frío.',
+      },
+      sleeping_poison_or_antidote: {
+        name: 'Veneno para Dormir',
+        effect: 'Potencia 3. Cada aumento de Potencia duplica el precio.',
+      },
+      small_tent: {
+        name: 'Tienda Pequeña',
+        effect: 'Espacio para dos. Bonificación de Equipo +2 a Montar Campamento',
+      },
+      snares: {
+        name: 'Trampas',
+        effect: 'Bonificación de Equipo +1 a Caza durante viajes.',
+      },
+      spoon: {
+        name: 'Cuchara',
+        effect: '–',
+      },
+      spyglass: {
+        name: 'Catalejo',
+        effect: 'Bonificación de Equipo +2 a Exploración en rango Largo.',
+      },
+      tallow_candle: {
+        name: 'Vela de Sebo',
+        effect: "Ilumina dentro del Alcance del Brazo durante un Cuarto de Día",
+      },
+      tankard: {
+        name: 'Jarra',
+        effect: '–',
+      },
+      three_arrows_iron_head: {
+        name: 'Flechas, Punta de Hierro',
+        effect: 'Aumenta el Dado de Recurso de Flechas un paso.',
+      },
+      three_arrows_wooden_head: {
+        name: 'Flechas, Punta de Madera',
+        effect:
+          'Aumenta el Dado de Recurso de Flechas un paso. La Armadura cuenta doble.',
+      },
+      torches: {
+        name: 'Antorchas',
+        effect:
+          'Aumenta el Dado de Recurso de Antorchas un paso. Ilumina dentro del rango Cercano. Tira el Dado de Recurso cada Turno (15 minutos).',
+      },
+      waterskin: {
+        name: 'Odre',
+        effect: 'Necesario para llevar Agua. No estorba.',
+      },
+    },
+    service: {
+      service: 'Servicios Comunes',
+      bath_at_inn: {
+        name: 'Baño en Posada',
+        effect: '',
+      },
+      haircut: {
+        name: 'Corte de Pelo',
+        effect: '',
+      },
+      healing: {
+        name: 'Curación',
+        effect:
+          'Un sanador de aldea típico tiene Astucia 4 y nivel de habilidad 2 en Curación.',
+      },
+      bodyguard: {
+        name: 'Guardaespaldas',
+        effect: '',
+      },
+      clothes_washed: {
+        name: 'Ropa Lavada',
+        effect: '',
+      },
+      courier: {
+        name: 'Mensajero',
+        effect: '',
+      },
+      road_toll: {
+        name: 'Peaje de Carretera',
+        effect: '',
+      },
+      lodging_at_inn_dormitory: {
+        name: 'Alojamiento en Posada, Dormitorio',
+        effect: '',
+      },
+      lodging_at_inn_separate_room: {
+        name: 'Alojamiento en Posada, Habitación Separada',
+        effect: '',
+      },
+      fine_dwelling: {
+        name: 'Morada Fina',
+        effect: '',
+      },
+      bowl_of_stew: {
+        name: 'Tazón de Estofado',
+        effect: 'Cubre la necesidad diaria de Comida',
+      },
+      hearty_meal: {
+        name: 'Comida Abundante',
+        effect: 'Cubre la necesidad diaria de Comida y Agua',
+      },
+      feast: {
+        name: 'Banquete',
+        effect:
+          'Cubre la necesidad diaria de Comida y Agua. Bonificación de +1 a Empatía durante el siguiente Cuarto de Día.',
+      },
+    },
+  },
   village: {
     page_title: 'Generador de Aldeas',
     page_description:
@@ -816,6 +1133,236 @@ export const translationsEs = {
       during_blood_mist: 'Durante la Niebla de Sangre',
       after_blood_mist: 'Después de la Niebla de Sangre',
     },
+  },
+  monsters: {
+    armor: {
+      skin: 'Piel',
+      soft_fur: 'Pelaje suave',
+      thick_fur: 'Pelaje grueso',
+      feathers: 'Plumas',
+      scales: 'Escamas',
+      shell: 'Caparazón',
+      bone_plates: 'Placas de hueso',
+      armored_hide: 'Piel blindada',
+    },
+    size: {
+      puny: 'Enclenque',
+      small: 'Pequeño',
+      average: 'Promedio',
+      large: 'Grande',
+      big: 'Enorme',
+      huge: 'Gigantesco',
+      gigantic: 'Colosal',
+      puny_def: 'El Enclenque',
+      small_def: 'El Pequeño',
+      average_def: 'El Promedio',
+      large_def: 'El Grande',
+      big_def: 'El Enorme',
+      huge_def: 'El Gigantesco',
+      gigantic_def: 'El Colosal',
+    },
+    type: {
+      grazing: 'Pastador',
+      herbivore: 'Herbívoro',
+      gatherer: 'Recolector',
+      scavenger: 'Carroñero',
+      predator: 'Depredador',
+      aggressive_predator: 'Depredador Agresivo',
+    },
+    movement: {
+      slithering: 'Deslizándose',
+      digging: 'Cavando',
+      swimming: 'Nadando',
+      running: 'Corriendo',
+      flying: 'Volando',
+      climbing: 'Escalando',
+    },
+    homes: {
+      burrow: 'Madriguera',
+      ruin: 'Ruina',
+      watering_hole: 'Abrevadero',
+      tree_or_high_point: 'Árbol o punto alto',
+      cave: 'Cueva',
+      ravine: 'Barranco',
+      den: 'Guarida',
+    },
+    motivation: {
+      territory: {
+        name: 'Territorio',
+        description: 'La criatura defiende su territorio.',
+      },
+      pregnant: {
+        name: 'Embarazada',
+        description: 'La criatura está protegiendo a su cría.',
+      },
+      hunger: {
+        name: 'Hambre',
+        description: 'La criatura está hambrienta y busca comida.',
+      },
+      injured: {
+        name: 'Herida',
+        description: 'La criatura está herida y es agresiva por dolor.',
+      },
+      parasite: {
+        name: 'Parásito',
+        description: 'La criatura está infestada de parásitos.',
+      },
+      alone: {
+        name: 'Sola',
+        description: 'La criatura está sola y asustada.',
+      },
+      fun: {
+        name: 'Diversión',
+        description: 'La criatura "juega" con sus víctimas.',
+      },
+      looking_for_host: {
+        name: 'Buscando anfitrión',
+        description: 'La criatura busca un cuerpo donde poner sus huevos.',
+      },
+      guarding_treasure: {
+        name: 'Guardando tesoro',
+        description: 'La criatura protege algo valioso.',
+      },
+    },
+    attack: {
+      attack: 'Ataque',
+      damage: {
+        damage: 'Daño',
+        blunt: 'Contundente',
+        slash: 'Corte',
+        stab: 'Estocada',
+        fear: 'Miedo',
+        disease: 'Enfermedad',
+        non_typical: 'Atípico',
+        poison: 'Veneno',
+      },
+      range: 'Rango',
+      slash: { type: 'Tajo' },
+      bite: { type: 'Mordisco' },
+      claw_flurry: { type: 'Ráfaga de garras' },
+      horn: { type: 'Cuerno' },
+      roar: { type: 'Rugido' },
+      bash: { type: 'Golpe' },
+      breath_fire: { type: 'Aliento de Fuego' },
+      spit_acid: { type: 'Escupir Ácido' },
+      deadly_gaze: { type: 'Mirada Mortal' },
+      kick: { type: 'Patada' },
+      devour: { type: 'Devorar' },
+      eye_gourge: { type: 'Sacar Ojos' },
+      locked_jaws: { type: 'Mandíbulas Bloqueadas' },
+      throat_bite: { type: 'Mordisco a la Garganta' },
+      headbutt: { type: 'Cabezazo' },
+      tails_slash: { type: 'Coleatazo' },
+      tentacle_lash: { type: 'Latigazo de Tentáculo' },
+      tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
+      tentacle_penetration_arms_length: {
+        type: 'Penetración de Tentáculo (Cercano)',
+      },
+      tentacle_penetration_near: {
+        type: 'Penetración de Tentáculo (Próximo)',
+      },
+      sweep: { type: 'Barrido' },
+      spray_fire: { type: 'Rociada de Fuego' },
+      spray_acid: { type: 'Rociada de Ácido' },
+      cold_strike: { type: 'Golpe Gélido' },
+      death_scream: { type: 'Grito de Muerte' },
+      backwards_kick: { type: 'Coz' },
+      dive_attack: { type: 'Ataque en Picada' },
+      whirlwind: { type: 'Torbellino' },
+      peck: { type: 'Picotazo' },
+      squash: { type: 'Aplastar' },
+      beak_throw: { type: 'Lanzamiento de Pico' },
+      adventure_toss: { type: 'Lanzamiento de Aventurero' },
+      death_rattle: { type: 'Estertor de Muerte' },
+      infected_scratch: { type: 'Arañazo Infectado' },
+      diseased_bite: { type: 'Mordisco Enfermo' },
+      infected_tail_swipe: { type: 'Coleatazo Infectado' },
+      infected_tentacle_swipe: { type: 'Latigazo Infectado' },
+      diseased_touch: { type: 'Toque Enfermo' },
+      distraction: { type: 'Distracción' },
+      punch: { type: 'Puñetazo' },
+      flying_fists: { type: 'Puños Voladores' },
+      fists_of_fury: { type: 'Puños de Furia' },
+      poison_spit: { type: 'Escupitajo Venenoso' },
+      venemous_bite: { type: 'Mordisco Venenoso' },
+      poison_scratch: { type: 'Arañazo Venenoso' },
+      poison_tail_attack: { type: 'Ataque de Cola Venenoso' },
+      poison_tentacle_attack: { type: 'Ataque de Tentáculo Venenoso' },
+      poison_horn_attack: { type: 'Ataque de Cuerno Venenoso' },
+      nightmare_visions: { type: 'Visiones de Pesadilla' },
+      mind_burst: { type: 'Estallido Mental' },
+      taunt: { type: 'Bula' },
+      plea: { type: 'Súplica' },
+      burrow: { type: 'Excavar' },
+      the_ground_shatters: { type: 'El Suelo se Rompe' },
+      rush: { type: 'Embestida' },
+      wrap_attack: { type: 'Ataque Envolvente' },
+      fall_from_the_sky: { type: 'Caída del Cielo' },
+      rain_of_rocks: { type: 'Lluvia de Rocas' },
+      generic: { type: 'Ataque Genérico' },
+      call_the_brood: { type: 'Llamar a la Camada' },
+      piercing_shriek: { type: 'Chillido Perforante' },
+      pounce: { type: 'Abalanzarse' },
+      stab: { type: 'Puñalada' },
+      webshot: { type: 'Disparo de Telaraña' },
+      clay_smash: { type: 'Golpe de Arcilla' },
+      clay_punch: { type: 'Puñetazo de Arcilla' },
+      hasty_reaction: { type: 'Reacción Apresurada' },
+      earth_rumble: { type: 'Retumbar de la Tierra' },
+      ground_quake: { type: 'Terremoto' },
+      golem_rampage: { type: 'Alboroto de Gólem' },
+    },
+    poisons: {
+      lethal: 'Letal',
+      paralyzing: 'Paralizante',
+      sleeping: 'Somnífero',
+      hallucinogenic: 'Alucinógeno',
+    },
+  },
+  names: {
+    title: 'Nombres',
+    human_name: 'Nombre Humano',
+    generate: 'Generar',
+  },
+  map: {
+    title: 'Mapa',
+    hexes: 'hexágonos',
+    fog_of_war_on: 'Niebla ON',
+    fog_of_war_off: 'Niebla OFF',
+    download_map_data: 'Descargar datos',
+    paste_map_data: 'Pegar datos',
+    popover_explored: 'Explorado',
+    popover_unexplored: 'Inexplorado',
+    popover_hide: 'Ocultar',
+    popover_forget: 'Olvidar',
+    popover_explore: 'Explorar',
+  },
+  home: {
+    page: 'Inicio',
+    description:
+      'Herramientas para el juego de rol Forbidden Lands.',
+    game_title: 'Forbidden Lands',
+    game_description:
+      'Un juego de rol de fantasía de mundo abierto.',
+    thanks_to: 'Gracias a',
+    free_league: 'Free League Publishing',
+    for_afantastic_game: 'por un juego fantástico.',
+    community_title: 'Comunidad',
+    thanks_community: 'Gracias a la comunidad por su apoyo y herramientas.',
+    more_tools: {
+      title: 'Más Herramientas',
+      dragon_tools: {
+        name: 'Herramientas del Dragón',
+        description: 'Otras utilidades para tus partidas.',
+      },
+    },
+  },
+  npc: {
+    title: 'PNJs',
+    npc_button: 'Generar PNJ',
+  },
+  typical: {
+    title: 'Persona Típica',
   },
   session: {
     title: 'Sesión',
