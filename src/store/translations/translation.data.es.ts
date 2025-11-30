@@ -1135,6 +1135,13 @@ export const translationsEs = {
     },
   },
   monsters: {
+    random_monster: {
+      title: 'Monstruo Aleatorio',
+      generate: 'Generar',
+    },
+    community_monster: {
+      title: '',
+    },
     armor: {
       skin: 'Piel',
       soft_fur: 'Pelaje suave',
