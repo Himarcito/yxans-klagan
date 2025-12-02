@@ -100,6 +100,23 @@ export const translationsEs = {
       bitter_reach: 'La Cuenca Glacial',
     },
     empty: '',
+    // ESTO SOLUCIONA EL ERROR ROJO DE LA IMAGEN 1
+    // Las claves existen, pero están vacías para ocultar los monstruos
+    community_monster: {
+      title: '', 
+      giant_spider: {
+        name: '',
+        description: '',
+      },
+      giant_spiderling: {
+        name: '',
+        description: '',
+      },
+      golem_clay: {
+        name: '',
+        description: '',
+      },
+    },
     kin: {
       human: {
         human: 'Humano',
@@ -224,11 +241,6 @@ export const translationsEs = {
       troll: 'Trol',
       dragon: 'Dragón',
       demon: 'Demonio',
-    },
-    community_monster: {
-      title: '',
-      description: '',
-      // Se han eliminado las arañas y el golem para que no aparezcan en la lista
     },
     direction: {
       north: 'norte',
