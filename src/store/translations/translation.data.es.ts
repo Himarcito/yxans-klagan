@@ -226,19 +226,9 @@ export const translationsEs = {
       demon: 'Demonio',
     },
     community_monster: {
-      giant_spider: {
-        name: 'Araña Gigante',
-        description:
-          'Muy territorial, guarda su nido y no perseguirá. Cuando sea posible, comenzará la lucha con un ataque de emboscada hacia el enemigo más alto.',
-      },
-      giant_spiderling: {
-        name: 'Araña Gigante Joven',
-        description: '',
-      },
-      golem_clay: {
-        name: 'Gólem de Arcilla',
-        description: `Invocar una criatura de este poder requiere un maestro hechicero. Primero el invocador debe lanzar un hechizo de Invocar Gólem con Nivel de Poder de al menos 4, o encontrar un Gólem inactivo. Luego se necesita un hechizo de Invocar Elemental, también con Nivel de Poder 4, para infundir el Gólem con un espíritu elemental. Esta poderosa criatura permanece bajo el control del hechicero durante un turno (15 minutos), siempre que el hechicero se mantenga a distancia CORTA y mantenga al Gólem a la vista. El hechicero puede mantener el control volviendo a lanzar el mismo Nivel de Poder de Invocar Elemental. Si el hechicero queda ROTO, el Gólem obtiene una apariencia de libre albedrío.<br>        Si el hechicero no mantiene el mando del Gólem, este se aleja, explorando su entorno con una fascinación infantil. El cuerpo del Gólem se convertirá en una estatua inanimada después de un Cuarto de Día, se desconoce qué le sucede al espíritu elemental una vez que esto ocurre.`,
-      },
+      title: '',
+      description: '',
+      // Se han eliminado las arañas y el golem para que no aparezcan en la lista
     },
     direction: {
       north: 'norte',
