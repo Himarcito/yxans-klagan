@@ -100,8 +100,7 @@ export const translationsEs = {
       bitter_reach: 'La Cuenca Glacial',
     },
     empty: '',
-    // ESTO SOLUCIONA EL ERROR ROJO DE LA IMAGEN 1
-    // Las claves existen, pero están vacías para ocultar los monstruos
+    // ESTO OCULTA LOS MONSTRUOS DE COMUNIDAD DE LA LISTA
     community_monster: {
       title: '', 
       giant_spider: {
@@ -213,6 +212,7 @@ export const translationsEs = {
       mire: 'Ciénaga',
       ruin_city: 'Ruinas',
     },
+    // Añadida referencia en common por si acaso
     monster: {
       giant: 'Gigante',
       abyss_worm: 'Gusano abisal',
@@ -824,6 +824,7 @@ export const translationsEs = {
       after_blood_mist: 'Después de la Niebla de Sangre',
     },
   },
+  // Bloque "monsters" (PLURAL) con todas las claves del generador aleatorio añadidas
   monsters: {
     title: 'Monstruos',
     book_of_monsters: 'Libro de Monstruos',
@@ -839,6 +840,70 @@ export const translationsEs = {
       title: '',
       description: '',
     },
+    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO DETECTADAS EN LA CAPTURA
+    back_to_all_monsters: 'Volver a todos los monstruos',
+    the_monster_has: 'El monstruo tiene',
+    lives_in: 'Vive en',
+    armor_label: 'Armadura',
+    skill: 'Habilidad',
+    head: {
+        insectoid_eyes: 'Ojos insectoides',
+    },
+    limbs: {
+        none: 'Ninguna',
+    },
+    movement: {
+        movement: 'Movimiento',
+        move: 'Movimiento', // Clave duplicada por si acaso
+        zones_other: 'zonas/turno',
+    },
+    skills: {
+        melee: 'Pelea',
+        scouting: 'Exploración',
+    },
+    trait: {
+        traits: 'Rasgos',
+        camouflage: {
+            name: 'Camuflaje',
+            description: 'La criatura es difícil de ver en su terreno natural.',
+        },
+        fast: {
+            name: 'Rápido',
+            description: 'La criatura es muy rápida y puede realizar acciones adicionales.',
+        },
+    },
+    weakness: {
+        weakness: 'Debilidad',
+        protects_offspring: 'Protege a sus crías',
+        protects_offspring_description: 'Lucha con ferocidad si su cría está amenazada.',
+    },
+    motivation: {
+        motivation: 'Motivación',
+    },
+    attack: {
+        attacks: 'Ataques',
+        roll: 'Tirar',
+        bite: { 
+            description: 'D3 (corte) a un enemigo a distancia DE BRAZO.' 
+        },
+        distraction: { 
+            description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' 
+        },
+        headbutt: { 
+            description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
+        },
+        throat_bite: { 
+            description: 'Intenta morder la garganta del objetivo, causando daño letal.' 
+        },
+        wrap_attack: { 
+            description: 'Envuelve al objetivo restringiendo su movimiento.' 
+        },
+        sweep: { 
+            description: 'Barre a los enemigos cercanos derribándolos.' 
+        },
+    },
+    // FIN DE CLAVES DEL GENERADOR ALEATORIO
+    
     giant: 'Gigante',
     abyss_worm: 'Gusano abisal',
     bloodling: 'Sanguino',
@@ -1050,6 +1115,7 @@ export const translationsEs = {
       hallucinogenic: 'Alucinógeno',
     },
   },
+  // Bloque duplicado "monster" (SINGULAR) para compatibilidad
   monster: {
     random_monster: {
       title: 'Monstruo Aleatorio',
