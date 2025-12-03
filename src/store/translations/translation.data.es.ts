@@ -100,7 +100,6 @@ export const translationsEs = {
       bitter_reach: 'La Cuenca Glacial',
     },
     empty: '',
-    // ESTO OCULTA LOS MONSTRUOS DE COMUNIDAD DE LA LISTA
     community_monster: {
       title: '', 
       giant_spider: {
@@ -212,7 +211,6 @@ export const translationsEs = {
       mire: 'Ciénaga',
       ruin_city: 'Ruinas',
     },
-    // Añadida referencia en common por si acaso
     monster: {
       giant: 'Gigante',
       abyss_worm: 'Gusano abisal',
@@ -492,339 +490,6 @@ export const translationsEs = {
       book_time: '7 Cuartos de Día para un original. 2 Cuartos de Día para una copia',
     },
   },
-  finds: {
-    title: 'Hallazgos',
-    value: 'Valor',
-    type: 'Tipo',
-    location: 'Ubicación',
-    find: {
-      type: {
-        simple: 'Sencillo',
-        valuable: 'Valioso',
-        precious: 'Precioso',
-      },
-      location: {
-        carried: 'Encima',
-        lair: 'Guarida',
-      },
-      armchair: 'Sillón',
-      artifact: 'Artefacto',
-      axe: 'Hacha',
-      beautiful_desk: 'Escritorio Hermoso',
-      beautiful_tapestry: 'Tapiz Hermoso',
-      beautiful_vase: 'Jarrón Hermoso',
-      belt_buckle: 'Hebilla de Cinturón',
-      bone_dice: 'Dados de Hueso',
-      bone_statuette: 'Estatuilla de Hueso',
-      bone_whistle: 'Silbato de Hueso',
-      book: 'Libro',
-      bottle_of_expensive_wine: 'Botella de Vino Caro',
-      bronze_altar: 'Altar de Bronce',
-      bronze_armor: 'Armadura de Bronce',
-      bronze_belt_buckle: 'Hebilla de Cinturón de Bronce',
-      bronze_bracelet: 'Brazalete de Bronce',
-      bronze_dagger: 'Daga de Bronce',
-      bronze_drinking_horn: 'Cuerno para Beber de Bronce',
-      bronze_earring: 'Pendiente de Bronce',
-      bronze_helmet: 'Yelmo de Bronce',
-      bronze_lantern: 'Linterna de Bronce',
-      bronze_medallion: 'Medallón de Bronce',
-      bronze_mirror: 'Espejo de Bronce',
-      bronze_necklace: 'Collar de Bronce',
-      bronze_pot: 'Olla de Bronce',
-      bronze_sarcophagus: 'Sarcófago de Bronce',
-      bronze_shield: 'Escudo de Bronce',
-      bronze_statue: 'Estatua de Bronce',
-      bronze_statuette: 'Estatuilla de Bronce',
-      cabinet: 'Gabinete',
-      calf_skin_gloves: 'Guantes de Piel de Becerro',
-      candelabrum: 'Candelabro',
-      carpet: 'Alfombra',
-      ceiling_candelabrum: 'Candelabro de Techo',
-      chest: 'Cofre',
-      copper_bowl: 'Cuenco de Cobre',
-      copper_coins: 'Monedas de Cobre',
-      copper_crown: 'Corona de Cobre',
-      copper_headband: 'Diadema de Cobre',
-      copper_mug: 'Taza de Cobre',
-      copper_plate: 'Plato de Cobre',
-      copper_ring: 'Anillo de Cobre',
-      crown_with_gemstones: 'Corona con Piedras Preciosas',
-      dragonscale_boots: 'Botas de Escamas de Dragón',
-      drinking_horn_with_gold_details: 'Cuerno para Beber con Detalles de Oro',
-      drinking_horn_with_silver_details: 'Cuerno para Beber con Detalles de Plata',
-      elegant_boots: 'Botas Elegantes',
-      elegant_helmet: 'Yelmo Elegante',
-      elegant_large_shield: 'Escudo Grande Elegante',
-      elegant_one_handed_weapon: 'Arma a Una Mano Elegante',
-      embroided_carpet: 'Alfombra Bordada',
-      embroidery: 'Bordado',
-      fine_hat: 'Sombrero Fino',
-      fur_cloak_with_expensive_embroidery_and_golden_buckle:
-        'Capa de Piel con Bordado Caro y Hebilla Dorada',
-      gaming_board: 'Tablero de Juego',
-      gemstone: 'Piedra Preciosa',
-      glass_bowl: 'Cuenco de Vidrio',
-      gold_amulet: 'Amuleto de Oro',
-      gold_bracelet: 'Brazalete de Oro',
-      gold_coins: 'Monedas de Oro',
-      golden_armchair: 'Sillón Dorado',
-      golden_armor: 'Armadura Dorada',
-      golden_bowl: 'Cuenco Dorado',
-      golden_cradle: 'Cuna Dorada',
-      golden_crown: 'Corona Dorada',
-      golden_diadem: 'Diadema Dorada',
-      golden_embroidery: 'Bordado Dorado',
-      golden_helmet: 'Yelmo Dorado',
-      golden_large_shield: 'Escudo Grande Dorado',
-      golden_mirror: 'Espejo Dorado',
-      golden_necklace: 'Collar Dorado',
-      golden_palanquin: 'Palanquín Dorado',
-      golden_sarcophagus: 'Sarcófago Dorado',
-      golden_statue: 'Estatua Dorada',
-      golden_statue_of_achild: 'Estatua Dorada de un Niño',
-      golden_table: 'Mesa Dorada',
-      golden_tray: 'Bandeja Dorada',
-      golden_weapon: 'Arma Dorada',
-      gold_goblet: 'Copa de Oro',
-      gold_mug: 'Taza de Oro',
-      gold_necklace: 'Collar de Oro',
-      gold_ring: 'Anillo de Oro',
-      gold_statuette: 'Estatuilla de Oro',
-      good_boots: 'Botas Buenas',
-      good_gloves: 'Guantes Buenos',
-      hammer: 'Martillo',
-      knapsack: 'Mochila',
-      lantern: 'Linterna',
-      large_rare_gemstone: 'Piedra Preciosa Rara Grande',
-      lute: 'Laúd',
-      mask: 'Máscara',
-      necklace_with_gemstones: 'Collar con Piedras Preciosas',
-      one_handed_bronze_weapon: 'Arma de Bronce a Una Mano',
-      painting: 'Pintura',
-      painting_with_golden_frame: 'Pintura con Marco Dorado',
-      palanquin_with_copper_details: 'Palanquín con Detalles de Cobre',
-      palanquin_with_silver_details: 'Palanquín con Detalles de Plata',
-      pearl: 'Perla',
-      pearls: 'Perlas',
-      piece_of_amber: 'Pieza de Ámbar',
-      pile_of_coins: 'Pila de Monedas',
-      pulpit: 'Púlpito',
-      rare_book: 'Libro Raro',
-      rare_gemstone: 'Piedra Preciosa Rara',
-      ring_with_gemstone: 'Anillo con Piedra Preciosa',
-      saw: 'Sierra',
-      scepter: 'Cetro',
-      scepter_with_gemstones: 'Cetro con Piedras Preciosas',
-      short_spear: 'Lanza Corta',
-      short_sword: 'Espada Corta',
-      silver_altar: 'Altar de Plata',
-      silver_amulet: 'Amuleto de Plata',
-      silver_bowl: 'Cuenco de Plata',
-      silver_box: 'Caja de Plata',
-      silver_bracelet: 'Brazalete de Plata',
-      silver_brooch: 'Broche de Plata',
-      silver_coins: 'Monedas de Plata',
-      silver_comb: 'Peine de Plata',
-      silver_crown: 'Corona de Plata',
-      silver_earring: 'Pendiente de Plata',
-      silver_goblet: 'Copa de Plata',
-      silver_headband: 'Diadema de Plata',
-      silver_helmet: 'Yelmo de Plata',
-      silver_medallion: 'Medallón de Plata',
-      silver_mirror: 'Espejo de Plata',
-      silver_mug: 'Taza de Plata',
-      silver_necklace: 'Collar de Plata',
-      silver_ring: 'Anillo de Plata',
-      silver_sarcophagus: 'Sarcófago de Plata',
-      silver_statue: 'Estatua de Plata',
-      silver_statuette: 'Estatuilla de Plata',
-      simple_gemstone: 'Piedra Preciosa Simple',
-      small_shield: 'Escudo Pequeño',
-      small_silver_chest: 'Cofre Pequeño de Plata',
-      tapestry: 'Tapiz',
-      unique_book: 'Libro Único',
-      velvet_gloves: 'Guantes de Terciopelo',
-      waterskin: 'Odre',
-      well_tailored_cloak_with_silver_buckle:
-        'Capa Bien Confeccionada con Hebilla de Plata',
-    },
-  },
-  village: {
-    page_title: 'Generador de Aldeas',
-    page_description:
-      'Genera una aldea completa con habitantes, problemas y posadas.',
-    create_new_village: 'Crear nueva aldea',
-    inhabitants: 'Habitantes',
-    age: 'Edad',
-    years: 'años',
-    founded: 'Fundada',
-    quirks: 'Peculiaridades',
-    problems: {
-      problem: 'Problema',
-      nightwargs: 'Noctargos',
-      widespread_drunkenness: 'Embriaguez generalizada',
-      power_struggle: 'Lucha de poder',
-      secret_cult: 'Culto secreto',
-      schism: 'Cisma',
-      undead: 'No-muertos',
-      disease: 'Enfermedad',
-      sinkhole: 'Sumidero',
-      bandits: 'Bandidos',
-      terrorizing_monster: 'Monstruo aterrorizante',
-      slave_trade: 'Comercio de esclavos',
-      haunted_by_ghoul_or_ghost: 'Embrujado por un ghoul o fantasma',
-    },
-    fames: {
-      fame: 'Fama',
-      excellent_wine: 'Vino excelente',
-      delicious_bread: 'Pan delicioso',
-      craftsmanship: 'Artesanía',
-      beautiful_location: 'Ubicación hermosa',
-      a_horrible_massacre: 'Una horrible masacre',
-      decadence: 'Decadencia',
-      well_brewed_beer: 'Cerveza bien elaborada',
-      hidden_riches: 'Riquezas ocultas',
-      strange_disappearances: 'Desapariciones extrañas',
-      worshipping_demons: 'Adoración de demonios',
-      suspicion_of_strangers: 'Sospecha de los extraños',
-      hospitality: 'Hospitalidad',
-    },
-    oddities: {
-      oddity: 'Peculiaridad',
-      eccentric_clothing: 'Ropa excéntrica',
-      incomprehensible_accent: 'Acento incomprensible',
-      smells_bad: 'Huele mal',
-      full_of_flowers: 'Lleno de flores',
-      muddy: 'Fangoso',
-      odd_building_materials: 'Materiales de construcción extraños',
-      tent_village: 'Aldea de tiendas',
-      built_on_steep_hill: 'Construida en una colina empinada',
-      old_tower_inthe_middle: 'Torre antigua en el medio',
-      grand_building: 'Edificio grandioso',
-      windy: 'Ventoso',
-      inbreeding: 'Endogamia',
-      strange_eating_habits: 'Hábitos alimenticios extraños',
-      built_on_marshland: 'Construida sobre pantano',
-      cut_out_of_acliff: 'Tallada en un acantilado',
-      old_burial_site: 'Antiguo lugar de entierro',
-      wandering_cattle: 'Ganado errante',
-      mostly_inhabited_by_women: 'Habitada mayoritariamente por mujeres',
-      allied_with_monster: 'Aliada con un monstruo',
-      preparing_wedding: 'Preparando una boda',
-    },
-    leader: {
-      leader: 'Líder',
-      oddities: {
-        oddity: 'Peculiaridad',
-        bickering: 'Pendenciero',
-        cruel: 'Cruel',
-        weak: 'Débil',
-        greedy: 'Codicioso',
-        wise: 'Sabio',
-        eccentric: 'Excéntrico',
-        confusing: 'Confuso',
-        brutal: 'Brutal',
-        cunning: 'Astuto',
-        stern: 'Severo',
-        secret: 'Reservado',
-        drunkard: 'Borracho',
-      },
-      type: {
-        type: 'Tipo',
-        council: 'Consejo',
-        despot: 'Déspota',
-        elder: 'Anciano',
-        mayor: 'Alcalde',
-        druid: 'Druida',
-        sorcerer: 'Hechicero',
-        no_one: 'Nadie',
-        commander: 'Comandante',
-        trader: 'Comerciante',
-        rust_brother: 'Hermano de la Herrumbre',
-        artisan: 'Artesano',
-        bandit_chief: 'Jefe Bandido',
-      },
-    },
-    institutions: {
-      institutions: 'Instituciones',
-      owner: 'Propietario',
-      nothing: 'Nada',
-      inn: 'Posada',
-      mill: 'Molino',
-      smith: 'Herrero',
-      forester: 'Guardabosques',
-      trading_post: 'Puesto comercial',
-      temple: 'Templo',
-      militia: 'Milicia',
-      tavern: 'Taberna',
-      stable: 'Establo',
-    },
-    inns: {
-      inn: 'Posada',
-      oddities: {
-        violence_is_in_the_air: 'Se respira violencia en el aire',
-        barrels_instead_of_chairs_and_planks_instead_of_tables:
-          'Barriles en lugar de sillas y tablones en lugar de mesas',
-        big_fireplace: 'Gran chimenea',
-        pelts_on_walls: 'Pieles en las paredes',
-        long_communal_table: 'Larga mesa comunal',
-        gambling_den: 'Garito de juego',
-        mediocre_bard: 'Bardo mediocre',
-        nice_dog: 'Perro simpático',
-        grumpy_owner: 'Dueño gruñón',
-        monster_head_on_wall: 'Cabeza de monstruo en la pared',
-        singing_waiter: 'Camarero cantante',
-        stomped_floor: 'Suelo de tierra pisada',
-        birthday_party: 'Fiesta de cumpleaños',
-        drunk_adventurers: 'Aventureros borrachos',
-      },
-      specialities: {
-        cheap_diluted_beer: 'Cerveza barata y aguada',
-        meat_stew: 'Estofado de carne',
-        grilled_rodent: 'Roedor a la parrilla',
-        stewed_turnips: 'Nabos estofados',
-        salt_bird: 'Pájaro en salazón',
-        blood_soup: 'Sopa de sangre',
-        fiery_spice_wine: 'Vino especiado ardiente',
-        roasted_piglet: 'Cochinillo asado',
-        swamp_stew: 'Estofado de pantano',
-        vegetable_mush: 'Papilla de verduras',
-        salted_fish: 'Pescado salado',
-        cooked_crow: 'Cuervo cocinado',
-        bear_stew: 'Estofado de oso',
-        dwarven_strong_ale: 'Cerveza fuerte enana',
-      },
-      guests: {
-        escaped_criminal: 'Criminal fugado',
-        unhappy_farmer: 'Granjero infeliz',
-        scarred_treasure_hunter: 'Cazatesoros con cicatrices',
-        dirty_and_sullen_hunter: 'Cazador sucio y hosco',
-        silent_raven_sister: 'Hermana del Cuervo silenciosa',
-        noisy_bandit: 'Bandido ruidoso',
-        old_war_veteran: 'Viejo veterano de guerra',
-        noble_in_disguise: 'Noble disfrazado',
-        secretive_spellbinder: 'Hechicero reservado',
-        annoying_jester: 'Bufón molesto',
-        dusty_traveller: 'Viajero polvoriento',
-        hungry_dwarf: 'Enano hambriento',
-        frosty_elf: 'Elfo gélido',
-        scouting_thief: 'Ladrón explorador',
-      },
-    },
-    size: {
-      outpost: 'Puesto avanzado',
-      hamlet: 'Aldea',
-      village: 'Villa',
-    },
-    ages: {
-      before_blood_mist: 'Antes de la Niebla de Sangre',
-      during_alder_wars: 'Durante las Guerras de los Alisos',
-      during_blood_mist: 'Durante la Niebla de Sangre',
-      after_blood_mist: 'Después de la Niebla de Sangre',
-    },
-  },
-  // Bloque "monsters" (PLURAL) con todas las claves del generador aleatorio añadidas
   monsters: {
     title: 'Monstruos',
     book_of_monsters: 'Libro de Monstruos',
@@ -840,7 +505,7 @@ export const translationsEs = {
       title: '',
       description: '',
     },
-    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO DETECTADAS EN LA CAPTURA
+    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en',
@@ -851,11 +516,6 @@ export const translationsEs = {
     },
     limbs: {
         none: 'Ninguna',
-    },
-    movement: {
-        movement: 'Movimiento',
-        move: 'Movimiento', // Clave duplicada por si acaso
-        zones_other: 'zonas/turno',
     },
     skills: {
         melee: 'Pelea',
@@ -877,33 +537,8 @@ export const translationsEs = {
         protects_offspring: 'Protege a sus crías',
         protects_offspring_description: 'Lucha con ferocidad si su cría está amenazada.',
     },
-    motivation: {
-        motivation: 'Motivación',
-    },
-    attack: {
-        attacks: 'Ataques',
-        roll: 'Tirar',
-        bite: { 
-            description: 'D3 (corte) a un enemigo a distancia DE BRAZO.' 
-        },
-        distraction: { 
-            description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' 
-        },
-        headbutt: { 
-            description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
-        },
-        throat_bite: { 
-            description: 'Intenta morder la garganta del objetivo, causando daño letal.' 
-        },
-        wrap_attack: { 
-            description: 'Envuelve al objetivo restringiendo su movimiento.' 
-        },
-        sweep: { 
-            description: 'Barre a los enemigos cercanos derribándolos.' 
-        },
-    },
-    // FIN DE CLAVES DEL GENERADOR ALEATORIO
     
+    // NOMBRES DE MONSTRUOS
     giant: 'Gigante',
     abyss_worm: 'Gusano abisal',
     bloodling: 'Sanguino',
@@ -931,6 +566,8 @@ export const translationsEs = {
     troll: 'Trol',
     dragon: 'Dragón',
     demon: 'Demonio',
+    
+    // BLOQUES FUSIONADOS (AQUÍ ESTABA EL ERROR ANTERIOR)
     armor: {
       skin: 'Piel',
       soft_fur: 'Pelaje suave',
@@ -965,14 +602,6 @@ export const translationsEs = {
       predator: 'Depredador',
       aggressive_predator: 'Depredador Agresivo',
     },
-    movement: {
-      slithering: 'Deslizándose',
-      digging: 'Cavando',
-      swimming: 'Nadando',
-      running: 'Corriendo',
-      flying: 'Volando',
-      climbing: 'Escalando',
-    },
     homes: {
       burrow: 'Madriguera',
       ruin: 'Ruina',
@@ -982,7 +611,23 @@ export const translationsEs = {
       ravine: 'Barranco',
       den: 'Guarida',
     },
+    
+    // MOVEMENT FUSIONADO
+    movement: {
+      movement: 'Movimiento', // Generator
+      move: 'Movimiento',     // Generator
+      zones_other: 'zonas/turno', // Generator
+      slithering: 'Deslizándose', // List
+      digging: 'Cavando', // List
+      swimming: 'Nadando', // List
+      running: 'Corriendo', // List
+      flying: 'Volando', // List
+      climbing: 'Escalando', // List
+    },
+
+    // MOTIVATION FUSIONADO
     motivation: {
+      motivation: 'Motivación', // Generator
       territory: {
         name: 'Territorio',
         description: 'La criatura defiende su territorio.',
@@ -1020,8 +665,12 @@ export const translationsEs = {
         description: 'La criatura protege algo valioso.',
       },
     },
+
+    // ATTACK FUSIONADO
     attack: {
-      attack: 'Ataque',
+      attack: 'Ataque', // List
+      attacks: 'Ataques', // Generator
+      roll: 'Tirar', // Generator
       damage: {
         damage: 'Daño',
         blunt: 'Contundente',
@@ -1033,8 +682,13 @@ export const translationsEs = {
         poison: 'Veneno',
       },
       range: 'Rango',
+      
+      // Ataques individuales con datos combinados
       slash: { type: 'Tajo' },
-      bite: { type: 'Mordisco' },
+      bite: { 
+          type: 'Mordisco',
+          description: 'D3 (corte) a un enemigo a distancia DE BRAZO.' 
+      },
       claw_flurry: { type: 'Ráfaga de garras' },
       horn: { type: 'Cuerno' },
       roar: { type: 'Rugido' },
@@ -1046,8 +700,10 @@ export const translationsEs = {
       devour: { type: 'Devorar' },
       eye_gourge: { type: 'Sacar Ojos' },
       locked_jaws: { type: 'Mandíbulas Bloqueadas' },
-      throat_bite: { type: 'Mordisco a la Garganta' },
-      headbutt: { type: 'Cabezazo' },
+      headbutt: { 
+          type: 'Cabezazo',
+          description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
+      },
       tails_slash: { type: 'Coleatazo' },
       tentacle_lash: { type: 'Latigazo de Tentáculo' },
       tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
@@ -1057,7 +713,6 @@ export const translationsEs = {
       tentacle_penetration_near: {
         type: 'Penetración de Tentáculo (Próximo)',
       },
-      sweep: { type: 'Barrido' },
       spray_fire: { type: 'Rociada de Fuego' },
       spray_acid: { type: 'Rociada de Ácido' },
       cold_strike: { type: 'Golpe Gélido' },
@@ -1075,7 +730,6 @@ export const translationsEs = {
       infected_tail_swipe: { type: 'Coleatazo Infectado' },
       infected_tentacle_swipe: { type: 'Latigazo Infectado' },
       diseased_touch: { type: 'Toque Enfermo' },
-      distraction: { type: 'Distracción' },
       punch: { type: 'Puñetazo' },
       flying_fists: { type: 'Puños Voladores' },
       fists_of_fury: { type: 'Puños de Furia' },
@@ -1092,7 +746,6 @@ export const translationsEs = {
       burrow: { type: 'Excavar' },
       the_ground_shatters: { type: 'El Suelo se Rompe' },
       rush: { type: 'Embestida' },
-      wrap_attack: { type: 'Ataque Envolvente' },
       fall_from_the_sky: { type: 'Caída del Cielo' },
       rain_of_rocks: { type: 'Lluvia de Rocas' },
       generic: { type: 'Ataque Genérico' },
@@ -1107,6 +760,24 @@ export const translationsEs = {
       earth_rumble: { type: 'Retumbar de la Tierra' },
       ground_quake: { type: 'Terremoto' },
       golem_rampage: { type: 'Alboroto de Gólem' },
+      
+      // Generator Only attacks added here
+      distraction: { 
+          type: 'Distracción',
+          description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' 
+      },
+      throat_bite: { 
+          type: 'Mordisco a la Garganta',
+          description: 'Intenta morder la garganta del objetivo, causando daño letal.' 
+      },
+      wrap_attack: { 
+          type: 'Ataque Envolvente',
+          description: 'Envuelve al objetivo restringiendo su movimiento.' 
+      },
+      sweep: { 
+          type: 'Barrido',
+          description: 'Barre a los enemigos cercanos derribándolos.' 
+      },
     },
     poisons: {
       lethal: 'Letal',
