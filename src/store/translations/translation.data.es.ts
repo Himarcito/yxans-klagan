@@ -505,7 +505,7 @@ export const translationsEs = {
       title: '',
       description: '',
     },
-    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO
+    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO (Solución a tus capturas)
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en',
@@ -514,19 +514,22 @@ export const translationsEs = {
     
     head: {
         insectoid_eyes: 'Ojos insectoides',
-        big_mane: 'Gran melena', // NUEVO DETECTADO
+        big_mane: 'Gran melena', // Faltaba en tu captura
+        tentacles_with_count: 'tentáculos',
+        big_ears: 'Orejas grandes',
     },
     limbs: {
         none: 'Ninguna',
     },
-    // NUEVA SECCIÓN DETECTADA
     tail: {
-        tail: 'Cola', 
+        tail: 'Cola', // Faltaba en tu captura
+        spiked_tail: 'Cola con pinchos',
     },
     skills: {
         melee: 'Pelea',
         scouting: 'Exploración',
-        move: 'Atletismo', // NUEVO DETECTADO
+        move: 'Atletismo', // Faltaba en tu captura
+        stealth: 'Sigilo',
     },
     trait: {
         traits: 'Rasgos',
@@ -538,21 +541,40 @@ export const translationsEs = {
             name: 'Rápido',
             description: 'La criatura es muy rápida y puede realizar acciones adicionales.',
         },
-        // NUEVO DETECTADO
-        dark_vision: {
+        dark_vision: { // Faltaba en tu captura
             name: 'Visión Nocturna',
             description: 'El monstruo puede ver perfectamente en la oscuridad total.',
+        },
+        sensitive_hearing: {
+             name: 'Oído Agudo',
+             description: 'El monstruo percibe el más leve sonido.',
+        },
+        intelligent: {
+             name: 'Inteligente',
+             description: 'Posee una inteligencia casi humana.',
+             telepathy: 'Puede comunicarse telepáticamente.',
+        },
+        resistance_magic: {
+             name: 'Resistencia Mágica',
+             description: 'Es muy difícil afectarle con conjuros.',
+        },
+        hurt: {
+             name: 'Herido',
+             description: 'La criatura comienza el combate herida.',
         },
     },
     weakness: {
         weakness: 'Debilidad',
         protects_offspring: 'Protege a sus crías',
         protects_offspring_description: 'Lucha con ferocidad si su cría está amenazada.',
-        // NUEVO DETECTADO
-        none: {
+        none: { // Faltaba en tu captura
             name: 'Ninguna',
             description: 'Este monstruo no tiene debilidades evidentes.',
-        }
+        },
+        vulnerable_to_fire: {
+            name: 'Vulnerable al Fuego',
+            description: 'El fuego le causa daño doble o pánico.',
+        },
     },
     
     // NOMBRES DE MONSTRUOS
@@ -716,13 +738,15 @@ export const translationsEs = {
       kick: { type: 'Patada' },
       devour: { type: 'Devorar' },
       eye_gourge: { type: 'Sacar Ojos' },
-      locked_jaws: { type: 'Mandíbulas Bloqueadas' },
+      locked_jaws: { 
+          type: 'Mandíbulas Bloqueadas',
+          description: 'Muerde y se aferra, causando daño continuo.'
+      },
       headbutt: { 
           type: 'Cabezazo',
           description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
       },
-      // Actualizado con descripción
-      tails_slash: { 
+      tails_slash: { // Faltaba descripción en tu captura
           type: 'Coleatazo',
           description: 'Un golpe de barrido con la cola.'
       },
@@ -730,6 +754,7 @@ export const translationsEs = {
       tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
       tentacle_penetration_arms_length: {
         type: 'Penetración de Tentáculo (Cercano)',
+        description: 'El tentáculo atraviesa la carne.',
       },
       tentacle_penetration_near: {
         type: 'Penetración de Tentáculo (Próximo)',
@@ -745,9 +770,15 @@ export const translationsEs = {
       squash: { type: 'Aplastar' },
       beak_throw: { type: 'Lanzamiento de Pico' },
       adventure_toss: { type: 'Lanzamiento de Aventurero' },
-      death_rattle: { type: 'Estertor de Muerte' },
+      death_rattle: { 
+          type: 'Estertor de Muerte',
+          description: 'Al morir, emite un sonido o efecto nocivo.',
+      },
       infected_scratch: { type: 'Arañazo Infectado' },
-      diseased_bite: { type: 'Mordisco Enfermo' },
+      diseased_bite: { 
+          type: 'Mordisco Enfermo',
+          description: 'Transmite una enfermedad virulenta.',
+      },
       infected_tail_swipe: { type: 'Coleatazo Infectado' },
       infected_tentacle_swipe: { type: 'Latigazo Infectado' },
       diseased_touch: { type: 'Toque Enfermo' },
@@ -762,12 +793,14 @@ export const translationsEs = {
       poison_horn_attack: { type: 'Ataque de Cuerno Venenoso' },
       nightmare_visions: { type: 'Visiones de Pesadilla' },
       mind_burst: { type: 'Estallido Mental' },
-      taunt: { type: 'Bula' },
+      taunt: { 
+          type: 'Bula',
+          description: 'Se burla de los enemigos, afectando su moral.',
+      },
       plea: { type: 'Súplica' },
       burrow: { type: 'Excavar' },
       the_ground_shatters: { type: 'El Suelo se Rompe' },
-      // Actualizado con descripción
-      rush: { 
+      rush: { // Faltaba descripción en tu captura
           type: 'Embestida',
           description: 'Carga contra un enemigo derribándolo.'
       },
