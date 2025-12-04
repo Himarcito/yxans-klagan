@@ -511,15 +511,22 @@ export const translationsEs = {
     lives_in: 'Vive en',
     armor_label: 'Armadura',
     skill: 'Habilidad',
+    
     head: {
         insectoid_eyes: 'Ojos insectoides',
+        big_mane: 'Gran melena', // NUEVO DETECTADO
     },
     limbs: {
         none: 'Ninguna',
     },
+    // NUEVA SECCIÓN DETECTADA
+    tail: {
+        tail: 'Cola', 
+    },
     skills: {
         melee: 'Pelea',
         scouting: 'Exploración',
+        move: 'Atletismo', // NUEVO DETECTADO
     },
     trait: {
         traits: 'Rasgos',
@@ -531,11 +538,21 @@ export const translationsEs = {
             name: 'Rápido',
             description: 'La criatura es muy rápida y puede realizar acciones adicionales.',
         },
+        // NUEVO DETECTADO
+        dark_vision: {
+            name: 'Visión Nocturna',
+            description: 'El monstruo puede ver perfectamente en la oscuridad total.',
+        },
     },
     weakness: {
         weakness: 'Debilidad',
         protects_offspring: 'Protege a sus crías',
         protects_offspring_description: 'Lucha con ferocidad si su cría está amenazada.',
+        // NUEVO DETECTADO
+        none: {
+            name: 'Ninguna',
+            description: 'Este monstruo no tiene debilidades evidentes.',
+        }
     },
     
     // NOMBRES DE MONSTRUOS
@@ -567,7 +584,7 @@ export const translationsEs = {
     dragon: 'Dragón',
     demon: 'Demonio',
     
-    // BLOQUES FUSIONADOS (AQUÍ ESTABA EL ERROR ANTERIOR)
+    // BLOQUES FUSIONADOS CORRECTAMENTE
     armor: {
       skin: 'Piel',
       soft_fur: 'Pelaje suave',
@@ -614,20 +631,20 @@ export const translationsEs = {
     
     // MOVEMENT FUSIONADO
     movement: {
-      movement: 'Movimiento', // Generator
-      move: 'Movimiento',     // Generator
-      zones_other: 'zonas/turno', // Generator
-      slithering: 'Deslizándose', // List
-      digging: 'Cavando', // List
-      swimming: 'Nadando', // List
-      running: 'Corriendo', // List
-      flying: 'Volando', // List
-      climbing: 'Escalando', // List
+      movement: 'Movimiento', 
+      move: 'Movimiento',     
+      zones_other: 'zonas/turno', 
+      slithering: 'Deslizándose', 
+      digging: 'Cavando', 
+      swimming: 'Nadando', 
+      running: 'Corriendo', 
+      flying: 'Volando', 
+      climbing: 'Escalando', 
     },
 
     // MOTIVATION FUSIONADO
     motivation: {
-      motivation: 'Motivación', // Generator
+      motivation: 'Motivación', 
       territory: {
         name: 'Territorio',
         description: 'La criatura defiende su territorio.',
@@ -668,9 +685,9 @@ export const translationsEs = {
 
     // ATTACK FUSIONADO
     attack: {
-      attack: 'Ataque', // List
-      attacks: 'Ataques', // Generator
-      roll: 'Tirar', // Generator
+      attack: 'Ataque', 
+      attacks: 'Ataques', 
+      roll: 'Tirar', 
       damage: {
         damage: 'Daño',
         blunt: 'Contundente',
@@ -683,7 +700,7 @@ export const translationsEs = {
       },
       range: 'Rango',
       
-      // Ataques individuales con datos combinados
+      // Ataques individuales
       slash: { type: 'Tajo' },
       bite: { 
           type: 'Mordisco',
@@ -704,7 +721,11 @@ export const translationsEs = {
           type: 'Cabezazo',
           description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
       },
-      tails_slash: { type: 'Coleatazo' },
+      // Actualizado con descripción
+      tails_slash: { 
+          type: 'Coleatazo',
+          description: 'Un golpe de barrido con la cola.'
+      },
       tentacle_lash: { type: 'Latigazo de Tentáculo' },
       tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
       tentacle_penetration_arms_length: {
@@ -745,7 +766,11 @@ export const translationsEs = {
       plea: { type: 'Súplica' },
       burrow: { type: 'Excavar' },
       the_ground_shatters: { type: 'El Suelo se Rompe' },
-      rush: { type: 'Embestida' },
+      // Actualizado con descripción
+      rush: { 
+          type: 'Embestida',
+          description: 'Carga contra un enemigo derribándolo.'
+      },
       fall_from_the_sky: { type: 'Caída del Cielo' },
       rain_of_rocks: { type: 'Lluvia de Rocas' },
       generic: { type: 'Ataque Genérico' },
