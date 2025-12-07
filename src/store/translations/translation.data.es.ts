@@ -101,18 +101,20 @@ export const translationsEs = {
     },
     empty: '',
     community_monster: {
-      title: '', 
+      title: 'Monstruos de la Comunidad',
       giant_spider: {
-        name: '',
-        description: '',
+        name: 'Araña Gigante',
+        description:
+          'Muy territorial, protege su nido y no perseguirá. Cuando sea posible, comenzará la lucha con un ataque de emboscada hacia el enemigo más alto.',
       },
       giant_spiderling: {
-        name: '',
+        name: 'Araña Gigante Joven',
         description: '',
       },
       golem_clay: {
-        name: '',
-        description: '',
+        name: 'Gólem de Arcilla',
+        description:
+          'Invocar una criatura de este poder requiere un maestro hechicero. Primero el invocador debe lanzar un hechizo de Invocar Gólem con Nivel de Poder de al menos 4, o encontrar un Gólem inactivo. Luego se necesita un hechizo de Invocar Elemental, también con Nivel de Poder 4, para infundir el Gólem con un espíritu elemental. Esta poderosa criatura permanece bajo el control del hechicero durante un turno (15 minutos), siempre que el hechicero se mantenga a distancia CORTA y mantenga al Gólem a la vista.',
       },
     },
     kin: {
@@ -447,7 +449,8 @@ export const translationsEs = {
       body: 'Cabeza',
     },
     armor_feature: {
-      penetration_protection: 'VA 3 contra flechas y Estocadas.',
+      penetration_protection:
+        'VA 3 contra flechas y Estocadas.',
       hard_to_move: 'Modifica Atletismo -2',
       hard_to_see: 'Modifica Exploración -2',
       normal: '',
@@ -494,90 +497,90 @@ export const translationsEs = {
     title: 'Monstruos',
     book_of_monsters: 'Libro de Monstruos',
     bookmonsters: {
-        title: 'Libro de Monstruos',
-        description: 'Una colección de bestias y horrores.',
+      title: 'Libro de Monstruos',
+      description: 'Una colección de bestias y horrores.',
     },
     random_monster: {
       title: 'Monstruo Aleatorio',
       generate: 'Generar',
     },
     community_monster: {
-      title: '',
+      title: 'Monstruos de la Comunidad',
       description: '',
     },
-    // CLAVES NUEVAS PARA EL GENERADOR ALEATORIO (Solución a tus capturas)
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en',
     armor_label: 'Armadura',
     skill: 'Habilidad',
-    
+
     head: {
-        insectoid_eyes: 'Ojos insectoides',
-        big_mane: 'Gran melena', // Faltaba en tu captura
-        tentacles_with_count: 'tentáculos',
-        big_ears: 'Orejas grandes',
+      insectoid_eyes: 'Ojos insectoides',
+      big_mane: 'Gran melena',
+      tentacles_with_count: 'tentáculos',
+      big_ears: 'Orejas grandes',
     },
     limbs: {
-        none: 'Ninguna',
+      none: 'Ninguna',
     },
     tail: {
-        tail: 'Cola', // Faltaba en tu captura
-        spiked_tail: 'Cola con pinchos',
+      tail: 'Cola',
+      spiked_tail: 'Cola con pinchos',
     },
     skills: {
-        melee: 'Pelea',
-        scouting: 'Exploración',
-        move: 'Atletismo', // Faltaba en tu captura
-        stealth: 'Sigilo',
+      melee: 'Pelea',
+      scouting: 'Exploración',
+      move: 'Atletismo',
+      stealth: 'Sigilo',
     },
     trait: {
-        traits: 'Rasgos',
-        camouflage: {
-            name: 'Camuflaje',
-            description: 'La criatura es difícil de ver en su terreno natural.',
-        },
-        fast: {
-            name: 'Rápido',
-            description: 'La criatura es muy rápida y puede realizar acciones adicionales.',
-        },
-        dark_vision: { // Faltaba en tu captura
-            name: 'Visión Nocturna',
-            description: 'El monstruo puede ver perfectamente en la oscuridad total.',
-        },
-        sensitive_hearing: {
-             name: 'Oído Agudo',
-             description: 'El monstruo percibe el más leve sonido.',
-        },
-        intelligent: {
-             name: 'Inteligente',
-             description: 'Posee una inteligencia casi humana.',
-             telepathy: 'Puede comunicarse telepáticamente.',
-        },
-        resistance_magic: {
-             name: 'Resistencia Mágica',
-             description: 'Es muy difícil afectarle con conjuros.',
-        },
-        hurt: {
-             name: 'Herido',
-             description: 'La criatura comienza el combate herida.',
-        },
+      traits: 'Rasgos',
+      camouflage: {
+        name: 'Camuflaje',
+        description: 'La criatura es difícil de ver en su terreno natural.',
+      },
+      fast: {
+        name: 'Rápido',
+        description:
+          'La criatura es muy rápida y puede realizar acciones adicionales.',
+      },
+      dark_vision: {
+        name: 'Visión Nocturna',
+        description: 'El monstruo puede ver perfectamente en la oscuridad total.',
+      },
+      sensitive_hearing: {
+        name: 'Oído Agudo',
+        description: 'El monstruo percibe el más leve sonido.',
+      },
+      intelligent: {
+        name: 'Inteligente',
+        description: 'Posee una inteligencia casi humana.',
+        telepathy: 'Puede comunicarse telepáticamente.',
+      },
+      resistance_magic: {
+        name: 'Resistencia Mágica',
+        description: 'Es muy difícil afectarle con conjuros.',
+      },
+      hurt: {
+        name: 'Herido',
+        description: 'La criatura comienza el combate herida.',
+      },
     },
     weakness: {
-        weakness: 'Debilidad',
-        protects_offspring: 'Protege a sus crías',
-        protects_offspring_description: 'Lucha con ferocidad si su cría está amenazada.',
-        none: { // Faltaba en tu captura
-            name: 'Ninguna',
-            description: 'Este monstruo no tiene debilidades evidentes.',
-        },
-        vulnerable_to_fire: {
-            name: 'Vulnerable al Fuego',
-            description: 'El fuego le causa daño doble o pánico.',
-        },
+      weakness: 'Debilidad',
+      protects_offspring: 'Protege a sus crías',
+      protects_offspring_description:
+        'Lucha con ferocidad si su cría está amenazada.',
+      none: {
+        name: 'Ninguna',
+        description: 'Este monstruo no tiene debilidades evidentes.',
+      },
+      vulnerable_to_fire: {
+        name: 'Vulnerable al Fuego',
+        description: 'El fuego le causa daño doble o pánico.',
+      },
     },
-    
-    // NOMBRES DE MONSTRUOS
+
     giant: 'Gigante',
     abyss_worm: 'Gusano abisal',
     bloodling: 'Sanguino',
@@ -605,8 +608,7 @@ export const translationsEs = {
     troll: 'Trol',
     dragon: 'Dragón',
     demon: 'Demonio',
-    
-    // BLOQUES FUSIONADOS CORRECTAMENTE
+
     armor: {
       skin: 'Piel',
       soft_fur: 'Pelaje suave',
@@ -650,23 +652,21 @@ export const translationsEs = {
       ravine: 'Barranco',
       den: 'Guarida',
     },
-    
-    // MOVEMENT FUSIONADO
+
     movement: {
-      movement: 'Movimiento', 
-      move: 'Movimiento',     
-      zones_other: 'zonas/turno', 
-      slithering: 'Deslizándose', 
-      digging: 'Cavando', 
-      swimming: 'Nadando', 
-      running: 'Corriendo', 
-      flying: 'Volando', 
-      climbing: 'Escalando', 
+      movement: 'Movimiento',
+      move: 'Movimiento',
+      zones_other: 'zonas/turno',
+      slithering: 'Deslizándose',
+      digging: 'Cavando',
+      swimming: 'Nadando',
+      running: 'Corriendo',
+      flying: 'Volando',
+      climbing: 'Escalando',
     },
 
-    // MOTIVATION FUSIONADO
     motivation: {
-      motivation: 'Motivación', 
+      motivation: 'Motivación',
       territory: {
         name: 'Territorio',
         description: 'La criatura defiende su territorio.',
@@ -705,11 +705,10 @@ export const translationsEs = {
       },
     },
 
-    // ATTACK FUSIONADO
     attack: {
-      attack: 'Ataque', 
-      attacks: 'Ataques', 
-      roll: 'Tirar', 
+      attack: 'Ataque',
+      attacks: 'Ataques',
+      roll: 'Tirar',
       damage: {
         damage: 'Daño',
         blunt: 'Contundente',
@@ -721,12 +720,11 @@ export const translationsEs = {
         poison: 'Veneno',
       },
       range: 'Rango',
-      
-      // Ataques individuales
+
       slash: { type: 'Tajo' },
-      bite: { 
-          type: 'Mordisco',
-          description: 'D3 (corte) a un enemigo a distancia DE BRAZO.' 
+      bite: {
+        type: 'Mordisco',
+        description: 'D3 (corte) a un enemigo a distancia DE BRAZO.',
       },
       claw_flurry: { type: 'Ráfaga de garras' },
       horn: { type: 'Cuerno' },
@@ -738,17 +736,17 @@ export const translationsEs = {
       kick: { type: 'Patada' },
       devour: { type: 'Devorar' },
       eye_gourge: { type: 'Sacar Ojos' },
-      locked_jaws: { 
-          type: 'Mandíbulas Bloqueadas',
-          description: 'Muerde y se aferra, causando daño continuo.'
+      locked_jaws: {
+        type: 'Mandíbulas Bloqueadas',
+        description: 'Muerde y se aferra, causando daño continuo.',
       },
-      headbutt: { 
-          type: 'Cabezazo',
-          description: 'Un fuerte golpe con la cabeza que puede aturdir.' 
+      headbutt: {
+        type: 'Cabezazo',
+        description: 'Un fuerte golpe con la cabeza que puede aturdir.',
       },
-      tails_slash: { // Faltaba descripción en tu captura
-          type: 'Coleatazo',
-          description: 'Un golpe de barrido con la cola.'
+      tails_slash: {
+        type: 'Coleatazo',
+        description: 'Un golpe de barrido con la cola.',
       },
       tentacle_lash: { type: 'Latigazo de Tentáculo' },
       tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
@@ -770,14 +768,14 @@ export const translationsEs = {
       squash: { type: 'Aplastar' },
       beak_throw: { type: 'Lanzamiento de Pico' },
       adventure_toss: { type: 'Lanzamiento de Aventurero' },
-      death_rattle: { 
-          type: 'Estertor de Muerte',
-          description: 'Al morir, emite un sonido o efecto nocivo.',
+      death_rattle: {
+        type: 'Estertor de Muerte',
+        description: 'Al morir, emite un sonido o efecto nocivo.',
       },
       infected_scratch: { type: 'Arañazo Infectado' },
-      diseased_bite: { 
-          type: 'Mordisco Enfermo',
-          description: 'Transmite una enfermedad virulenta.',
+      diseased_bite: {
+        type: 'Mordisco Enfermo',
+        description: 'Transmite una enfermedad virulenta.',
       },
       infected_tail_swipe: { type: 'Coleatazo Infectado' },
       infected_tentacle_swipe: { type: 'Latigazo Infectado' },
@@ -793,16 +791,16 @@ export const translationsEs = {
       poison_horn_attack: { type: 'Ataque de Cuerno Venenoso' },
       nightmare_visions: { type: 'Visiones de Pesadilla' },
       mind_burst: { type: 'Estallido Mental' },
-      taunt: { 
-          type: 'Bula',
-          description: 'Se burla de los enemigos, afectando su moral.',
+      taunt: {
+        type: 'Bula',
+        description: 'Se burla de los enemigos, afectando su moral.',
       },
       plea: { type: 'Súplica' },
       burrow: { type: 'Excavar' },
       the_ground_shatters: { type: 'El Suelo se Rompe' },
-      rush: { // Faltaba descripción en tu captura
-          type: 'Embestida',
-          description: 'Carga contra un enemigo derribándolo.'
+      rush: {
+        type: 'Embestida',
+        description: 'Carga contra un enemigo derribándolo.',
       },
       fall_from_the_sky: { type: 'Caída del Cielo' },
       rain_of_rocks: { type: 'Lluvia de Rocas' },
@@ -818,23 +816,24 @@ export const translationsEs = {
       earth_rumble: { type: 'Retumbar de la Tierra' },
       ground_quake: { type: 'Terremoto' },
       golem_rampage: { type: 'Alboroto de Gólem' },
-      
-      // Generator Only attacks added here
-      distraction: { 
-          type: 'Distracción',
-          description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' 
+
+      distraction: {
+        type: 'Distracción',
+        description:
+          'El monstruo distrae a sus enemigos, imponiendo desventaja.',
       },
-      throat_bite: { 
-          type: 'Mordisco a la Garganta',
-          description: 'Intenta morder la garganta del objetivo, causando daño letal.' 
+      throat_bite: {
+        type: 'Mordisco a la Garganta',
+        description:
+          'Intenta morder la garganta del objetivo, causando daño letal.',
       },
-      wrap_attack: { 
-          type: 'Ataque Envolvente',
-          description: 'Envuelve al objetivo restringiendo su movimiento.' 
+      wrap_attack: {
+        type: 'Ataque Envolvente',
+        description: 'Envuelve al objetivo restringiendo su movimiento.',
       },
-      sweep: { 
-          type: 'Barrido',
-          description: 'Barre a los enemigos cercanos derribándolos.' 
+      sweep: {
+        type: 'Barrido',
+        description: 'Barre a los enemigos cercanos derribándolos.',
       },
     },
     poisons: {
@@ -844,7 +843,6 @@ export const translationsEs = {
       hallucinogenic: 'Alucinógeno',
     },
   },
-  // Bloque duplicado "monster" (SINGULAR) para compatibilidad
   monster: {
     random_monster: {
       title: 'Monstruo Aleatorio',
@@ -873,11 +871,9 @@ export const translationsEs = {
   },
   home: {
     page: 'Inicio',
-    description:
-      'Herramientas para el juego de rol Forbidden Lands.',
+    description: 'Herramientas para el juego de rol Forbidden Lands.',
     game_title: 'Forbidden Lands',
-    game_description:
-      'Un juego de rol de fantasía de mundo abierto.',
+    game_description: 'Un juego de rol de fantasía de mundo abierto.',
     thanks_to: 'Gracias a',
     free_league: 'Free League Publishing',
     for_afantastic_game: 'por un juego fantástico.',
@@ -891,7 +887,6 @@ export const translationsEs = {
       },
     },
   },
-  // Bloque duplicado en mayúsculas por si la app lo pide así
   HOME: {
     GAME_TITLE: 'Forbidden Lands',
     COMMUNITY: 'Comunidad',
