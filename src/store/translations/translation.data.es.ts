@@ -504,7 +504,7 @@ export const translationsEs = {
     founded: 'Fundada',
     quirks: 'Peculiaridades',
     problems: {
-      problem: 'Problema', // <--- ETIQUETA FALTANTE AÑADIDA
+      problem: 'Problema', // 🛠️ Soluciona village:problems.problem
       nightwargs: 'Huargos nocturnos',
       widespread_drunkenness: 'Embriaguez generalizada',
       power_struggle: 'Lucha de poder',
@@ -519,7 +519,7 @@ export const translationsEs = {
       haunted_by_ghoul_or_ghost: 'Embrujado por un ghoul o fantasma',
     },
     fames: {
-      fame: 'Fama', // <--- ETIQUETA FALTANTE AÑADIDA
+      fame: 'Fama', // 🛠️ Soluciona village:fames.fame
       excellent_wine: 'Vino excelente',
       delicious_bread: 'Pan delicioso',
       craftsmanship: 'Artesanía',
@@ -534,7 +534,7 @@ export const translationsEs = {
       hospitality: 'Hospitalidad',
     },
     oddities: {
-      oddity: 'Peculiaridad', // <--- ETIQUETA FALTANTE AÑADIDA
+      oddity: 'Peculiaridad', // 🛠️ Soluciona village:oddities.oddity
       eccentric_clothing: 'Ropa excéntrica',
       incomprehensible_accent: 'Acento incomprensible',
       smells_bad: 'Huele mal',
@@ -559,7 +559,7 @@ export const translationsEs = {
     leader: {
       leader: 'Líder',
       oddities: {
-        oddity: 'Peculiaridad', // <--- ETIQUETA FALTANTE AÑADIDA
+        oddity: 'Peculiaridad', // 🛠️ Soluciona village:leader.oddities.oddity
         bickering: 'Pendenciero',
         cruel: 'Cruel',
         weak: 'Débil',
@@ -574,7 +574,7 @@ export const translationsEs = {
         drunkard: 'Borracho',
       },
       type: {
-        type: 'Tipo', // <--- ETIQUETA FALTANTE AÑADIDA
+        type: 'Tipo', // 🛠️ Soluciona village:leader.type.type
         council: 'Consejo',
         despot: 'Déspota',
         elder: 'Anciano',
@@ -590,7 +590,7 @@ export const translationsEs = {
       },
     },
     institutions: {
-      institutions: 'Instituciones',
+      institutions: 'Instituciones', // 🛠️ Soluciona village:institutions.institutions
       owner: 'Propietario',
       nothing: 'Nada',
       inn: 'Posada',
@@ -695,7 +695,7 @@ export const translationsEs = {
       tentacles_with_count: 'tentáculos',
       big_ears: 'Orejas grandes',
       elk_horns: 'Cuernos de alce',
-      clk_horns: 'Cuernos de alce', // <--- PARCHE AÑADIDO (Typo en la app)
+      clk_horns: 'Cuernos de alce', // 🛠️ Soluciona el error tipográfico monsters:head.clk_horns
       beak: 'Pico',
       horn_with_count: 'Cuernos',
       side_eyes_with_count: 'Ojos laterales',
@@ -737,7 +737,7 @@ export const translationsEs = {
         name: 'Oído Agudo',
         description: 'El monstruo percibe el más leve sonido.',
       },
-      sensitive_smell: {
+      sensitive_smell: { // 🛠️ Soluciona monsters:trait.sensitive_smell
         name: 'Olfato Sensible',
         description: 'La criatura puede oler a sus presas desde una gran distancia.',
       },
@@ -919,7 +919,7 @@ export const translationsEs = {
       horn: { type: 'Cuerno' },
       roar: {
         type: 'Rugido',
-        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.'
+        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.' // 🛠️ Soluciona monsters:attack.roar.description
       },
       bash: { type: 'Golpe' },
       breath_fire: { type: 'Aliento de Fuego' },
