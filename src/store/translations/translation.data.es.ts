@@ -698,7 +698,7 @@ export const translationsEs = {
       tentacles_with_count: 'tentáculos',
       big_ears: 'Orejas grandes',
       elk_horns: 'Cuernos de alce',
-      clk_horns: 'Cuernos de alce', // Parche para el typo original
+      clk_horns: 'Cuernos de alce',
       beak: 'Pico',
       horn_with_count: 'Cuernos',
       side_eyes_with_count: 'Ojos laterales',
