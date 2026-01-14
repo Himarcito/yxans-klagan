@@ -504,7 +504,7 @@ export const translationsEs = {
     founded: 'Fundada',
     quirks: 'Peculiaridades',
     problems: {
-      problem: 'Problema', // 🛠️ Soluciona village:problems.problem
+      problem: 'Problema',
       nightwargs: 'Huargos nocturnos',
       widespread_drunkenness: 'Embriaguez generalizada',
       power_struggle: 'Lucha de poder',
@@ -519,7 +519,7 @@ export const translationsEs = {
       haunted_by_ghoul_or_ghost: 'Embrujado por un ghoul o fantasma',
     },
     fames: {
-      fame: 'Fama', // 🛠️ Soluciona village:fames.fame
+      fame: 'Fama',
       excellent_wine: 'Vino excelente',
       delicious_bread: 'Pan delicioso',
       craftsmanship: 'Artesanía',
@@ -534,7 +534,7 @@ export const translationsEs = {
       hospitality: 'Hospitalidad',
     },
     oddities: {
-      oddity: 'Peculiaridad', // 🛠️ Soluciona village:oddities.oddity
+      oddity: 'Peculiaridad',
       eccentric_clothing: 'Ropa excéntrica',
       incomprehensible_accent: 'Acento incomprensible',
       smells_bad: 'Huele mal',
@@ -559,7 +559,7 @@ export const translationsEs = {
     leader: {
       leader: 'Líder',
       oddities: {
-        oddity: 'Peculiaridad', // 🛠️ Soluciona village:leader.oddities.oddity
+        oddity: 'Peculiaridad',
         bickering: 'Pendenciero',
         cruel: 'Cruel',
         weak: 'Débil',
@@ -574,7 +574,7 @@ export const translationsEs = {
         drunkard: 'Borracho',
       },
       type: {
-        type: 'Tipo', // 🛠️ Soluciona village:leader.type.type
+        type: 'Tipo',
         council: 'Consejo',
         despot: 'Déspota',
         elder: 'Anciano',
@@ -590,7 +590,7 @@ export const translationsEs = {
       },
     },
     institutions: {
-      institutions: 'Instituciones', // 🛠️ Soluciona village:institutions.institutions
+      institutions: 'Instituciones',
       owner: 'Propietario',
       nothing: 'Nada',
       inn: 'Posada',
@@ -606,6 +606,7 @@ export const translationsEs = {
     inns: {
       inn: 'Posada',
       oddities: {
+        oddity: 'Peculiaridad', // <--- ARREGLADO
         violence_is_in_the_air: 'Se respira violencia en el aire',
         barrels_instead_of_chairs_and_planks_instead_of_tables:
           'Barriles en lugar de sillas y tablones en lugar de mesas',
@@ -623,6 +624,7 @@ export const translationsEs = {
         drunk_adventurers: 'Aventureros borrachos',
       },
       specialities: {
+        speciality: 'Especialidad', // <--- ARREGLADO
         cheap_diluted_beer: 'Cerveza barata y aguada',
         meat_stew: 'Estofado de carne',
         grilled_rodent: 'Roedor a la parrilla',
@@ -639,6 +641,7 @@ export const translationsEs = {
         dwarven_strong_ale: 'Cerveza fuerte enana',
       },
       guests: {
+        guest: 'Huésped', // <--- ARREGLADO
         escaped_criminal: 'Criminal fugado',
         unhappy_farmer: 'Granjero infeliz',
         scarred_treasure_hunter: 'Cazatesoros con cicatrices',
@@ -695,7 +698,7 @@ export const translationsEs = {
       tentacles_with_count: 'tentáculos',
       big_ears: 'Orejas grandes',
       elk_horns: 'Cuernos de alce',
-      clk_horns: 'Cuernos de alce', // 🛠️ Soluciona el error tipográfico monsters:head.clk_horns
+      clk_horns: 'Cuernos de alce',
       beak: 'Pico',
       horn_with_count: 'Cuernos',
       side_eyes_with_count: 'Ojos laterales',
@@ -737,7 +740,7 @@ export const translationsEs = {
         name: 'Oído Agudo',
         description: 'El monstruo percibe el más leve sonido.',
       },
-      sensitive_smell: { // 🛠️ Soluciona monsters:trait.sensitive_smell
+      sensitive_smell: {
         name: 'Olfato Sensible',
         description: 'La criatura puede oler a sus presas desde una gran distancia.',
       },
@@ -919,7 +922,7 @@ export const translationsEs = {
       horn: { type: 'Cuerno' },
       roar: {
         type: 'Rugido',
-        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.' // 🛠️ Soluciona monsters:attack.roar.description
+        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.'
       },
       bash: { type: 'Golpe' },
       breath_fire: { type: 'Aliento de Fuego' },
