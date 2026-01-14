@@ -31,7 +31,7 @@ export interface Village {
   inns: Inn[]
 }
 
-// Lista de nombres para asegurar que los PNJs siempre tengan nombre en ES
+// --- LISTA DE NOMBRES PARA ASEGURAR QUE LOS PROPIETARIOS TENGAN NOMBRE ---
 const humanNames = [
   'Fulco', 'Aenor', 'Erminlinda', 'Avila', 'Gerulf', 'Adelina', 'Gorm',
   'Hrod', 'Stig', 'Vigdis', 'Ylva', 'Aslög', 'Bjorn', 'Borg', 'Dag',
@@ -43,10 +43,9 @@ const humanNames = [
   'Theobald', 'Wilfred', 'Wynne'
 ]
 
-// Función local para generar nombres de personajes correctamente en ES
+// Función local para generar el nombre en el formato correcto { es: ['Nombre'] }
 const createRandomCharacterName = (): LanguageNameMap => {
   const name = choose(humanNames)
-  // El tipo Character espera un array de strings en el mapa de idioma
   return {
     es: [name]
   }
@@ -76,6 +75,7 @@ export const createRandomVillage = (): Village => {
   )
 
   return {
+    // Cast a any para evitar conflictos de tipado con la función antigua de nombres
     name: createRandomVillageName() as any,
     size,
     inhabitants,
@@ -210,7 +210,7 @@ const createRandomLeader = (): Leader | undefined => {
 
   return {
     id: nanoid(),
-    // IMPORTANTE: Aquí generamos el nombre
+    // IMPORTANTE: Generamos el nombre del líder
     name: createRandomCharacterName(),
     oddity,
     type,
@@ -431,8 +431,8 @@ const createVillageInstitutions = (
         type: weightedRandom(villageInstitutionsWithWeights).value,
         owner: {
           id: nanoid(),
-          // IMPORTANTE: Aquí generamos el nombre
-          name: createRandomCharacterName(),
+          // IMPORTANTE: Generamos el nombre del propietario
+          name: createRandomCharacterName(), 
         },
       }),
     )
