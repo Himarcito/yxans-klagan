@@ -43,13 +43,11 @@ const humanNames = [
   'Theobald', 'Wilfred', 'Wynne', 'Kyler', 'Meren', 'Vana'
 ]
 
-// FUNCIÓN DE SEGURIDAD: Asigna el nombre a TODOS los idiomas
+// FUNCIÓN CORREGIDA: Solo devuelve 'es' para cumplir con el tipo estricto
 const createRandomCharacterName = (): LanguageNameMap => {
   const name = choose(humanNames)
   return {
-    es: [name],
-    en: [name], // Truco: Rellena inglés por si el sistema lo busca por defecto
-    sv: [name], // Truco: Rellena sueco por si acaso
+    es: [name]
   }
 }
 
@@ -211,7 +209,7 @@ const createRandomLeader = (): Leader | undefined => {
 
   return {
     id: nanoid(),
-    name: createRandomCharacterName(), // Nombre para el Líder
+    name: createRandomCharacterName(),
     oddity,
     type,
   }
@@ -431,7 +429,7 @@ const createVillageInstitutions = (
         type: weightedRandom(villageInstitutionsWithWeights).value,
         owner: {
           id: nanoid(),
-          name: createRandomCharacterName(), // Nombre para el propietario
+          name: createRandomCharacterName(),
         },
       }),
     )
