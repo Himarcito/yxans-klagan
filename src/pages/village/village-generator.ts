@@ -390,3 +390,50 @@ export type VillageInstitution = {
   id: string
   type: VillageInstitutionType
   name?: string
+  owner: Character
+}
+
+const villageInstitutionsWithWeights: WeightedChoice<VillageInstitutionType>[] =
+  [
+    { weight: 6, value: 'nothing' },
+    { weight: 6, value: 'inn' },
+    { weight: 5, value: 'mill' },
+    { weight: 4, value: 'smith' },
+    { weight: 3, value: 'forester' },
+    { weight: 3, value: 'tradingPost' },
+    { weight: 2, value: 'temple' },
+    { weight: 3, value: 'militia' },
+    { weight: 2, value: 'tavern' },
+    { weight: 2, value: 'stable' },
+  ]
+
+const createVillageInstitutions = (
+  villageSize: VillageSize,
+): VillageInstitution[] => {
+  let rolls = 0
+  if (villageSize === 'outpost') {
+    rolls = 1
+  }
+
+  if (villageSize === 'hamlet') {
+    rolls = 3
+  }
+
+  if (villageSize === 'village') {
+    rolls = 5 + rollD6()
+  }
+
+  return range(rolls)
+    .map(
+      (_): VillageInstitution => ({
+        id: nanoid(),
+
+        type: weightedRandom(villageInstitutionsWithWeights).value,
+        owner: {
+          id: nanoid(),
+          name: createRandomCharacterName(), // Nombre para el propietario
+        },
+      }),
+    )
+    .filter((i) => i.type !== 'nothing')
+}
