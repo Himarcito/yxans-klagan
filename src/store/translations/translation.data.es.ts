@@ -493,8 +493,6 @@ export const translationsEs = {
       book_time: '7 Cuartos de Día para un original. 2 Cuartos de Día para una copia',
     },
   },
-
-  // --- SECCIÓN VILLAGE (Agregada para arreglar tu pantalla) ---
   village: {
     page_title: 'Generador de Aldeas',
     page_description:
@@ -506,6 +504,7 @@ export const translationsEs = {
     founded: 'Fundada',
     quirks: 'Peculiaridades',
     problems: {
+      problem: 'Problema', // <--- ETIQUETA FALTANTE AÑADIDA
       nightwargs: 'Huargos nocturnos',
       widespread_drunkenness: 'Embriaguez generalizada',
       power_struggle: 'Lucha de poder',
@@ -520,6 +519,7 @@ export const translationsEs = {
       haunted_by_ghoul_or_ghost: 'Embrujado por un ghoul o fantasma',
     },
     fames: {
+      fame: 'Fama', // <--- ETIQUETA FALTANTE AÑADIDA
       excellent_wine: 'Vino excelente',
       delicious_bread: 'Pan delicioso',
       craftsmanship: 'Artesanía',
@@ -534,6 +534,7 @@ export const translationsEs = {
       hospitality: 'Hospitalidad',
     },
     oddities: {
+      oddity: 'Peculiaridad', // <--- ETIQUETA FALTANTE AÑADIDA
       eccentric_clothing: 'Ropa excéntrica',
       incomprehensible_accent: 'Acento incomprensible',
       smells_bad: 'Huele mal',
@@ -558,6 +559,7 @@ export const translationsEs = {
     leader: {
       leader: 'Líder',
       oddities: {
+        oddity: 'Peculiaridad', // <--- ETIQUETA FALTANTE AÑADIDA
         bickering: 'Pendenciero',
         cruel: 'Cruel',
         weak: 'Débil',
@@ -572,6 +574,7 @@ export const translationsEs = {
         drunkard: 'Borracho',
       },
       type: {
+        type: 'Tipo', // <--- ETIQUETA FALTANTE AÑADIDA
         council: 'Consejo',
         despot: 'Déspota',
         elder: 'Anciano',
@@ -691,7 +694,8 @@ export const translationsEs = {
       big_mane: 'Gran melena',
       tentacles_with_count: 'tentáculos',
       big_ears: 'Orejas grandes',
-      elk_horns: 'Cuernos de alce', // <--- AÑADIDO (Error de tu imagen)
+      elk_horns: 'Cuernos de alce',
+      clk_horns: 'Cuernos de alce', // <--- PARCHE AÑADIDO (Typo en la app)
       beak: 'Pico',
       horn_with_count: 'Cuernos',
       side_eyes_with_count: 'Ojos laterales',
@@ -733,7 +737,6 @@ export const translationsEs = {
         name: 'Oído Agudo',
         description: 'El monstruo percibe el más leve sonido.',
       },
-      // <--- AÑADIDO (Error de tu imagen)
       sensitive_smell: {
         name: 'Olfato Sensible',
         description: 'La criatura puede oler a sus presas desde una gran distancia.',
@@ -916,7 +919,7 @@ export const translationsEs = {
       horn: { type: 'Cuerno' },
       roar: {
         type: 'Rugido',
-        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.' // <--- AÑADIDO (Error de tu imagen)
+        description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.'
       },
       bash: { type: 'Golpe' },
       breath_fire: { type: 'Aliento de Fuego' },
