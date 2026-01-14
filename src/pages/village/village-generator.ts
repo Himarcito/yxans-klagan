@@ -31,7 +31,7 @@ export interface Village {
   inns: Inn[]
 }
 
-// --- LISTA DE NOMBRES PARA ASEGURAR QUE LOS PROPIETARIOS TENGAN NOMBRE ---
+// LISTA DE NOMBRES MANUAL PARA GARANTIZAR QUE SIEMPRE SALGAN
 const humanNames = [
   'Fulco', 'Aenor', 'Erminlinda', 'Avila', 'Gerulf', 'Adelina', 'Gorm',
   'Hrod', 'Stig', 'Vigdis', 'Ylva', 'Aslög', 'Bjorn', 'Borg', 'Dag',
@@ -40,14 +40,16 @@ const humanNames = [
   'Ragnfrid', 'Runa', 'Sigrid', 'Sten', 'Thor', 'Tora', 'Ulf', 'Vidar',
   'Yngve', 'Ailmar', 'Berangar', 'Clothilde', 'Edgar', 'Edith', 'Godfrey',
   'Gisela', 'Hadrian', 'Hildegard', 'Luther', 'Matilda', 'Osric', 'Rowena',
-  'Theobald', 'Wilfred', 'Wynne'
+  'Theobald', 'Wilfred', 'Wynne', 'Kyler', 'Meren', 'Vana'
 ]
 
-// Función local para generar el nombre en el formato correcto { es: ['Nombre'] }
+// FUNCIÓN DE SEGURIDAD: Asigna el nombre a TODOS los idiomas
 const createRandomCharacterName = (): LanguageNameMap => {
   const name = choose(humanNames)
   return {
-    es: [name]
+    es: [name],
+    en: [name], // Truco: Rellena inglés por si el sistema lo busca por defecto
+    sv: [name], // Truco: Rellena sueco por si acaso
   }
 }
 
@@ -75,7 +77,6 @@ export const createRandomVillage = (): Village => {
   )
 
   return {
-    // Cast a any para evitar conflictos de tipado con la función antigua de nombres
     name: createRandomVillageName() as any,
     size,
     inhabitants,
@@ -210,8 +211,7 @@ const createRandomLeader = (): Leader | undefined => {
 
   return {
     id: nanoid(),
-    // IMPORTANTE: Generamos el nombre del líder
-    name: createRandomCharacterName(),
+    name: createRandomCharacterName(), // Nombre para el Líder
     oddity,
     type,
   }
@@ -390,51 +390,3 @@ export type VillageInstitution = {
   id: string
   type: VillageInstitutionType
   name?: string
-  owner: Character
-}
-
-const villageInstitutionsWithWeights: WeightedChoice<VillageInstitutionType>[] =
-  [
-    { weight: 6, value: 'nothing' },
-    { weight: 6, value: 'inn' },
-    { weight: 5, value: 'mill' },
-    { weight: 4, value: 'smith' },
-    { weight: 3, value: 'forester' },
-    { weight: 3, value: 'tradingPost' },
-    { weight: 2, value: 'temple' },
-    { weight: 3, value: 'militia' },
-    { weight: 2, value: 'tavern' },
-    { weight: 2, value: 'stable' },
-  ]
-
-const createVillageInstitutions = (
-  villageSize: VillageSize,
-): VillageInstitution[] => {
-  let rolls = 0
-  if (villageSize === 'outpost') {
-    rolls = 1
-  }
-
-  if (villageSize === 'hamlet') {
-    rolls = 3
-  }
-
-  if (villageSize === 'village') {
-    rolls = 5 + rollD6()
-  }
-
-  return range(rolls)
-    .map(
-      (_): VillageInstitution => ({
-        id: nanoid(),
-
-        type: weightedRandom(villageInstitutionsWithWeights).value,
-        owner: {
-          id: nanoid(),
-          // IMPORTANTE: Generamos el nombre del propietario
-          name: createRandomCharacterName(), 
-        },
-      }),
-    )
-    .filter((i) => i.type !== 'nothing')
-}
