@@ -10,12 +10,12 @@ import {
 } from '../../functions/dice.functions'
 import { D6, D66 } from '../../models/fbl-dice.model'
 import { Mapping } from '../../utils/types'
-import { getHumanName } from '../npc/name2' // Eliminado randomGender ya que no se usa
 import { Character } from './character'
 import { createRandomInn, Inn } from './inn-generator'
 import { createRandomVillageName, LanguageStringMap } from './village-name'
 import { TranslationKey } from '../../store/translations/translation.model'
 import { translationDict } from '../../functions/translation-dict'
+import { LanguageNameMap } from '../npc/name2'
 
 export interface Village {
   name: LanguageStringMap
@@ -29,6 +29,27 @@ export interface Village {
   oddity: VillageOddity
   institutions: VillageInstitution[]
   inns: Inn[]
+}
+
+// Lista de nombres para asegurar que los PNJs siempre tengan nombre
+const humanNames = [
+  'Fulco', 'Aenor', 'Erminlinda', 'Avila', 'Gerulf', 'Adelina', 'Gorm',
+  'Hrod', 'Stig', 'Vigdis', 'Ylva', 'Aslög', 'Bjorn', 'Borg', 'Dag',
+  'Egil', 'Estrid', 'Frida', 'Geir', 'Grim', 'Gunnar', 'Helga', 'Inga',
+  'Ingvar', 'Jorunn', 'Kari', 'Ketil', 'Leif', 'Liv', 'Nanna', 'Olaf',
+  'Ragnfrid', 'Runa', 'Sigrid', 'Sten', 'Thor', 'Tora', 'Ulf', 'Vidar',
+  'Yngve', 'Ailmar', 'Berangar', 'Clothilde', 'Edgar', 'Edith', 'Godfrey',
+  'Gisela', 'Hadrian', 'Hildegard', 'Luther', 'Matilda', 'Osric', 'Rowena',
+  'Theobald', 'Wilfred', 'Wynne'
+]
+
+// Función local para generar nombres de personajes correctamente en ES
+const createRandomCharacterName = (): LanguageNameMap => {
+  const name = choose(humanNames)
+  // El tipo Character espera un array de strings en el mapa de idioma
+  return {
+    es: [name]
+  }
 }
 
 export const createRandomVillage = (): Village => {
@@ -55,7 +76,7 @@ export const createRandomVillage = (): Village => {
   )
 
   return {
-    // CORRECCIÓN 1: Cast a any y sin argumentos
+    // CORRECCIÓN: Cast a any para evitar conflicto de tipos estrictos en nombre de aldea
     name: createRandomVillageName() as any,
     size,
     inhabitants,
@@ -190,8 +211,8 @@ const createRandomLeader = (): Leader | undefined => {
 
   return {
     id: nanoid(),
-    // CORRECCIÓN 2: Sin argumentos
-    name: getHumanName(), 
+    // CORRECCIÓN: Usar la nueva función de nombres
+    name: createRandomCharacterName(),
     oddity,
     type,
   }
@@ -411,8 +432,8 @@ const createVillageInstitutions = (
         type: weightedRandom(villageInstitutionsWithWeights).value,
         owner: {
           id: nanoid(),
-          // CORRECCIÓN 3: Sin argumentos
-          name: getHumanName(), 
+          // CORRECCIÓN: Usar la nueva función de nombres
+          name: createRandomCharacterName(), 
         },
       }),
     )
