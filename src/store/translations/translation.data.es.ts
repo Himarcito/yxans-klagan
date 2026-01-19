@@ -8,6 +8,7 @@ export const translationsEs = {
       menu: 'Menú',
       session: 'Sesión',
       encounters: 'Encuentros',
+      stronghold: 'Fortaleza',
       places: {
         places: 'Lugares',
         map: 'Mapa',
