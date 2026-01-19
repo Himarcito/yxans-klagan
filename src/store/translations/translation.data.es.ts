@@ -124,25 +124,25 @@ export const translationsEs = {
         alderlander: 'Aliseo',
         ailander: 'Ayeo',
         aslene: 'Asleno',
-        frailer: 'Elfrágil',
-        silent_guard: 'Guardia Silente',
-        maiden_druid: 'Dama Druida',
+        frailer: 'Endeble',
+        silent_guard: 'Guardia Silencioso',
+        maiden_druid: 'Druida Doncella',
       },
       elf: {
         elf: 'Elfo',
         elves: 'Elfos',
-        still_elf: 'Elfo Calmo',
-        unruly_elf: 'Elfo Indómito',
+        still_elf: 'Elfo Quieto',
+        unruly_elf: 'Elfo Revoltoso',
         golden_bough: 'Rama Dorada',
-        melder: 'Veteado',
-        red_runner: 'Caminante Rojo',
+        melder: 'Fusionador',
+        red_runner: 'Corredor Rojo',
       },
       dwarf: {
         dwarf: 'Enano',
         dwarves: 'Enanos',
-        belderranian: 'Belderano',
-        meromannian: 'Meromano',
-        canide: 'Cánido',
+        belderranian: 'Belderranio',
+        meromannian: 'Meromannio',
+        canide: 'Canide',
         crombe: 'Crombe',
       },
       ogre: {
@@ -152,8 +152,8 @@ export const translationsEs = {
       orc: {
         orc: 'Orco',
         orcs: 'Orcos',
-        urhur: 'Úrhura',
-        roka: 'Roko',
+        urhur: 'Urhur',
+        roka: 'Roka',
         isir: 'Isir',
         viraga: 'Viraga',
         drifter: 'Vagabundo',
@@ -178,8 +178,8 @@ export const translationsEs = {
       believers: {
         believers: 'Creyentes',
         raven_sister: 'Hermana del Cuervo',
-        black_wing: 'Ala Negra (Segadente)',
-        rust_brother: 'Hermano Herrumbroso',
+        black_wing: 'Ala Negra',
+        rust_brother: 'Hermano de la Herrumbre',
         iron_guard: 'Guardia de Hierro',
         heme_sister: 'Hermana de Hema',
       },
@@ -235,7 +235,7 @@ export const translationsEs = {
       night_warg: 'Noctargo',
       restless_dead: 'Muertos Inquietos',
       skeleton: 'Esqueleto',
-      ghoul: 'Gul',
+      ghoul: 'Ghoul',
       sea_serpent: 'Serpiente Marina',
       strangling_vine: 'Estranguladera',
       troll: 'Trol',
@@ -279,7 +279,7 @@ export const translationsEs = {
       endurance: 'Resistencia',
       melee: 'Pelea',
       crafting: 'Artesanía',
-      stealth: 'Sigilo',
+      stealth: 'Discreción',
       sleight_of_hand: 'Juego de manos',
       move: 'Atletismo',
       markmanship: 'Puntería',
@@ -504,9 +504,9 @@ export const translationsEs = {
         after_blood_mist: 'después de la Niebla de Sangre',
       },
     },
-    // CLAVES BASADAS EN "LEYENDAS Y AVENTURERAS" (PÁGS 27-30)
+    // CLAVES EXACTAS DE "LEYENDAS Y AVENTURERAS" (PÁG 27-30)
     who_or_what: {
-      // TABLA DE "QUIÉN O QUÉ" (PÁG 27)
+      // TABLA 1: QUIÉN O QUÉ (11-66)
       elf: 'Un elfo',
       dwarf: 'Un enano',
       peddler: 'Un buhonero',
@@ -522,7 +522,7 @@ export const translationsEs = {
       priest: 'Un sacerdote',
       sorcerer: 'Un hechicero',
       robber_chief: 'Un jefe de una banda de ladrones',
-      bandit_chief: 'Un jefe de una banda de ladrones', // Alias común
+      bandit_chief: 'Un jefe de una banda de ladrones', // Alias por seguridad
       warrior: 'Un guerrero',
       lord: 'Un señor',
       prince: 'Un príncipe',
@@ -530,18 +530,19 @@ export const translationsEs = {
       queen: 'Una reina',
       king: 'Un rey',
       
-      // "No alguien, sino algo" (PÁG 27)
-      soldiers: 'Una unidad de soldados',
+      // TABLA 1 (61-66): NO ALGUIEN, SINO ALGO
       unit_of_soldiers: 'Una unidad de soldados',
+      soldiers: 'Una unidad de soldados',
       village: 'Una aldea',
       cult: 'Una secta',
-      robbers: 'Una banda de ladrones',
       band_of_robbers: 'Una banda de ladrones',
+      robbers: 'Una banda de ladrones',
       coterie: 'Una camarilla',
       monster: 'Un monstruo',
 
-      // "PERO TAMBIÉN..." (PÁG 30) - Adversarios
+      // TABLA 7: PERO TAMBIÉN... (Adversarios)
       wolfkin: 'Lupinos',
+      wolfkins: 'Lupinos',
       slave_traders: 'Comerciantes de esclavos',
       orcs: 'Orcos',
       ghosts: 'Fantasmas',
@@ -553,79 +554,9 @@ export const translationsEs = {
       ogres: 'Ogros',
       monsters: 'Monstruos',
       demons: 'Demonios',
-      
-      // Claves genéricas de reserva
-      human: 'Un humano',
-      ogre: 'Un ogro',
-      orc: 'Un orco',
-      halfling: 'Un mediano',
-      goblin: 'Un goblin',
-      believer: 'Un creyente',
-      fighter: 'Un luchador',
-      hunter: 'Un cazador',
-      minstrel: 'Un juglar',
-      bard: 'Un bardo',
-      merchant: 'Un mercader',
-      trader: 'Un comerciante',
-      knight: 'Un caballero',
-      rogue: 'Un pícaro',
-      thief: 'Un ladrón',
-      mage: 'Un mago',
-      wizard: 'Un mago',
-      adventurer: 'Un aventurero',
-      captain: 'Un capitán',
-      leader: 'Un líder',
-      commander: 'Un comandante',
-      soldier: 'Un soldado',
-      guard: 'Un guardia',
-      cultist: 'Un cultista',
-      artisan: 'Un artesano',
-      blacksmith: 'Un herrero',
-      innkeeper: 'Un posadero',
-      peasant: 'Un campesino',
-      hermit: 'Un ermitaño',
-      guide: 'Un guía',
-      healer: 'Un sanador',
-      scholar: 'Un erudito',
-      spy: 'Un espía',
-      assassin: 'Un asesino',
-      jester: 'Un bufón',
-      criminal: 'Un criminal',
-      fugitive: 'Un fugitivo',
-      prisoner: 'Un prisionero',
-      refugee: 'Un refugiado',
-      wanderer: 'Un vagabundo',
-      beggar: 'Un mendigo',
-      noble: 'Un noble',
-      man: 'Un hombre',
-      woman: 'Una mujer',
-      boy: 'Un chico',
-      girl: 'Una chica',
-      child: 'Un niño',
-      youth: 'Un joven',
-      old_man: 'Un anciano',
-      old_woman: 'Una anciana',
-      father: 'Un padre',
-      mother: 'Una madre',
-      brother: 'Un hermano',
-      sister: 'Una hermana',
-      son: 'Un hijo',
-      daughter: 'Una hija',
-      friend: 'Un amigo',
-      enemy: 'Un enemigo',
-      traitor: 'Un traidor',
-      hero: 'Un héroe',
-      villain: 'Un villano',
-      stranger: 'Un extraño',
-      traveller: 'Un viajero',
-      beast: 'Una bestia',
-      demon: 'Un demonio',
-      dragon: 'Un dragón',
-      skeleton: 'Un esqueleto',
-      ghoul: 'Un gul',
     },
     
-    // TABLA DE ADJETIVOS (PÁG 27) Y ADVERSARIOS (PÁG 30)
+    // TABLA 2: ADJETIVOS (11-66)
     adjective: {
       bloodthirsty: 'sanguinario',
       blood_thirsty: 'sanguinario',
@@ -651,22 +582,22 @@ export const translationsEs = {
       terrified: 'aterrorizado',
       evil: 'malvado',
       
-      // Adjetivos de "PERO TAMBIÉN..." (PÁG 30)
+      // ADJETIVOS DE TABLA 7 (Adversarios)
       aggressive: 'agresivo',
-      murderous: 'sanguinario',
+      murderous: 'sanguinario', // Traducción posible en tabla 7
       horrible: 'horrible',
       hungry: 'hambriento',
       watchful: 'vigilante',
       starving: 'muriendo de inanición',
+      mad: 'loco',
       homicidal: 'homicida',
       maniacal: 'maniático',
       hunting: 'cazador',
       
-      // Claves de reserva
+      // ADJETIVOS GENÉRICOS (Por seguridad)
       brave: 'valiente',
       strange: 'extraño',
       fierce: 'feroz',
-      mad: 'loco',
       lonely: 'solitario',
       lost: 'perdido',
       drunk: 'borracho',
@@ -690,7 +621,7 @@ export const translationsEs = {
       },
     },
 
-    // TABLA "QUE BUSCABA..." (PÁG 29)
+    // TABLA 3: QUE BUSCABA... (11-66)
     searched_for: {
       weapon: 'un arma',
       love: 'el amor',
@@ -702,18 +633,9 @@ export const translationsEs = {
       artifact: 'un artefacto',
       monster: 'un monstruo',
       dream: 'un sueño',
-      
-      // Extras
-      person: 'una persona',
-      village: 'una aldea',
-      ruin: 'unas ruinas',
-      cave: 'una cueva',
-      castle: 'un castillo',
-      fort: 'un fuerte',
-      tower: 'una torre',
     },
 
-    // TABLA "... POR..." (PÁG 29)
+    // TABLA 4: ...POR (11-66)
     because: {
       love: 'amor',
       friendship: 'amistad',
@@ -726,17 +648,9 @@ export const translationsEs = {
       honor: 'honor',
       madness: 'locura',
       greed: 'avaricia',
-      
-      // Extras
-      money: 'dinero',
-      fame: 'fama',
-      revenge: 'venganza',
-      fear: 'miedo',
-      curiosity: 'curiosidad',
-      threat: 'una amenaza',
     },
 
-    // TABLA "... Y VIAJÓ A..." (PÁG 29)
+    // TABLA 5: ...Y VIAJÓ A (11-66)
     location: {
       ruin: 'unas ruinas',
       ruins: 'unas ruinas',
@@ -751,9 +665,9 @@ export const translationsEs = {
       tree: 'un árbol',
       water_source: 'una fuente de agua',
       well: 'una fuente de agua',
-      fort: 'un fuerte',
     },
 
+    // TABLA 6: DISTANCIA (11-66)
     distance: {
       here: 'aquí',
       nearby: 'cerca de aquí',
@@ -761,11 +675,11 @@ export const translationsEs = {
       several_days: 'a varios días',
       far_away: 'muy lejos',
       other_side: 'en el otro extremo de las Tierras Prohibidas',
-      close: 'próximo',
-      unknown: 'desconocido',
+      close: 'próximo', // Fallback
+      unknown: 'desconocido', // Fallback
     },
 
-    // TABLA "SEGÚN LA LEYENDA..." ¿QUÉ PASÓ? (PÁG 30)
+    // TABLA 8: SEGÚN LA LEYENDA... (11-66)
     what_happened: {
       betrayed: 'fue traicionado/a',
       murdered: 'fue asesinado/a',
@@ -775,21 +689,13 @@ export const translationsEs = {
       suicide: 'se quitó la vida',
       died_in_battle: 'murió en batalla',
       enchanted: 'fue hechizado/a',
-      cursed: 'fue maldecido/a',
+      cursed: 'fue hechizado/a',
       possessed: 'fue poseído/a',
       changed: 'volvió cambiado/a',
       still_searching: 'aún sigue buscando',
-      
-      // Extras
-      found: 'lo encontró',
-      still_looking: 'aún está buscando',
-      died: 'murió',
-      lost: 'se perdió',
-      trapped: 'quedó atrapado/a',
-      fled: 'huyó',
     },
 
-    // TABLA "... Y QUE EN ESE LUGAR HAY..." ¿QUÉ HAY? (PÁG 30)
+    // TABLA 9: Y QUE EN ESE LUGAR HAY... (11-66)
     its_told_that: {
       gold: 'oro, montones de oro',
       artifact: 'un poderoso artefacto',
@@ -803,7 +709,7 @@ export const translationsEs = {
       elf_ruby: 'un rubí élfico',
       elven_ruby: 'un rubí élfico',
       
-      // Extras
+      // Fallbacks para otros generadores
       sword: 'una espada',
       potion: 'pociones',
       gems: 'gemas',
@@ -813,6 +719,7 @@ export const translationsEs = {
       demon: 'demonios',
     },
 
+    // TEXTOS DE UNIÓN
     along_time_ago: 'Hace mucho tiempo',
     years_ago: 'años atrás',
     there_was: 'había',
