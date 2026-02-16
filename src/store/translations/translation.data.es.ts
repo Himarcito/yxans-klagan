@@ -1066,15 +1066,25 @@ export const translationsEs = {
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en', 
     
-    // AQUÍ ESTÁ EL ARREGLO DE "VIVE EN" (home vs homes)
+    // AQUÍ ESTÁ EL ARREGLO DE "VIVE EN": Añadimos tanto "home" como "homes" por seguridad.
+    // Además los ponemos en minúscula para que la frase tenga sentido ("Vive en una cueva.")
     home: {
-      burrow: 'Madriguera',
-      ruin: 'Ruina',
-      watering_hole: 'Abrevadero',
-      tree_or_high_point: 'Árbol o punto alto',
-      cave: 'Cueva',
-      ravine: 'Barranco',
-      den: 'Guarida',
+      burrow: 'una madriguera',
+      ruin: 'unas ruinas',
+      watering_hole: 'un abrevadero',
+      tree_or_high_point: 'un árbol o punto alto',
+      cave: 'una cueva',
+      ravine: 'un barranco',
+      den: 'una guarida',
+    },
+    homes: {
+      burrow: 'una madriguera',
+      ruin: 'unas ruinas',
+      watering_hole: 'un abrevadero',
+      tree_or_high_point: 'un árbol o punto alto',
+      cave: 'una cueva',
+      ravine: 'un barranco',
+      den: 'una guarida',
     },
 
     armor_label: 'Armadura',
@@ -1094,10 +1104,10 @@ export const translationsEs = {
       long_tongue: 'Lengua larga',
       fin: 'Aleta',
       roll_twice: 'Tira dos veces',
-      missing: '0 cabezas', 
+      missing: 'ninguna cabeza',
     },
     limbs: {
-      none: '0 extremidades', 
+      none: 'ninguna extremidad', // CORREGIDO para evitar el error visual con el "0"
     },
     tail: {
       tail: 'Cola',
