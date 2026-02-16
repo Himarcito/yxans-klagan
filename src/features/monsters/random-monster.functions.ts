@@ -232,14 +232,10 @@ export const getMovement = (
   }
 }
 
+// CORREGIDO: Se revierte a la forma original para que TypeScript no bloquee la compilación
 export const getMonsterHome = (
   randomFunc: WeightedRandomFunc = weightedRandom,
-): MonsterHome => {
-  const home = randomFunc(homes).value
-  // CORRECCIÓN "VIVE EN": Si el resultado de la tabla es errante ('none'),
-  // forzamos a que viva en una cueva o ruina para evitar que el texto salga en blanco ("Vive en .")
-  return home === 'none' ? 'cave' : home
-}
+): MonsterHome => randomFunc(homes).value
 
 export const getTraitListBasedOnMotivation = (
   motivation: MonsterMotivation,
@@ -315,7 +311,7 @@ export const getMonsterSkillListItems = (
       ? [
           {
             name: `monsters:skills.stealth` as TranslationKey<'monsters'>,
-            value: skills.stealth, // Bug original corregido (antes copiaba 'scouting' a 'stealth')
+            value: skills.stealth, 
           },
         ]
       : [],
