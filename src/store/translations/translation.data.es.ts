@@ -292,6 +292,7 @@ export const translationsEs = {
       performance: 'Interpretación',
       healing: 'Curación',
       animal_handling: 'Trato con animales',
+      none: 'Ninguna', // AÑADIDO: Soluciona el error monsters:skills.none
     },
     talents: {
       talents: 'Talentos',
@@ -1063,7 +1064,7 @@ export const translationsEs = {
     },
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
-    lives_in: 'Vive en', // CORREGIDO (Quitado el punto doble extra)
+    lives_in: 'Vive en', 
     armor_label: 'Armadura',
     skill: 'Habilidad',
 
@@ -1075,16 +1076,16 @@ export const translationsEs = {
       elk_horns: 'Cuernos de alce',
       clk_horns: 'Cuernos de alce',
       beak: 'Pico',
-      horn_with_count: 'cuernos',
-      side_eyes_with_count: 'ojos laterales',
+      horn_with_count: 'Cuernos',
+      side_eyes_with_count: 'Ojos laterales',
       many_eyes: 'Muchos ojos',
       long_tongue: 'Lengua larga',
       fin: 'Aleta',
-      roll_twice: 'rasgos múltiples',
+      roll_twice: 'Tira dos veces',
       missing: 'ninguna cabeza', // CORREGIDO
     },
     limbs: {
-      none: '0 extremidades', // CORREGIDO para que suene perfecto "El monstruo tiene 0 extremidades"
+      none: '0 extremidades', // CORREGIDO
     },
     tail: {
       tail: 'Cola',
@@ -1095,6 +1096,7 @@ export const translationsEs = {
       scouting: 'Exploración',
       move: 'Atletismo',
       stealth: 'Sigilo',
+      none: 'Ninguna', // AÑADIDO
     },
     trait: {
       traits: 'Rasgos',
@@ -1132,7 +1134,6 @@ export const translationsEs = {
         name: 'Herido',
         description: 'La criatura comienza el combate herida.',
       },
-      // RASGOS AÑADIDOS
       acid_glands: {
         name: 'Glándulas de Ácido',
         description: 'El monstruo tiene glándulas de ácido y puede usar el ataque Escupir Ácido.',
@@ -1175,7 +1176,11 @@ export const translationsEs = {
       },
       colorful: {
         name: 'Colorido',
-        description: 'El monstruo tiene colores brillantes que hipnotizan o advierten de su peligro.', // AÑADIDO (Imagen 5)
+        description: 'El monstruo tiene colores brillantes que hipnotizan o advierten de su peligro.', 
+      },
+      regeneration: {
+        name: 'Regeneración', // AÑADIDO
+        description: 'La criatura recupera salud rápidamente y no puede morir a menos que se use fuego o ácido.',
       }
     },
     weakness: {
@@ -1191,7 +1196,6 @@ export const translationsEs = {
         name: 'Vulnerable al Fuego',
         description: 'El fuego le causa daño doble o pánico.',
       },
-      // DEBILIDADES AÑADIDAS
       obsessed_with_all_that_glitters: {
         name: 'Obsesionado con lo que brilla',
         description: 'Lanzar monedas u objetos brillantes puede distraer al monstruo.',
@@ -1211,6 +1215,14 @@ export const translationsEs = {
       fear_of_fire: {
         name: 'Miedo al Fuego',
         description: 'El monstruo teme al fuego y evitará acercarse a las llamas.',
+      },
+      afraid_of_loud_noises: { // AÑADIDO
+        name: 'Miedo a los Ruidos Fuertes',
+        description: 'El monstruo huye o entra en pánico si se expone a sonidos estruendosos.',
+      },
+      sensitive_eyes: { // AÑADIDO
+        name: 'Ojos Sensibles',
+        description: 'Sufre daño adicional o desventaja ante luz brillante o destellos.',
       }
     },
 
@@ -1255,15 +1267,15 @@ export const translationsEs = {
     size: {
       puny: 'Enclenque',
       small: 'Pequeño',
-      average: 'Mediano', // MEJORADO GRAMATICALMENTE
-      large: 'Gran', // MEJORADO GRAMATICALMENTE
+      average: 'Mediano', // CORREGIDO
+      large: 'Gran', // CORREGIDO
       big: 'Enorme',
       huge: 'Gigantesco',
       gigantic: 'Colosal',
       puny_def: 'El Enclenque',
       small_def: 'El Pequeño',
-      average_def: 'El Mediano', // MEJORADO GRAMATICALMENTE
-      large_def: 'El Gran', // MEJORADO GRAMATICALMENTE
+      average_def: 'El Mediano', 
+      large_def: 'El Gran', 
       big_def: 'El Enorme',
       huge_def: 'El Gigantesco',
       gigantic_def: 'El Colosal',
@@ -1284,13 +1296,14 @@ export const translationsEs = {
       cave: 'Cueva',
       ravine: 'Barranco',
       den: 'Guarida',
+      none: '', // Asegura que no salga código si falta
     },
 
     movement: {
       movement: 'Movimiento',
       move: 'Movimiento',
       zones_other: 'zonas/turno',
-      zones_one: 'zona/turno',
+      zones_one: 'zona/turno', // AÑADIDO
       slithering: 'Deslizándose',
       digging: 'Cavando',
       swimming: 'Nadando',
@@ -1461,7 +1474,7 @@ export const translationsEs = {
       },
       peck: { 
         type: 'Picotazo',
-        description: 'Un feroz picotazo con su pico afilado como una navaja.'
+        description: 'Un feroz picotazo con su pico afilado como una navaja.' 
       },
       squash: { 
         type: 'Aplastar',
@@ -1553,7 +1566,7 @@ export const translationsEs = {
       },
       burrow: { 
         type: 'Excavar',
-        description: 'Se entierra bajo el suelo para protegerse o emboscar.'
+        description: 'Se entierra bajo el suelo para protegerse o emboscar.' 
       },
       the_ground_shatters: { 
         type: 'El Suelo se Rompe',
