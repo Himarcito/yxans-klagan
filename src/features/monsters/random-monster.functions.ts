@@ -189,8 +189,8 @@ const getLimbsDescription = (
   const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // CORRECCIÓN LÓGICA: Si no hay NI cola NI extremidades, muestra "0 extremidades". 
-  // Si tiene cola, ya no mostrará "0 extremidades & Cola con pinchos".
+  // CORRECCIÓN LÓGICA: Si no hay NI extremidades NI cola, devuelve "0 extremidades".
+  // Si solo tiene cola, devolverá la cola y omitirá "0 extremidades".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
@@ -232,7 +232,6 @@ export const getMovement = (
   }
 }
 
-// CORREGIDO: Se revierte a la forma original para que TypeScript no bloquee la compilación
 export const getMonsterHome = (
   randomFunc: WeightedRandomFunc = weightedRandom,
 ): MonsterHome => randomFunc(homes).value
