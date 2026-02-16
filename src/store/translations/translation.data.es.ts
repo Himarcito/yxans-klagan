@@ -500,7 +500,7 @@ export const translationsEs = {
     time_ago: {
       before_blood_mist: 'antes de la Niebla de Sangre',
       before_shift: 'antes del Cambio',
-      during_alder_wars: 'durante las Guerras de los Aliseos', // CORREGIDO: Aliseos
+      during_alder_wars: 'durante las Guerras de los Aliseos',
       during_blood_mist: 'durante la Niebla de Sangre',
       after_blood_mist: 'después de la Niebla de Sangre',
     },
@@ -672,6 +672,7 @@ export const translationsEs = {
       happy: 'feliz',
       tired: 'cansado',
       vain: 'vanidoso', 
+      enterprising: 'emprendedor',
     },
 
     adjective_adversary: {
@@ -702,7 +703,7 @@ export const translationsEs = {
       trolls: 'troles',
       demons: 'demonios',
       demon_one: 'un demonio',
-      demon_with_count: 'demonios', // AÑADIDO
+      demon_with_count: 'demonios',
       ghosts: 'fantasmas',
       wolves: 'lobos',
       bandits: 'bandidos',
@@ -769,7 +770,7 @@ export const translationsEs = {
       fear: 'miedo',
       curiosity: 'curiosidad',
       threat: 'una amenaza',
-      dreams: 'unos sueños', // AÑADIDO
+      dreams: 'unos sueños',
     },
 
     location: {
