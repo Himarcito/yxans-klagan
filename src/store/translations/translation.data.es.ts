@@ -1066,6 +1066,7 @@ export const translationsEs = {
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en', 
     
+    // AQUÍ ESTÁ LA MAGIA DEL "VIVE EN". Asegura que las encuentre.
     homes: {
       burrow: 'una madriguera',
       ruin: 'unas ruinas',
@@ -1074,7 +1075,7 @@ export const translationsEs = {
       cave: 'una cueva',
       ravine: 'un barranco',
       den: 'una guarida',
-      none: 'cualquier lugar', // Esto soluciona lo del "Vive en" vacío
+      none: 'cualquier lugar', // Esto arregla el espacio en blanco de los monstruos errantes
     },
 
     armor_label: 'Armadura',
@@ -1097,7 +1098,7 @@ export const translationsEs = {
       missing: 'ninguna cabeza',
     },
     limbs: {
-      none: '0 extremidades',
+      none: 'ninguna extremidad', // ¡Corregido para que no parezca una "o"!
     },
     tail: {
       tail: 'Cola',
