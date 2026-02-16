@@ -292,7 +292,7 @@ export const translationsEs = {
       performance: 'Interpretación',
       healing: 'Curación',
       animal_handling: 'Trato con animales',
-      none: 'Ninguna', // AÑADIDO: Soluciona el error monsters:skills.none
+      none: 'Ninguna',
     },
     talents: {
       talents: 'Talentos',
@@ -1065,6 +1065,18 @@ export const translationsEs = {
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en', 
+    
+    // AQUÍ ESTÁ EL ARREGLO DE "VIVE EN" (home vs homes)
+    home: {
+      burrow: 'Madriguera',
+      ruin: 'Ruina',
+      watering_hole: 'Abrevadero',
+      tree_or_high_point: 'Árbol o punto alto',
+      cave: 'Cueva',
+      ravine: 'Barranco',
+      den: 'Guarida',
+    },
+
     armor_label: 'Armadura',
     skill: 'Habilidad',
 
@@ -1082,10 +1094,10 @@ export const translationsEs = {
       long_tongue: 'Lengua larga',
       fin: 'Aleta',
       roll_twice: 'Tira dos veces',
-      missing: 'ninguna cabeza', // CORREGIDO
+      missing: '0 cabezas', 
     },
     limbs: {
-      none: '0 extremidades', // CORREGIDO
+      none: '0 extremidades', 
     },
     tail: {
       tail: 'Cola',
@@ -1096,7 +1108,7 @@ export const translationsEs = {
       scouting: 'Exploración',
       move: 'Atletismo',
       stealth: 'Sigilo',
-      none: 'Ninguna', // AÑADIDO
+      none: 'Ninguna',
     },
     trait: {
       traits: 'Rasgos',
@@ -1179,7 +1191,7 @@ export const translationsEs = {
         description: 'El monstruo tiene colores brillantes que hipnotizan o advierten de su peligro.', 
       },
       regeneration: {
-        name: 'Regeneración', // AÑADIDO
+        name: 'Regeneración',
         description: 'La criatura recupera salud rápidamente y no puede morir a menos que se use fuego o ácido.',
       }
     },
@@ -1216,11 +1228,11 @@ export const translationsEs = {
         name: 'Miedo al Fuego',
         description: 'El monstruo teme al fuego y evitará acercarse a las llamas.',
       },
-      afraid_of_loud_noises: { // AÑADIDO
+      afraid_of_loud_noises: { 
         name: 'Miedo a los Ruidos Fuertes',
         description: 'El monstruo huye o entra en pánico si se expone a sonidos estruendosos.',
       },
-      sensitive_eyes: { // AÑADIDO
+      sensitive_eyes: { 
         name: 'Ojos Sensibles',
         description: 'Sufre daño adicional o desventaja ante luz brillante o destellos.',
       }
@@ -1267,8 +1279,8 @@ export const translationsEs = {
     size: {
       puny: 'Enclenque',
       small: 'Pequeño',
-      average: 'Mediano', // CORREGIDO
-      large: 'Gran', // CORREGIDO
+      average: 'Mediano', 
+      large: 'Gran', 
       big: 'Enorme',
       huge: 'Gigantesco',
       gigantic: 'Colosal',
@@ -1288,22 +1300,12 @@ export const translationsEs = {
       predator: 'Depredador',
       aggressive_predator: 'Depredador Agresivo',
     },
-    homes: {
-      burrow: 'Madriguera',
-      ruin: 'Ruina',
-      watering_hole: 'Abrevadero',
-      tree_or_high_point: 'Árbol o punto alto',
-      cave: 'Cueva',
-      ravine: 'Barranco',
-      den: 'Guarida',
-      none: '', // Asegura que no salga código si falta
-    },
 
     movement: {
       movement: 'Movimiento',
       move: 'Movimiento',
       zones_other: 'zonas/turno',
-      zones_one: 'zona/turno', // AÑADIDO
+      zones_one: 'zona/turno', 
       slithering: 'Deslizándose',
       digging: 'Cavando',
       swimming: 'Nadando',
@@ -1474,7 +1476,7 @@ export const translationsEs = {
       },
       peck: { 
         type: 'Picotazo',
-        description: 'Un feroz picotazo con su pico afilado como una navaja.' 
+        description: 'Un feroz picotazo con su pico afilado como una navaja.'
       },
       squash: { 
         type: 'Aplastar',
@@ -1566,7 +1568,7 @@ export const translationsEs = {
       },
       burrow: { 
         type: 'Excavar',
-        description: 'Se entierra bajo el suelo para protegerse o emboscar.' 
+        description: 'Se entierra bajo el suelo para protegerse o emboscar.'
       },
       the_ground_shatters: { 
         type: 'El Suelo se Rompe',
