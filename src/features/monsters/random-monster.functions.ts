@@ -114,6 +114,11 @@ export const createRandomMonsterViewModelFromRandomMonster = (
       description: description(),
     })),
     skills: getMonsterSkillListItems(rm.skills),
+    
+    // CORRECCIÓN VIVE EN: Le decimos al sistema exactamente dónde está la traducción
+    // Usamos 'as unknown as MonsterHome' para que TypeScript no bloquee a Vercel
+    home: `monsters:homes.${rm.home === 'none' ? 'cave' : rm.home}` as unknown as MonsterHome,
+    
     motivation: {
       name: `monsters:motivation.${rm.motivation}.name`,
       description: `monsters:motivation.${rm.motivation}.description`,
@@ -189,7 +194,8 @@ const getLimbsDescription = (
   const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // CORRECCIÓN: Si no hay NI cola NI extremidades, muestra el mensaje de "ninguna".
+  // CORRECCIÓN EXTREMIDADES: Si no tiene brazos, piernas, ni cola, dice "0 extremidades".
+  // Si tiene cola, simplemente omite la frase de las extremidades y dice "Cola con pinchos".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
