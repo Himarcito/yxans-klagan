@@ -189,8 +189,7 @@ const getLimbsDescription = (
   const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // CORRECCIÓN LÓGICA: Si no hay NI extremidades NI cola, devuelve "0 extremidades".
-  // Si solo tiene cola, devolverá la cola y omitirá "0 extremidades".
+  // CORRECCIÓN: Si no hay NI cola NI extremidades, muestra el mensaje de "ninguna".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
@@ -310,7 +309,7 @@ export const getMonsterSkillListItems = (
       ? [
           {
             name: `monsters:skills.stealth` as TranslationKey<'monsters'>,
-            value: skills.stealth, 
+            value: skills.stealth,
           },
         ]
       : [],
