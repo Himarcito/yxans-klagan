@@ -189,8 +189,9 @@ const getLimbsDescription = (
   const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // CORRECCIÓN LÓGICA: Si no hay NI cola NI extremidades, muestra el mensaje de "ninguna".
-  // Si hay cola, ya no mostrará "0 extremidades & Cola", solo mostrará la cola.
+  // CORRECCIÓN LÓGICA DE EXTREMIDADES:
+  // Si no tiene brazos, ni piernas, NI COLA, dirá "ninguna extremidad".
+  // Si tiene cola, simplemente omite la frase de extremidades y dice "Cola con pinchos".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
