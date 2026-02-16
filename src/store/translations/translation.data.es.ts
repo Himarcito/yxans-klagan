@@ -503,7 +503,6 @@ export const translationsEs = {
       during_blood_mist: 'durante la Niebla de Sangre',
       after_blood_mist: 'después de la Niebla de Sangre',
     },
-    // SECCIÓN DE PERSONAJES (SIN EL "UN/UNA" PARA ARREGLAR LA GRAMÁTICA)
     who_or_what: {
       elf: 'elfo',
       dwarf: 'enano',
@@ -536,7 +535,6 @@ export const translationsEs = {
       robbers: 'banda de ladrones',
       coterie: 'camarilla',
       monster: 'monstruo',
-
       wolfkin: 'lupino',
       slave_traders: 'comerciantes de esclavos',
       orcs: 'orco',
@@ -549,7 +547,6 @@ export const translationsEs = {
       ogres: 'ogro',
       monsters: 'monstruo',
       demons: 'demonio',
-      
       human: 'humano',
       halfling: 'mediano',
       saurian: 'saurio',
@@ -632,6 +629,7 @@ export const translationsEs = {
       innovative: 'innovador',
       kind: 'amable',
       persevering: 'perseverante',
+      perseverant: 'perseverante', 
       treacherous: 'traicionero',
       moralistic: 'moralista',
       moral: 'honorable',
@@ -647,7 +645,6 @@ export const translationsEs = {
       cunning: 'astuto',
       terrified: 'aterrorizado',
       evil: 'malvado',
-      
       aggressive: 'agresivo',
       murderous: 'sanguinario',
       horrible: 'horrible',
@@ -658,7 +655,6 @@ export const translationsEs = {
       homicidal: 'homicida',
       maniacal: 'maniático',
       hunting: 'cazador',
-      
       brave: 'valiente',
       strange: 'extraño',
       fierce: 'feroz',
@@ -686,6 +682,8 @@ export const translationsEs = {
       guarding: 'custodiado por',
       blood_thirsty: 'sanguinarios',
       greedy: 'codiciosos', 
+      starving: 'hambrientos', 
+      hunting: 'cazadores', 
     },
 
     adversary: { 
@@ -712,6 +710,8 @@ export const translationsEs = {
       group_of_undead: 'un grupo de no-muertos',
       group_of_orcs: 'un grupo de orcos',
       saurians: 'saurios',
+      iron_guards: 'guardias de hierro', 
+      slave_traders: 'comerciantes de esclavos', 
     },
 
     searched_for: {
@@ -745,6 +745,7 @@ export const translationsEs = {
       war: 'la guerra',
       honor: 'honor',
       madness: 'locura',
+      insanity: 'locura', 
       greed: 'avaricia',
       money: 'dinero',
       fame: 'fama',
@@ -778,6 +779,7 @@ export const translationsEs = {
       many_days_march: 'a varios días de marcha', 
       several_days: 'a varios días de marcha',
       far_away: 'muy lejos',
+      the_other_side: 'en el otro extremo de las Tierras Prohibidas', 
       other_side: 'en el otro extremo de las Tierras Prohibidas',
       close: 'próximo',
       unknown: 'desconocido',
