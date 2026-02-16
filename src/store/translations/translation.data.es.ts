@@ -503,9 +503,7 @@ export const translationsEs = {
       during_blood_mist: 'durante la Niebla de Sangre',
       after_blood_mist: 'después de la Niebla de Sangre',
     },
-    // CLAVES DE LEYENDAS Y AVENTURERAS + EXTRAS
     who_or_what: {
-      // TABLA 1 (11-66)
       elf: 'Un elfo',
       dwarf: 'Un enano',
       peddler: 'Un buhonero',
@@ -522,7 +520,7 @@ export const translationsEs = {
       sorcerer: 'Un hechicero',
       robber_chief: 'Un jefe de una banda de ladrones',
       bandit_chief: 'Un jefe de una banda de ladrones',
-      robber_chieftain: 'un jefe bandido', // AÑADIDO (Error imagen)
+      robber_chieftain: 'un jefe bandido',
       warrior: 'Un guerrero',
       lord: 'Un señor',
       prince: 'Un príncipe',
@@ -538,7 +536,6 @@ export const translationsEs = {
       coterie: 'Una camarilla',
       monster: 'Un monstruo',
 
-      // TABLA 7 (11-66)
       wolfkin: 'Lupinos',
       slave_traders: 'Comerciantes de esclavos',
       orcs: 'Orcos',
@@ -552,7 +549,6 @@ export const translationsEs = {
       monsters: 'Monstruos',
       demons: 'Demonios',
       
-      // CLAVES EXTRA / SINGULARES PARA EVITAR ERRORES
       human: 'Un humano',
       halfling: 'Un mediano',
       saurian: 'Un saurio',
@@ -621,11 +617,10 @@ export const translationsEs = {
       skeleton: 'Un esqueleto',
       ghoul: 'Un gul',
       ghost: 'Un fantasma',
-      water_drawer: 'un aguador', // Extra
-      widow: 'un viudo', // Extra
+      water_drawer: 'un aguador',
+      widow: 'un viudo',
     },
     
-    // ADJETIVOS (TABLA 2 + TABLA 7)
     adjective: {
       bloodthirsty: 'sanguinario',
       blood_thirsty: 'sanguinario',
@@ -638,7 +633,7 @@ export const translationsEs = {
       persevering: 'perseverante',
       treacherous: 'traicionero',
       moralistic: 'moralista',
-      moral: 'honorable', // AÑADIDO (Error imagen)
+      moral: 'honorable',
       skilled: 'habilidoso',
       stingy: 'rácano',
       selfish: 'egoísta',
@@ -652,7 +647,6 @@ export const translationsEs = {
       terrified: 'aterrorizado',
       evil: 'malvado',
       
-      // DE TABLA 7
       aggressive: 'agresivo',
       murderous: 'sanguinario',
       horrible: 'horrible',
@@ -664,7 +658,6 @@ export const translationsEs = {
       maniacal: 'maniático',
       hunting: 'cazador',
       
-      // EXTRAS
       brave: 'valiente',
       strange: 'extraño',
       fierce: 'feroz',
@@ -679,7 +672,6 @@ export const translationsEs = {
       tired: 'cansado',
     },
 
-    // AÑADIDO FUERA DE ADJECTIVE (Error imagen)
     adjective_adversary: {
       powerful: 'poderosos',
       ancient: 'antiguos',
@@ -690,11 +682,11 @@ export const translationsEs = {
       hungry: 'hambrientos',
       saurians: 'Saurios',
       horrible: 'horribles',
-      guarding: 'custodiado por', // AÑADIDO (Error imagen)
+      guarding: 'custodiado por',
       blood_thirsty: 'sanguinarios',
+      greedy: 'codiciosos',
     },
 
-    // AÑADIDO PARA LOS ADVERSARIOS (Error imagen)
     adversary: { 
       ogres: 'ogros',
       orcs: 'orcos',
@@ -712,6 +704,7 @@ export const translationsEs = {
       group_of_wild_animals: 'una manada de animales salvajes',
       bandit: 'un bandido',
       band_of_robbers: 'una banda de ladrones',
+      robbers: 'ladrones',
       cultist: 'un cultista',
       cult: 'un culto',
       restless_dead: 'un muerto inquieto',
@@ -719,7 +712,6 @@ export const translationsEs = {
       group_of_orcs: 'un grupo de orcos',
     },
 
-    // TABLA 3 (11-66)
     searched_for: {
       weapon: 'un arma',
       love: 'el amor',
@@ -731,7 +723,6 @@ export const translationsEs = {
       artifact: 'un artefacto',
       monster: 'un monstruo',
       dream: 'un sueño',
-      // Extras
       person: 'una persona',
       village: 'una aldea',
       ruin: 'unas ruinas',
@@ -741,7 +732,6 @@ export const translationsEs = {
       tower: 'una torre',
     },
 
-    // TABLA 4 (11-66)
     because: {
       love: 'amor',
       friendship: 'amistad',
@@ -754,7 +744,6 @@ export const translationsEs = {
       honor: 'honor',
       madness: 'locura',
       greed: 'avaricia',
-      // Extras
       money: 'dinero',
       fame: 'fama',
       revenge: 'venganza',
@@ -763,7 +752,6 @@ export const translationsEs = {
       threat: 'una amenaza',
     },
 
-    // TABLA 5 (11-66)
     location: {
       ruin: 'unas ruinas',
       ruins: 'unas ruinas',
@@ -781,11 +769,11 @@ export const translationsEs = {
       fort: 'un fuerte',
     },
 
-    // TABLA 6 (11-66)
     distance: {
       here: 'aquí',
       nearby: 'cerca de aquí',
       one_days_march: 'a un día de marcha',
+      many_days_march: 'a varios días de marcha',
       several_days: 'a varios días',
       far_away: 'muy lejos',
       other_side: 'en el otro extremo de las Tierras Prohibidas',
@@ -793,21 +781,20 @@ export const translationsEs = {
       unknown: 'desconocido',
     },
 
-    // TABLA 8 (11-66)
     what_happened: {
       betrayed: 'fue traicionado/a',
       murdered: 'fue asesinado/a',
       killed: 'fue asesinado/a',
       never_seen: 'no se le volvió a ver jamás',
+      never_seen_again: 'no se le volvió a ver jamás',
       starved: 'murió de inanición',
       suicide: 'se quitó la vida',
       died_in_battle: 'murió en batalla',
       enchanted: 'fue hechizado/a',
-      cursed: 'fue hechizado/a', // Variante
+      cursed: 'fue hechizado/a',
       possessed: 'fue poseído/a',
       changed: 'volvió cambiado/a',
       still_searching: 'aún sigue buscando',
-      // Extras
       found: 'lo encontró',
       still_looking: 'aún está buscando',
       died: 'murió',
@@ -816,7 +803,6 @@ export const translationsEs = {
       fled: 'huyó',
     },
 
-    // TABLA 9 (11-66)
     its_told_that: {
       gold: 'oro, montones de oro',
       artifact: 'un poderoso artefacto',
@@ -829,10 +815,9 @@ export const translationsEs = {
       dwarven_artifact: 'un artefacto enano',
       elf_ruby: 'un rubí élfico',
       elven_ruby: 'un rubí élfico',
-      // Extras
-      war_chest: 'un botín de guerra', // AÑADIDO (Error imagen)
-      spell_book: 'un grimorio', // AÑADIDO
-      secret_knowledge: 'conocimiento secreto', // AÑADIDO
+      war_chest: 'un botín de guerra',
+      spell_book: 'un grimorio',
+      secret_knowledge: 'conocimiento secreto',
       sword: 'una espada',
       potion: 'pociones',
       gems: 'gemas',
@@ -844,7 +829,7 @@ export const translationsEs = {
 
     along_time_ago: 'Hace mucho tiempo',
     years_ago: 'años atrás',
-    there_was: 'había',
+    there_was: 'había un',
     who_searched: 'que buscaba',
     because_of: 'por',
     and_traveled_to: 'y viajó a',
