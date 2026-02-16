@@ -499,6 +499,7 @@ export const translationsEs = {
     legend: 'Leyenda',
     time_ago: {
       before_blood_mist: 'antes de la Niebla de Sangre',
+      before_shift: 'antes del Cambio', // AÑADIDO (Imagen 4 y 6)
       during_alder_wars: 'durante las Guerras de los Alisos',
       during_blood_mist: 'durante la Niebla de Sangre',
       after_blood_mist: 'después de la Niebla de Sangre',
@@ -625,6 +626,7 @@ export const translationsEs = {
       vengeful: 'vengativo',
       greedy: 'avaricioso',
       unhappy_in_love: 'infeliz en el amor',
+      unhappy: 'infeliz', // AÑADIDO (Imagen 8)
       ingenious: 'ingenioso',
       innovative: 'innovador',
       kind: 'amable',
@@ -644,6 +646,7 @@ export const translationsEs = {
       determined: 'determinado',
       cunning: 'astuto',
       terrified: 'aterrorizado',
+      scared: 'asustado/a', // AÑADIDO (Imagen 9 y 10)
       evil: 'malvado',
       aggressive: 'agresivo',
       murderous: 'sanguinario',
@@ -684,6 +687,9 @@ export const translationsEs = {
       greedy: 'codiciosos', 
       starving: 'hambrientos', 
       hunting: 'cazadores', 
+      aggresive: 'agresivos', // AÑADIDO (Imagen 7) (Typos del código original)
+      crazy: 'locos', // AÑADIDO (Imagen 9)
+      manic: 'maniáticos', // AÑADIDO (Imagen 10)
     },
 
     adversary: { 
@@ -691,6 +697,7 @@ export const translationsEs = {
       orcs: 'orcos',
       trolls: 'troles',
       demons: 'demonios',
+      demon_one: 'un demonio', // AÑADIDO (Imagen 6)
       ghosts: 'fantasmas',
       wolves: 'lobos',
       bandits: 'bandidos',
@@ -712,12 +719,14 @@ export const translationsEs = {
       saurians: 'saurios',
       iron_guards: 'guardias de hierro', 
       slave_traders: 'comerciantes de esclavos', 
+      death_knight: 'Caballeros de la Muerte', // AÑADIDO por concordancia
     },
 
     searched_for: {
       weapon: 'un arma',
       love: 'el amor',
       friend_in_need: 'un amigo en apuros',
+      friend: 'un amigo', // AÑADIDO (Imagen 8 y 10)
       enemy: 'un enemigo',
       treasure: 'un tesoro',
       map: 'un mapa',
@@ -745,7 +754,7 @@ export const translationsEs = {
       war: 'la guerra',
       honor: 'honor',
       madness: 'locura',
-      insanity: 'locura', 
+      insanity: 'locura', // AÑADIDO (Imagen 5)
       greed: 'avaricia',
       money: 'dinero',
       fame: 'fama',
@@ -770,6 +779,7 @@ export const translationsEs = {
       water_source: 'una fuente de agua',
       well: 'una fuente de agua',
       fort: 'un fuerte',
+      fortress: 'una fortaleza', // AÑADIDO (Imagen 9)
     },
 
     distance: {
@@ -794,11 +804,14 @@ export const translationsEs = {
       starved: 'murió de inanición',
       starved_to_death: 'murió de inanición',
       suicide: 'se quitó la vida',
+      commited_suicide: 'se quitó la vida', // AÑADIDO (Imagen 7) (Typo del código original)
       died_in_battle: 'murió en batalla',
       enchanted: 'fue hechizado/a',
+      charmed: 'fue hechizado/a', // AÑADIDO (Imagen 6)
       cursed: 'fue hechizado/a',
       possessed: 'fue poseído/a',
       changed: 'volvió cambiado/a',
+      came_back_changed: 'volvió cambiado/a', // AÑADIDO (Imagen 4)
       still_searching: 'aún sigue buscando',
       found: 'lo encontró',
       still_looking: 'aún está buscando',
