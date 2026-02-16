@@ -497,13 +497,11 @@ export const translationsEs = {
   session: {
     title: 'Sesión',
     legend: 'Leyenda',
-    time: {
-      ago: {
-        before_blood_mist: 'antes de la Niebla de Sangre',
-        during_alder_wars: 'durante las Guerras de los Alisos',
-        during_blood_mist: 'durante la Niebla de Sangre',
-        after_blood_mist: 'después de la Niebla de Sangre',
-      },
+    time_ago: {
+      before_blood_mist: 'antes de la Niebla de Sangre',
+      during_alder_wars: 'durante las Guerras de los Alisos',
+      during_blood_mist: 'durante la Niebla de Sangre',
+      after_blood_mist: 'después de la Niebla de Sangre',
     },
     // CLAVES DE LEYENDAS Y AVENTURERAS + EXTRAS
     who_or_what: {
@@ -524,6 +522,7 @@ export const translationsEs = {
       sorcerer: 'Un hechicero',
       robber_chief: 'Un jefe de una banda de ladrones',
       bandit_chief: 'Un jefe de una banda de ladrones',
+      robber_chieftain: 'un jefe bandido', // AÑADIDO (Error imagen)
       warrior: 'Un guerrero',
       lord: 'Un señor',
       prince: 'Un príncipe',
@@ -555,10 +554,7 @@ export const translationsEs = {
       
       // CLAVES EXTRA / SINGULARES PARA EVITAR ERRORES
       human: 'Un humano',
-      ogre: 'Un ogro',
-      orc: 'Un orco',
       halfling: 'Un mediano',
-      goblin: 'Un goblin',
       saurian: 'Un saurio',
       wolfkins: 'Lupinos',
       believer: 'Un creyente',
@@ -625,6 +621,8 @@ export const translationsEs = {
       skeleton: 'Un esqueleto',
       ghoul: 'Un gul',
       ghost: 'Un fantasma',
+      water_drawer: 'un aguador', // Extra
+      widow: 'un viudo', // Extra
     },
     
     // ADJETIVOS (TABLA 2 + TABLA 7)
@@ -640,6 +638,7 @@ export const translationsEs = {
       persevering: 'perseverante',
       treacherous: 'traicionero',
       moralistic: 'moralista',
+      moral: 'honorable', // AÑADIDO (Error imagen)
       skilled: 'habilidoso',
       stingy: 'rácano',
       selfish: 'egoísta',
@@ -678,18 +677,46 @@ export const translationsEs = {
       sad: 'triste',
       happy: 'feliz',
       tired: 'cansado',
-      
-      adjective_adversary: {
-        powerful: 'poderoso',
-        ancient: 'antiguo',
-        dead: 'muerto',
-        possessed: 'poseído',
-        undead: 'no-muerto',
-        corrupt: 'corrupto',
-        hungry: 'hambriento',
-        saurians: 'Saurios',
-        horrible: 'horrible',
-      },
+    },
+
+    // AÑADIDO FUERA DE ADJECTIVE (Error imagen)
+    adjective_adversary: {
+      powerful: 'poderosos',
+      ancient: 'antiguos',
+      dead: 'muertos',
+      possessed: 'poseídos',
+      undead: 'no-muertos',
+      corrupt: 'corruptos',
+      hungry: 'hambrientos',
+      saurians: 'Saurios',
+      horrible: 'horribles',
+      guarding: 'custodiado por', // AÑADIDO (Error imagen)
+      blood_thirsty: 'sanguinarios',
+    },
+
+    // AÑADIDO PARA LOS ADVERSARIOS (Error imagen)
+    adversary: { 
+      ogres: 'ogros',
+      orcs: 'orcos',
+      trolls: 'troles',
+      demons: 'demonios',
+      ghosts: 'fantasmas',
+      wolves: 'lobos',
+      bandits: 'bandidos',
+      undead: 'no-muertos',
+      cultists: 'cultistas',
+      monsters: 'monstruos',
+      monster: 'un monstruo',
+      monster_and_offspring: 'un monstruo y sus crías',
+      wild_animal: 'un animal salvaje',
+      group_of_wild_animals: 'una manada de animales salvajes',
+      bandit: 'un bandido',
+      band_of_robbers: 'una banda de ladrones',
+      cultist: 'un cultista',
+      cult: 'un culto',
+      restless_dead: 'un muerto inquieto',
+      group_of_undead: 'un grupo de no-muertos',
+      group_of_orcs: 'un grupo de orcos',
     },
 
     // TABLA 3 (11-66)
@@ -803,6 +830,9 @@ export const translationsEs = {
       elf_ruby: 'un rubí élfico',
       elven_ruby: 'un rubí élfico',
       // Extras
+      war_chest: 'un botín de guerra', // AÑADIDO (Error imagen)
+      spell_book: 'un grimorio', // AÑADIDO
+      secret_knowledge: 'conocimiento secreto', // AÑADIDO
       sword: 'una espada',
       potion: 'pociones',
       gems: 'gemas',
