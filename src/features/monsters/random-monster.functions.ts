@@ -190,7 +190,7 @@ const getLimbsDescription = (
   const combined = [...limbsDescriptions, ...tailDescription]
 
   // CORRECCIÓN LÓGICA: Si no hay NI cola NI extremidades, muestra el mensaje de "ninguna".
-  // Si hay cola, ya no mostrará "0 extremidades".
+  // Si hay cola, ya no mostrará "0 extremidades & Cola", solo mostrará la cola.
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
