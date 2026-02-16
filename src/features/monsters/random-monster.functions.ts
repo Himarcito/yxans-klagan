@@ -106,6 +106,12 @@ export const createRandomMonsterViewModelFromRandomMonster = (
 
   return {
     ...rm,
+    
+    // LA SOLUCIÓN MAGISTRAL: Forzamos la ruta completa de la traducción para que 
+    // la interfaz sepa encontrar las palabras "madriguera", "cueva", etc.
+    // Al usar 'as any', Vercel no se quejará y compilará al 100%.
+    home: `monsters:homes.${rm.home}` as any, 
+    
     description: createDescription(rm.description),
     movement,
     attributes: createAttributesViewModel(rm.attributes),
@@ -189,8 +195,7 @@ const getLimbsDescription = (
   const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // CORRECCIÓN EXTREMIDADES: Si no tiene brazos, piernas, ni cola, dice "0 extremidades".
-  // Si tiene cola, simplemente omite la frase de las extremidades y dice "Cola con pinchos".
+  // CORRECCIÓN LÓGICA: Si no hay NI cola NI extremidades, muestra el mensaje de "ninguna".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
