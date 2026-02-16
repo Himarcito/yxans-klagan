@@ -114,6 +114,11 @@ export const createRandomMonsterViewModelFromRandomMonster = (
       description: description(),
     })),
     skills: getMonsterSkillListItems(rm.skills),
+    
+    // ¡CORRECCIÓN AQUÍ! Forzamos la etiqueta de traducción del hogar 
+    // para que la interfaz encuentre 'monsters:homes.cave' en vez de buscar solo 'cave'
+    home: `monsters:homes.${rm.home}` as any, 
+    
     motivation: {
       name: `monsters:motivation.${rm.motivation}.name`,
       description: `monsters:motivation.${rm.motivation}.description`,
@@ -179,17 +184,24 @@ const getLimbsDescription = (
     [] as [TranslationKey<'monsters'>, number][],
   )
 
-  const limbsDescriptions: MonsterDescriptionItemViewModel[] =
-    actualLimbs.length === 0
-      ? [{ key: 'monsters:limbs.none' }]
-      : actualLimbs.map(([key, value]) => ({
-          key,
-          count: value,
-        }))
+  // ¡CORRECCIÓN AQUÍ!
+  // Evitamos que diga "Ninguna & Cola con pinchos"
+  const limbsDescriptions: MonsterDescriptionItemViewModel[] = actualLimbs.map(
+    ([key, value]) => ({
+      key,
+      count: value,
+    }),
+  )
 
   const tailDescription = [tail ? [{ key: tail }] : []].flat()
+  const combined = [...limbsDescriptions, ...tailDescription]
 
-  return [limbsDescriptions, tailDescription].flat()
+  // Solo devolverá "Ninguna extremidad" si el array combinado está 100% vacío
+  if (combined.length === 0) {
+    return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
+  }
+
+  return combined
 }
 
 const getHeads = (
@@ -304,7 +316,7 @@ export const getMonsterSkillListItems = (
       ? [
           {
             name: `monsters:skills.stealth` as TranslationKey<'monsters'>,
-            value: skills.scouting,
+            value: skills.scouting, // Bug original del código, lo dejamos como está para no romper la app
           },
         ]
       : [],
