@@ -114,11 +114,6 @@ export const createRandomMonsterViewModelFromRandomMonster = (
       description: description(),
     })),
     skills: getMonsterSkillListItems(rm.skills),
-    
-    // CORRECCIÓN VIVE EN: Le decimos al sistema exactamente dónde está la traducción
-    // Usamos 'as unknown as MonsterHome' para que TypeScript no bloquee a Vercel
-    home: `monsters:homes.${rm.home === 'none' ? 'cave' : rm.home}` as unknown as MonsterHome,
-    
     motivation: {
       name: `monsters:motivation.${rm.motivation}.name`,
       description: `monsters:motivation.${rm.motivation}.description`,
