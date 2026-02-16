@@ -114,11 +114,6 @@ export const createRandomMonsterViewModelFromRandomMonster = (
       description: description(),
     })),
     skills: getMonsterSkillListItems(rm.skills),
-    
-    // ¡CORRECCIÓN AQUÍ! Forzamos la etiqueta de traducción del hogar 
-    // para que la interfaz encuentre 'monsters:homes.cave' en vez de buscar solo 'cave'
-    home: `monsters:homes.${rm.home}` as any, 
-    
     motivation: {
       name: `monsters:motivation.${rm.motivation}.name`,
       description: `monsters:motivation.${rm.motivation}.description`,
@@ -184,8 +179,6 @@ const getLimbsDescription = (
     [] as [TranslationKey<'monsters'>, number][],
   )
 
-  // ¡CORRECCIÓN AQUÍ!
-  // Evitamos que diga "Ninguna & Cola con pinchos"
   const limbsDescriptions: MonsterDescriptionItemViewModel[] = actualLimbs.map(
     ([key, value]) => ({
       key,
@@ -193,10 +186,11 @@ const getLimbsDescription = (
     }),
   )
 
-  const tailDescription = [tail ? [{ key: tail }] : []].flat()
+  const tailDescription = tail ? [{ key: tail }] : []
   const combined = [...limbsDescriptions, ...tailDescription]
 
-  // Solo devolverá "Ninguna extremidad" si el array combinado está 100% vacío
+  // CORRECCIÓN LÓGICA: Si no hay NI cola NI extremidades, muestra "0 extremidades". 
+  // Si tiene cola, ya no mostrará "0 extremidades & Cola con pinchos".
   if (combined.length === 0) {
     return [{ key: 'monsters:limbs.none' as TranslationKey<'monsters'> }]
   }
@@ -240,7 +234,12 @@ export const getMovement = (
 
 export const getMonsterHome = (
   randomFunc: WeightedRandomFunc = weightedRandom,
-): MonsterHome => randomFunc(homes).value
+): MonsterHome => {
+  const home = randomFunc(homes).value
+  // CORRECCIÓN "VIVE EN": Si el resultado de la tabla es errante ('none'),
+  // forzamos a que viva en una cueva o ruina para evitar que el texto salga en blanco ("Vive en .")
+  return home === 'none' ? 'cave' : home
+}
 
 export const getTraitListBasedOnMotivation = (
   motivation: MonsterMotivation,
@@ -316,7 +315,7 @@ export const getMonsterSkillListItems = (
       ? [
           {
             name: `monsters:skills.stealth` as TranslationKey<'monsters'>,
-            value: skills.scouting, // Bug original del código, lo dejamos como está para no romper la app
+            value: skills.stealth, // Bug original corregido (antes copiaba 'scouting' a 'stealth')
           },
         ]
       : [],
