@@ -500,7 +500,7 @@ export const translationsEs = {
     time_ago: {
       before_blood_mist: 'antes de la Niebla de Sangre',
       before_shift: 'antes del Cambio',
-      during_alder_wars: 'durante las Guerras de los Alisos',
+      during_alder_wars: 'durante las Guerras de los Aliseos', // CORREGIDO: Aliseos
       during_blood_mist: 'durante la Niebla de Sangre',
       after_blood_mist: 'después de la Niebla de Sangre',
     },
@@ -532,7 +532,7 @@ export const translationsEs = {
       soldiers: 'unidad de soldados',
       village: 'aldea',
       cult: 'secta',
-      cabal: 'cábala', // AÑADIDO
+      cabal: 'cábala', 
       band_of_robbers: 'banda de ladrones',
       robbers: 'banda de ladrones',
       coterie: 'camarilla',
@@ -671,7 +671,7 @@ export const translationsEs = {
       sad: 'triste',
       happy: 'feliz',
       tired: 'cansado',
-      vain: 'vanidoso', // AÑADIDO
+      vain: 'vanidoso', 
     },
 
     adjective_adversary: {
@@ -692,6 +692,8 @@ export const translationsEs = {
       aggresive: 'agresivos',
       crazy: 'locos',
       manic: 'maniáticos',
+      cruel: 'crueles', 
+      murderous: 'sanguinarios', 
     },
 
     adversary: { 
@@ -700,6 +702,7 @@ export const translationsEs = {
       trolls: 'troles',
       demons: 'demonios',
       demon_one: 'un demonio',
+      demon_with_count: 'demonios', // AÑADIDO
       ghosts: 'fantasmas',
       wolves: 'lobos',
       bandits: 'bandidos',
@@ -722,8 +725,8 @@ export const translationsEs = {
       iron_guards: 'guardias de hierro', 
       slave_traders: 'comerciantes de esclavos', 
       death_knight: 'Caballeros de la Muerte',
-      wolf_kin: 'lupinos', // AÑADIDO
-      goblins: 'goblins', // AÑADIDO
+      wolf_kin: 'lupinos', 
+      goblins: 'goblins', 
     },
 
     searched_for: {
@@ -766,6 +769,7 @@ export const translationsEs = {
       fear: 'miedo',
       curiosity: 'curiosidad',
       threat: 'una amenaza',
+      dreams: 'unos sueños', // AÑADIDO
     },
 
     location: {
@@ -796,7 +800,7 @@ export const translationsEs = {
       the_other_side: 'en el otro extremo de las Tierras Prohibidas', 
       other_side: 'en el otro extremo de las Tierras Prohibidas',
       close: 'próximo',
-      close_by: 'muy cerca', // AÑADIDO
+      close_by: 'muy cerca', 
       unknown: 'desconocido',
     },
 
@@ -1035,7 +1039,7 @@ export const translationsEs = {
     },
     ages: {
       before_blood_mist: 'Antes de la Niebla de Sangre',
-      during_alder_wars: 'Durante las Guerras de los Alisos',
+      during_alder_wars: 'Durante las Guerras de los Aliseos',
       during_blood_mist: 'Durante la Niebla de Sangre',
       after_blood_mist: 'Después de la Niebla de Sangre',
     },
