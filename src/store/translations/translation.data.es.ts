@@ -1063,7 +1063,7 @@ export const translationsEs = {
     },
     back_to_all_monsters: 'Volver a todos los monstruos',
     the_monster_has: 'El monstruo tiene',
-    lives_in: 'Vive en',
+    lives_in: 'Vive en.',
     armor_label: 'Armadura',
     skill: 'Habilidad',
 
@@ -1084,7 +1084,7 @@ export const translationsEs = {
       missing: 'Falta',
     },
     limbs: {
-      none: 'Ninguna',
+      none: 'ninguna extremidad', // CORREGIDO para evitar la frase "El monstruo tiene Ninguna"
     },
     tail: {
       tail: 'Cola',
@@ -1132,6 +1132,47 @@ export const translationsEs = {
         name: 'Herido',
         description: 'La criatura comienza el combate herida.',
       },
+      // AÑADIDOS PARA EVITAR ERRORES EN RASGOS
+      acid_glands: {
+        name: 'Glándulas de Ácido',
+        description: 'El monstruo tiene glándulas de ácido y puede usar el ataque Escupir Ácido.',
+      },
+      possessed_by_demon: {
+        name: 'Poseído por un Demonio',
+        description: 'El monstruo está poseído por un demonio. Ignora los resultados de pánico y siempre lucha a muerte.',
+      },
+      can_speak: {
+        name: 'Puede Hablar',
+        description: 'La criatura puede hablar y es altamente inteligente.',
+      },
+      hard_to_kill: {
+        name: 'Difícil de Matar',
+        description: 'Requiere recibir un Golpe Crítico letal para morir.',
+      },
+      fire_glands: {
+        name: 'Glándulas de Fuego',
+        description: 'El monstruo puede usar el ataque Aliento de Fuego.',
+      },
+      poisonous: {
+        name: 'Venenoso',
+        description: 'El monstruo segrega veneno letal.',
+      },
+      undead: {
+        name: 'No-muerto',
+        description: 'La criatura no está viva. No se ve afectada por el cansancio ni por el veneno.',
+      },
+      telepathy: {
+        name: 'Telepatía',
+        description: 'El monstruo puede comunicarse telepáticamente con otras criaturas.',
+      },
+      armored: {
+        name: 'Acorazado',
+        description: 'Su piel es tan dura como el hierro.',
+      },
+      weapon: {
+        name: 'Arma Natural',
+        description: 'El monstruo ataca con un arma natural extremadamente letal.',
+      }
     },
     weakness: {
       weakness: 'Debilidad',
@@ -1146,6 +1187,19 @@ export const translationsEs = {
         name: 'Vulnerable al Fuego',
         description: 'El fuego le causa daño doble o pánico.',
       },
+      // AÑADIDOS PARA EVITAR ERRORES EN DEBILIDADES
+      obsessed_with_all_that_glitters: {
+        name: 'Obsesionado con lo que brilla',
+        description: 'Lanzar monedas u objetos brillantes puede distraer al monstruo.',
+      },
+      vulnerable_to_cold: {
+        name: 'Vulnerable al Frío',
+        description: 'Recibe doble daño de ataques basados en frío.',
+      },
+      vulnerable_to_bright_light: {
+        name: 'Vulnerable a la Luz Brillante',
+        description: 'Sufre daño si se expone a luz solar o mágica intensa.',
+      }
     },
 
     giant: 'Gigante',
@@ -1218,12 +1272,14 @@ export const translationsEs = {
       cave: 'Cueva',
       ravine: 'Barranco',
       den: 'Guarida',
+      none: '', // AÑADIDO por si el terreno no aplica
     },
 
     movement: {
       movement: 'Movimiento',
       move: 'Movimiento',
       zones_other: 'zonas/turno',
+      zones_one: 'zona/turno', // AÑADIDO
       slithering: 'Deslizándose',
       digging: 'Cavando',
       swimming: 'Nadando',
@@ -1288,24 +1344,55 @@ export const translationsEs = {
       },
       range: 'Rango',
 
-      slash: { type: 'Tajo' },
+      // SE HAN AÑADIDO DESCRIPCIONES A TODOS LOS ATAQUES PARA EVITAR CÓDIGOS VISIBLES
+      slash: { 
+        type: 'Tajo',
+        description: 'Un rápido tajo con sus garras o extremidades afiladas.'
+      },
       bite: {
         type: 'Mordisco',
         description: 'D3 (corte) a un enemigo a distancia DE BRAZO.',
       },
-      claw_flurry: { type: 'Ráfaga de garras' },
-      horn: { type: 'Cuerno' },
+      claw_flurry: { 
+        type: 'Ráfaga de garras',
+        description: 'Golpea repetidamente con furia usando sus garras.'
+      },
+      horn: { 
+        type: 'Cuerno',
+        description: 'Empala a su objetivo con un cuerno o púa mortal.'
+      },
       roar: {
         type: 'Rugido',
         description: 'Suelta un rugido aterrador. Todos los enemigos a alcance AUDIBLE sufren Miedo.'
       },
-      bash: { type: 'Golpe' },
-      breath_fire: { type: 'Aliento de Fuego' },
-      spit_acid: { type: 'Escupir Ácido' },
-      deadly_gaze: { type: 'Mirada Mortal' },
-      kick: { type: 'Patada' },
-      devour: { type: 'Devorar' },
-      eye_gourge: { type: 'Sacar Ojos' },
+      bash: { 
+        type: 'Golpe',
+        description: 'Un golpe contundente y brutal.'
+      },
+      breath_fire: { 
+        type: 'Aliento de Fuego',
+        description: 'Rocía a sus enemigos con un cono de llamas abrasadoras.'
+      },
+      spit_acid: { 
+        type: 'Escupir Ácido',
+        description: 'Escupe ácido corrosivo que disuelve armaduras y carne.'
+      },
+      deadly_gaze: { 
+        type: 'Mirada Mortal',
+        description: 'Su mirada aterroriza o paraliza a quien lo observe.'
+      },
+      kick: { 
+        type: 'Patada',
+        description: 'Una patada brutal capaz de romper huesos.'
+      },
+      devour: { 
+        type: 'Devorar',
+        description: 'Intenta tragarse a su presa entera.'
+      },
+      eye_gourge: { 
+        type: 'Sacar Ojos',
+        description: 'Ataca directamente a los ojos para cegar a la víctima.'
+      },
       locked_jaws: {
         type: 'Mandíbulas Bloqueadas',
         description: 'Muerde y se aferra, causando daño continuo.',
@@ -1318,74 +1405,210 @@ export const translationsEs = {
         type: 'Coleatazo',
         description: 'Un golpe de barrido con la cola.',
       },
-      tentacle_lash: { type: 'Latigazo de Tentáculo' },
-      tentacle_frenzy: { type: 'Frenesí de Tentáculos' },
+      tentacle_lash: { 
+        type: 'Latigazo de Tentáculo',
+        description: 'Azota a su enemigo con un poderoso tentáculo.'
+      },
+      tentacle_frenzy: { 
+        type: 'Frenesí de Tentáculos',
+        description: 'Múltiples tentáculos atacan frenéticamente al mismo tiempo.'
+      },
       tentacle_penetration_arms_length: {
         type: 'Penetración de Tentáculo (Cercano)',
-        description: 'El tentáculo atraviesa la carne.',
+        description: 'El tentáculo atraviesa la carne como una lanza.',
       },
       tentacle_penetration_near: {
         type: 'Penetración de Tentáculo (Próximo)',
+        description: 'El tentáculo se estira y empala desde una distancia moderada.',
       },
-      spray_fire: { type: 'Rociada de Fuego' },
-      spray_acid: { type: 'Rociada de Ácido' },
-      cold_strike: { type: 'Golpe Gélido' },
-      death_scream: { type: 'Grito de Muerte' },
-      backwards_kick: { type: 'Coz' },
-      dive_attack: { type: 'Ataque en Picada' },
-      whirlwind: { type: 'Torbellino' },
-      peck: { type: 'Picotazo' },
-      squash: { type: 'Aplastar' },
-      beak_throw: { type: 'Lanzamiento de Pico' },
-      adventure_toss: { type: 'Lanzamiento de Aventurero' },
+      spray_fire: { 
+        type: 'Rociada de Fuego',
+        description: 'Desata una tormenta de fuego incontrolable.'
+      },
+      spray_acid: { 
+        type: 'Rociada de Ácido',
+        description: 'Baña el área con ácido mortal.'
+      },
+      cold_strike: { 
+        type: 'Golpe Gélido',
+        description: 'Un golpe que congela la sangre de la víctima.'
+      },
+      death_scream: { 
+        type: 'Grito de Muerte',
+        description: 'Un alarido mágico que drena la vida de quienes lo oyen.'
+      },
+      backwards_kick: { 
+        type: 'Coz',
+        description: 'Lanza una patada hacia atrás con fuerza aplastante.'
+      },
+      dive_attack: { 
+        type: 'Ataque en Picada',
+        description: 'Cae desde arriba a una velocidad vertiginosa.'
+      },
+      whirlwind: { 
+        type: 'Torbellino',
+        description: 'Gira violentamente golpeando todo a su alrededor.'
+      },
+      peck: { 
+        type: 'Picotazo',
+        description: 'Un feroz picotazo con su pico afilado como una navaja.' // AÑADIDO (Imagen 2)
+      },
+      squash: { 
+        type: 'Aplastar',
+        description: 'Utiliza todo su peso para aplastar a la víctima.'
+      },
+      beak_throw: { 
+        type: 'Lanzamiento de Pico',
+        description: 'Agarra a la víctima con su pico y la lanza por el aire.'
+      },
+      adventure_toss: { 
+        type: 'Lanzamiento de Aventurero',
+        description: 'Atrapa a un aventurero y lo arroja con fuerza.'
+      },
       death_rattle: {
         type: 'Estertor de Muerte',
         description: 'Al morir, emite un sonido o efecto nocivo.',
       },
-      infected_scratch: { type: 'Arañazo Infectado' },
+      infected_scratch: { 
+        type: 'Arañazo Infectado',
+        description: 'Sus garras sucias transmiten enfermedades letales.'
+      },
       diseased_bite: {
         type: 'Mordisco Enfermo',
         description: 'Transmite una enfermedad virulenta.',
       },
-      infected_tail_swipe: { type: 'Coleatazo Infectado' },
-      infected_tentacle_swipe: { type: 'Latigazo Infectado' },
-      diseased_touch: { type: 'Toque Enfermo' },
-      punch: { type: 'Puñetazo' },
-      flying_fists: { type: 'Puños Voladores' },
-      fists_of_fury: { type: 'Puños de Furia' },
-      poison_spit: { type: 'Escupitajo Venenoso' },
-      venemous_bite: { type: 'Mordisco Venenoso' },
-      poison_scratch: { type: 'Arañazo Venenoso' },
-      poison_tail_attack: { type: 'Ataque de Cola Venenoso' },
-      poison_tentacle_attack: { type: 'Ataque de Tentáculo Venenoso' },
-      poison_horn_attack: { type: 'Ataque de Cuerno Venenoso' },
-      nightmare_visions: { type: 'Visiones de Pesadilla' },
-      mind_burst: { type: 'Estallido Mental' },
+      infected_tail_swipe: { 
+        type: 'Coleatazo Infectado',
+        description: 'Un golpe de cola que propaga putrefacción.'
+      },
+      infected_tentacle_swipe: { 
+        type: 'Latigazo Infectado',
+        description: 'Un tentáculo purulento azota a la víctima.'
+      },
+      diseased_touch: { 
+        type: 'Toque Enfermo',
+        description: 'Un simple roce propaga la podredumbre.'
+      },
+      punch: { 
+        type: 'Puñetazo',
+        description: 'Un golpe simple pero devastador.'
+      },
+      flying_fists: { 
+        type: 'Puños Voladores',
+        description: 'Salta y golpea con ambos puños a la vez.'
+      },
+      fists_of_fury: { 
+        type: 'Puños de Furia',
+        description: 'Una lluvia incesante de golpes mortales.'
+      },
+      poison_spit: { 
+        type: 'Escupitajo Venenoso',
+        description: 'Escupe un dardo de veneno cegador.'
+      },
+      venemous_bite: { 
+        type: 'Mordisco Venenoso',
+        description: 'Inyecta veneno paralizante o letal con sus colmillos.'
+      },
+      poison_scratch: { 
+        type: 'Arañazo Venenoso',
+        description: 'Las puntas de sus garras gotean un veneno mortal.'
+      },
+      poison_tail_attack: { 
+        type: 'Ataque de Cola Venenoso',
+        description: 'La cola posee un aguijón inyectado de veneno.'
+      },
+      poison_tentacle_attack: { 
+        type: 'Ataque de Tentáculo Venenoso',
+        description: 'Un latigazo de tentáculo que inyecta toxinas.'
+      },
+      poison_horn_attack: { 
+        type: 'Ataque de Cuerno Venenoso',
+        description: 'Una embestida tóxica de su cuerno principal.'
+      },
+      nightmare_visions: { 
+        type: 'Visiones de Pesadilla',
+        description: 'Proyecta terrores directamente en la mente del objetivo.'
+      },
+      mind_burst: { 
+        type: 'Estallido Mental',
+        description: 'Una explosión de energía psíquica pura.'
+      },
       taunt: {
         type: 'Bula',
         description: 'Se burla de los enemigos, afectando su moral.',
       },
-      plea: { type: 'Súplica' },
-      burrow: { type: 'Excavar' },
-      the_ground_shatters: { type: 'El Suelo se Rompe' },
+      plea: { 
+        type: 'Súplica',
+        description: 'Grita pidiendo piedad, haciendo que el enemigo dude.'
+      },
+      burrow: { 
+        type: 'Excavar',
+        description: 'Se entierra bajo el suelo para protegerse o emboscar.' // AÑADIDO (Imagen 3)
+      },
+      the_ground_shatters: { 
+        type: 'El Suelo se Rompe',
+        description: 'Golpea la tierra provocando un derrumbe.'
+      },
       rush: {
         type: 'Embestida',
         description: 'Carga contra un enemigo derribándolo.',
       },
-      fall_from_the_sky: { type: 'Caída del Cielo' },
-      rain_of_rocks: { type: 'Lluvia de Rocas' },
-      generic: { type: 'Ataque Genérico' },
-      call_the_brood: { type: 'Llamar a la Camada' },
-      piercing_shriek: { type: 'Chillido Perforante' },
-      pounce: { type: 'Abalanzarse' },
-      stab: { type: 'Puñalada' },
-      webshot: { type: 'Disparo de Telaraña' },
-      clay_smash: { type: 'Golpe de Arcilla' },
-      clay_punch: { type: 'Puñetazo de Arcilla' },
-      hasty_reaction: { type: 'Reacción Apresurada' },
-      earth_rumble: { type: 'Retumbar de la Tierra' },
-      ground_quake: { type: 'Terremoto' },
-      golem_rampage: { type: 'Alboroto de Gólem' },
+      fall_from_the_sky: { 
+        type: 'Caída del Cielo',
+        description: 'Se deja caer desde gran altura causando un impacto masivo.'
+      },
+      rain_of_rocks: { 
+        type: 'Lluvia de Rocas',
+        description: 'Arroja rocas o escombros desde la distancia.'
+      },
+      generic: { 
+        type: 'Ataque Genérico',
+        description: 'Realiza un ataque físico básico.'
+      },
+      call_the_brood: { 
+        type: 'Llamar a la Camada',
+        description: 'Invoca crías o aliados para que asistan en el combate.'
+      },
+      piercing_shriek: { 
+        type: 'Chillido Perforante',
+        description: 'Un sonido tan agudo que puede romper los tímpanos.'
+      },
+      pounce: { 
+        type: 'Abalanzarse',
+        description: 'Salta sobre su presa, inmovilizándola.'
+      },
+      stab: { 
+        type: 'Puñalada',
+        description: 'Atraviesa con precisión mortal usando una extremidad afilada.'
+      },
+      webshot: { 
+        type: 'Disparo de Telaraña',
+        description: 'Lanza una red pegajosa para atrapar a su enemigo.'
+      },
+      clay_smash: { 
+        type: 'Golpe de Arcilla',
+        description: 'Un golpe pesado con un puño moldeado de tierra.'
+      },
+      clay_punch: { 
+        type: 'Puñetazo de Arcilla',
+        description: 'Impacta repetidamente con sus brazos pesados.'
+      },
+      hasty_reaction: { 
+        type: 'Reacción Apresurada',
+        description: 'Responde instantáneamente a un ataque enemigo.'
+      },
+      earth_rumble: { 
+        type: 'Retumbar de la Tierra',
+        description: 'Genera temblores que hacen perder el equilibrio a sus enemigos.'
+      },
+      ground_quake: { 
+        type: 'Terremoto',
+        description: 'Sacude violentamente el campo de batalla.'
+      },
+      golem_rampage: { 
+        type: 'Alboroto de Gólem',
+        description: 'Carga destructiva barriendo con todo a su paso.'
+      },
 
       distraction: {
         type: 'Distracción',
