@@ -5,7 +5,7 @@ import { useAppSelector } from '../../../store/store.hooks'
 import { selectTranslateFunction } from '../../../store/translations/translation.slice'
 import { MonsterViewModel } from '../monster.model'
 import { MonsterAttributeGrid } from './MonsterAttributeGrid'
-import { MonsterAttackSection } from './MonsterAttackSection' // <-- IMPORTANTE: Añadimos el componente de ataques
+import { MonsterAttackSection } from './MonsterAttackSection'
 
 export type MonsterDisplayProps = {
   m: MonsterViewModel
@@ -36,7 +36,7 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
         <MonsterAttributeGrid attributes={m.attributes} />
       </section>
 
-      {/* ¡AÑADIDO! Si el monstruo tiene ataques en la base de datos, los dibuja */}
+      {/* Dibuja la sección de ataques debajo de los atributos si el monstruo los tiene */}
       {m.attacks && m.attacks.length > 0 && (
         <section className="mt-8">
           <MonsterAttackSection attacks={m.attacks} />
