@@ -14,9 +14,7 @@ import {
   selectCurrentLanguage,
   selectTranslateFunction,
 } from '../../../store/translations/translation.slice'
-import { createCommunityMonsterViewModel } from '../community-monster.model'
 import { BackToAllMonsters } from '../components/BackToAllMonsters'
-import { CommunityMonsterDisplay } from '../components/CommunityMonsterDisplay'
 import { MonsterAttackSection } from '../components/MonsterAttackSection'
 import { MonsterDisplay } from '../components/MonsterDisplay'
 import { RandomMonsterDisplay } from '../components/RandomMonsterDisplay'
@@ -85,7 +83,8 @@ export const MonstersPage = () => {
       communityMonsters.find((m) => m.id === monster)) ||
     undefined
 
-  const comovm = como ? createCommunityMonsterViewModel(como) : undefined
+  // CORRECCIÓN: Tratamos a los monstruos de la expansión exactamente como monstruos oficiales
+  const comovm = como ? createMonstersViewModel(como) : undefined
 
   // * Navigation
 
@@ -107,7 +106,11 @@ export const MonstersPage = () => {
     text: t(m.name),
   }))
 
-  const communityMonstersNav = communityMonsters.map((m) => ({
+  const communityMonstersViewModels = communityMonsters
+    .map(createMonstersViewModel)
+    .sort(monsterComparer(t))
+
+  const communityMonstersNav = communityMonstersViewModels.map((m) => ({
     to: `/monsters/community/${m.id}`,
     part: t('monsters:community_monster.title'),
     text: t(m.name),
@@ -148,20 +151,19 @@ export const MonstersPage = () => {
     monsters.sort(monsterComparer(t))
   }, [currentLanguage, monsters, t])
 
-  // Lógica para saber si debemos dibujar el Dragón o no
   const shouldShowDragon = () => {
-    // Si estamos en el índice principal, muestra el dragón
     if (monsterSection === undefined) return true
 
-    // Si es un monstruo del libro, ocultarlo si tiene ataques
     if (isBookMonster && paramMonster) {
-      if (paramMonster.attacks && paramMonster.attacks.length > 0) {
-        return false
-      }
+      if (paramMonster.attacks && paramMonster.attacks.length > 0) return false
       return true
     }
     
-    // Para los monstruos aleatorios y de la comunidad, ocultar el dragón (ellos siempre tienen ataques)
+    if (isCommunityMonster && comovm) {
+      if (comovm.attacks && comovm.attacks.length > 0) return false
+      return true
+    }
+
     return false
   }
 
@@ -207,8 +209,9 @@ export const MonstersPage = () => {
                 <RandomMonsterDisplay rm={randomMonster} bookPart={bookPart} />
               ) : null}
 
+              {/* CORRECCIÓN: Renderizamos la expansión con el mismo diseño visual que los del libro */}
               {isCommunityMonster && comovm ? (
-                <CommunityMonsterDisplay como={comovm} bookPart={bookPart} />
+                <MonsterDisplay m={comovm} bookPart={bookPart} />
               ) : null}
 
               {previousMonster.some ? (
@@ -241,13 +244,12 @@ export const MonstersPage = () => {
                   <MonsterAttackSection como={randomMonster} />
                 ) : null}
 
-                {isCommunityMonster && comovm ? (
-                  <MonsterAttackSection como={comovm} />
-                ) : null}
-
-                {/* ¡AÑADIDO! Renderizar ataques oficiales del libro en la página derecha */}
                 {isBookMonster && paramMonster && paramMonster.attacks && paramMonster.attacks.length > 0 ? (
                   <MonsterAttackSection como={paramMonster} />
+                ) : null}
+
+                {isCommunityMonster && comovm && comovm.attacks && comovm.attacks.length > 0 ? (
+                  <MonsterAttackSection como={comovm} />
                 ) : null}
 
               </section>
@@ -272,6 +274,10 @@ export default MonstersPage
 const MonsterTableOfContents = () => {
   const t = useAppSelector(selectTranslateFunction(['monsters', 'common']))
   const monsters = bookMonsters
+    .map(createMonstersViewModel)
+    .sort(monsterComparer(t))
+
+  const communityMonstersViewModels = communityMonsters
     .map(createMonstersViewModel)
     .sort(monsterComparer(t))
 
@@ -319,7 +325,8 @@ const MonsterTableOfContents = () => {
             {t('monsters:community_monster.description')}
           </div>
           <BookList>
-            {communityMonsters.map((m) => (
+            {/* Los monstruos de la expansión ahora se listan ordenados alfabéticamente */}
+            {communityMonstersViewModels.map((m) => (
               <li key={m.name} className="">
                 <BookLink to={`/monsters/community/${m.id}`}>
                   {t(m.name)}
