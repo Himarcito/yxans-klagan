@@ -148,6 +148,23 @@ export const MonstersPage = () => {
     monsters.sort(monsterComparer(t))
   }, [currentLanguage, monsters, t])
 
+  // Lógica para saber si debemos dibujar el Dragón o no
+  const shouldShowDragon = () => {
+    // Si estamos en el índice principal, muestra el dragón
+    if (monsterSection === undefined) return true
+
+    // Si es un monstruo del libro, ocultarlo si tiene ataques
+    if (isBookMonster && paramMonster) {
+      if (paramMonster.attacks && paramMonster.attacks.length > 0) {
+        return false
+      }
+      return true
+    }
+    
+    // Para los monstruos aleatorios y de la comunidad, ocultar el dragón (ellos siempre tienen ataques)
+    return false
+  }
+
   return (
     <div className="flex w-full flex-col gap-y-8 pb-8">
       <PageHeader>{t('monsters:title')}</PageHeader>
@@ -207,11 +224,12 @@ export const MonstersPage = () => {
             <div className="absolute bottom-0 left-0 z-50 h-4 w-full translate-y-2 bg-gradient-to-b from-transparent from-25% via-black to-transparent to-75% md:hidden"></div>
           </Parchment>
         </div>
+        
         <div className="flex-[0_0_50%] items-stretch">
           <Parchment full>
             <div className="flex h-full flex-col gap-4">
               <section>
-                {monsterSection === undefined || isBookMonster ? (
+                {shouldShowDragon() ? (
                   <div className="md:h-full">
                     <div className="mx-auto mt-16 min-h-[6rem] w-2/3 opacity-50">
                       <RetroDragonIllustration />
@@ -226,6 +244,12 @@ export const MonstersPage = () => {
                 {isCommunityMonster && comovm ? (
                   <MonsterAttackSection como={comovm} />
                 ) : null}
+
+                {/* ¡AÑADIDO! Renderizar ataques oficiales del libro en la página derecha */}
+                {isBookMonster && paramMonster && paramMonster.attacks && paramMonster.attacks.length > 0 ? (
+                  <MonsterAttackSection como={paramMonster} />
+                ) : null}
+
               </section>
 
               {nextMonster.some ? (
