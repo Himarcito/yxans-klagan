@@ -36,10 +36,10 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
         <MonsterAttributeGrid attributes={m.attributes} />
       </section>
 
-      {/* Dibuja la sección de ataques debajo de los atributos si el monstruo los tiene */}
+      {/* Dibuja la sección de ataques pasando el monstruo en la variable "como" */}
       {m.attacks && m.attacks.length > 0 && (
         <section className="mt-8">
-          <MonsterAttackSection attacks={m.attacks} />
+          <MonsterAttackSection como={m as any} />
         </section>
       )}
     </Stack.Vertical>
