@@ -6,7 +6,7 @@ export const bookMonsters: Monster[] = [
     id: 'giant',
     name: 'common:monster.giant',
     attributes: { ...defaultAttributes, strength: 24, agility: 2, wits: 2, empathy: 2 },
-    pageReference: 98,
+    pageReference: 120,
     attacks: [
       { type: 'giant_1', attack: 12, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.giant_1.description' },
       { type: 'giant_2', attack: 6, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.giant_2.description' },
@@ -20,7 +20,7 @@ export const bookMonsters: Monster[] = [
     id: 'abyss-worm',
     name: 'common:monster.abyss_worm',
     attributes: { ...defaultAttributes, strength: 18, agility: 2 },
-    pageReference: 104,
+    pageReference: 72,
     attacks: [
       { type: 'abyss_worm_1', attack: 9, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.abyss_worm_1.description' },
       { type: 'abyss_worm_2', attack: 5, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.abyss_worm_2.description' },
@@ -34,7 +34,7 @@ export const bookMonsters: Monster[] = [
     id: 'bloodling',
     name: 'common:monster.bloodling',
     attributes: { ...defaultAttributes, strength: 8, agility: 4 },
-    pageReference: 120,
+    pageReference: 74,
     attacks: [
       { type: 'bloodling_1', attack: 12, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.bloodling_1.description' },
       { type: 'bloodling_2', attack: 8, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.bloodling_2.description' },
@@ -47,8 +47,8 @@ export const bookMonsters: Monster[] = [
   {
     id: 'dragon-small',
     name: 'common:monster.dragon_small',
-    attributes: { strength: 32, agility: 4, wits: 4, empathy: 2 },
-    pageReference: 90,
+    attributes: { strength: 32, agility: 2, wits: 4, empathy: 2 },
+    pageReference: 82,
     attacks: [
       { type: 'dragon_1', attack: 10, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.dragon_1.description' },
       { type: 'dragon_2', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.dragon_2.description' },
@@ -62,7 +62,7 @@ export const bookMonsters: Monster[] = [
     id: 'dragon-large',
     name: 'common:monster.dragon_large',
     attributes: { strength: 48, agility: 4, wits: 6, empathy: 3 },
-    pageReference: 90,
+    pageReference: 82,
     attacks: [
       { type: 'dragon_1', attack: 16, damage: { slash: 3 }, range: 'common:range.near', description: 'monsters:attack.dragon_1.description' },
       { type: 'dragon_2', attack: 14, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.dragon_2.description' },
@@ -76,7 +76,7 @@ export const bookMonsters: Monster[] = [
     id: 'drakewyrm',
     name: 'common:monster.drakewyrm',
     attributes: { strength: 25, agility: 3, wits: 5, empathy: 2 },
-    pageReference: 88,
+    pageReference: 84,
     attacks: [
       { type: 'drakewyrm_1', attack: 10, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.drakewyrm_1.description' },
       { type: 'drakewyrm_2', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.drakewyrm_2.description' },
@@ -90,7 +90,7 @@ export const bookMonsters: Monster[] = [
     id: 'death-knight',
     name: 'common:monster.death_knight',
     attributes: { strength: 12, agility: 3, wits: 3, empathy: 2 },
-    pageReference: 78,
+    pageReference: 86,
     attacks: [
       { type: 'death_knight_1', attack: 12, damage: { weapon: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.death_knight_1.description' },
       { type: 'death_knight_2', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.death_knight_2.description' },
@@ -104,7 +104,7 @@ export const bookMonsters: Monster[] = [
     id: 'ent',
     name: 'common:monster.ent',
     attributes: { strength: 16, agility: 3, wits: 5, empathy: 3 },
-    pageReference: 92,
+    pageReference: 88,
     attacks: [
       { type: 'ent_1', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.ent_1.description' },
       { type: 'ent_2', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.ent_2.description' },
@@ -118,7 +118,7 @@ export const bookMonsters: Monster[] = [
     id: 'wyvern',
     name: 'common:monster.wyvern',
     attributes: { ...defaultAttributes, strength: 14, agility: 5 },
-    pageReference: 102,
+    pageReference: 90,
     attacks: [
       { type: 'wyvern_1', attack: 7, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.wyvern_1.description' },
       { type: 'wyvern_2', attack: 10, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.wyvern_2.description' },
@@ -132,7 +132,7 @@ export const bookMonsters: Monster[] = [
     id: 'ghost',
     name: 'common:monster.ghost',
     attributes: { strength: 8, agility: 3, wits: 3, empathy: 2 },
-    pageReference: 96,
+    pageReference: 92,
     attacks: [
       { type: 'ghost_1', attack: 8, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.ghost_1.description' },
       { type: 'ghost_2', attack: 9, damage: { fear: true }, range: 'common:range.arms_length', description: 'monsters:attack.ghost_2.description' },
@@ -146,7 +146,7 @@ export const bookMonsters: Monster[] = [
     id: 'gryphon',
     name: 'common:monster.gryphon',
     attributes: { ...defaultAttributes, strength: 12, agility: 5 },
-    pageReference: 100,
+    pageReference: 94,
     attacks: [
       { type: 'gryphon_1', attack: 9, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.gryphon_1.description' },
       { type: 'gryphon_2', attack: 6, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.gryphon_2.description' },
@@ -160,7 +160,7 @@ export const bookMonsters: Monster[] = [
     id: 'gray-bear',
     name: 'common:monster.gray_bear',
     attributes: { ...defaultAttributes, strength: 14, agility: 2 },
-    pageReference: 118,
+    pageReference: 96,
     attacks: [
       { type: 'gray_bear_1', attack: 9, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.gray_bear_1.description' },
       { type: 'gray_bear_2', attack: 10, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.gray_bear_2.description' },
@@ -174,11 +174,182 @@ export const bookMonsters: Monster[] = [
     id: 'harpies',
     name: 'common:monster.harpies',
     attributes: { strength: 8, agility: 3, wits: 2, empathy: 1 },
-    pageReference: 76,
+    pageReference: 98,
     attacks: [
       { type: 'harpies_1', attack: 6, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.harpies_1.description' },
       { type: 'harpies_2', attack: 8, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.harpies_2.description' },
       { type: 'harpies_3', attack: 6, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.harpies_3.description' },
       { type: 'harpies_4', attack: 8, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.harpies_4.description' },
       { type: 'harpies_5', attack: 6, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.harpies_5.description' },
-      { type: 'harpies_6', attack: 6, damage: { non_typical: 1 }, range: 'common:range
+      { type: 'harpies_6', attack: 6, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.harpies_6.description' }
+    ]
+  },
+  {
+    id: 'hydra',
+    name: 'common:monster.hydra',
+    attributes: { ...defaultAttributes, strength: 4, agility: 4 },
+    pageReference: 100,
+    attacks: [
+      { type: 'hydra_1', attack: 6, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.hydra_1.description' },
+      { type: 'hydra_2', attack: 5, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.hydra_2.description' },
+      { type: 'hydra_3', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.hydra_3.description' },
+      { type: 'hydra_4', attack: 6, damage: { stab: 2 }, range: 'common:range.near', description: 'monsters:attack.hydra_4.description' },
+      { type: 'hydra_5', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.hydra_5.description' },
+      { type: 'hydra_6', attack: 7, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.hydra_6.description' }
+    ]
+  },
+  {
+    id: 'insectoid',
+    name: 'common:monster.insectoid',
+    attributes: { ...defaultAttributes, strength: 5, agility: 3 },
+    pageReference: 102,
+    attacks: [
+      { type: 'slash', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.slash.description' },
+      { type: 'bite', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bite.description' },
+      { type: 'poisonScratch', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.poison_scratch.description' },
+      { type: 'webshot', attack: 9, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.webshot.description' },
+      { type: 'poisonSpit', attack: 9, damage: { poison: { type: 'lethal', potency: 5 } }, range: 'common:range.near', description: 'monsters:attack.poison_spit.description' },
+      { type: 'rush', attack: 9, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.rush.description' }
+    ]
+  },
+  {
+    id: 'giant-squid',
+    name: 'common:monster.giant_squid',
+    attributes: { ...defaultAttributes, strength: 14, agility: 4 },
+    pageReference: 106,
+    attacks: [
+      { type: 'giant_squid_1', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_1.description' },
+      { type: 'giant_squid_2', attack: 6, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_2.description' },
+      { type: 'giant_squid_3', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_3.description' },
+      { type: 'giant_squid_4', attack: 9, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_4.description' },
+      { type: 'giant_squid_5', attack: 8, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_5.description' },
+      { type: 'giant_squid_6', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.giant_squid_6.description' }
+    ]
+  },
+  {
+    id: 'manticore',
+    name: 'common:monster.manticore',
+    attributes: { ...defaultAttributes, strength: 15, agility: 4 },
+    pageReference: 108,
+    attacks: [
+      { type: 'manticore_1', attack: 9, damage: { stab: 2 }, range: 'common:range.short', description: 'monsters:attack.manticore_1.description' },
+      { type: 'manticore_2', attack: 9, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.manticore_2.description' },
+      { type: 'manticore_3', attack: 10, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.manticore_3.description' },
+      { type: 'manticore_4', attack: 8, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.manticore_4.description' },
+      { type: 'manticore_5', attack: 10, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.manticore_5.description' },
+      { type: 'manticore_6', attack: 7, damage: { stab: 2 }, range: 'common:range.short', description: 'monsters:attack.manticore_6.description' }
+    ]
+  },
+  {
+    id: 'minotaur',
+    name: 'common:monster.minotaur',
+    attributes: { strength: 10, agility: 4, wits: 2, empathy: 2 },
+    pageReference: 110,
+    attacks: [
+      { type: 'minotaur_1', attack: 8, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.minotaur_1.description' },
+      { type: 'minotaur_2', attack: 9, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.minotaur_2.description' },
+      { type: 'minotaur_3', attack: 10, damage: { stab: 2 }, range: 'common:range.near', description: 'monsters:attack.minotaur_3.description' },
+      { type: 'minotaur_4', attack: 10, damage: { weapon: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.minotaur_4.description' },
+      { type: 'minotaur_5', attack: 8, damage: { weapon: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.minotaur_5.description' },
+      { type: 'minotaur_6', attack: 12, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.minotaur_6.description' }
+    ]
+  },
+  {
+    id: 'nightwarg',
+    name: 'common:monster.night_warg',
+    attributes: { ...defaultAttributes, strength: 8, agility: 4 },
+    pageReference: 112,
+    attacks: [
+      { type: 'nightwarg_1', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.nightwarg_1.description' },
+      { type: 'nightwarg_2', attack: 7, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.nightwarg_2.description' },
+      { type: 'nightwarg_3', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.nightwarg_3.description' },
+      { type: 'nightwarg_4', attack: 8, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.nightwarg_4.description' },
+      { type: 'nightwarg_5', attack: 7, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.nightwarg_5.description' },
+      { type: 'nightwarg_6', attack: 10, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.nightwarg_6.description' }
+    ]
+  },
+  {
+    id: 'restless-dead',
+    name: 'common:monster.restless_dead',
+    attributes: { ...defaultAttributes, strength: 3, agility: 2 },
+    pageReference: 114,
+    attacks: [
+      { type: 'slash', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.slash.description' },
+      { type: 'bash', attack: 7, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bash.description' },
+      { type: 'bite', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bite.description' },
+      { type: 'rush', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.rush.description' },
+      { type: 'clawFlurry', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.claw_flurry.description' },
+      { type: 'deadlyGaze', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.deadly_gaze.description' }
+    ]
+  },
+  {
+    id: 'skeleton',
+    name: 'common:monster.skeleton',
+    attributes: { ...defaultAttributes, strength: 3, agility: 2 },
+    pageReference: 114,
+    attacks: [
+      { type: 'slash', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.slash.description' },
+      { type: 'bash', attack: 7, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bash.description' },
+      { type: 'stab', attack: 7, damage: { stab: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.stab.description' },
+      { type: 'rush', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.rush.description' },
+      { type: 'sweep', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.sweep.description' },
+      { type: 'distraction', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.distraction.description' }
+    ]
+  },
+  {
+    id: 'ghoul',
+    name: 'common:monster.ghoul',
+    attributes: { ...defaultAttributes, strength: 4, agility: 2 },
+    pageReference: 114,
+    attacks: [
+      { type: 'clawFlurry', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.claw_flurry.description' },
+      { type: 'infectedScratch', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.infected_scratch.description' },
+      { type: 'diseasedBite', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.diseased_bite.description' },
+      { type: 'pounce', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.pounce.description' },
+      { type: 'lockedJaws', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.locked_jaws.description' },
+      { type: 'distraction', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.distraction.description' }
+    ]
+  },
+  {
+    id: 'sea-serpent',
+    name: 'common:monster.sea_serpent',
+    attributes: { ...defaultAttributes, strength: 18, agility: 3 },
+    pageReference: 116,
+    attacks: [
+      { type: 'sea_serpent_1', attack: 10, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_1.description' },
+      { type: 'sea_serpent_2', attack: 8, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_2.description' },
+      { type: 'sea_serpent_3', attack: 10, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_3.description' },
+      { type: 'sea_serpent_4', attack: 8, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_4.description' },
+      { type: 'sea_serpent_5', attack: 9, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_5.description' },
+      { type: 'sea_serpent_6', attack: 11, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.sea_serpent_6.description' }
+    ]
+  },
+  {
+    id: 'strangling-vine',
+    name: 'common:monster.strangling_vine',
+    attributes: { ...defaultAttributes, strength: 8, agility: 3 },
+    pageReference: 118,
+    attacks: [
+      { type: 'vine_1', attack: 0, damage: { poison: { type: 'paralyzing', potency: 8 } }, range: 'common:range.near', description: 'monsters:attack.vine_1.description' },
+      { type: 'vine_2', attack: 6, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.vine_2.description' },
+      { type: 'vine_3', attack: 8, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.vine_3.description' },
+      { type: 'vine_4', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.vine_4.description' },
+      { type: 'vine_5', attack: 10, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.vine_5.description' },
+      { type: 'vine_6', attack: 0, damage: { poison: { type: 'paralyzing', potency: 8 } }, range: 'common:range.near', description: 'monsters:attack.vine_6.description' }
+    ]
+  },
+  {
+    id: 'troll',
+    name: 'common:monster.troll',
+    attributes: { ...defaultAttributes, strength: 8, agility: 3 },
+    pageReference: 120,
+    attacks: [
+      { type: 'troll_1', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.troll_1.description' },
+      { type: 'troll_2', attack: 8, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.troll_2.description' },
+      { type: 'troll_3', attack: 12, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.troll_3.description' },
+      { type: 'troll_4', attack: 8, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.troll_4.description' },
+      { type: 'troll_5', attack: 10, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.troll_5.description' },
+      { type: 'troll_6', attack: 7, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.troll_6.description' }
+    ]
+  }
+]
