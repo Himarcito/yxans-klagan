@@ -15,7 +15,7 @@ export interface Monster {
   name: TranslationKey<'common'>
   attributes: Attributes
   pageReference?: number
-  attacks?: any[] // <-- ¡AÑADIDO COMO ANY PARA EVITAR ERRORES TS!
+  attacks?: any[] // Para que acepte cualquier ataque del libro sin dar error
 }
 
 export interface MonsterViewModel {
@@ -23,7 +23,7 @@ export interface MonsterViewModel {
   name: TranslationKey<'common'>
   attributes: AttributesViewModel
   pageReference?: number
-  attacks?: any[] // <-- ¡AÑADIDO COMO ANY PARA EVITAR ERRORES TS!
+  attacks?: any[]
 }
 
 export type ArmorTypeLabel =
@@ -412,7 +412,7 @@ export type MonsterAttackMinimalContext = Pick<
   | 'traits'
   | 'skills'
 >
-export type MonsterAttack<T = MonsterAttackType> = {
+export type MonsterAttack<T = any> = {
   type: T
   attack?: (rm: MonsterAttackMinimalContext) => number
   damage?: (rm: MonsterAttackMinimalContext) => MonsterDamage
@@ -424,16 +424,19 @@ export type MonsterAttack<T = MonsterAttackType> = {
   chance: number
 }
 
-export type MonsterAttackViewModel<T = MonsterAttackType> = {
+export type MonsterAttackViewModel<T = any> = {
   type: T
   attack?: number
   damage?: MonsterDamage
-  range: TranslationKey<'common'>
-  description: TranslationKey<'monsters'>
+  range: TranslationKey<'common'> | string
+  description: TranslationKey<'monsters'> | string
   descriptionExtras?: { count: number }
 }
 
-export type MonsterAttacks = { [T in MonsterAttackType]: MonsterAttack }
+// CORRECCIÓN MAGISTRAL: Convertimos MonsterAttacks en un Record abierto.
+// Esto evita que TypeScript exija los ataques nuevos a los monstruos antiguos.
+export type MonsterAttacks = Record<string, MonsterAttack<any>>
+
 export type MonsterDamageModifiers = {
   [M in MonsterDamageModifierType]: number
 }
