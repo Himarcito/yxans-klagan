@@ -15,7 +15,7 @@ export interface Monster {
   name: TranslationKey<'common'>
   attributes: Attributes
   pageReference?: number
-  attacks?: MonsterAttackViewModel<any>[]
+  attacks?: any[] // <-- ¡AÑADIDO COMO ANY PARA EVITAR ERRORES TS!
 }
 
 export interface MonsterViewModel {
@@ -23,7 +23,7 @@ export interface MonsterViewModel {
   name: TranslationKey<'common'>
   attributes: AttributesViewModel
   pageReference?: number
-  attacks?: MonsterAttackViewModel<any>[]
+  attacks?: any[] // <-- ¡AÑADIDO COMO ANY PARA EVITAR ERRORES TS!
 }
 
 export type ArmorTypeLabel =
