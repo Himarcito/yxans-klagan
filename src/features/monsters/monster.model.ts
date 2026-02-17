@@ -8,7 +8,6 @@ import { MonsterAttackRange } from '../../models/attack-range'
 import { Attributes, AttributesViewModel } from '../../models/attributes.model'
 import { MonsterSkillsValues } from '../../models/skills.model'
 import { TranslationKey } from '../../store/translations/translation.model'
-import { CommunityMonsterAttackType } from './community-monster.model'
 
 export interface Monster {
   id: string
@@ -220,93 +219,104 @@ export type MonsterMotivation =
 
 export type MonsterAttackType = any
 
-// AÑADIMOS TODOS LOS ATAQUES GENÉRICOS DE LA COMUNIDAD Y DEL SISTEMA BASE
-export const monsterAttackTypeTranslationDict: Record<string, string> = {
-  slash: 'monsters:attack.slash.type',
-  eyeGourge: 'monsters:attack.eye_gourge.type',
-  clawFlurry: 'monsters:attack.claw_flurry.type',
-  bite: 'monsters:attack.bite.type',
-  lockedJaws: 'monsters:attack.locked_jaws.type',
-  throatBite: 'monsters:attack.throat_bite.type',
-  horn: 'monsters:attack.horn.type',
-  headbutt: 'monsters:attack.headbutt.type',
-  roar: 'monsters:attack.roar.type',
-  tailsSlash: 'monsters:attack.tails_slash.type',
-  tentacleLash: 'monsters:attack.tentacle_lash.type',
-  tentacleFrenzy: 'monsters:attack.tentacle_frenzy.type',
-  tentaclePenetrationArmsLength: 'monsters:attack.tentacle_penetration_arms_length.type',
-  tentaclePenetrationNear: 'monsters:attack.tentacle_penetration_near.type',
-  bash: 'monsters:attack.bash.type',
-  sweep: 'monsters:attack.sweep.type',
-  breathFire: 'monsters:attack.breath_fire.type',
-  sprayFire: 'monsters:attack.spray_fire.type',
-  spitAcid: 'monsters:attack.spit_acid.type',
-  sprayAcid: 'monsters:attack.spray_acid.type',
-  deadlyGaze: 'monsters:attack.deadly_gaze.type',
-  coldStrike: 'monsters:attack.cold_strike.type',
-  deathScream: 'monsters:attack.death_scream.type',
-  kick: 'monsters:attack.kick.type',
-  backwardsKick: 'monsters:attack.backwards_kick.type',
-  devour: 'monsters:attack.devour.type',
-  diveAttack: 'monsters:attack.dive_attack.type',
-  whirlwind: 'monsters:attack.whirlwind.type',
-  peck: 'monsters:attack.peck.type',
-  squash: 'monsters:attack.squash.type',
-  beakThrow: 'monsters:attack.beak_throw.type',
-  adventureToss: 'monsters:attack.adventure_toss.type',
-  deathRattle: 'monsters:attack.death_rattle.type',
-  infectedScratch: 'monsters:attack.infected_scratch.type',
-  diseasedBite: 'monsters:attack.diseased_bite.type',
-  infectedTailSwipe: 'monsters:attack.infected_tail_swipe.type',
-  infectedTentacleSwipe: 'monsters:attack.infected_tentacle_swipe.type',
-  diseasedTouch: 'monsters:attack.diseased_touch.type',
-  distraction: 'monsters:attack.distraction.type',
-  punch: 'monsters:attack.punch.type',
-  flyingFists: 'monsters:attack.flying_fists.type',
-  fistsOfFury: 'monsters:attack.fists_of_fury.type',
-  poisonSpit: 'monsters:attack.poison_spit.type',
-  venemousBite: 'monsters:attack.venemous_bite.type',
-  poisonScratch: 'monsters:attack.poison_scratch.type',
-  poisonTailAttack: 'monsters:attack.poison_tail_attack.type',
-  poisonTentacleAttack: 'monsters:attack.poison_tentacle_attack.type',
-  poisonHornAttack: 'monsters:attack.poison_horn_attack.type',
-  nightmareVisions: 'monsters:attack.nightmare_visions.type',
-  mindBurst: 'monsters:attack.mind_burst.type',
-  taunt: 'monsters:attack.taunt.type',
-  plea: 'monsters:attack.plea.type',
-  burrow: 'monsters:attack.burrow.type',
-  theGroundShatters: 'monsters:attack.the_ground_shatters.type',
-  rush: 'monsters:attack.rush.type',
-  wrapAttack: 'monsters:attack.wrap_attack.type',
-  fallFromTheSky: 'monsters:attack.fall_from_the_sky.type',
-  rainOfRocks: 'monsters:attack.rain_of_rocks.type',
-  generic: 'monsters:attack.generic.type',
-  call_the_brood: 'monsters:attack.call_the_brood.type',
-  piercing_shriek: 'monsters:attack.piercing_shriek.type',
-  pounce: 'monsters:attack.pounce.type',
-  stab: 'monsters:attack.stab.type',
-  webshot: 'monsters:attack.webshot.type',
-  claySmash: 'monsters:attack.clay_smash.type',
-  clayPunch: 'monsters:attack.clay_punch.type',
-  hastyReaction: 'monsters:attack.hasty_reaction.type',
-  earthRumble: 'monsters:attack.earth_rumble.type',
-  groundQuake: 'monsters:attack.ground_quake.type',
-  golemRampage: 'monsters:attack.golem_rampage.type',
+// SOLUCIÓN DEFINITIVA A LA PANTALLA EN BLANCO: 
+// Construimos el diccionario de ataques mediante una función limpia y segura
+const generateMonsterAttacks = () => {
+  const dict: Record<string, string> = {
+    slash: 'monsters:attack.slash.type',
+    eyeGourge: 'monsters:attack.eye_gourge.type',
+    clawFlurry: 'monsters:attack.claw_flurry.type',
+    bite: 'monsters:attack.bite.type',
+    lockedJaws: 'monsters:attack.locked_jaws.type',
+    throatBite: 'monsters:attack.throat_bite.type',
+    horn: 'monsters:attack.horn.type',
+    headbutt: 'monsters:attack.headbutt.type',
+    roar: 'monsters:attack.roar.type',
+    tailsSlash: 'monsters:attack.tails_slash.type',
+    tentacleLash: 'monsters:attack.tentacle_lash.type',
+    tentacleFrenzy: 'monsters:attack.tentacle_frenzy.type',
+    tentaclePenetrationArmsLength: 'monsters:attack.tentacle_penetration_arms_length.type',
+    tentaclePenetrationNear: 'monsters:attack.tentacle_penetration_near.type',
+    bash: 'monsters:attack.bash.type',
+    sweep: 'monsters:attack.sweep.type',
+    breathFire: 'monsters:attack.breath_fire.type',
+    sprayFire: 'monsters:attack.spray_fire.type',
+    spitAcid: 'monsters:attack.spit_acid.type',
+    sprayAcid: 'monsters:attack.spray_acid.type',
+    deadlyGaze: 'monsters:attack.deadly_gaze.type',
+    coldStrike: 'monsters:attack.cold_strike.type',
+    deathScream: 'monsters:attack.death_scream.type',
+    kick: 'monsters:attack.kick.type',
+    backwardsKick: 'monsters:attack.backwards_kick.type',
+    devour: 'monsters:attack.devour.type',
+    diveAttack: 'monsters:attack.dive_attack.type',
+    whirlwind: 'monsters:attack.whirlwind.type',
+    peck: 'monsters:attack.peck.type',
+    squash: 'monsters:attack.squash.type',
+    beakThrow: 'monsters:attack.beak_throw.type',
+    adventureToss: 'monsters:attack.adventure_toss.type',
+    deathRattle: 'monsters:attack.death_rattle.type',
+    infectedScratch: 'monsters:attack.infected_scratch.type',
+    diseasedBite: 'monsters:attack.diseased_bite.type',
+    infectedTailSwipe: 'monsters:attack.infected_tail_swipe.type',
+    infectedTentacleSwipe: 'monsters:attack.infected_tentacle_swipe.type',
+    diseasedTouch: 'monsters:attack.diseased_touch.type',
+    distraction: 'monsters:attack.distraction.type',
+    punch: 'monsters:attack.punch.type',
+    flyingFists: 'monsters:attack.flying_fists.type',
+    fistsOfFury: 'monsters:attack.fists_of_fury.type',
+    poisonSpit: 'monsters:attack.poison_spit.type',
+    venemousBite: 'monsters:attack.venemous_bite.type',
+    poisonScratch: 'monsters:attack.poison_scratch.type',
+    poisonTailAttack: 'monsters:attack.poison_tail_attack.type',
+    poisonTentacleAttack: 'monsters:attack.poison_tentacle_attack.type',
+    poisonHornAttack: 'monsters:attack.poison_horn_attack.type',
+    nightmareVisions: 'monsters:attack.nightmare_visions.type',
+    mindBurst: 'monsters:attack.mind_burst.type',
+    taunt: 'monsters:attack.taunt.type',
+    plea: 'monsters:attack.plea.type',
+    burrow: 'monsters:attack.burrow.type',
+    theGroundShatters: 'monsters:attack.the_ground_shatters.type',
+    rush: 'monsters:attack.rush.type',
+    wrapAttack: 'monsters:attack.wrap_attack.type',
+    fallFromTheSky: 'monsters:attack.fall_from_the_sky.type',
+    rainOfRocks: 'monsters:attack.rain_of_rocks.type',
+    generic: 'monsters:attack.generic.type',
+    call_the_brood: 'monsters:attack.call_the_brood.type',
+    piercing_shriek: 'monsters:attack.piercing_shriek.type',
+    pounce: 'monsters:attack.pounce.type',
+    stab: 'monsters:attack.stab.type',
+    webshot: 'monsters:attack.webshot.type',
+    claySmash: 'monsters:attack.clay_smash.type',
+    clayPunch: 'monsters:attack.clay_punch.type',
+    hastyReaction: 'monsters:attack.hasty_reaction.type',
+    earthRumble: 'monsters:attack.earth_rumble.type',
+    groundQuake: 'monsters:attack.ground_quake.type',
+    golemRampage: 'monsters:attack.golem_rampage.type',
+  }
+
+  // Registramos todos los monstruos de forma segura para evitar crashes
+  const monsters = [
+    'giant', 'abyss_worm', 'bloodling', 'dragon', 'drakewyrm', 'death_knight',
+    'ent', 'wyvern', 'ghost', 'gryphon', 'gray_bear', 'harpies', 'hydra',
+    'giant_squid', 'manticore', 'minotaur', 'nightwarg', 'sea_serpent', 'troll', 'vine',
+    'amphibian', 'amoeba', 'basilisk', 'bog_man', 'dread_raptor', 'gatekeeper',
+    'giant_specter', 'giant_spider_hatchling', 'giant_spider_male', 'giant_spider_female',
+    'greater_golem', 'imp', 'iron_dragon', 'mara', 'mire_drake', 'mummy',
+    'nature_spirit', 'possessor', 'rat_king', 'rock_troll', 'shapeshifter',
+    'skolopendra', 'swarming_death'
+  ]
+
+  for (const m of monsters) {
+    for (let i = 1; i <= 6; i++) {
+      dict[`${m}_${i}`] = `monsters:attack.${m}_${i}.type`
+    }
+  }
+
+  return dict
 }
 
-// ¡TRUCO MÁGICO! Autocompletar el diccionario para todos los ataques de los monstruos del libro 
-// (Esto arregla definitivamente el error de la pantalla en blanco al hacer clic en los monstruos)
-const customAttacks = [
-  'giant', 'abyss_worm', 'bloodling', 'dragon', 'drakewyrm', 'death_knight',
-  'ent', 'wyvern', 'ghost', 'gryphon', 'gray_bear', 'harpies', 'hydra',
-  'giant_squid', 'manticore', 'minotaur', 'nightwarg', 'sea_serpent', 'troll', 'vine'
-];
-
-customAttacks.forEach(monster => {
-  for (let i = 1; i <= 6; i++) {
-    monsterAttackTypeTranslationDict[`${monster}_${i}`] = `monsters:attack.${monster}_${i}.type`;
-  }
-});
+export const monsterAttackTypeTranslationDict = generateMonsterAttacks()
 
 export type MonsterDamageType =
   | 'slash'
