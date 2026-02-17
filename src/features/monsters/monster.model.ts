@@ -15,7 +15,7 @@ export interface Monster {
   name: TranslationKey<'common'>
   attributes: Attributes
   pageReference?: number
-  attacks?: any[] // Para que acepte cualquier ataque del libro sin dar error
+  attacks?: any[] 
 }
 
 export interface MonsterViewModel {
@@ -218,75 +218,10 @@ export type MonsterMotivation =
   | 'looking_for_host'
   | 'guarding_treasure'
 
-export type MonsterAttackType =
-  | 'slash'
-  | 'eyeGourge'
-  | 'clawFlurry'
-  | 'bite'
-  | 'lockedJaws'
-  | 'throatBite'
-  | 'horn'
-  | 'headbutt'
-  | 'roar'
-  | 'tailsSlash'
-  | 'tentacleLash'
-  | 'tentacleFrenzy'
-  | 'tentaclePenetrationArmsLength'
-  | 'tentaclePenetrationNear'
-  | 'bash'
-  | 'sweep'
-  | 'breathFire'
-  | 'sprayFire'
-  | 'spitAcid'
-  | 'sprayAcid'
-  | 'deadlyGaze'
-  | 'coldStrike'
-  | 'deathScream'
-  | 'kick'
-  | 'backwardsKick'
-  | 'devour'
-  | 'diveAttack'
-  | 'whirlwind'
-  | 'peck'
-  | 'squash'
-  | 'beakThrow'
-  | 'adventureToss'
-  | 'deathRattle'
-  | 'infectedScratch'
-  | 'diseasedBite'
-  | 'infectedTailSwipe'
-  | 'infectedTentacleSwipe'
-  | 'diseasedTouch'
-  | 'distraction'
-  | 'punch'
-  | 'flyingFists'
-  | 'fistsOfFury'
-  | 'poisonSpit'
-  | 'venemousBite'
-  | 'poisonScratch'
-  | 'poisonTailAttack'
-  | 'poisonTentacleAttack'
-  | 'poisonHornAttack'
-  | 'nightmareVisions'
-  | 'mindBurst'
-  | 'taunt'
-  | 'plea'
-  | 'burrow'
-  | 'theGroundShatters'
-  | 'rush'
-  | 'wrapAttack'
-  | 'fallFromTheSky'
-  | 'rainOfRocks'
-  | 'generic'
-  | 'pounce'
-  | 'piercing_shriek'
-  | 'webshot'
-  | 'stab'
+export type MonsterAttackType = any
 
-export const monsterAttackTypeTranslationDict: Record<
-  CommunityMonsterAttackType,
-  TranslationKey<'monsters'>
-> = {
+// AÑADIMOS TODOS LOS ATAQUES GENÉRICOS DE LA COMUNIDAD Y DEL SISTEMA BASE
+export const monsterAttackTypeTranslationDict: Record<string, string> = {
   slash: 'monsters:attack.slash.type',
   eyeGourge: 'monsters:attack.eye_gourge.type',
   clawFlurry: 'monsters:attack.claw_flurry.type',
@@ -299,8 +234,7 @@ export const monsterAttackTypeTranslationDict: Record<
   tailsSlash: 'monsters:attack.tails_slash.type',
   tentacleLash: 'monsters:attack.tentacle_lash.type',
   tentacleFrenzy: 'monsters:attack.tentacle_frenzy.type',
-  tentaclePenetrationArmsLength:
-    'monsters:attack.tentacle_penetration_arms_length.type',
+  tentaclePenetrationArmsLength: 'monsters:attack.tentacle_penetration_arms_length.type',
   tentaclePenetrationNear: 'monsters:attack.tentacle_penetration_near.type',
   bash: 'monsters:attack.bash.type',
   sweep: 'monsters:attack.sweep.type',
@@ -359,6 +293,21 @@ export const monsterAttackTypeTranslationDict: Record<
   groundQuake: 'monsters:attack.ground_quake.type',
   golemRampage: 'monsters:attack.golem_rampage.type',
 }
+
+// ¡TRUCO MÁGICO! Autocompletar el diccionario para todos los ataques de los monstruos del libro 
+// (Esto arregla definitivamente el error de la pantalla en blanco al hacer clic en los monstruos)
+const customAttacks = [
+  'giant', 'abyss_worm', 'bloodling', 'dragon', 'drakewyrm', 'death_knight',
+  'ent', 'wyvern', 'ghost', 'gryphon', 'gray_bear', 'harpies', 'hydra',
+  'giant_squid', 'manticore', 'minotaur', 'nightwarg', 'sea_serpent', 'troll', 'vine'
+];
+
+customAttacks.forEach(monster => {
+  for (let i = 1; i <= 6; i++) {
+    monsterAttackTypeTranslationDict[`${monster}_${i}`] = `monsters:attack.${monster}_${i}.type`;
+  }
+});
+
 export type MonsterDamageType =
   | 'slash'
   | 'blunt'
@@ -433,8 +382,6 @@ export type MonsterAttackViewModel<T = any> = {
   descriptionExtras?: { count: number }
 }
 
-// CORRECCIÓN MAGISTRAL: Convertimos MonsterAttacks en un Record abierto.
-// Esto evita que TypeScript exija los ataques nuevos a los monstruos antiguos.
 export type MonsterAttacks = Record<string, MonsterAttack<any>>
 
 export type MonsterDamageModifiers = {
