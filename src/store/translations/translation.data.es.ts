@@ -1066,7 +1066,7 @@ export const translationsEs = {
     the_monster_has: 'El monstruo tiene',
     lives_in: 'Vive en', 
     
-    // AQUÍ ESTÁ EL ARREGLO DE "VIVE EN" PARA QUE NUNCA SALGA EN BLANCO
+    // CASAS DISPONIBLES (arreglado para que no salga en blanco)
     homes: {
       burrow: 'una madriguera',
       ruin: 'unas ruinas',
@@ -1075,34 +1075,35 @@ export const translationsEs = {
       cave: 'una cueva',
       ravine: 'un barranco',
       den: 'una guarida',
-      none: 'cualquier lugar',
+      none: 'cualquier lugar', // ESTO ARREGLA EL VIVE EN EN BLANCO
     },
 
     armor_label: 'Armadura',
     skill: 'Habilidad',
 
+    // TODO EN MINÚSCULAS PARA LA GRAMÁTICA DE "El monstruo tiene..."
     head: {
-      insectoid_eyes: 'Ojos insectoides',
-      big_mane: 'Gran melena',
+      insectoid_eyes: 'ojos insectoides',
+      big_mane: 'gran melena',
       tentacles_with_count: 'tentáculos',
-      big_ears: 'Orejas grandes',
-      elk_horns: 'Cuernos de alce',
-      clk_horns: 'Cuernos de alce',
-      beak: 'Pico',
-      horn_with_count: 'Cuernos',
-      side_eyes_with_count: 'Ojos laterales',
-      many_eyes: 'Muchos ojos',
-      long_tongue: 'Lengua larga',
-      fin: 'Aleta',
-      roll_twice: 'Tira dos veces',
+      big_ears: 'orejas grandes',
+      elk_horns: 'cuernos de alce',
+      clk_horns: 'cuernos de alce',
+      beak: 'pico',
+      horn_with_count: 'cuernos',
+      side_eyes_with_count: 'ojos laterales',
+      many_eyes: 'muchos ojos',
+      long_tongue: 'lengua larga',
+      fin: 'aleta',
+      roll_twice: 'tira dos veces',
       missing: 'ninguna cabeza',
     },
     limbs: {
-      none: 'ninguna extremidad', // EVITA QUE PAREZCA UN CERO
+      none: 'ninguna extremidad', // No es un cero "0"
     },
     tail: {
-      tail: 'Cola',
-      spiked_tail: 'Cola con pinchos',
+      tail: 'cola',
+      spiked_tail: 'cola con pinchos',
     },
     skills: {
       melee: 'Pelea',
@@ -1220,6 +1221,10 @@ export const translationsEs = {
       vulnerable_to_bright_light: {
         name: 'Vulnerable a la Luz Brillante',
         description: 'Sufre daño si se expone a luz solar o mágica intensa.',
+      },
+      vulnerable_to_light: {  // AÑADIDO (Imagen 12)
+        name: 'Vulnerable a la Luz',
+        description: 'El monstruo sufre daño si se expone a la luz.'
       },
       fear_of_loud_noises: {
         name: 'Miedo a los Ruidos Fuertes',
