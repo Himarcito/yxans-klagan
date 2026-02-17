@@ -15,7 +15,7 @@ export interface Monster {
   name: TranslationKey<'common'>
   attributes: Attributes
   pageReference?: number
-  attacks?: MonsterAttackViewModel[] // <-- ¡AÑADIDO!
+  attacks?: MonsterAttackViewModel<any>[]
 }
 
 export interface MonsterViewModel {
@@ -23,7 +23,7 @@ export interface MonsterViewModel {
   name: TranslationKey<'common'>
   attributes: AttributesViewModel
   pageReference?: number
-  attacks?: MonsterAttackViewModel[] // <-- ¡AÑADIDO!
+  attacks?: MonsterAttackViewModel<any>[]
 }
 
 export type ArmorTypeLabel =
@@ -278,6 +278,11 @@ export type MonsterAttackType =
   | 'fallFromTheSky'
   | 'rainOfRocks'
   | 'generic'
+  | 'pounce'
+  | 'piercing_shriek'
+  | 'webshot'
+  | 'stab'
+
 export const monsterAttackTypeTranslationDict: Record<
   CommunityMonsterAttackType,
   TranslationKey<'monsters'>
