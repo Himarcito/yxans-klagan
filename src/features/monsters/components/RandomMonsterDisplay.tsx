@@ -31,6 +31,11 @@ export const RandomMonsterDisplay = ({
   const describeMonsterHeads = (
     heads: MonsterDescriptionItemViewModel[],
   ): string => {
+    // CORRECCIÓN: Si no tiene cabeza, mostramos una frase con sentido
+    if (heads.length === 1 && heads[0].key === 'monsters:head.missing') {
+      return t('monsters:the_monster_has_no_head', 'El monstruo no tiene cabeza.')
+    }
+
     const translatedHeads = heads.map((h) =>
       t(
         h.key,
@@ -39,10 +44,12 @@ export const RandomMonsterDisplay = ({
     )
 
     if (translatedHeads.length === 1) {
-      return `${t('monsters:the_monster_has')} ${translatedHeads.join('')}.`
+      return `${t('monsters:the_monster_has')} ${translatedHeads[0]}.`
     }
 
-    const [lastHead, ...restOfHeads] = translatedHeads
+    // CORRECCIÓN: El código original cogía el primer elemento en lugar del último. Arreglado.
+    const lastHead = translatedHeads[translatedHeads.length - 1]
+    const restOfHeads = translatedHeads.slice(0, -1)
 
     return `${t('monsters:the_monster_has')} ${restOfHeads.join(
       ', ',
@@ -52,6 +59,11 @@ export const RandomMonsterDisplay = ({
   const describeMonsterLimbs = (
     limbs: MonsterDescriptionItemViewModel[],
   ): string => {
+    // CORRECCIÓN: Si no tiene extremidades ni cola, mostramos una frase con sentido
+    if (limbs.length === 1 && limbs[0].key === 'monsters:limbs.none') {
+      return t('monsters:the_monster_has_no_limbs', 'El monstruo no tiene extremidades.')
+    }
+
     const translatedLimbs = limbs.map((l) =>
       t(
         l.key,
@@ -60,22 +72,24 @@ export const RandomMonsterDisplay = ({
     )
 
     if (translatedLimbs.length === 1) {
-      return `${t('monsters:the_monster_has')} ${translatedLimbs.join('')}.`
+      return `${t('monsters:the_monster_has')} ${translatedLimbs[0]}.`
     }
 
-    const [lastLimb, ...restOfLimbs] = [...translatedLimbs].reverse()
+    // CORRECCIÓN: El código original invertía mal el array. Arreglado.
+    const lastLimb = translatedLimbs[translatedLimbs.length - 1]
+    const restOfLimbs = translatedLimbs.slice(0, -1)
 
     return `${t('monsters:the_monster_has')} ${restOfLimbs.join(
       ', ',
     )} & ${lastLimb}.`
   }
 
-  const describeHome = (monsterHome: TranslationKey<'monsters'>): string =>
-    `${t('monsters:lives_in', {
-      context: {
-        home: t(monsterHome),
-      },
-    })}.`
+  const describeHome = (monsterHome: TranslationKey<'monsters'>): string => {
+    // CORRECCIÓN: Hemos eliminado la lógica de "context" que rompía el texto y lo dejaba en blanco
+    const homeStr = t(monsterHome)
+    if (!homeStr) return ''
+    return `${t('monsters:lives_in')} ${homeStr}.`
+  }
 
   return (
     <div>
@@ -135,7 +149,7 @@ export const RandomMonsterDisplay = ({
           <div className="md:w-full">
             <Typography variant="h3">{t(`monsters:skill`)}</Typography>
             {rm.skills.length === 0 ? (
-              <div>{t('monsters:skills.none')}</div>
+              <div>{t('monsters:skills.none', 'Ninguna')}</div>
             ) : (
               <SkillList
                 skills={
