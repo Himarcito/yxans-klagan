@@ -20,12 +20,13 @@ import { MonsterDisplay } from '../components/MonsterDisplay'
 import { RandomMonsterDisplay } from '../components/RandomMonsterDisplay'
 import { RetroDragonIllustration } from '../components/RetroDragonIllustration'
 import { communityMonsters } from '../data/community-monster.data'
+import { bitterReachMonsters } from '../data/bitter-reach-monster.data' // NUEVO IMPORT
 import { bookMonsters } from '../data/monster.data'
 import { createMonstersViewModel, monsterComparer } from '../monster.functions'
 import { createRandomMonsterViewModel } from '../random-monster.functions'
 import { slidingNWise } from '../../../functions/array.functions'
 
-const validSections = ['random', 'book', 'community'] as const
+const validSections = ['random', 'book', 'community', 'bitter-reach'] as const
 type MonsterRouteSection = (typeof validSections)[number]
 
 const isMonsterRouteSection = (
@@ -82,9 +83,17 @@ export const MonstersPage = () => {
       !!monster &&
       communityMonsters.find((m) => m.id === monster)) ||
     undefined
-
-  // CORRECCIÓN: Tratamos a los monstruos de la expansión exactamente como monstruos oficiales
   const comovm = como ? createMonstersViewModel(como) : undefined
+
+  // NUEVA SECCIÓN CUENCA GLACIAL
+  const isBitterReachMonster = monsterSection === 'bitter-reach'
+  const brm =
+    (isBitterReachMonster &&
+      !!monster &&
+      bitterReachMonsters.find((m) => m.id === monster)) ||
+    undefined
+  const brmvm = brm ? createMonstersViewModel(brm) : undefined
+
 
   // * Navigation
 
@@ -116,12 +125,23 @@ export const MonstersPage = () => {
     text: t(m.name),
   }))
 
+  const bitterReachMonstersViewModels = bitterReachMonsters
+    .map(createMonstersViewModel)
+    .sort(monsterComparer(t))
+
+  const bitterReachMonstersNav = bitterReachMonstersViewModels.map((m) => ({
+    to: `/monsters/bitter-reach/${m.id}`,
+    part: t('common:bitter_reach_monster.title'),
+    text: t(m.name),
+  }))
+
   const navigationLibrary: NavigationLibrary = slidingNWise(3, [
     undefined,
     tableOfContentsNav,
     randomMonsterNav,
     ...monstersNav,
     ...communityMonstersNav,
+    ...bitterReachMonstersNav, // AÑADIDA A LA NAVEGACIÓN
     undefined,
   ])
     .map(
@@ -161,6 +181,11 @@ export const MonstersPage = () => {
     
     if (isCommunityMonster && comovm) {
       if (comovm.attacks && comovm.attacks.length > 0) return false
+      return true
+    }
+
+    if (isBitterReachMonster && brmvm) {
+      if (brmvm.attacks && brmvm.attacks.length > 0) return false
       return true
     }
 
@@ -209,9 +234,12 @@ export const MonstersPage = () => {
                 <RandomMonsterDisplay rm={randomMonster} bookPart={bookPart} />
               ) : null}
 
-              {/* CORRECCIÓN: Renderizamos la expansión con el mismo diseño visual que los del libro */}
               {isCommunityMonster && comovm ? (
                 <MonsterDisplay m={comovm} bookPart={bookPart} />
+              ) : null}
+
+              {isBitterReachMonster && brmvm ? (
+                <MonsterDisplay m={brmvm} bookPart={bookPart} />
               ) : null}
 
               {previousMonster.some ? (
@@ -252,6 +280,10 @@ export const MonstersPage = () => {
                   <MonsterAttackSection como={comovm} />
                 ) : null}
 
+                {isBitterReachMonster && brmvm && brmvm.attacks && brmvm.attacks.length > 0 ? (
+                  <MonsterAttackSection como={brmvm} />
+                ) : null}
+
               </section>
 
               {nextMonster.some ? (
@@ -281,6 +313,10 @@ const MonsterTableOfContents = () => {
     .map(createMonstersViewModel)
     .sort(monsterComparer(t))
 
+  const bitterReachMonstersViewModels = bitterReachMonsters
+    .map(createMonstersViewModel)
+    .sort(monsterComparer(t))
+
   return (
     <div className="flex flex-col">
       <BookPageTitle>{t('monsters:book_of_monsters')}</BookPageTitle>
@@ -299,6 +335,7 @@ const MonsterTableOfContents = () => {
             </li>
           </BookList>
         </section>
+        
         <section>
           <Typography variant="h3" parchment>
             {t(`monsters:bookmonsters.title`)}
@@ -317,15 +354,15 @@ const MonsterTableOfContents = () => {
             ))}
           </BookList>
         </section>
+
         <section>
           <Typography variant="h3" parchment>
-            {t(`monsters:community_monster.title`)}
+            {t(`common:community_monster.title`)}
           </Typography>
           <div className="mb-4">
-            {t('monsters:community_monster.description')}
+            {t('common:community_monster.description')}
           </div>
           <BookList>
-            {/* Los monstruos de la expansión ahora se listan ordenados alfabéticamente */}
             {communityMonstersViewModels.map((m) => (
               <li key={m.name} className="">
                 <BookLink to={`/monsters/community/${m.id}`}>
@@ -335,6 +372,25 @@ const MonsterTableOfContents = () => {
             ))}
           </BookList>
         </section>
+
+        <section>
+          <Typography variant="h3" parchment>
+            {t(`common:bitter_reach_monster.title`)}
+          </Typography>
+          <div className="mb-4">
+            {t('common:bitter_reach_monster.description')}
+          </div>
+          <BookList>
+            {bitterReachMonstersViewModels.map((m) => (
+              <li key={m.name} className="">
+                <BookLink to={`/monsters/bitter-reach/${m.id}`}>
+                  {t(m.name)}
+                </BookLink>
+              </li>
+            ))}
+          </BookList>
+        </section>
+
       </div>
     </div>
   )
