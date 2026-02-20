@@ -323,5 +323,103 @@ export const communityMonsters: Monster[] = [
       { type: 'swarming_death_5', attack: 0, damage: { poison: { type: 'paralyzing', potency: 7 } }, range: 'common:range.short', description: 'monsters:attack.swarming_death_5.description' },
       { type: 'swarming_death_6', attack: 12, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.swarming_death_6.description' }
     ]
+  },
+  {
+    id: 'tupilaq',
+    name: 'common:monster.tupilaq',
+    attributes: { ...defaultAttributes, strength: 24, agility: 2, wits: 1, empathy: 1 },
+    pageReference: 95,
+    attacks: [
+      { type: 'tupilaq_1', attack: 7, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.tupilaq_1.description' },
+      { type: 'tupilaq_2', attack: 8, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.tupilaq_2.description' },
+      { type: 'tupilaq_3', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.tupilaq_3.description' },
+      { type: 'tupilaq_4', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.tupilaq_4.description' },
+      { type: 'tupilaq_5', attack: 10, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.tupilaq_5.description' },
+      { type: 'tupilaq_6', attack: 7, damage: { poison: { type: 'lethal', potency: 9 } }, range: 'common:range.arms_length', description: 'monsters:attack.tupilaq_6.description' }
+    ]
+  },
+  {
+    id: 'twisted_ent',
+    name: 'common:monster.twisted_ent',
+    attributes: { ...defaultAttributes, strength: 36, agility: 3, wits: 1, empathy: 1 },
+    pageReference: 99,
+    attacks: [
+      { type: 'twisted_ent_1', attack: 8, damage: { fear: true }, range: 'common:range.short', description: 'monsters:attack.twisted_ent_1.description' },
+      { type: 'twisted_ent_2', attack: 9, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.twisted_ent_2.description' },
+      { type: 'twisted_ent_3', attack: 10, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.twisted_ent_3.description' },
+      { type: 'twisted_ent_4', attack: 11, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.twisted_ent_4.description' },
+      { type: 'twisted_ent_5', attack: 9, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.twisted_ent_5.description' },
+      { type: 'twisted_ent_6', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.twisted_ent_6.description' }
+    ]
+  },
+  {
+    id: 'undead_dragon',
+    name: 'common:monster.undead_dragon',
+    attributes: { ...defaultAttributes, strength: 48, agility: 4, wits: 6, empathy: 3 },
+    pageReference: 103,
+    attacks: [
+      { type: 'undead_dragon_1', attack: 8, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.undead_dragon_1.description' },
+      { type: 'undead_dragon_2', attack: 9, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.undead_dragon_2.description' },
+      { type: 'undead_dragon_3', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.undead_dragon_3.description' },
+      { type: 'undead_dragon_4', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.undead_dragon_4.description' },
+      { type: 'undead_dragon_5', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.undead_dragon_5.description' },
+      { type: 'undead_dragon_6', attack: 10, damage: { stab: 2 }, range: 'common:range.near', description: 'monsters:attack.undead_dragon_6.description' }
+    ]
+  },
+  {
+    id: 'vampyr',
+    name: 'common:monster.vampyr',
+    attributes: { ...defaultAttributes, strength: 18, agility: 4, wits: 4, empathy: 4 },
+    pageReference: 107,
+    attacks: [
+      { type: 'vampyr_1', attack: 10, damage: { weapon: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.vampyr_1.description' },
+      { type: 'vampyr_2', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.vampyr_2.description' },
+      { type: 'vampyr_3', attack: 8, damage: { weapon: 1 }, range: 'common:range.near', description: 'monsters:attack.vampyr_3.description' },
+      { type: 'vampyr_4', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.vampyr_4.description' },
+      { type: 'vampyr_5', attack: 0, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.vampyr_5.description' },
+      { type: 'vampyr_6', attack: 10, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.vampyr_6.description' }
+    ]
+  },
+  {
+    id: 'water_troll',
+    name: 'common:monster.water_troll',
+    attributes: { ...defaultAttributes, strength: 22, agility: 2, wits: 2, empathy: 1 },
+    pageReference: 111,
+    attacks: [
+      { type: 'water_troll_1', attack: 10, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.water_troll_1.description' },
+      { type: 'water_troll_2', attack: 9, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.water_troll_2.description' },
+      { type: 'water_troll_3', attack: 12, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.water_troll_3.description' },
+      { type: 'water_troll_4', attack: 8, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.water_troll_4.description' },
+      { type: 'water_troll_5', attack: 0, damage: { poison: { type: 'lethal', potency: 7 } }, range: 'common:range.near', description: 'monsters:attack.water_troll_5.description' },
+      { type: 'water_troll_6', attack: 7, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.water_troll_6.description' }
+    ]
+  },
+  {
+    id: 'will_o_the_wisp',
+    name: 'common:monster.will_o_the_wisp',
+    attributes: { ...defaultAttributes, strength: 8, agility: 3, wits: 8, empathy: 1 },
+    pageReference: 115,
+    attacks: [
+      { type: 'will_o_the_wisp_1', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.will_o_the_wisp_1.description' },
+      { type: 'will_o_the_wisp_2', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.will_o_the_wisp_2.description' },
+      { type: 'will_o_the_wisp_3', attack: 8, damage: { blunt: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.will_o_the_wisp_3.description' },
+      { type: 'will_o_the_wisp_4', attack: 9, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.will_o_the_wisp_4.description' },
+      { type: 'will_o_the_wisp_5', attack: 9, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.will_o_the_wisp_5.description' },
+      { type: 'will_o_the_wisp_6', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.will_o_the_wisp_6.description' }
+    ]
+  },
+  {
+    id: 'wolfshadow',
+    name: 'common:monster.wolfshadow',
+    attributes: { ...defaultAttributes, strength: 16, agility: 6, wits: 2, empathy: 1 },
+    pageReference: 119,
+    attacks: [
+      { type: 'wolfshadow_1', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.wolfshadow_1.description' },
+      { type: 'wolfshadow_2', attack: 9, damage: { weapon: 1 }, range: 'common:range.near', description: 'monsters:attack.wolfshadow_2.description' },
+      { type: 'wolfshadow_3', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.wolfshadow_3.description' },
+      { type: 'wolfshadow_4', attack: 7, damage: { slash: 2 }, range: 'common:range.arms_length', description: 'monsters:attack.wolfshadow_4.description' },
+      { type: 'wolfshadow_5', attack: 7, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.wolfshadow_5.description' },
+      { type: 'wolfshadow_6', attack: 10, damage: { weapon: 1 }, range: 'common:range.near', description: 'monsters:attack.wolfshadow_6.description' }
+    ]
   }
 ]
