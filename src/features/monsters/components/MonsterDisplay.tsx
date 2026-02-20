@@ -59,7 +59,7 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
             <div>
               <strong>{t('monsters:trait.traits' as any)}:</strong>
               <ul className="list-disc pl-5 mt-1">
-                {m.traits.map((trait: string, index: number) => (
+                {(m.traits as string[]).map((trait, index) => (
                   <li key={index}>{trait}</li>
                 ))}
               </ul>
@@ -70,7 +70,7 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
             <div>
               <strong>{t('monsters:weakness.weakness' as any)}:</strong>
               <ul className="list-disc pl-5 mt-1">
-                {m.weaknesses.map((weakness: string, index: number) => (
+                {(m.weaknesses as string[]).map((weakness, index) => (
                   <li key={index}>{weakness}</li>
                 ))}
               </ul>
