@@ -206,9 +206,9 @@ export const bookMonsters: Monster[] = [
     attacks: [
       { type: 'slash', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.slash.description' },
       { type: 'bite', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bite.description' },
-      { type: 'poisonScratch', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.poison_scratch.description' },
+      { type: 'poisonScratch', attack: 9, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.poisonScratch.description' },
       { type: 'webshot', attack: 9, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.webshot.description' },
-      { type: 'poisonSpit', attack: 9, damage: { poison: { type: 'lethal', potency: 5 } }, range: 'common:range.near', description: 'monsters:attack.poison_spit.description' },
+      { type: 'poisonSpit', attack: 9, damage: { poison: { type: 'lethal', potency: 5 } }, range: 'common:range.near', description: 'monsters:attack.poisonSpit.description' },
       { type: 'rush', attack: 9, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.rush.description' }
     ]
   },
@@ -278,8 +278,8 @@ export const bookMonsters: Monster[] = [
       { type: 'bash', attack: 7, damage: { blunt: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bash.description' },
       { type: 'bite', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.bite.description' },
       { type: 'rush', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.rush.description' },
-      { type: 'clawFlurry', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.claw_flurry.description' },
-      { type: 'deadlyGaze', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.deadly_gaze.description' }
+      { type: 'clawFlurry', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.clawFlurry.description' },
+      { type: 'deadlyGaze', attack: 7, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.deadlyGaze.description' }
     ]
   },
   {
@@ -302,11 +302,11 @@ export const bookMonsters: Monster[] = [
     attributes: { ...defaultAttributes, strength: 4, agility: 2 },
     pageReference: 114,
     attacks: [
-      { type: 'clawFlurry', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.claw_flurry.description' },
-      { type: 'infectedScratch', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.infected_scratch.description' },
-      { type: 'diseasedBite', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.diseased_bite.description' },
+      { type: 'clawFlurry', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.clawFlurry.description' },
+      { type: 'infectedScratch', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.infectedScratch.description' },
+      { type: 'diseasedBite', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.diseasedBite.description' },
       { type: 'pounce', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.pounce.description' },
-      { type: 'lockedJaws', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.locked_jaws.description' },
+      { type: 'lockedJaws', attack: 8, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.lockedJaws.description' },
       { type: 'distraction', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.distraction.description' }
     ]
   },
