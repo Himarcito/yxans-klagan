@@ -15,6 +15,11 @@ export interface Monster {
   attributes: Attributes
   pageReference?: number
   attacks?: any[] 
+  movement?: string | number
+  armor?: string | number
+  skills?: string[]
+  traits?: string[]
+  weaknesses?: string[]
 }
 
 export interface MonsterViewModel {
@@ -23,6 +28,11 @@ export interface MonsterViewModel {
   attributes: AttributesViewModel
   pageReference?: number
   attacks?: any[]
+  movement?: string | number
+  armor?: string | number
+  skills?: string[]
+  traits?: string[]
+  weaknesses?: string[]
 }
 
 export type ArmorTypeLabel =
