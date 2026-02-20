@@ -22,9 +22,9 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
         <Stack.Horizontal wrap>
           <div>
             {m.pageReference && (
-              <div>
+              <div className="mb-2 text-sm italic opacity-80">
                 <>
-                  {t('common:page')}: {m.pageReference} {t('common:gmbook')}
+                  {t('common:page')}: {m.pageReference}
                 </>
               </div>
             )}
@@ -33,6 +33,51 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
 
         <Typography variant="h3">{t(`common:attribute` as any)}</Typography>
         <MonsterAttributeGrid attributes={m.attributes} />
+
+        {/* --- NUEVA SECCIÓN DE DATOS AMPLIADOS --- */}
+        <div className="mt-4 flex flex-col gap-2 text-md">
+          
+          {m.movement !== undefined && (
+            <div>
+              <strong>{t('monsters:movement.movement' as any)}:</strong> {m.movement}
+            </div>
+          )}
+
+          {m.armor !== undefined && (
+            <div>
+              <strong>{t('monsters:armor_label' as any)}:</strong> {m.armor}
+            </div>
+          )}
+
+          {m.skills && m.skills.length > 0 && (
+            <div>
+              <strong>{t('common:skills.skills' as any)}:</strong> {m.skills.join(', ')}
+            </div>
+          )}
+
+          {m.traits && m.traits.length > 0 && (
+            <div>
+              <strong>{t('monsters:trait.traits' as any)}:</strong>
+              <ul className="list-disc pl-5 mt-1">
+                {m.traits.map((trait, index) => (
+                  <li key={index}>{trait}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {m.weaknesses && m.weaknesses.length > 0 && (
+            <div>
+              <strong>{t('monsters:weakness.weakness' as any)}:</strong>
+              <ul className="list-disc pl-5 mt-1">
+                {m.weaknesses.map((weakness, index) => (
+                  <li key={index}>{weakness}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          
+        </div>
       </section>
     </Stack.Vertical>
   )
