@@ -301,8 +301,8 @@ const generateMonsterAttacks = () => {
     'giant_specter', 'giant_spider_hatchling', 'giant_spider_male', 'giant_spider_female',
     'greater_golem', 'imp', 'iron_dragon', 'mara', 'mire_drake', 'mummy',
     'nature_spirit', 'possessor', 'rat_king', 'rock_troll', 'shapeshifter',
-    'skolopendra', 'swarming_death', 
-    'tupilaq', 'twisted_ent', 'undead_dragon', 'vampyr', 'water_troll', 'will_o_the_wisp', 'wolfshadow'
+    'skolopendra', 'swarming_death', 'tupilaq', 'twisted_ent', 'undead_dragon', 'vampyr', 'water_troll', 'will_o_the_wisp', 'wolfshadow',
+    'pike_beast', 'stone_raven', 'frost_dragon', 'ice_giant', 'stone_guardian', 'giant_wolf', 'nanuik', 'wendigo'
   ]
 
   for (const m of monsters) {
