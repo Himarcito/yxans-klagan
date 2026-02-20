@@ -3,6 +3,48 @@ import { Monster } from '../monster.model'
 
 export const communityMonsters: Monster[] = [
   {
+    id: 'amphibian',
+    name: 'common:monster.amphibian',
+    attributes: { ...defaultAttributes, strength: 5, agility: 2, wits: 3, empathy: 3 },
+    pageReference: 7,
+    attacks: [
+      { type: 'amphibian_1', attack: 7, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.amphibian_1.description' },
+      { type: 'amphibian_2', attack: 6, damage: { slash: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.amphibian_2.description' },
+      { type: 'amphibian_3', attack: 7, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.amphibian_3.description' },
+      { type: 'amphibian_4', attack: 6, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.amphibian_4.description' },
+      { type: 'amphibian_5', attack: 6, damage: { non_typical: 1 }, range: 'common:range.arms_length', description: 'monsters:attack.amphibian_5.description' },
+      { type: 'amphibian_6', attack: 7, damage: { poison: { type: 'lethal', potency: 3 } }, range: 'common:range.near', description: 'monsters:attack.amphibian_6.description' }
+    ]
+  },
+  {
+    id: 'amoeba',
+    name: 'common:monster.amoeba',
+    attributes: { ...defaultAttributes, strength: 18, agility: 3, wits: 1, empathy: 1 },
+    pageReference: 11,
+    attacks: [
+      { type: 'amoeba_1', attack: 8, damage: { blunt: 2 }, range: 'common:range.near', description: 'monsters:attack.amoeba_1.description' },
+      { type: 'amoeba_2', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.amoeba_2.description' },
+      { type: 'amoeba_3', attack: 7, damage: { poison: { type: 'lethal', potency: 7 } }, range: 'common:range.near', description: 'monsters:attack.amoeba_3.description' },
+      { type: 'amoeba_4', attack: 8, damage: { fear: true }, range: 'common:range.near', description: 'monsters:attack.amoeba_4.description' },
+      { type: 'amoeba_5', attack: 9, damage: { stab: 1 }, range: 'common:range.near', description: 'monsters:attack.amoeba_5.description' },
+      { type: 'amoeba_6', attack: 8, damage: { blunt: 1 }, range: 'common:range.near', description: 'monsters:attack.amoeba_6.description' }
+    ]
+  },
+  {
+    id: 'basilisk',
+    name: 'common:monster.basilisk',
+    attributes: { ...defaultAttributes, strength: 24, agility: 6, wits: 2, empathy: 1 },
+    pageReference: 15,
+    attacks: [
+      { type: 'basilisk_1', attack: 7, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.basilisk_1.description' },
+      { type: 'basilisk_2', attack: 8, damage: { slash: 2 }, range: 'common:range.near', description: 'monsters:attack.basilisk_2.description' },
+      { type: 'basilisk_3', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.basilisk_3.description' },
+      { type: 'basilisk_4', attack: 7, damage: { slash: 1 }, range: 'common:range.near', description: 'monsters:attack.basilisk_4.description' },
+      { type: 'basilisk_5', attack: 0, damage: { poison: { type: 'lethal', potency: 7 } }, range: 'common:range.near', description: 'monsters:attack.basilisk_5.description' },
+      { type: 'basilisk_6', attack: 0, damage: { non_typical: 1 }, range: 'common:range.near', description: 'monsters:attack.basilisk_6.description' }
+    ]
+  },
+  {
     id: 'bog_man',
     name: 'common:monster.bog_man',
     attributes: { ...defaultAttributes, strength: 12, agility: 3, wits: 1, empathy: 1 },
