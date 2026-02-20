@@ -34,13 +34,13 @@ export const translationsEs = {
     page: 'Página', gmbook: 'Manual de la Directora',
     game_source: { game_source: 'Fuente', ravland: 'Las Tierras Prohibidas', bitter_reach: 'La Cuenca Glacial' },
     empty: '',
-    community_monster: { title: 'Bestiario Extendido', description: 'Ampliación de Monstruos del Book of Beasts' },
+    community_monster: { title: 'Bestiario Extendido', description: 'Ampliación oficial con los monstruos del Book of Beasts.' },
     kin: { human: { human: 'Humano', humans: 'Humanos', alderlander: 'Aliseo', ailander: 'Ayeo', aslene: 'Asleno', frailer: 'Endeble', silent_guard: 'Guardia Silencioso', maiden_druid: 'Druida Doncella' }, elf: { elf: 'Elfo', elves: 'Elfos', still_elf: 'Elfo Quieto', unruly_elf: 'Elfo Revoltoso', golden_bough: 'Rama Dorada', melder: 'Fusionador', red_runner: 'Corredor Rojo' }, dwarf: { dwarf: 'Enano', dwarves: 'Enanos', belderranian: 'Belderranio', meromannian: 'Meromannio', canide: 'Canide', crombe: 'Crombe' }, ogre: { ogre: 'Ogro', ogres: 'Ogros' }, orc: { orc: 'Orco', orcs: 'Orcos', urhur: 'Urhur', roka: 'Roka', isir: 'Isir', viraga: 'Viraga', drifter: 'Vagabundo' }, wolfkin: { wolfkin: 'Lupino', wolfkins: 'Lupinos' }, saurian: { saurian: 'Saurio', saurians: 'Saurios' }, whiner: { whiner: 'Llorón', whiners: 'Llorones' }, halfling_and_goblin: { halfling: 'Mediano', goblin: 'Goblin', halfling_and_goblins: 'Medianos y Goblins' }, believers: { believers: 'Creyentes', raven_sister: 'Hermana del Cuervo', black_wing: 'Ala Negra', rust_brother: 'Hermano de la Herrumbre', iron_guard: 'Guardia de Hierro', heme_sister: 'Hermana de Hema' } },
     gender: { man: 'Hombre', men: 'Hombres', woman: 'Mujer', women: 'Mujeres' },
     aterrain: { plains: 'en una llanura', forest: 'en un bosque', dark_forest: 'en un bosque oscuro', hills: 'en las colinas', mountain: 'en una montaña', lake: 'en un lago', swamp: 'en un pantano', mire: 'en una ciénaga', ruin_city: 'en ruinas' },
     terrain: { all: 'Todos', plains: 'Llanuras', forest: 'Bosque', dark_forest: 'Bosque Oscuro', hills: 'Colinas', mountain: 'Montañas', lake: 'Lago', swamp: 'Pantano', mire: 'Ciénaga', ruin_city: 'Ruinas' },
     monster: { giant: 'Gigante', abyss_worm: 'Gusano abisal', bloodling: 'Sanguino', dragon_small: 'Dragón, pequeño', dragon_large: 'Dragón, grande', drakewyrm: 'Dracosierpe', death_knight: 'Caballero de la Muerte', ent: 'Ent', wyvern: 'Guiverno', ghost: 'Fantasma', gryphon: 'Grifo', gray_bear: 'Osogrís', harpies: 'Arpías', hydra: 'Hidra', insectoid: 'Insectoide', giant_squid: 'Calamar Gigante', manticore: 'Mantícora', minotaur: 'Minotauro', night_warg: 'Noctargo', restless_dead: 'Muertos Inquietos', skeleton: 'Esqueleto', ghoul: 'Ghoul', sea_serpent: 'Serpiente Marina', strangling_vine: 'Estranguladera', troll: 'Trol', dragon: 'Dragón', demon: 'Demonio',
-    amphibian: 'Anfibio', amoeba: 'Ameba', basilisk: 'Basilisco', bog_man: 'Hombre del Pantano', dread_raptor: 'Rapaz Temible', gatekeeper: 'Guardián del Portal', giant_specter: 'Espectro Gigante', giant_spider_hatchling: 'Araña Gigante (Cría)', giant_spider_male: 'Araña Gigante (Macho)', giant_spider_female: 'Araña Gigante (Hembra)', greater_golem: 'Gólem Mayor', imp: 'Diablillo', iron_dragon: 'Dragón de Hierro', mara: 'Mara', mire_drake: 'Draco del Cieno', mummy: 'Momia', nature_spirit: 'Espíritu de la Naturaleza', possessor: 'Poseedor', rat_king: 'Rey Rata', rock_troll: 'Trol de Roca', shapeshifter: 'Cambiaformas', skolopendra: 'Escolopendra', swarming_death: 'Muerte Enjambre' },
+    amphibian: 'Anfibio', amoeba: 'Ameba', basilisk: 'Basilisco', bog_man: 'Hombre del Pantano', dread_raptor: 'Rapaz Temible', gatekeeper: 'Guardián del Portal', giant_specter: 'Espectro Gigante', giant_spider_hatchling: 'Araña Gigante (Cría)', giant_spider_male: 'Araña Gigante (Macho)', giant_spider_female: 'Araña Gigante (Hembra)', greater_golem: 'Gólem Mayor', imp: 'Diablillo', iron_dragon: 'Dragón de Hierro', mara: 'Mara', mire_drake: 'Draco del Cieno', mummy: 'Momia', nature_spirit: 'Espíritu de la Naturaleza', possessor: 'Poseedor', rat_king: 'Rey Rata', rock_troll: 'Trol de Roca', shapeshifter: 'Cambiaformas', skolopendra: 'Escolopendra', swarming_death: 'Muerte Enjambre', tupilaq: 'Tupilaq', twisted_ent: 'Ent Retorcido', undead_dragon: 'Dragón No Muerto', vampyr: 'Vampiro', water_troll: 'Trol de Agua', will_o_the_wisp: 'Fuego Fatuo', wolfshadow: 'Sombra de Lobo' },
     direction: { north: 'norte', north_east: 'noreste', east: 'este', south_east: 'sureste', south: 'sur', south_west: 'suroeste', west: 'oeste', north_west: 'noroeste' },
     range: { range: 'Alcance', arms_length: 'Brazo', near: 'Cercano', short: 'Corto', long: 'Largo' },
     attribute: 'Características', attributes: { strength: 'Fortaleza', agility: 'Destreza', wits: 'Intelecto', empathy: 'Empatía' },
@@ -96,7 +96,7 @@ export const translationsEs = {
     trait: { traits: 'Rasgos', camouflage: { name: 'Camuflaje', description: 'La criatura es difícil de ver.' }, fast: { name: 'Rápido', description: 'La criatura es muy rápida.' }, dark_vision: { name: 'Visión Nocturna', description: 'El monstruo puede ver en la oscuridad.' }, sensitive_hearing: { name: 'Oído Agudo', description: 'El monstruo percibe todo sonido.' }, sensitive_smell: { name: 'Olfato Sensible', description: 'Puede oler presas de lejos.' }, intelligent: { name: 'Inteligente', description: 'Posee inteligencia.' }, resistance_magic: { name: 'Resistencia Mágica', description: 'Difícil afectarle con conjuros.' }, hurt: { name: 'Herido', description: 'Comienza herida.' }, acid_glands: { name: 'Glándulas Ácido', description: 'Escupe ácido.' }, possessed_by_demon: { name: 'Poseído Demonio', description: 'No huye, lucha a muerte.' }, can_speak: { name: 'Puede Hablar', description: 'Inteligente y habla.' }, hard_to_kill: { name: 'Difícil Matar', description: 'Requiere crítico.' }, fire_glands: { name: 'Glándulas Fuego', description: 'Aliento de Fuego.' }, poisonous: { name: 'Venenoso', description: 'Segrega veneno.' }, undead: { name: 'No-muerto', description: 'No viva. Ignora veneno.' }, telepathy: { name: 'Telepatía', description: 'Telepatía con criaturas.' }, armored: { name: 'Acorazado', description: 'Piel dura.' }, weapon: { name: 'Arma Natural', description: 'Ataca con arma natural.' }, colorful: { name: 'Colorido', description: 'Colores brillantes.' }, regeneration: { name: 'Regeneración', description: 'Recupera salud.' } },
     weakness: { weakness: 'Debilidad', protects_offspring: 'Protege crías', protects_offspring_description: 'Lucha por cría.', none: { name: 'Ninguna', description: 'Sin debilidad.' }, vulnerable_to_fire: { name: 'Vulnerable Fuego', description: 'Fuego causa daño doble.' }, obsessed_with_all_that_glitters: { name: 'Obsesionado brillos', description: 'Monedas lo distraen.' }, vulnerable_to_cold: { name: 'Vulnerable Frío', description: 'Frío causa daño doble.' }, vulnerable_to_bright_light: { name: 'Vulnerable Luz', description: 'Luz causa daño.' }, vulnerable_to_light: { name: 'Vulnerable Luz', description: 'Sufre daño por luz.' }, fear_of_loud_noises: { name: 'Miedo Ruidos', description: 'Huye por ruidos.' }, fear_of_fire: { name: 'Miedo Fuego', description: 'Teme fuego.' }, afraid_of_loud_noises: { name: 'Miedo Ruidos', description: 'Entra en pánico por ruidos.' }, sensitive_eyes: { name: 'Ojos Sensibles', description: 'Sufre por luz.' } },
     
-    giant: 'Gigante', abyss_worm: 'Gusano abisal', bloodling: 'Sanguino', dragon_small: 'Dragón', dragon_large: 'Dragón grande', drakewyrm: 'Dracosierpe', death_knight: 'Caballero Muerte', ent: 'Ent', wyvern: 'Guiverno', ghost: 'Fantasma', gryphon: 'Grifo', gray_bear: 'Osogrís', harpies: 'Arpías', hydra: 'Hidra', insectoid: 'Insectoide', giant_squid: 'Calamar Gigante', manticore: 'Mantícora', minotaur: 'Minotauro', night_warg: 'Noctargo', restless_dead: 'Muertos Inquietos', skeleton: 'Esqueleto', ghoul: 'Ghoul', sea_serpent: 'Serpiente Marina', strangling_vine: 'Estranguladera', troll: 'Trol', dragon: 'Dragón', demon: 'Demonio', tupilaq: 'Tupilaq', twisted_ent: 'Ent Retorcido', undead_dragon: 'Dragón No Muerto', vampyr: 'Vampiro', water_troll: 'Trol de Agua', will_o_the_wisp: 'Fuego Fatuo', wolfshadow: 'Sombra de Lobo',   
+    giant: 'Gigante', abyss_worm: 'Gusano abisal', bloodling: 'Sanguino', dragon_small: 'Dragón', dragon_large: 'Dragón grande', drakewyrm: 'Dracosierpe', death_knight: 'Caballero Muerte', ent: 'Ent', wyvern: 'Guiverno', ghost: 'Fantasma', gryphon: 'Grifo', gray_bear: 'Osogrís', harpies: 'Arpías', hydra: 'Hidra', insectoid: 'Insectoide', giant_squid: 'Calamar Gigante', manticore: 'Mantícora', minotaur: 'Minotauro', night_warg: 'Noctargo', restless_dead: 'Muertos Inquietos', skeleton: 'Esqueleto', ghoul: 'Ghoul', sea_serpent: 'Serpiente Marina', strangling_vine: 'Estranguladera', troll: 'Trol', dragon: 'Dragón', demon: 'Demonio',
     
     armor: { skin: 'Piel', soft_fur: 'Pelaje suave', thick_fur: 'Pelaje grueso', feathers: 'Plumas', scales: 'Escamas', shell: 'Caparazón', bone_plates: 'Placas hueso', armored_hide: 'Piel blindada' },
     size: { puny: 'Enclenque', small: 'Pequeño', average: 'Mediano', large: 'Gran', big: 'Enorme', huge: 'Gigantesco', gigantic: 'Colosal', puny_def: 'El Enclenque', small_def: 'El Pequeño', average_def: 'El Mediano', large_def: 'El Gran', big_def: 'El Enorme', huge_def: 'El Gigantesco', gigantic_def: 'El Colosal' },
@@ -104,12 +104,12 @@ export const translationsEs = {
     movement: { movement: 'Movimiento', move: 'Mov.', zones_other: 'zonas/turno', zones_one: 'zona/turno', slithering: 'Deslizándose', digging: 'Cavando', swimming: 'Nadando', running: 'Corriendo', flying: 'Volando', climbing: 'Escalando' },
     motivation: { motivation: 'Motivación', territory: { name: 'Territorio', description: 'Defiende su territorio.' }, pregnant: { name: 'Embarazada', description: 'Protege a su cría.' }, hunger: { name: 'Hambre', description: 'Busca comida.' }, injured: { name: 'Herida', description: 'Agresiva por dolor.' }, parasite: { name: 'Parásito', description: 'Infestada.' }, alone: { name: 'Sola', description: 'Asustada.' }, fun: { name: 'Diversión', description: 'Juega con presas.' }, looking_for_host: { name: 'Buscando anfitrión', description: 'Busca cuerpo.' }, guarding_treasure: { name: 'Guardando tesoro', description: 'Protege tesoro.' } },
     
-attack: {
+    attack: {
       attack: 'Ataque', attacks: 'Ataques', roll: 'Tirar',
       damage: { damage: 'Daño', blunt: 'Contundente', slash: 'Corte', stab: 'Estocada', fear: 'Miedo', disease: 'Enfermedad', non_typical: 'Atípico', poison: 'Veneno' },
       range: 'Rango',
       
-      // === ATAQUES ALEATORIOS Y GENÉRICOS (Etiquetas originales restauradas) ===
+      // === ATAQUES ALEATORIOS Y GENÉRICOS ===
       slash: { type: 'Tajo', description: 'Un rápido tajo con sus garras o extremidades afiladas.' },
       bite: { type: 'Mordisco', description: 'D3 (corte) a un enemigo a distancia DE BRAZO.' },
       clawFlurry: { type: 'Ráfaga de garras', description: 'Golpea repetidamente con furia usando sus garras.' },
@@ -146,6 +146,7 @@ attack: {
       infectedTailSwipe: { type: 'Coleatazo Infectado', description: 'Un golpe de cola que propaga putrefacción.' },
       infectedTentacleSwipe: { type: 'Latigazo Infectado', description: 'Un tentáculo purulento azota a la víctima.' },
       diseasedTouch: { type: 'Toque Enfermo', description: 'Un simple roce propaga la podredumbre.' },
+      distraction: { type: 'Distracción', description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' },
       punch: { type: 'Puñetazo', description: 'Un golpe simple pero devastador.' },
       flyingFists: { type: 'Puños Voladores', description: 'Salta y golpea con ambos puños a la vez.' },
       fistsOfFury: { type: 'Puños de Furia', description: 'Una lluvia incesante de golpes mortales.' },
@@ -177,7 +178,6 @@ attack: {
       earthRumble: { type: 'Retumbar de la Tierra', description: 'Genera temblores.' },
       groundQuake: { type: 'Terremoto', description: 'Sacude violentamente el campo de batalla.' },
       golemRampage: { type: 'Alboroto de Gólem', description: 'Carga destructiva barriendo todo a su paso.' },
-      distraction: { type: 'Distracción', description: 'El monstruo distrae a sus enemigos, imponiendo desventaja.' },
       throatBite: { type: 'Mordisco a la Garganta', description: 'Intenta morder la garganta del objetivo, causando daño letal.' },
       sweep: { type: 'Barrido', description: 'Barre a los enemigos cercanos derribándolos.' },
 
@@ -260,6 +260,12 @@ attack: {
       hydra_4: { type: '¡COLETAZO!', description: 'Azota con la cola CERCA. Ataque con 6 dados de base y daño de arma 2 (puñalada).' },
       hydra_5: { type: '¡MORDISCO ATENAZADOR!', description: 'AL ALCANCE DE LA MANO. Ataque con 7 dados de base y daño de arma 1 (corte). Queda atrapada y recibe ataque extra cada asalto.' },
       hydra_6: { type: '¡ESCUPITAJO ÁCIDO!', description: 'Escupe ácido CERCA. Ataque con 7 dados de base y daño de arma 1. Sufre 1 daño extra por 1D3 rondas.' },
+      insectoid_1: { type: '¡TAJO!', description: 'Ataque rápido de zarpas. 9 dados de base y daño 1 (corte).' },
+      insectoid_2: { type: '¡MORDISCO!', description: 'Mordisco en frenesí. 9 dados de base y daño 1 (corte).' },
+      insectoid_3: { type: '¡ARAÑAZO VENENOSO!', description: 'Ataque con 9 dados de base y daño 1 (corte).' },
+      insectoid_4: { type: '¡TELARAÑA!', description: 'Dispara telaraña con 9 dados de base y daño 1 (atípico).' },
+      insectoid_5: { type: '¡ESCUPITAJO VENENOSO!', description: 'Veneno letal (Potencia 5). 9 dados de base.' },
+      insectoid_6: { type: '¡EMBESTIDA!', description: 'Embestida pesada. 9 dados de base y daño 1 (contundente).' },
       giant_squid_1: { type: '¡TENTÁCULO PEGAJOSO!', description: 'Apresa a una aventurera CERCA. 7 dados de base y daño de arma 1 (contundente). Queda AGARRADA.' },
       giant_squid_2: { type: '¡AHOGAMIENTO!', description: 'Sumerge en el agua a alguien CERCA. 6 dados base, daño 1. Queda AGARRADA y sumergida.' },
       giant_squid_3: { type: '¡ABRAZO DE TENTÁCULO!', description: 'Estruja a alguien CERCA. 8 dados base, daño 1 (contundente). Queda AGARRADA y recibe daño constante.' },
@@ -447,55 +453,49 @@ attack: {
       swarming_death_3: { type: '¡Ataque de Distracción!', description: 'Centenares de insectos se meten por la ropa, los ojos y la boca. Todos a distancia Corta deben superar Resistencia o perder su turno aplastando bichos.' },
       swarming_death_4: { type: '¡Ataque Masivo!', description: 'Inundan como una marea a los aventureros a distancia Corta. Ataque de 7 dados base y daño 1 (corte). Además, el valor de toda armadura se reduce a la mitad.' },
       swarming_death_5: { type: '¡Aerosol!', description: 'Lanzan un jugo pegajoso al aire. Todo el que falle Movimiento quedará inmovilizado bajo un veneno paralizante de potencia 7.' },
-      swarming_death_6: { type: '¡Ataque Depurador!', description: 'El enjambre rodea a una sola aventurera dejándola en los puros huesos. Ataque de 12 dados base y daño 2 (corte). La arrastra y derriba. Es inesquivable.' }
+      swarming_death_6: { type: '¡Ataque Depurador!', description: 'El enjambre rodea a una sola aventurera dejándola en los puros huesos. Ataque de 12 dados base y daño 2 (corte). La arrastra y derriba. Es inesquivable.' },
       tupilaq_1: { type: '¡Mordisco Necrótico!', description: 'El tupilaq muerde con sus dientes podridos. Ataque con 5 dados de base (7 contra su objetivo designado) y daño 1 (corte). Si impacta, inyecta un veneno paralizante de potencia 6.' },
       tupilaq_2: { type: '¡Arañazo!', description: 'El tupilaq extiende sus garras y salta furiosamente. Ataque con 6 dados de base (8 contra su objetivo) y daño 1 (corte).' },
       tupilaq_3: { type: '¡Ataque de Oscuridad!', description: 'Expulsa una oscuridad mágica y aceitosa. Todos a distancia Cerca deben superar Perspicacia o quedar cegados (-2 a los ataques) hasta el siguiente turno.' },
       tupilaq_4: { type: '¡Rugido de Angustia!', description: 'Emite un rugido cacofónico por sus múltiples gargantas. Todos a distancia Cerca sufren un ataque de miedo con 7 dados de base.' },
       tupilaq_5: { type: '¡Placaje!', description: 'La bestia se lanza con todo su peso. Ataque con 8 dados de base (10 contra su objetivo) y daño 1 (contundente). Si impacta, la víctima cae derribada.' },
       tupilaq_6: { type: '¡Ataque Disolvente!', description: 'Abraza a una aventurera y vomita un veneno lechoso. Ataque con 7 dados de base y daño 1 (contundente). Si impacta queda AGARRADA y sufre un veneno letal de potencia 6 (9 contra objetivo) cada ronda.' },
-
       twisted_ent_1: { type: '¡Rugido Demoníaco!', description: 'El ent demoníaco deja escapar un rugido de angustia. Todos a distancia Corta sufren un ataque de miedo con 8 dados de base.' },
       twisted_ent_2: { type: '¡Golpe de Barrido!', description: 'Barre sus brazos nudosos contra dos aventureras a distancia Cerca. Ataque con 9 dados de base y daño 2 (contundente). Si impacta, caen derribadas.' },
       twisted_ent_3: { type: '¡Tentáculos Atrapadores!', description: 'Una aventurera es atrapada por los tentáculos de la copa. Ataque con 10 dados de base y daño 2 (contundente). Si impacta, queda AGARRADA por los tentáculos (Fuerza 6).' },
       twisted_ent_4: { type: '¡Agarre Aplastante!', description: 'Agarra a una aventurera e intenta despedazarla. Ataque con 11 dados de base y daño 2 (contundente).' },
       twisted_ent_5: { type: '¡Ataque Devorador!', description: 'Una enorme boca se abre en el tronco. Ataque con 9 dados de base y daño 2 (corte). Si impacta, se traga a la víctima entera (sufre daño por ronda y debe infligir 3 de daño de un golpe para salir).' },
       twisted_ent_6: { type: '¡Cascada de Larvas!', description: 'Vomita larvas negras brillantes. Ataque con 8 dados de base y daño 1 (contundente). Si impacta, sufren ataque de enjambre y veneno paralizante de potencia 6.' },
-
       undead_dragon_1: { type: '¡Zarpazo!', description: 'Barre con sus garras huesudas contra dos aventureras a distancia Cerca. Ataque con 8 dados de base y daño 2.' },
       undead_dragon_2: { type: '¡Mordisco Corrupto!', description: 'Abre sus fauces llenas de colmillos y carne podrida. Ataque con 9 dados de base y daño 2 (corte). Si impacta, la víctima contrae una enfermedad con virulencia 6.' },
       undead_dragon_3: { type: '¡Desesperación Mortal!', description: 'Lanza un rugido de odio y desesperación. Todos a distancia Cerca sufren un ataque de miedo con 8 dados de base.' },
       undead_dragon_4: { type: '¡Ataque Masivo No Muerto!', description: 'Lanza una risa aterradora y envía a D10 muertos inquietos (esqueletos o ghouls) contra las aventureras.' },
       undead_dragon_5: { type: '¡Coletazo!', description: 'Golpea con su gran cola espinada a todos a distancia Cerca. Ataque con 7 dados de base y daño 1 (contundente). Las víctimas caen al suelo.' },
       undead_dragon_6: { type: '¡Lluvia de Huesos!', description: 'Escupe una lluvia de astillas de hueso. Todos a distancia Cerca sufren un ataque con 10 dados de base y daño 2 (estocada), lo que impone un -2 a todos los ataques del grupo.' },
-
       vampyr_1: { type: '¡Golpe Mortal!', description: 'Alza su arma y asesta un golpe letal. Ataque con 10 dados de base y daño del arma. Si impacta, la víctima es arrojada a distancia Cerca y cae derribada.' },
       vampyr_2: { type: '¡Niebla Asesina!', description: 'Se disuelve en una niebla que envuelve a todos a distancia Cerca. Si fallan una tirada de Resistencia, sufren un ataque de asfixia (aplica reglas de ahogamiento).' },
       vampyr_3: { type: '¡Barrido Invisible!', description: 'Dibuja una runa y se vuelve invisible para saltar y golpear a todos a distancia Cerca. Ataque con 8 dados de base y daño del arma. No se puede Esquivar ni Parar.' },
       vampyr_4: { type: '¡Mirada Hipnótica!', description: 'Fija sus ojos rojos en una víctima. Tirada enfrentada de Perspicacia contra la Empatía del vampiro. Si la víctima falla, el vampiro la controla un turno para que ataque a un aliado (+2 dados y +1 al daño).' },
       vampyr_5: { type: '¡Enjambre de Murciélagos!', description: 'Se transforma en un enjambre de murciélagos chupasangres. Realiza ataque de enjambre (daño 2). Por cada punto de daño que inflige, el vampiro regenera 1 de Fuerza.' },
       vampyr_6: { type: '¡Ataque Sangrante!', description: 'Muerde el cuello de una aventurera. Ataque con 10 dados de base y daño 2 (corte). El vampiro regenera 1 de Fuerza por cada punto de daño infligido. La víctima se enfrenta a veneno paralizante de potencia 6.' },
-
       water_troll_1: { type: '¡Tajo!', description: 'Raja con sus garras negras y viscosas. Ataque con 10 dados de base y daño 2 (corte). Si impacta, inyecta veneno paralizante de potencia 6.' },
       water_troll_2: { type: '¡Mordisco!', description: 'Muerde con sus mandíbulas llenas de algas y colmillos. Ataque con 9 dados de base y daño 2 (contundente). La víctima queda AGARRADA en las fauces.' },
       water_troll_3: { type: '¡Lanzamiento de Trol!', description: 'Agarra a una aventurera y la lanza contra las rocas. Ataque con 12 dados de base y daño 2 (contundente). Cae derribada a distancia Corta.' },
       water_troll_4: { type: '¡Golpe de Barrido!', description: 'Usa sus brazos nudosos para golpear a todos al alcance de la mano. Ataque con 8 dados de base y daño 2 (contundente).' },
       water_troll_5: { type: '¡Aliento de Agua!', description: 'Sopla una lluvia de agua sucia a todos a distancia Cerca. Sufren un veneno letal de potencia 7.' },
-      water_troll_6: { type: '¡Agarre Secuestrador!', description: 'Tira al agua a una aventurera. Ataque con 7 dados de base y daño 2 (corte). Queda AGARRADA y sufre ahogamiento inmediato.' },
-
+      water_troll_6: { type: '¡Agarre Secuestrador!', description: 'Tira al agua a una aventurera. Ataque con 7 dados de base y daño 2 (corte). Queda AGARRADA y su sufre ahogamiento inmediato.' },
       will_o_the_wisp_1: { type: '¡Sonrisa de la Muerte!', description: 'La máscara de fuego crece y ríe con locura. Todos a distancia Cerca sufren un ataque de miedo con 7 dados de base.' },
       will_o_the_wisp_2: { type: '¡Rayo Vil!', description: 'El fuego fatuo explota en una luz cegadora. Todos a distancia Cerca deben superar Movimiento o quedar cegados durante D3 rondas.' },
       will_o_the_wisp_3: { type: '¡Carga Ectoplásmica!', description: 'Carga a través del cuerpo de una aventurera. Ataque con 8 dados de base y daño 2 (contundente). Se puede PARAR.' },
       will_o_the_wisp_4: { type: '¡Pesadillas Vivientes!', description: 'Envía a la mente visiones de su muerte ardiendo en la hoguera. Una aventurera a distancia Cerca sufre un ataque de miedo con 9 dados de base.' },
       will_o_the_wisp_5: { type: '¡Llamas de Otro Mundo!', description: 'Sopla una nube de fuego a distancia Cerca. Ataque con 9 dados de base. Quien reciba daño sigue sufriendo 1 de daño por ronda hasta apagarlo.' },
       will_o_the_wisp_6: { type: '¡Posesión Impía!', description: 'Inunda la mente con odio hacia los vivos. La víctima debe superar Perspicacia o el fuego fatuo la controla durante un asalto para atacar a sus amigos.' },
-
       wolfshadow_1: { type: '¡Aullido de Pesadilla!', description: 'Deja escapar un aullido furioso. Todos a distancia Cerca sufren un ataque de miedo con 8 dados de base. Si impacta, también quedan ATERIDOS.' },
       wolfshadow_2: { type: '¡Ataque Furioso con Arma!', description: 'Ataca con su pesada arma de guerrero. Ataque con 9 dados de base y daño del arma. Si impacta, la víctima es arrojada a distancia Cerca y cae derribada.' },
       wolfshadow_3: { type: '¡Ataque Desgarrador!', description: 'Salta y raja con sus afiladas garras. Ataque con 8 dados de base y daño 1 (corte). Si impacta, la víctima queda ATERIDA.' },
       wolfshadow_4: { type: '¡Mordisco Hambriento!', description: 'Hunde sus colmillos en el cuerpo. Ataque con 7 dados de base y daño 2 (corte). Si tiene éxito, ataca una segunda vez con 7 dados y daño 2 arrancando carne.' },
       wolfshadow_5: { type: '¡Torbellino de Garras y Mordiscos!', description: 'Salta al medio del grupo lanzando cortes. Ataque de 7 dados de base y daño 2 contra todos a distancia Cerca. Si impacta, quedan ATERIDOS.' },
-      wolfshadow_6: { type: '¡Golpe Aullante!', description: 'Lanza un ataque aterrador (8 dados) a todos. Si impacta al objetivo principal, queda paralizado D3 rondas y sufre a la vez un ataque de arma con 10 dados de base.' },
+      wolfshadow_6: { type: '¡Golpe Aullante!', description: 'Lanza un ataque aterrador (8 dados) a todos. Si impacta al objetivo principal, queda paralizado D3 rondas y sufre a la vez un ataque de arma con 10 dados de base.' }
     },
     poisons: { lethal: 'Letal', paralyzing: 'Paralizante', sleeping: 'Somnífero', hallucinogenic: 'Alucinógeno' }
   },
