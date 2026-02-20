@@ -34,7 +34,7 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
         <Typography variant="h3">{t(`common:attribute` as any)}</Typography>
         <MonsterAttributeGrid attributes={m.attributes} />
 
-        {/* --- NUEVA SECCIÓN DE DATOS AMPLIADOS --- */}
+        {/* --- SECCIÓN DE DATOS AMPLIADOS CON PROTECCIÓN --- */}
         <div className="mt-4 flex flex-col gap-2 text-md">
           
           {m.movement !== undefined && (
@@ -49,28 +49,28 @@ export const MonsterDisplay = ({ m, bookPart }: MonsterDisplayProps) => {
             </div>
           )}
 
-          {m.skills && m.skills.length > 0 && (
+          {m.skills && Array.isArray(m.skills) && m.skills.length > 0 && (
             <div>
               <strong>{t('common:skills.skills' as any)}:</strong> {m.skills.join(', ')}
             </div>
           )}
 
-          {m.traits && m.traits.length > 0 && (
+          {m.traits && Array.isArray(m.traits) && m.traits.length > 0 && (
             <div>
               <strong>{t('monsters:trait.traits' as any)}:</strong>
               <ul className="list-disc pl-5 mt-1">
-                {m.traits.map((trait, index) => (
+                {m.traits.map((trait: string, index: number) => (
                   <li key={index}>{trait}</li>
                 ))}
               </ul>
             </div>
           )}
 
-          {m.weaknesses && m.weaknesses.length > 0 && (
+          {m.weaknesses && Array.isArray(m.weaknesses) && m.weaknesses.length > 0 && (
             <div>
               <strong>{t('monsters:weakness.weakness' as any)}:</strong>
               <ul className="list-disc pl-5 mt-1">
-                {m.weaknesses.map((weakness, index) => (
+                {m.weaknesses.map((weakness: string, index: number) => (
                   <li key={index}>{weakness}</li>
                 ))}
               </ul>
