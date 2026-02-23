@@ -70,7 +70,7 @@ setTerrain([
 // Estos son algunos de los principales marcados en el mapa original.
 setTerrain([
   'C42', // El Hueco (Håga)
-  'X8',  // Refugio Lejano (Farhaven)
+  'X7',  // Refugio Lejano (Farhaven) - CORREGIDO
   'O34', // Pelia
   'P13', // Grindbone
 ], 'village')
