@@ -24,7 +24,7 @@ export const ForbiddenLandsMap = ({
         <image href="bitter-reach-small-edit.png" width={2059} height={1491} />
       ) : null}
       {source === 'ravland' ? (
-        <image href="mapa-tierras-prohibidas.jpg" width={2059} height={1491} />
+        <image href="ravland-small.jpg" width={2059} height={1491} />
       ) : null}
       <rect
         className="cls-1"
