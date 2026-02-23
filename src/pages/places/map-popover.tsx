@@ -1,10 +1,12 @@
-import { FireIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
+import { FireIcon, MagnifyingGlassIcon, SparklesIcon } from '@heroicons/react/20/solid'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
 import { useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
 import { Hex } from './map.model'
+import { getTerrainForHex } from './terrain-data'
+
 export interface MapPopoverOptions {
   hex: Hex
   x: number
@@ -26,9 +28,13 @@ export const MapPopover = ({
   onExploreChanged,
   onHide,
 }: MapPopoverProps) => {
-  const t = useAppSelector(selectTranslateFunction(['map']))
+  const t = useAppSelector(selectTranslateFunction(['map', 'common']))
   const ref = useRef<HTMLDivElement>(null)
   const [show, setShow] = useState<boolean>(true)
+  
+  // Estado para el panel de encuentros
+  const [encounterPending, setEncounterPending] = useState<boolean>(false)
+
   const initialPosition = -9999
   const [position, setPosition] = useState({
     x: initialPosition,
@@ -83,8 +89,26 @@ export const MapPopover = ({
     if (options) {
       setPosition({ x: getX(options), y: getY(options) })
       setShow(true)
+      setEncounterPending(false) // Se cierra el panel si cambias de hexágono
     }
   }, [getX, getY, options, ref])
+
+  // Traductor y formateador del terreno
+  const getTerrainTranslation = (terrain: string) => {
+    if (terrain === 'village') return 'Aldea'
+    if (terrain === 'dungeon') return 'Mazmorra'
+    if (terrain === 'castle') return 'Fortaleza'
+    
+    const terrainMap: Record<string, string> = {
+      marshlands: 'swamp',
+      quagmire: 'mire',
+      high_mountain: 'mountain'
+    }
+    const mapped = terrainMap[terrain] || terrain
+    return t(`common:terrain.${mapped}` as any) || terrain
+  }
+
+  const terrainType = options ? getTerrainForHex(options.hex.hexKey) : 'plains'
 
   return (
     <div
@@ -95,17 +119,23 @@ export const MapPopover = ({
       style={{
         top: position.y,
         left: position.x,
+        width: '320px', // Un poco más ancho para que quepan los textos del encuentro
       }}
     >
       {options && (
         <Parchment padding="sm">
-          <div className="mb-3 text-2xl">
-            {options.hex.hexKey}:{' '}
-            {options.hex.explored
-              ? t('map:popover_explored')
-              : t('map:popover_unexplored')}
+          <div className="mb-3 border-b border-black/20 pb-2">
+            <div className="text-2xl font-bold">Hex: {options.hex.hexKey}</div>
+            <div className="text-sm font-semibold text-amber-900 uppercase tracking-widest mt-1">
+              {getTerrainTranslation(terrainType)}
+              {' • '}
+              {options.hex.explored
+                ? t('map:popover_explored')
+                : t('map:popover_unexplored')}
+            </div>
           </div>
-          <div className="flex gap-2">
+          
+          <div className="flex flex-wrap gap-2">
             <ParchmentButton
               buttonType="ghost"
               onPress={() => {
@@ -117,17 +147,31 @@ export const MapPopover = ({
             </ParchmentButton>
 
             {options.hex.explored ? (
-              <ParchmentButton
-                buttonType="danger"
-                onPress={() => {
-                  setShow(false)
-                  onHide()
-                  onExploreChanged({ ...options.hex, explored: false })
-                }}
-              >
-                <FireIcon className="size-5" />
-                {t('map:popover_forget')}
-              </ParchmentButton>
+              <>
+                <ParchmentButton
+                  buttonType="danger"
+                  onPress={() => {
+                    setShow(false)
+                    onHide()
+                    onExploreChanged({ ...options.hex, explored: false })
+                  }}
+                >
+                  <FireIcon className="size-5" />
+                  {t('map:popover_forget')}
+                </ParchmentButton>
+
+                {/* BOTÓN DE TIRAR ENCUENTRO */}
+                <div className="w-full mt-2">
+                  <ParchmentButton
+                    onPress={() => {
+                      setEncounterPending(true)
+                    }}
+                  >
+                    <SparklesIcon className="size-5" /> 
+                    Tirar Encuentro
+                  </ParchmentButton>
+                </div>
+              </>
             ) : (
               <ParchmentButton
                 onPress={() => {
@@ -141,6 +185,15 @@ export const MapPopover = ({
               </ParchmentButton>
             )}
           </div>
+
+          {/* PANEL TEMPORAL DE ENCUENTROS */}
+          {encounterPending && (
+            <div className="mt-4 p-3 bg-black/5 rounded text-sm italic border border-black/10">
+              Generando encuentro para <strong>{getTerrainTranslation(terrainType)}</strong>... <br/><br/>
+              (En el siguiente paso conectaremos aquí la Megalista de Encuentros).
+            </div>
+          )}
+
         </Parchment>
       )}
     </div>
