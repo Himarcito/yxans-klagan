@@ -15,7 +15,6 @@ export const ForbiddenLandsMap = ({
     <svg
       id="ravland-map"
       className={`
-
         ${fogOfWar ? 'fog-of-war' : ''}
         `}
       xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +24,7 @@ export const ForbiddenLandsMap = ({
         <image href="bitter-reach-small-edit.png" width={2059} height={1491} />
       ) : null}
       {source === 'ravland' ? (
-        <image href="ravland-small.jpg" width={2059} height={1491} />
+        <image href="mapa-tierras-prohibidas.jpg" width={2059} height={1491} />
       ) : null}
       <rect
         className="cls-1"
