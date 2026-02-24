@@ -58,6 +58,7 @@ export type TerrainType =
   | 'marshlands' 
   | 'quagmire' 
   | 'ruin_city'
-  | 'village'
-  | 'dungeon'
-  | 'castle'
+  | 'village'   // Pueblo genérico
+  | 'dungeon'   // Mazmorra genérica
+  | 'castle'    // Castillo genérico
+  | 'special'   // Escenario de Aventura Único
