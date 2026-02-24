@@ -47,7 +47,7 @@ export const specialLocations: Partial<Record<HexKey, SpecialLocation>> = {
   // He dejado listos los huecos para el resto de tus escenarios del CSV:
   'E38': { name: 'Vond', book: 'La Purga del Cuervo', page: '180', description: 'La fortaleza inexpugnable del Rey Demonio Zygofer y sus seguidores más temibles.' },
   'Z1': { name: 'La Nieba Calma', book: 'Desconocido', page: '-', description: '...' },
-  'G49': { name: 'El Sello de Hierro', book: 'Manual de la Directora', page: '19', description: '...' },
+  'G48': { name: 'El Sello de Hierro', book: 'Manual de la Directora', page: '19', description: '...' },
   'B3': { name: 'Belderand', book: 'Manual de la Directora', page: '15', description: '...' },
   'I6': { name: 'Los Caminos Sinuosos', book: '-', page: '-', description: '...' },
   'P47': { name: 'Roca de los Vientos', book: '-', page: '-', description: '...' },
