@@ -1,24 +1,16 @@
 import {
-  DocumentArrowDownIcon,
   EyeIcon,
   EyeSlashIcon,
 } from '@heroicons/react/20/solid'
 import '@total-typescript/ts-reset'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { ZodError } from 'zod'
 import { ParchmentButton } from '../../components/ParchmentButton'
 import { Train } from '../../components/Stack'
 import { PageHeader } from '../../components/page-header'
 import { Parchment } from '../../components/parchment'
-import { PasteData } from '../../components/paste-data'
 import {
-  MapState,
-  handlePasteSuccess,
-  mapStateSchema,
-  oldHexStorageSchema,
   selectFogOfWar,
   selectMap,
-  selectMapSerializable,
   selectSource,
   setSelectedHex,
   setSource,
@@ -26,10 +18,7 @@ import {
   unsetSelectedHex,
   updateHex,
 } from '../../features/map/map-slice'
-import { downloadFile } from '../../functions/file.functions'
-import { safeJSONParse } from '../../store/persist/json-parsing'
 import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
-import { TranslationKey } from '../../store/translations/translation.model'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
 import ForbiddenLandsMap from './ForbiddenLandsMap'
 import { MapPopover, MapPopoverOptions } from './map-popover'
@@ -40,15 +29,10 @@ export const MapPage = () => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
   const source = useAppSelector(selectSource)
   const fogOfWar = useAppSelector(selectFogOfWar)
-  const { hasExploredHexes, hexes, selectedHex } = useAppSelector(selectMap)
-  const serializableMap = useAppSelector(selectMapSerializable)
+  const { hexes, selectedHex } = useAppSelector(selectMap)
   const dispatch = useAppDispatch()
 
   const parchmentRef = useRef<HTMLDivElement>(null)
-
-  const [pasteError, setPasteError] = useState<
-    TranslationKey<'map'> | undefined
-  >(undefined)
 
   const [mapPopover, setMapPopover] = useState<MapPopoverOptions | undefined>(
     undefined,
@@ -61,6 +45,7 @@ export const MapPage = () => {
     rect: hexTarget.getBoundingClientRect(),
     parchmentRect: parchmentElem.getBoundingClientRect(),
   })
+  
   const initialTooltip = useMemo(
     () => ({
       text: '',
@@ -137,64 +122,8 @@ export const MapPage = () => {
     }
   }
 
-  const handleFileDownload = () => {
-    downloadFile(serializableMap, 'map')
-  }
-
-  const handlePasteMapData = (s: string) => {
-    setPasteError(undefined)
-    const oldResult = safeJSONParse(s, oldHexStorageSchema)
-
-    if (oldResult.ok) {
-      const data = oldResult.safeUnwrap()
-      const ms: MapState = {
-        version: 2,
-        fogOfWar: data.fogOfWar,
-        source: 'ravland',
-        maps: {
-          ravland: {
-            hexes: data.hexes,
-            selectedHex: undefined,
-            hasExploredHexes: hexes.some((hex) => hex.explored),
-          },
-          bitterReach: {
-            hexes: [],
-            selectedHex: undefined,
-            hasExploredHexes: false,
-          },
-        },
-      }
-
-      dispatch(handlePasteSuccess(ms))
-
-      return
-    }
-
-    const result = safeJSONParse(s, mapStateSchema)
-
-    if (result.ok) {
-      const data = result.safeUnwrap()
-      dispatch(handlePasteSuccess(data))
-
-      return
-    }
-
-    if (oldResult.err) {
-      const oe = errorToPasteError(oldResult.val)
-      setPasteError(pasteErrorLabel[oe])
-      console.error(oldResult.val)
-
-      return
-    }
-
-    console.error(result.val)
-
-    const ne = errorToPasteError(result.val)
-    setPasteError(pasteErrorLabel[ne])
-  }
-
   return (
-    <div className="flex w-full flex-col gap-y-8">
+    <div className="flex w-full flex-col gap-y-8 relative pb-20">
       <PageHeader>{t('map:title')}</PageHeader>
 
       <Train>
@@ -223,31 +152,11 @@ export const MapPage = () => {
           )}
           {t(fogOfWar ? 'map:fog_of_war_on' : 'map:fog_of_war_off')}
         </ParchmentButton>
-        <ParchmentButton
-          isDisabled={!hasExploredHexes}
-          buttonType="ghost"
-          onPress={() => handleFileDownload()}
-        >
-          <DocumentArrowDownIcon className="size-5" />
-          {t('map:download_map_data')}
-        </ParchmentButton>
-        <PasteData
-          onFocusTextArea={() => setPasteError(undefined)}
-          label={t('map:paste_map_data')}
-          onData={handlePasteMapData}
-        ></PasteData>
       </Train>
 
-      {/* Should be a notification and maybe autoclose? */}
-      {pasteError ? (
-        <div className="flex justify-end bg-red-500 p-2 font-bold text-white">
-          {t(pasteError)}
-        </div>
-      ) : null}
-
-      <div>
+      <div className="w-full">
         <Parchment padding="xs">
-          <div ref={parchmentRef} className="relative">
+          <div ref={parchmentRef} className="relative w-full h-full">
             <div
               className="pointer-events-none absolute z-10 flex select-none items-center justify-center text-center text-[0.9vw] font-bold leading-none text-white"
               style={{
@@ -286,23 +195,3 @@ export const MapPage = () => {
 const numToPx = (num: number): string => `${num}px`
 
 export default MapPage
-
-type PasteError = 'invalidJson' | 'invalidHexData' | 'general'
-
-const pasteErrorLabel: { [PE in PasteError]: TranslationKey<'map'> } = {
-  invalidJson: 'map:invalid_json',
-  invalidHexData: 'map:invalid_hex_data',
-  general: 'map:general_paste_error',
-}
-
-const errorToPasteError = (e: Error): PasteError => {
-  if (e instanceof SyntaxError) {
-    return 'invalidJson'
-  }
-
-  if (e instanceof ZodError) {
-    return 'invalidHexData'
-  }
-
-  return 'general'
-}
