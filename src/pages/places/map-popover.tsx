@@ -48,7 +48,8 @@ export const MapPopover = ({
     const saved = localStorage.getItem('cartographer_data')
     if (saved) {
       try {
-        setMappedTerrains(JSON.parse(saved))
+        // Le decimos a TypeScript que confíe en nosotros, que esto es un Record de strings
+        setMappedTerrains(JSON.parse(saved) as Record<string, string>)
       } catch (e) {
         console.error('Error loading cartographer data')
       }
