@@ -21,7 +21,7 @@ type MapPopoverProps = {
   onHide: () => void
 }
 
-// Pequeño diccionario para traducir los IDs técnicos a nombres bonitos en la interfaz
+// Diccionario para traducir el terreno a español en el popover
 const terrainNames: Record<string, string> = {
   plains: 'Llanuras',
   forest: 'Bosque',
@@ -51,13 +51,18 @@ export const MapPopover = ({
 
   const { hex, x, y, mapMaxX, mapMaxY } = options
 
-  // Si se sale de la pantalla, ajustamos la posición
+  // Centramos el menú sobre el hexágono de forma más elegante
   const popoverWidth = 200
   const popoverHeight = 150
-  const finalX = x + popoverWidth > mapMaxX ? x - popoverWidth : x
-  const finalY = y + popoverHeight > mapMaxY ? y - popoverHeight : y
+  
+  // Posición dinámica para que no se salga de la pantalla
+  let finalX = x - (popoverWidth / 2) + 25 
+  let finalY = y + 50
+  
+  if (finalX + popoverWidth > mapMaxX) finalX = mapMaxX - popoverWidth
+  if (finalY + popoverHeight > mapMaxY) finalY = mapMaxY - popoverHeight
 
-  // Obtenemos el terreno asignado desde nuestra gran base de datos
+  // Obtenemos el terreno desde tu base de datos cartografiada
   const terrainId = getTerrainForHex(hex.hexKey)
   const terrainDisplayName = terrainNames[terrainId] || 'Llanuras'
 
@@ -67,27 +72,26 @@ export const MapPopover = ({
       style={{ left: finalX, top: finalY }}
     >
       <Parchment padding="sm">
-        <div className="flex flex-col gap-3 relative">
-          {/* Botón de cerrar */}
-          <button 
-            onClick={onHide}
-            className="absolute -top-2 -right-2 text-red-800 font-bold text-xl hover:text-red-500"
-          >
-            ×
-          </button>
-
-          <div className="text-center border-b-2 border-[#8b5a2b] pb-2">
-            <h3 className="font-bold text-xl text-gray-900">
+        <div className="flex flex-col gap-2 relative text-center">
+          
+          {/* Título y Terreno */}
+          <div className="border-b-2 border-[#8b5a2b] pb-2 mb-2">
+            <h3 className="font-bold text-xl text-gray-900 leading-none">
               {hex.hexKey}
             </h3>
-            <span className="text-sm font-semibold text-[#8b5a2b] uppercase tracking-wider">
+            <span className="text-xs font-bold text-[#8b5a2b] uppercase tracking-wider">
               {terrainDisplayName}
             </span>
           </div>
 
-          {/* Botón de exploración */}
+          {/* Botón de Explorar / Olvidar (Restaurado a los originales) */}
           <ParchmentButton onPress={() => onExploreChanged(hex)}>
-            {hex.explored ? t('map:mark_unexplored') : t('map:mark_explored')}
+            {hex.explored ? '👁️ Olvidar' : '🗺️ Explorar'}
+          </ParchmentButton>
+
+          {/* Botón de Cerrar menú */}
+          <ParchmentButton buttonType="ghost" onPress={onHide}>
+            Cerrar
           </ParchmentButton>
           
         </div>
