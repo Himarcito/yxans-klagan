@@ -30,21 +30,24 @@ type PolygonProps = {
   onClick: (e: React.MouseEvent<SVGPolygonElement | SVGGElement, MouseEvent>) => void
 }
 
+// CALCULADORA A PRUEBA DE BALAS (Comas, espacios, saltos de línea... lee de todo)
 const getHexCenter = (points: string) => {
-  const pairs = points.trim().split(/\s+/)
+  const coords = points.replace(/,/g, ' ').trim().split(/\s+/).map(Number)
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
   
-  pairs.forEach(pair => {
-    const [xStr, yStr] = pair.split(',')
-    const x = parseFloat(xStr)
-    const y = parseFloat(yStr)
+  for (let i = 0; i < coords.length; i += 2) {
+    const x = coords[i]
+    const y = coords[i + 1]
     if (!isNaN(x) && !isNaN(y)) {
       if (x < minX) minX = x
       if (x > maxX) maxX = x
       if (y < minY) minY = y
       if (y > maxY) maxY = y
     }
-  })
+  }
+  
+  // Si por algún milagro falla, devolvemos el centro base para que NUNCA sea NaN
+  if (minX === Infinity) return { x: 50, y: 50 } 
   
   return { 
     x: minX + (maxX - minX) / 2, 
@@ -69,10 +72,6 @@ export const Polygon = ({
   const iconFileName = specialIcons[hex.hexKey]
   const iconSize = 45
 
-  // Vite base path (para asegurarnos de que la ruta siempre es absoluta)
-  const baseUrl = import.meta.env.BASE_URL || '/'
-  const imagePath = iconFileName ? `${baseUrl}${iconFileName}` : ''
-
   return (
     <g 
       onClick={onClick as any} 
@@ -91,11 +90,10 @@ export const Polygon = ({
         style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* Etiqueta SVG estándar con doble enlazado de URL (href y xlinkHref) para máxima compatibilidad */}
+      {/* IMAGEN SEGURA CON URL CODIFICADA */}
       {isSpecial && center && iconFileName && (
         <image
-          href={imagePath}
-          xlinkHref={imagePath}
+          href={`/${encodeURI(iconFileName)}`}
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
