@@ -1,11 +1,14 @@
-import { Hex } from './map.model'
+import { FireIcon, MagnifyingGlassIcon, SparklesIcon, BookOpenIcon } from '@heroicons/react/20/solid'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
 import { useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
+import { Hex } from './map.model'
 import { getTerrainForHex } from './terrain-data'
+import { specialLocations } from './special-locations.data'
 
-export type MapPopoverOptions = {
+export interface MapPopoverOptions {
   hex: Hex
   x: number
   y: number
@@ -15,27 +18,10 @@ export type MapPopoverOptions = {
   mapMaxY: number
 }
 
-type MapPopoverProps = {
+export interface MapPopoverProps {
   options?: MapPopoverOptions
   onExploreChanged: (hex: Hex) => void
   onHide: () => void
-}
-
-// Diccionario para traducir el terreno a español en el popover
-const terrainNames: Record<string, string> = {
-  plains: 'Llanuras',
-  forest: 'Bosque',
-  dark_forest: 'Bosque Oscuro',
-  hills: 'Colinas',
-  mountains: 'Montañas',
-  lake: 'Lago',
-  marsh: 'Marjal',
-  quagmire: 'Ciénaga',
-  ruins: 'Ruinas',
-  special: 'Sitio Especial',
-  castle: 'Castillo',
-  dungeon: 'Mazmorra',
-  village: 'Pueblo'
 }
 
 export const MapPopover = ({
@@ -44,58 +30,196 @@ export const MapPopover = ({
   onHide,
 }: MapPopoverProps) => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
+  const ref = useRef<HTMLDivElement>(null)
+  const [show, setShow] = useState<boolean>(true)
+  
+  // Estado para el panel de contenido
+  const [contentPending, setContentPending] = useState<boolean>(false)
 
-  if (!options) {
-    return null
+  const initialPosition = -9999
+  const [position, setPosition] = useState({
+    x: initialPosition,
+    y: initialPosition,
+  })
+
+  const getX = useCallback(
+    (xOptions?: MapPopoverOptions) => {
+      if (!xOptions || !ref.current) return initialPosition
+      const { x, mapMaxX, mapMinX } = xOptions
+      const rect = ref.current.getBoundingClientRect()
+      const popoverX = x - rect.width / 2
+
+      if (popoverX - mapMinX < 0) return 0
+      if (popoverX > mapMaxX) return mapMaxX - rect.width
+      return popoverX - mapMinX
+    },
+    [initialPosition],
+  )
+
+  const getY = useCallback(
+    (yOptions?: MapPopoverOptions) => {
+      if (!yOptions || !ref.current) return initialPosition
+      const { y, mapMinY } = yOptions
+      const rect = ref.current.getBoundingClientRect()
+      const popoverY = y - rect.height - mapMinY - 2
+
+      if (popoverY < 0) return mapMinY
+      return popoverY
+    },
+    [initialPosition],
+  )
+
+  useEffect(() => {
+    if (options) {
+      setPosition({ x: getX(options), y: getY(options) })
+      setShow(true)
+      setContentPending(false) // Se cierra el panel si cambias de hexágono
+    }
+  }, [getX, getY, options, ref])
+
+  // Traductor y formateador del terreno
+  const getTerrainTranslation = (terrain: string) => {
+    const terrainMap: Record<string, string> = {
+      plains: 'Llanuras',
+      forest: 'Bosque',
+      dark_forest: 'Bosque Oscuro',
+      hills: 'Colinas',
+      mountains: 'Montañas',
+      lake: 'Lago',
+      marsh: 'Marjal',
+      quagmire: 'Ciénaga',
+      ruins: 'Ruinas',
+      special: 'Sitio Especial',
+      castle: 'Castillo',
+      dungeon: 'Mazmorra',
+      village: 'Pueblo'
+    }
+    return terrainMap[terrain] || terrain
   }
 
-  const { hex, x, y, mapMaxX, mapMaxY } = options
+  const terrainType = options ? getTerrainForHex(options.hex.hexKey) : 'plains'
+  const specialData = options && terrainType === 'special' ? specialLocations[options.hex.hexKey] : null
 
-  // Centramos el menú sobre el hexágono de forma más elegante
-  const popoverWidth = 200
-  const popoverHeight = 150
-  
-  // Posición dinámica para que no se salga de la pantalla
-  let finalX = x - (popoverWidth / 2) + 25 
-  let finalY = y + 50
-  
-  if (finalX + popoverWidth > mapMaxX) finalX = mapMaxX - popoverWidth
-  if (finalY + popoverHeight > mapMaxY) finalY = mapMaxY - popoverHeight
-
-  // Obtenemos el terreno desde tu base de datos cartografiada
-  const terrainId = getTerrainForHex(hex.hexKey)
-  const terrainDisplayName = terrainNames[terrainId] || 'Llanuras'
+  // Texto dinámico para el botón según el hexágono
+  const getButtonText = () => {
+    switch (terrainType) {
+      case 'village': return 'Generar Aldea'
+      case 'dungeon': return 'Generar Mazmorra'
+      case 'castle': return 'Generar Fortaleza'
+      case 'special': return 'Ver Escenario'
+      default: return 'Tirar Encuentro'
+    }
+  }
 
   return (
     <div
-      className="absolute z-50 w-56 shadow-2xl"
-      style={{ left: finalX, top: finalY }}
+      ref={ref}
+      className={`absolute -z-10 flex -translate-y-12 flex-col gap-4 opacity-0 transition-all
+        ${show ? 'z-20 translate-y-0 opacity-100' : ''}
+      `}
+      style={{
+        top: position.y,
+        left: position.x,
+        width: '340px', 
+      }}
     >
-      <Parchment padding="sm">
-        <div className="flex flex-col gap-2 relative text-center">
+      {options && (
+        <Parchment padding="sm">
+          <div className="mb-3 border-b border-black/20 pb-2">
+            <div className="text-2xl font-bold">Hex: {options.hex.hexKey}</div>
+            {/* ETiqueta de Terreno conservada */}
+            <div className="text-sm font-semibold text-amber-900 uppercase tracking-widest mt-1">
+              {getTerrainTranslation(terrainType)}
+            </div>
+          </div>
           
-          {/* Título y Terreno */}
-          <div className="border-b-2 border-[#8b5a2b] pb-2 mb-2">
-            <h3 className="font-bold text-xl text-gray-900 leading-none">
-              {hex.hexKey}
-            </h3>
-            <span className="text-xs font-bold text-[#8b5a2b] uppercase tracking-wider">
-              {terrainDisplayName}
-            </span>
+          <div className="flex flex-wrap gap-2">
+            <ParchmentButton
+              buttonType="ghost"
+              onPress={() => {
+                onHide()
+                setShow(false)
+              }}
+            >
+              {t('map:popover_hide')}
+            </ParchmentButton>
+
+            {options.hex.explored ? (
+              <>
+                {/* BOTÓN OLVIDAR (Original Funcional) */}
+                <ParchmentButton
+                  buttonType="danger"
+                  onPress={() => {
+                    setShow(false)
+                    onHide()
+                    onExploreChanged({ ...options.hex, explored: false })
+                  }}
+                >
+                  <FireIcon className="size-5" />
+                  {t('map:popover_forget')}
+                </ParchmentButton>
+
+                {/* BOTÓN INTELIGENTE DE ACCIÓN */}
+                <div className="w-full mt-2">
+                  <ParchmentButton
+                    onPress={() => {
+                      setContentPending(true)
+                    }}
+                  >
+                    {terrainType === 'special' ? (
+                      <BookOpenIcon className="size-5" />
+                    ) : (
+                      <SparklesIcon className="size-5" /> 
+                    )}
+                    {getButtonText()}
+                  </ParchmentButton>
+                </div>
+              </>
+            ) : (
+              <>
+                {/* BOTÓN EXPLORAR (Original Funcional) */}
+                <ParchmentButton
+                  onPress={() => {
+                    setShow(false)
+                    onHide()
+                    onExploreChanged({ ...options.hex, explored: true })
+                  }}
+                >
+                  <MagnifyingGlassIcon className="size-5" />
+                  {t('map:popover_explore')}
+                </ParchmentButton>
+              </>
+            )}
           </div>
 
-          {/* Botón de Explorar / Olvidar (Restaurado a los originales) */}
-          <ParchmentButton onPress={() => onExploreChanged(hex)}>
-            {hex.explored ? '👁️ Olvidar' : '🗺️ Explorar'}
-          </ParchmentButton>
+          {/* PANEL DE RESULTADOS MÁGICOS */}
+          {contentPending && (
+            <div className="mt-4 animate-in fade-in slide-in-from-top-2 duration-300">
+              
+              {/* VISTA PARA ESCENARIOS ESPECIALES */}
+              {terrainType === 'special' && specialData && (
+                <div className="p-4 bg-amber-50 rounded border border-amber-900/30 text-sm shadow-inner">
+                  <h4 className="font-bold text-lg text-amber-950 mb-1 leading-tight">{specialData.name}</h4>
+                  <div className="text-xs font-semibold text-amber-800/80 mb-3 flex flex-col gap-0.5 border-b border-amber-900/10 pb-2">
+                    <span>📖 Libro: {specialData.book}</span>
+                    <span>📄 Página: {specialData.page}</span>
+                  </div>
+                  <p className="italic text-gray-800 leading-relaxed">{specialData.description}</p>
+                </div>
+              )}
 
-          {/* Botón de Cerrar menú */}
-          <ParchmentButton buttonType="ghost" onPress={onHide}>
-            Cerrar
-          </ParchmentButton>
-          
-        </div>
-      </Parchment>
+              {/* VISTA TEMPORAL PARA EL RESTO DE GENERADORES */}
+              {terrainType !== 'special' && (
+                <div className="p-3 bg-black/5 rounded text-sm italic border border-black/10">
+                  <span className="font-bold not-italic">⚙️ Módulo en construcción:</span> <br/>
+                  Preparando el motor para {getButtonText().toLowerCase()} en {getTerrainTranslation(terrainType).toLowerCase()}...
+                </div>
+              )}
+
+            </div>
+          )}
+        </Parchment>
+      )}
     </div>
   )
 }
