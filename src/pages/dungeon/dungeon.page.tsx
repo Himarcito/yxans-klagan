@@ -63,15 +63,17 @@ export const DungeonPage = ({ hexKey }: DungeonPageProps) => {
             <Stat flexGreedy label="Función Original">{dungeon.originalFunction}</Stat>
           </div>
 
-          <ParchmentCard subtle className="mt-4">
-            <section>
-              <Typography variant="h3" parchment>Historia y Habitantes</Typography>
-              <div className="flex flex-col gap-4 mt-2">
-                <Stat label="Acontecimiento">{dungeon.historyEvent}</Stat>
-                <Stat label="Habitantes Principales">{dungeon.mainInhabitant}</Stat>
-              </div>
-            </section>
-          </ParchmentCard>
+          <div className="mt-4">
+            <ParchmentCard subtle>
+              <section>
+                <Typography variant="h3" parchment>Historia y Habitantes</Typography>
+                <div className="flex flex-col gap-4 mt-2">
+                  <Stat label="Acontecimiento">{dungeon.historyEvent}</Stat>
+                  <Stat label="Habitantes Principales">{dungeon.mainInhabitant}</Stat>
+                </div>
+              </section>
+            </ParchmentCard>
+          </div>
 
           {/* LISTADO DE SALAS GENERADAS */}
           <div className="mt-6">
