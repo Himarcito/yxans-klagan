@@ -15,8 +15,9 @@ export const hexSchema = z.object({
     message: 'Hex key is not valid',
   }),
   explored: z.boolean(),
-  villageData: z.any().optional(), // Aquí guardaremos la aldea si la hay
-  castleData: z.any().optional(),  // Aquí guardaremos el castillo si lo hay
+  villageData: z.any().optional(),
+  castleData: z.any().optional(),
+  dungeonData: z.any().optional(), // <-- AÑADIDO
 })
 
 export const oldHexStorageSchema = z.object({
@@ -26,7 +27,8 @@ export const oldHexStorageSchema = z.object({
 
 export type HexStorage = z.infer<typeof hexSchema> & {
   villageData?: Village
-  castleData?: any 
+  castleData?: any
+  dungeonData?: any // <-- AÑADIDO
 }
 export type OldHexStorage = z.infer<typeof oldHexStorageSchema>
 
@@ -55,7 +57,7 @@ export type GameMap = {
 
 export type GameMapViewModel = {
   hasExploredHexes: boolean
-  hexes: (Hex & { villageData?: Village; castleData?: any })[]
+  hexes: (Hex & { villageData?: Village; castleData?: any; dungeonData?: any })[]
   selectedHex: Option<HexKey>
 }
 
@@ -125,8 +127,8 @@ const mapSlice = createSlice({
     unsetSelectedHex(state) {
       state.maps[state.source].selectedHex = undefined
     },
-    updateHex(state, action: PayloadAction<Hex & { villageData?: Village; castleData?: any }>) {
-      const { hexKey, explored, villageData, castleData } = action.payload
+   updateHex(state, action: PayloadAction<Hex & { villageData?: Village; castleData?: any; dungeonData?: any }>) {
+      const { hexKey, explored, villageData, castleData, dungeonData } = action.payload
 
       const map = state.maps[state.source]
       const hasHex = map.hexes.some((h) => h.hexKey === hexKey)
@@ -142,9 +144,10 @@ const mapSlice = createSlice({
               explored: explored !== undefined ? explored : h.explored,
               villageData: villageData !== undefined ? villageData : (h as any).villageData,
               castleData: castleData !== undefined ? castleData : (h as any).castleData,
+              dungeonData: dungeonData !== undefined ? dungeonData : (h as any).dungeonData, // <-- AÑADIDO
             }
           })
-        : [...state.maps[state.source].hexes, { hexKey, explored: explored || false, villageData, castleData }]
+        : [...state.maps[state.source].hexes, { hexKey, explored: explored || false, villageData, castleData, dungeonData }] // <-- AÑADIDO
 
       state.maps[state.source] = {
         hexes: updatedHexes,
@@ -180,6 +183,19 @@ const mapSlice = createSlice({
         map.hexes.push({ hexKey, explored: true, castleData: castle })
       }
     },
+    saveDungeonToHex(state, action: PayloadAction<{ hexKey: HexKey, dungeon: any }>) {
+      const { hexKey, dungeon } = action.payload
+      const map = state.maps[state.source]
+      const hasHex = map.hexes.some((h) => h.hexKey === hexKey)
+
+      if (hasHex) {
+        map.hexes = map.hexes.map(h => 
+          h.hexKey === hexKey ? { ...h, dungeonData: dungeon } : h
+        )
+      } else {
+        map.hexes.push({ hexKey, explored: true, dungeonData: dungeon })
+      }
+    },
     handlePasteSuccess(_, action: PayloadAction<MapState>) {
       return action.payload
     },
@@ -192,6 +208,7 @@ export const {
   updateHex,
   saveVillageToHex,
   saveCastleToHex,
+  saveDungeonToHex,
   setSelectedHex,
   unsetSelectedHex,
   handlePasteSuccess,
@@ -214,6 +231,7 @@ export const selectMap = (state: RootState): GameMapViewModel => {
           ...userHex,
           villageData: (userHex as any).villageData,
           castleData: (userHex as any).castleData,
+          dungeonData: (userHex as any).dungeonData,
         }
       }
 
