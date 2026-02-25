@@ -53,18 +53,18 @@ const getHexCenter = (points: string) => {
   }
 }
 
-// Función para obtener imagen aleatoria según el tipo
+// Función para obtener imagen aleatoria según el tipo (Arreglado a 4 imágenes)
 const getRandomGenericIcon = (terrain: string) => {
   if (terrain === 'castle') {
-    const num = Math.floor(Math.random() * 5) + 1; // Genera 1, 2, 3, 4 o 5
+    const num = Math.floor(Math.random() * 4) + 1; // Genera 1, 2, 3 o 4
     return `Castillo ${num}.png`;
   }
   if (terrain === 'dungeon') {
-    const num = Math.floor(Math.random() * 5) + 1;
+    const num = Math.floor(Math.random() * 4) + 1; // Genera 1, 2, 3 o 4
     return `Mazmorra ${num}.png`;
   }
   if (terrain === 'village') {
-    const num = Math.floor(Math.random() * 5) + 1;
+    const num = Math.floor(Math.random() * 4) + 1; // Genera 1, 2, 3 o 4
     return `Pueblo ${num}.png`;
   }
   return null;
