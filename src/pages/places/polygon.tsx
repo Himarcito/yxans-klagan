@@ -3,7 +3,7 @@ import { useMemo } from 'react'
 import { Hex, HexKey } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 
-// --- 1. DICCIONARIO DE IMÁGENES ---
+// --- 1. DICCIONARIO DE IMÁGENES EXACTO ---
 const specialIcons: Partial<Record<string, string>> = {
   'Ah21': 'Pico de Ámbar.png',
   'O28': 'Las Minas de Tejepiedra.png',
@@ -87,16 +87,21 @@ export const Polygon = ({
         style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* TRADUCCIÓN MÁGICA DE ESPACIOS Y TILDES CON encodeURI */}
+      {/* ARTILLERÍA PESADA: Inyectamos HTML puro para que nunca falle silenciosamente */}
       {isSpecial && center && iconFileName && (
-        <image
-          href={`/${encodeURI(iconFileName)}`}
+        <foreignObject
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
           height={iconSize}
-          style={{ pointerEvents: 'none' }} 
-        />
+          style={{ pointerEvents: 'none' }}
+        >
+          <img 
+            src={`/${encodeURIComponent(iconFileName)}`} 
+            alt={iconFileName}
+            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+          />
+        </foreignObject>
       )}
     </g>
   )
