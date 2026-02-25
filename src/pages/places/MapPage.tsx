@@ -24,6 +24,9 @@ import ForbiddenLandsMap from './ForbiddenLandsMap'
 import { MapPopover, MapPopoverOptions } from './map-popover'
 import { Hex } from './map.model'
 import { Polygon } from './polygon'
+import { getTerrainForHex } from './terrain-data'
+// IMPORAMOS EL NUEVO COMPONENTE DE ALDEA
+import { VillagePage } from '../village/village.page'
 
 export const MapPage = () => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
@@ -122,6 +125,12 @@ export const MapPage = () => {
     }
   }
 
+  // Extraemos la clave del hexágono seleccionado actualmente (si lo hay)
+  const currentSelectedHexKey = selectedHex.unwrapOr(undefined)
+  
+  // Averiguamos qué tipo de terreno es el hexágono seleccionado
+  const selectedTerrain = currentSelectedHexKey ? getTerrainForHex(currentSelectedHexKey) : undefined
+
   return (
     <div className="flex w-full flex-col gap-y-8 relative pb-20">
       <PageHeader>{t('map:title')}</PageHeader>
@@ -169,11 +178,13 @@ export const MapPage = () => {
             >
               {tooltip.text}
             </div>
+            
             <MapPopover
               options={mapPopover}
               onExploreChanged={(hex) => dispatch(updateHex(hex))}
               onHide={() => dispatch(unsetSelectedHex())}
             ></MapPopover>
+            
             <ForbiddenLandsMap fogOfWar={fogOfWar}>
               {hexes.map((hex) => (
                 <Polygon
@@ -188,6 +199,28 @@ export const MapPage = () => {
           </div>
         </Parchment>
       </div>
+
+      {/* --- SECCIÓN DE GENERADORES DE AVENTURA --- */}
+      {/* Si hay un hexágono seleccionado y es de tipo Pueblo ('village'), mostramos el generador de Aldea */}
+      {currentSelectedHexKey && selectedTerrain === 'village' && (
+        <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
+          <VillagePage hexKey={currentSelectedHexKey} />
+        </div>
+      )}
+
+      {/* Aquí añadiremos más adelante los generadores de Mazmorras y Castillos */}
+      {currentSelectedHexKey && selectedTerrain === 'dungeon' && (
+        <div className="mt-8 p-8 bg-black/10 rounded-lg text-center font-bold text-gray-700 italic border-2 border-dashed border-gray-400">
+          Generador de Mazmorras en construcción para {currentSelectedHexKey}...
+        </div>
+      )}
+
+      {currentSelectedHexKey && selectedTerrain === 'castle' && (
+        <div className="mt-8 p-8 bg-black/10 rounded-lg text-center font-bold text-gray-700 italic border-2 border-dashed border-gray-400">
+          Generador de Castillos en construcción para {currentSelectedHexKey}...
+        </div>
+      )}
+
     </div>
   )
 }
