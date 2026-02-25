@@ -14,7 +14,7 @@ const CalendarPage = lazy(() => import('./pages/calendar/calendar.page'))
 const EncounterPage = lazy(() => import('./pages/encounter.page'))
 const FindsPage = lazy(() => import('./pages/finds.page'))
 const GearPage = lazy(() => import('./pages/gear.page'))
-const VillagePage = lazy(() => import('./pages/village/village.page'))
+// Ojo: La página de la aldea ya no se importa aquí, ahora vive en el mapa
 const MapPage = lazy(() => import('./pages/places/MapPage'))
 const MonstersPage = lazy(
   () => import('./features/monsters/pages/monsters.page'),
@@ -90,23 +90,12 @@ export const menuRoutes: MenuRoute[] = [
     label: 'core:menu.calendar',
     element: <CalendarPage />,
   },
-  // {
-  //   path: 'dice',
-  //   label: 'core:Menu-Dice',
-  //   element: <DiceRollerPage />,
-  // },
- {
+  {
     path: 'places',
     id: nanoid(),
     label: 'core:menu.places.places',
     children: [
-      {
-        path: 'village',
-        id: nanoid(),
-        label: 'core:menu.places.village',
-        element: <VillagePage />,
-        showInMenu: false, // ESTA LÍNEA OCULTA LA ALDEA DEL MENÚ LATERAL
-      },
+      // La aldea desaparece de aquí. Solo queda el Mapa
       {
         path: 'map',
         id: nanoid(),
