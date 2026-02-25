@@ -3,6 +3,19 @@ import { useMemo } from 'react'
 import { Hex, HexKey } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 
+// --- 1. DICCIONARIO DE IMÁGENES ---
+// Aquí le decimos al código qué imagen de la carpeta public/ va en cada hexágono.
+// IMPORTANTE: Cambia los nombres de la derecha por los nombres EXACTOS de tus archivos.
+const specialIcons: Partial<Record<string, string>> = {
+  'Ah21': 'pico-ambar.png',       // Ejemplo: Pico de Ámbar
+  'O28': 'tejepiedra.png',        // Ejemplo: Minas de Tejepiedra
+  'E38': 'vond.png',              // Ejemplo: Vond
+  'Al11': 'pelia.png',            // Ejemplo: Pelagia
+  'Ab27': 'pueblo-hueco.png',     // Ejemplo: Pueblo Hueco
+  'Y8': 'torreon.png',            // Ejemplo: Torreón Argénteo
+  // Añade las demás aquí siguiendo el mismo formato...
+}
+
 type PolygonProps = {
   hex: Hex
   selectedHex: Option<HexKey>
@@ -47,11 +60,14 @@ export const Polygon = ({
   const terrain = getTerrainForHex(hex.hexKey)
   const isSpecial = terrain === 'special'
 
-  // Si es especial, calculamos su centro (solo se calcula una vez gracias a useMemo)
+  // Si es especial, calculamos su centro
   const center = useMemo(() => isSpecial ? getHexCenter(hex.points) : null, [hex.points, isSpecial])
 
-  // Tamaño del ícono en píxeles (puedes ajustarlo si lo ves muy grande o pequeño)
-  const iconSize = 35
+  // Buscamos si este hexágono tiene una imagen asignada en nuestro diccionario
+  const iconFileName = specialIcons[hex.hexKey]
+
+  // Tamaño del ícono (ajusta el número si lo ves muy grande o muy pequeño en el mapa)
+  const iconSize = 45
 
   return (
     <g 
@@ -69,13 +85,13 @@ export const Polygon = ({
         height="100%"
         points={hex.points}
         // Tintado dorado para resaltar los sitios de campaña:
-        style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.35)', stroke: '#b8860b', strokeWidth: 2 } : {}}
+        style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* Si es especial, dibujamos el ícono en el centro */}
-      {isSpecial && center && (
+      {/* Si es especial, calculamos el centro y TIENE imagen en el diccionario, la dibujamos */}
+      {isSpecial && center && iconFileName && (
         <image
-          href="icono-especial.png" /* <--- CAMBIA ESTO POR EL NOMBRE DE TU IMAGEN */
+          href={iconFileName}
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
