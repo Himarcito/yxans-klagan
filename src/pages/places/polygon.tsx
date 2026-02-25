@@ -4,16 +4,31 @@ import { Hex, HexKey } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 
 // --- 1. DICCIONARIO DE IMÁGENES ---
-// Aquí le decimos al código qué imagen de la carpeta public/ va en cada hexágono.
-// IMPORTANTE: Cambia los nombres de la derecha por los nombres EXACTOS de tus archivos.
 const specialIcons: Partial<Record<string, string>> = {
-  'Ah21': 'pico-ambar.png',       // Ejemplo: Pico de Ámbar
-  'O28': 'tejepiedra.png',        // Ejemplo: Minas de Tejepiedra
-  'E38': 'vond.png',              // Ejemplo: Vond
-  'Al11': 'pelia.png',            // Ejemplo: Pelagia
-  'Ab27': 'pueblo-hueco.png',     // Ejemplo: Pueblo Hueco
-  'Y8': 'torreon.png',            // Ejemplo: Torreón Argénteo
-  // Añade las demás aquí siguiendo el mismo formato...
+  'Ah21': 'Pico de Ámbar.png',
+  'O28': 'Las Minas de Tejepiedra.png',
+  'Al11': 'Pelagia.png',
+  'Ab27': 'Pueblo Hueco.png',
+  'Y8': 'El Torreón Argénteo de Las Maravillas.png',
+  'E38': 'Vond.png',
+  'G32': 'El Valle de los Muertos.png',
+  'Aa36': 'El Bosque de las Brujas.png',
+  'G20': 'El Ojo de la Rosa.png',
+  'S48': 'El Pico del Hambriento.png',
+  'E8': 'Jardín de Piedra.png',
+  'I32': 'La Casa del Sajador.png',
+  'N11': 'Muelehueso.png',
+  'Ae44': 'Paso de la Arboleda.png',
+  'F15': 'Pozo del Cuervo.png',
+  'P47': 'Roca de los Vientos.png',
+  
+  // Nota: Estos últimos no salían en la captura de tu GitHub, 
+  // si los has subido con otro nombre, solo tienes que cambiar el texto entre comillas:
+  'B39': 'Paso de Puertoumbrio.png',
+  'Z1': 'La Niebla Calma.png',
+  'G48': 'El Sello de Hierro.png',
+  'B3': 'Belderand.png',
+  'I6': 'Los Caminos Sinuosos.png'
 }
 
 type PolygonProps = {
