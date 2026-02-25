@@ -25,8 +25,9 @@ import { MapPopover, MapPopoverOptions } from './map-popover'
 import { Hex } from './map.model'
 import { Polygon } from './polygon'
 import { getTerrainForHex } from './terrain-data'
-// IMPORAMOS EL NUEVO COMPONENTE DE ALDEA
+// IMPORTAMOS LOS GENERADORES INCORPORADOS AL MAPA
 import { VillagePage } from '../village/village.page'
+import { CastlePage } from '../castle/castle.page' // <-- Importado nuestro flamante Castillo
 
 export const MapPage = () => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
@@ -201,23 +202,24 @@ export const MapPage = () => {
       </div>
 
       {/* --- SECCIÓN DE GENERADORES DE AVENTURA --- */}
-      {/* Si hay un hexágono seleccionado y es de tipo Pueblo ('village'), mostramos el generador de Aldea */}
+      {/* ALDEAS */}
       {currentSelectedHexKey && selectedTerrain === 'village' && (
         <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
           <VillagePage hexKey={currentSelectedHexKey} />
         </div>
       )}
 
-      {/* Aquí añadiremos más adelante los generadores de Mazmorras y Castillos */}
-      {currentSelectedHexKey && selectedTerrain === 'dungeon' && (
-        <div className="mt-8 p-8 bg-black/10 rounded-lg text-center font-bold text-gray-700 italic border-2 border-dashed border-gray-400">
-          Generador de Mazmorras en construcción para {currentSelectedHexKey}...
+      {/* CASTILLOS */}
+      {currentSelectedHexKey && selectedTerrain === 'castle' && (
+        <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
+          <CastlePage hexKey={currentSelectedHexKey} />
         </div>
       )}
 
-      {currentSelectedHexKey && selectedTerrain === 'castle' && (
+      {/* MAZMORRAS (En construcción) */}
+      {currentSelectedHexKey && selectedTerrain === 'dungeon' && (
         <div className="mt-8 p-8 bg-black/10 rounded-lg text-center font-bold text-gray-700 italic border-2 border-dashed border-gray-400">
-          Generador de Castillos en construcción para {currentSelectedHexKey}...
+          Generador de Mazmorras en construcción para {currentSelectedHexKey}...
         </div>
       )}
 
