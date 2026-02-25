@@ -98,16 +98,12 @@ export const Polygon = ({
   const iconFileName = isSpecial ? specialIcons[hex.hexKey] : genericIcon
   const iconSize = isSpecial ? 45 : 35 // Los genéricos los hacemos un pelín más pequeños para que el mapa respire
 
-  // Determinar el estilo de resaltado según el tipo
+// Determinar el estilo de resaltado según el tipo
   let hexStyle = {}
   if (isSpecial) {
     hexStyle = { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } // Dorado
-  } else if (terrain === 'castle') {
-    hexStyle = { fill: 'rgba(100, 100, 100, 0.25)', stroke: '#4a4a4a', strokeWidth: 1.5 } // Gris Oscuro
-  } else if (terrain === 'dungeon') {
-    hexStyle = { fill: 'rgba(128, 0, 128, 0.2)', stroke: '#800080', strokeWidth: 1.5 } // Púrpura
-  } else if (terrain === 'village') {
-    hexStyle = { fill: 'rgba(210, 105, 30, 0.2)', stroke: '#d2691e', strokeWidth: 1.5 } // Naranja / Tierra
+  } else if (isGeneric) {
+    hexStyle = { fill: 'rgba(128, 0, 128, 0.2)', stroke: '#800080', strokeWidth: 1.5 } // Rosado / Púrpura para todos los genéricos
   }
 
   return (
