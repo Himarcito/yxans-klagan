@@ -64,7 +64,7 @@ export const VillagePage = ({ hexKey }: VillagePageProps) => {
     dispatch(saveVillageToHex({ hexKey, village: newVillage }))
   }, [dispatch, hexKey])
 
-  if (!village) {
+if (!village) {
     return (
       <div className="flex w-full flex-col gap-y-4 items-center justify-center p-8 bg-amber-50/50 rounded-lg border-2 border-dashed border-amber-900/30">
         <Typography variant="h3" parchment>Aún no has generado la aldea de {hexKey}</Typography>
