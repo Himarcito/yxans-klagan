@@ -69,6 +69,10 @@ export const Polygon = ({
   const iconFileName = specialIcons[hex.hexKey]
   const iconSize = 45
 
+  // Vite base path (para asegurarnos de que la ruta siempre es absoluta)
+  const baseUrl = import.meta.env.BASE_URL || '/'
+  const imagePath = iconFileName ? `${baseUrl}${iconFileName}` : ''
+
   return (
     <g 
       onClick={onClick as any} 
@@ -87,21 +91,17 @@ export const Polygon = ({
         style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* ARTILLERÍA PESADA: Inyectamos HTML puro para que nunca falle silenciosamente */}
+      {/* Etiqueta SVG estándar con doble enlazado de URL (href y xlinkHref) para máxima compatibilidad */}
       {isSpecial && center && iconFileName && (
-        <foreignObject
+        <image
+          href={imagePath}
+          xlinkHref={imagePath}
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
           height={iconSize}
-          style={{ pointerEvents: 'none' }}
-        >
-          <img 
-            src={`/${encodeURIComponent(iconFileName)}`} 
-            alt={iconFileName}
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-          />
-        </foreignObject>
+          style={{ pointerEvents: 'none' }} 
+        />
       )}
     </g>
   )
