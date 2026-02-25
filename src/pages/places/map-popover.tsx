@@ -2,11 +2,13 @@ import { FireIcon, MagnifyingGlassIcon, SparklesIcon, BookOpenIcon } from '@hero
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
-import { useAppSelector } from '../../store/store.hooks'
+import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
+import { selectMap, saveVillageToHex } from '../../features/map/map-slice'
 import { Hex } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 import { specialLocations } from './special-locations.data'
+import { createRandomVillage } from '../village/village-generator'
 
 export interface MapPopoverOptions {
   hex: Hex
@@ -30,10 +32,10 @@ export const MapPopover = ({
   onHide,
 }: MapPopoverProps) => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
+  const dispatch = useAppDispatch()
+  const { hexes } = useAppSelector(selectMap)
   const ref = useRef<HTMLDivElement>(null)
   const [show, setShow] = useState<boolean>(true)
-  
-  // Estado para el panel de contenido
   const [contentPending, setContentPending] = useState<boolean>(false)
 
   const initialPosition = -9999
@@ -41,6 +43,10 @@ export const MapPopover = ({
     x: initialPosition,
     y: initialPosition,
   })
+
+  // Comprobar si el hexágono actual ya tiene una aldea generada
+  const currentHexData = options ? hexes.find(h => h.hexKey === options.hex.hexKey) : null
+  const hasVillage = !!currentHexData?.villageData
 
   const getX = useCallback(
     (xOptions?: MapPopoverOptions) => {
@@ -73,11 +79,10 @@ export const MapPopover = ({
     if (options) {
       setPosition({ x: getX(options), y: getY(options) })
       setShow(true)
-      setContentPending(false) // Se cierra el panel si cambias de hexágono
+      setContentPending(false)
     }
   }, [getX, getY, options, ref])
 
-  // Traductor y formateador del terreno
   const getTerrainTranslation = (terrain: string) => {
     const terrainMap: Record<string, string> = {
       plains: 'Llanuras',
@@ -100,10 +105,9 @@ export const MapPopover = ({
   const terrainType = options ? getTerrainForHex(options.hex.hexKey) : 'plains'
   const specialData = options && terrainType === 'special' ? specialLocations[options.hex.hexKey] : null
 
-  // Texto dinámico para el botón según el hexágono
   const getButtonText = () => {
     switch (terrainType) {
-      case 'village': return 'Generar Aldea'
+      case 'village': return hasVillage ? 'Ver Aldea' : 'Generar Aldea'
       case 'dungeon': return 'Generar Mazmorra'
       case 'castle': return 'Generar Fortaleza'
       case 'special': return 'Ver Escenario'
@@ -127,7 +131,6 @@ export const MapPopover = ({
         <Parchment padding="sm">
           <div className="mb-3 border-b border-black/20 pb-2">
             <div className="text-2xl font-bold">Hex: {options.hex.hexKey}</div>
-            {/* ETiqueta de Terreno conservada */}
             <div className="text-sm font-semibold text-amber-900 uppercase tracking-widest mt-1">
               {getTerrainTranslation(terrainType)}
             </div>
@@ -146,7 +149,6 @@ export const MapPopover = ({
 
             {options.hex.explored ? (
               <>
-                {/* BOTÓN OLVIDAR (Original Funcional) */}
                 <ParchmentButton
                   buttonType="danger"
                   onPress={() => {
@@ -163,7 +165,24 @@ export const MapPopover = ({
                 <div className="w-full mt-2">
                   <ParchmentButton
                     onPress={() => {
-                      setContentPending(true)
+                      if (terrainType === 'village') {
+                        // Si es un pueblo y no tiene datos, lo generamos y lo guardamos
+                        if (!hasVillage) {
+                          const newVillage = createRandomVillage()
+                          dispatch(saveVillageToHex({ hexKey: options.hex.hexKey, village: newVillage }))
+                        }
+                        // Hacemos scroll suave hacia abajo para ver la aldea (con un pequeño retraso para que renderice)
+                        setTimeout(() => {
+                          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+                        }, 100)
+                        
+                        // Cerramos el popover para dejar la vista limpia
+                        setShow(false)
+                        onHide()
+                      } else {
+                        // Si es otra cosa, mostramos el panel del popover
+                        setContentPending(true)
+                      }
                     }}
                   >
                     {terrainType === 'special' ? (
@@ -177,7 +196,6 @@ export const MapPopover = ({
               </>
             ) : (
               <>
-                {/* BOTÓN EXPLORAR (Original Funcional) */}
                 <ParchmentButton
                   onPress={() => {
                     setShow(false)
@@ -192,11 +210,8 @@ export const MapPopover = ({
             )}
           </div>
 
-          {/* PANEL DE RESULTADOS MÁGICOS */}
           {contentPending && (
             <div className="mt-4 animate-in fade-in slide-in-from-top-2 duration-300">
-              
-              {/* VISTA PARA ESCENARIOS ESPECIALES */}
               {terrainType === 'special' && specialData && (
                 <div className="p-4 bg-amber-50 rounded border border-amber-900/30 text-sm shadow-inner">
                   <h4 className="font-bold text-lg text-amber-950 mb-1 leading-tight">{specialData.name}</h4>
@@ -208,14 +223,12 @@ export const MapPopover = ({
                 </div>
               )}
 
-              {/* VISTA TEMPORAL PARA EL RESTO DE GENERADORES */}
               {terrainType !== 'special' && (
                 <div className="p-3 bg-black/5 rounded text-sm italic border border-black/10">
                   <span className="font-bold not-italic">⚙️ Módulo en construcción:</span> <br/>
                   Preparando el motor para {getButtonText().toLowerCase()} en {getTerrainTranslation(terrainType).toLowerCase()}...
                 </div>
               )}
-
             </div>
           )}
         </Parchment>
