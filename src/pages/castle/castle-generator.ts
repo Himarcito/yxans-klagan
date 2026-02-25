@@ -7,6 +7,7 @@ export interface Castle {
   name: string;
   type: string;
   size: CastleSize;
+  garrison: string; // <-- Nuevo campo para la guarnición
   age: string;
   originalFunction: string;
   founder: string;
@@ -23,14 +24,14 @@ const d66ToIndex = (roll: number) => (Math.floor(roll / 10) - 1) * 6 + (roll % 1
 
 // --- TABLAS DEL PDF ---
 
-const typeTable: Array<{ max: number, type: string, size: CastleSize }> = [
-  { max: 14, type: 'Puesto avanzado', size: 'Pequeño' },
-  { max: 23, type: 'Fortín', size: 'Pequeño' },
-  { max: 31, type: 'Torre', size: 'Pequeño' },
-  { max: 41, type: 'Fuerte', size: 'Medio' },
-  { max: 52, type: 'Plaza fuerte', size: 'Medio' },
-  { max: 62, type: 'Alcázar', size: 'Grande' },
-  { max: 66, type: 'Palacio', size: 'Grande' }
+const typeTable: Array<{ max: number, type: string, size: CastleSize, garrison: string }> = [
+  { max: 14, type: 'Puesto avanzado', size: 'Pequeño', garrison: '5-10' },
+  { max: 23, type: 'Fortín', size: 'Pequeño', garrison: '10-20' },
+  { max: 31, type: 'Torre', size: 'Pequeño', garrison: '5-20' },
+  { max: 41, type: 'Fuerte', size: 'Medio', garrison: '15-40' },
+  { max: 52, type: 'Plaza fuerte', size: 'Medio', garrison: '25-100' },
+  { max: 62, type: 'Alcázar', size: 'Grande', garrison: '50-200' },
+  { max: 66, type: 'Palacio', size: 'Grande', garrison: '50-300' }
 ];
 
 const ageTable: Array<{ max: number, text: string, stateMod: number }> = [
@@ -152,6 +153,7 @@ export const createRandomCastle = (): Castle => {
     name,
     type: tType.type,
     size: tType.size,
+    garrison: tType.garrison, // <-- Asignamos la guarnición generada
     age: finalAgeText,
     originalFunction: pickD66(functionTable, d66()).text,
     founder: pickD66(founderTable, d66()).text,
