@@ -95,7 +95,7 @@ export const menuRoutes: MenuRoute[] = [
   //   label: 'core:Menu-Dice',
   //   element: <DiceRollerPage />,
   // },
-  {
+ {
     path: 'places',
     id: nanoid(),
     label: 'core:menu.places.places',
@@ -105,6 +105,7 @@ export const menuRoutes: MenuRoute[] = [
         id: nanoid(),
         label: 'core:menu.places.village',
         element: <VillagePage />,
+        showInMenu: false, // ESTA LÍNEA OCULTA LA ALDEA DEL MENÚ LATERAL
       },
       {
         path: 'map',
