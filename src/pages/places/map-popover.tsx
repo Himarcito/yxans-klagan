@@ -4,12 +4,13 @@ import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
 import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
-import { selectMap, saveVillageToHex, saveCastleToHex } from '../../features/map/map-slice'
+import { selectMap, saveVillageToHex, saveCastleToHex, saveDungeonToHex } from '../../features/map/map-slice'
 import { Hex } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 import { specialLocations } from './special-locations.data'
 import { createRandomVillage } from '../village/village-generator'
 import { createRandomCastle } from '../castle/castle-generator'
+import { createRandomDungeon } from '../dungeon/dungeon-generator'
 
 export interface MapPopoverOptions {
   hex: Hex
@@ -49,6 +50,7 @@ export const MapPopover = ({
   const currentHexData = options ? hexes.find(h => h.hexKey === options.hex.hexKey) : null
   const hasVillage = !!currentHexData?.villageData
   const hasCastle = !!currentHexData?.castleData
+  const hasDungeon = !!currentHexData?.dungeonData
 
   const getX = useCallback(
     (xOptions?: MapPopoverOptions) => {
@@ -111,7 +113,7 @@ export const MapPopover = ({
     switch (terrainType) {
       case 'village': return hasVillage ? 'Ver Aldea' : 'Generar Aldea'
       case 'castle': return hasCastle ? 'Ver Fortaleza' : 'Generar Fortaleza'
-      case 'dungeon': return 'Generar Mazmorra'
+      case 'dungeon': return hasDungeon ? 'Ver Mazmorra' : 'Generar Mazmorra'
       case 'special': return 'Ver Escenario'
       default: return 'Tirar Encuentro'
     }
@@ -187,8 +189,13 @@ export const MapPopover = ({
                         }, 100)
                         setShow(false)
                         onHide()
-                      } else {
-                        setContentPending(true)
+                  } else if (terrainType === 'dungeon') {
+                        if (!hasDungeon) {
+                          const newDungeon = createRandomDungeon()
+                          dispatch(saveDungeonToHex({ hexKey: options.hex.hexKey, dungeon: newDungeon }))
+                        }
+                        setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
+                        setShow(false); onHide();
                       }
                     }}
                   >
