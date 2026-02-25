@@ -76,7 +76,7 @@ export const Polygon = ({
   // Tamaño del ícono (ajusta el número si lo ves muy grande o muy pequeño en el mapa)
   const iconSize = 45
 
-  return (
+ return (
     <g 
       onClick={onClick as any} 
       onMouseOver={onMouseOver as any} 
@@ -95,15 +95,15 @@ export const Polygon = ({
         style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* Si es especial, calculamos el centro y TIENE imagen en el diccionario, la dibujamos */}
+      {/* Si es especial, calculamos el centro y TIENE imagen, la dibujamos forzando la ruta raíz (/) */}
       {isSpecial && center && iconFileName && (
         <image
-          href={iconFileName}
+          href={`/${iconFileName}`}   /* <--- ESTA ES LA MAGIA QUE FALTABA */
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
           height={iconSize}
-          style={{ pointerEvents: 'none' }} /* Evita que el ícono bloquee el clic del hexágono */
+          style={{ pointerEvents: 'none' }} 
         />
       )}
     </g>
