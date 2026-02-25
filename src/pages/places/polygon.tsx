@@ -20,15 +20,7 @@ const specialIcons: Partial<Record<string, string>> = {
   'N11': 'Muelehueso.png',
   'Ae44': 'Paso de la Arboleda.png',
   'F15': 'Pozo del Cuervo.png',
-  'P47': 'Roca de los Vientos.png',
-  
-  // Nota: Estos últimos no salían en la captura de tu GitHub, 
-  // si los has subido con otro nombre, solo tienes que cambiar el texto entre comillas:
-  'B39': 'Paso de Puertoumbrio.png',
-  'Z1': 'La Niebla Calma.png',
-  'G48': 'El Sello de Hierro.png',
-  'B3': 'Belderand.png',
-  'I6': 'Los Caminos Sinuosos.png'
+  'P47': 'Roca de los Vientos.png'
 }
 
 type PolygonProps = {
