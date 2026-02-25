@@ -46,7 +46,7 @@ export const CastlePage = ({ hexKey }: CastlePageProps) => {
 
       <Parchment>
         <div className="uppercase tracking-widest text-sm text-amber-900 font-bold mb-1">
-          {castle.type} {castle.size}
+          {castle.type} {castle.size} (Guarnición original: {castle.garrison})
         </div>
         <Typography variant="h2" parchment>{castle.name}</Typography>
 
