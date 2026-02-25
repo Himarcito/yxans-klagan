@@ -28,6 +28,7 @@ import { getTerrainForHex } from './terrain-data'
 // IMPORTAMOS LOS GENERADORES INCORPORADOS AL MAPA
 import { VillagePage } from '../village/village.page'
 import { CastlePage } from '../castle/castle.page' // <-- Importado nuestro flamante Castillo
+import { DungeonPage } from '../dungeon/dungeon.page'
 
 export const MapPage = () => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
@@ -216,10 +217,10 @@ export const MapPage = () => {
         </div>
       )}
 
-      {/* MAZMORRAS (En construcción) */}
+      {/* MAZMORRAS */}
       {currentSelectedHexKey && selectedTerrain === 'dungeon' && (
-        <div className="mt-8 p-8 bg-black/10 rounded-lg text-center font-bold text-gray-700 italic border-2 border-dashed border-gray-400">
-          Generador de Mazmorras en construcción para {currentSelectedHexKey}...
+        <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
+          <DungeonPage hexKey={currentSelectedHexKey} />
         </div>
       )}
 
