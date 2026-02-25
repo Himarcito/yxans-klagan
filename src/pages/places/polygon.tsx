@@ -30,7 +30,6 @@ type PolygonProps = {
   onClick: (e: React.MouseEvent<SVGPolygonElement | SVGGElement, MouseEvent>) => void
 }
 
-// Función matemática para encontrar el centro exacto del hexágono a partir de sus puntos
 const getHexCenter = (points: string) => {
   const pairs = points.trim().split(/\s+/)
   let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity
@@ -63,20 +62,14 @@ export const Polygon = ({
     .map((s) => (s === hex.hexKey ? 'hex-selected' : ''))
     .unwrapOr('')
 
-  // Averiguamos si este hexágono es un sitio especial
   const terrain = getTerrainForHex(hex.hexKey)
   const isSpecial = terrain === 'special'
 
-  // Si es especial, calculamos su centro
   const center = useMemo(() => isSpecial ? getHexCenter(hex.points) : null, [hex.points, isSpecial])
-
-  // Buscamos si este hexágono tiene una imagen asignada en nuestro diccionario
   const iconFileName = specialIcons[hex.hexKey]
-
-  // Tamaño del ícono (ajusta el número si lo ves muy grande o muy pequeño en el mapa)
   const iconSize = 45
 
- return (
+  return (
     <g 
       onClick={onClick as any} 
       onMouseOver={onMouseOver as any} 
@@ -91,14 +84,13 @@ export const Polygon = ({
         width="100%"
         height="100%"
         points={hex.points}
-        // Tintado dorado para resaltar los sitios de campaña:
         style={isSpecial ? { fill: 'rgba(255, 215, 0, 0.25)', stroke: '#b8860b', strokeWidth: 2 } : {}}
       />
       
-      {/* Si es especial, calculamos el centro y TIENE imagen, la dibujamos forzando la ruta raíz (/) */}
+      {/* TRADUCCIÓN MÁGICA DE ESPACIOS Y TILDES CON encodeURI */}
       {isSpecial && center && iconFileName && (
         <image
-          href={`/${iconFileName}`}   /* <--- ESTA ES LA MAGIA QUE FALTABA */
+          href={`/${encodeURI(iconFileName)}`}
           x={center.x - iconSize / 2}
           y={center.y - iconSize / 2}
           width={iconSize}
