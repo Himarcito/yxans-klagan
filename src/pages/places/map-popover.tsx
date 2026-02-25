@@ -30,8 +30,8 @@ const TERRAIN_TYPES = [
   { id: 'hills', name: 'Colinas' },
   { id: 'mountains', name: 'Montañas' },
   { id: 'lake', name: 'Lago' },
-  { id: 'marsh', name: 'Pantano' },
-  { id: 'quagmire', name: 'Cenagal' },
+  { id: 'marsh', name: 'Marjal' },
+  { id: 'quagmire', name: 'Ciénaga' },
   { id: 'ruins', name: 'Ruinas' },
 ]
 
