@@ -72,8 +72,8 @@ const App = () => {
         </Suspense>
       </div>
 
-      {/* --- INICIO CÓDIGO DE GUARDADO (VERSION CORREGIDA) --- */}
-      <div style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      {/* --- INICIO CÓDIGO DE GUARDADO (VERSION CORREGIDA - MOVIDA A LA IZQUIERDA) --- */}
+      <div style={{ position: 'fixed', bottom: '60px', left: '20px', zIndex: 9999, display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <button 
           onClick={() => {
             const data = JSON.stringify(localStorage);
