@@ -155,8 +155,8 @@ Object.entries(cartographerData).forEach(([hex, terrain]) => {
 // CASTILLOS (Extraídos de tu CSV)
 setTerrain(['S14', 'Ag48', 'D21', 'P37', 'V27', 'Ak42', 'Ad9', 'Z49', 'U44', 'O8', 'K6', 'P25', 'Ai4', 'X15'], 'castle')
 
-// MAZMORRAS (Extraídas de tu CSV) + AÑADIDO Ae34
-setTerrain(['Aj15', 'Ag30', 'F5', 'R7', 'W42', 'Ag6', 'Ah9', 'J37', 'Ag10', 'E4', 'Z43', 'Ac44', 'V3', 'T39', 'K46', 'K18', 'T23', 'J13', 'M14', 'An23', 'Af3', 'An5', 'F45', 'M4', 'D27', 'D11', 'F29', 'N45', 'Ae34'], 'dungeon')
+// MAZMORRAS (Extraídas de tu CSV) + AÑADIDO Ae34 (Eliminados Ag10 y Ah9)
+setTerrain(['Aj15', 'Ag30', 'F5', 'R7', 'W42', 'Ag6', 'J37', 'E4', 'Z43', 'Ac44', 'V3', 'T39', 'K46', 'K18', 'T23', 'J13', 'M14', 'An23', 'Af3', 'An5', 'F45', 'M4', 'D27', 'D11', 'F29', 'N45', 'Ae34'], 'dungeon')
 
 // PUEBLOS GENÉRICOS (Extraídos de tu CSV)
 setTerrain(['Ad3', 'T3', 'L37', 'U18', 'Q36', 'Ag38', 'T33', 'Ai8', 'Al17', 'M48', 'C24', 'Q18', 'Ac12', 'Z17', 'Am30', 'Ak34', 'Q14', 'Ag14', 'Am26'], 'village')
