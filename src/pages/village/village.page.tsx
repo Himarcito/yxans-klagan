@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { LabelValue } from '../../components/LabelValue'
 import Name from '../../components/Name'
 import { ParchmentButton } from '../../components/ParchmentButton'
@@ -6,13 +6,14 @@ import Stack from '../../components/Stack'
 import { Stat } from '../../components/Stat'
 import { Typography } from '../../components/Typography'
 import { ParchmentCard } from '../../components/card'
-import { PageHeader } from '../../components/page-header'
 import { Parchment } from '../../components/parchment'
-import { useAppSelector } from '../../store/store.hooks'
+import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
 import {
   selectCurrentLanguage,
   selectTranslateFunction,
 } from '../../store/translations/translation.slice'
+import { saveVillageToHex, selectMap } from '../../features/map/map-slice'
+import { HexKey } from '../places/map.model'
 import { InnView } from './InnView'
 import {
   Village,
@@ -27,24 +28,63 @@ import {
   villageSizeTranslationDict,
 } from './village-generator'
 
-export const VillagePage = () => {
-  const [village, setVillage] = useState<Village>(createRandomVillage())
+interface VillagePageProps {
+  hexKey: HexKey;
+}
+
+export const VillagePage = ({ hexKey }: VillagePageProps) => {
+  const dispatch = useAppDispatch()
+  const { hexes } = useAppSelector(selectMap)
   const t = useAppSelector(selectTranslateFunction(['village']))
   const currentLang = useAppSelector(selectCurrentLanguage)
 
+  // Buscamos si el hexágono actual ya tiene una aldea guardada
+  const currentHex = hexes.find(h => h.hexKey === hexKey)
+  const savedVillage = currentHex?.villageData
+
+  const [village, setVillage] = useState<Village | undefined>(savedVillage)
+
+  // Si cambiamos de hexágono, actualizamos la vista
+  useEffect(() => {
+    setVillage(currentHex?.villageData)
+  }, [hexKey, currentHex?.villageData])
+
   const generateNewVillageName = useCallback(() => {
-    setVillage(createRandomVillage())
-  }, [])
+    if (window.confirm("¿Seguro que quieres generar una nueva aldea? Se sobrescribirá la actual.")) {
+      const newVillage = createRandomVillage()
+      setVillage(newVillage)
+      // Lo guardamos en el estado global del mapa
+      dispatch(saveVillageToHex({ hexKey, village: newVillage }))
+    }
+  }, [dispatch, hexKey])
+
+  const handleGenerateFirstTime = useCallback(() => {
+    const newVillage = createRandomVillage()
+    setVillage(newVillage)
+    dispatch(saveVillageToHex({ hexKey, village: newVillage }))
+  }, [dispatch, hexKey])
+
+  if (!village) {
+    return (
+      <div className="flex w-full flex-col gap-y-4 items-center justify-center p-8 bg-amber-50/50 rounded-lg border-2 border-dashed border-amber-900/30">
+        <Typography variant="h3" parchment>Aún no has generado la aldea de {hexKey}</Typography>
+        <ParchmentButton onPress={handleGenerateFirstTime}>
+          Generar Aldea
+        </ParchmentButton>
+      </div>
+    )
+  }
 
   return (
-    <div className="flex w-full flex-col gap-y-8">
-      <PageHeader>{t('village:page_title')}</PageHeader>
-
-      <div>{t('village:page_description')}</div>
-
-      <ParchmentButton onPress={generateNewVillageName}>
-        {t('village:create_new_village')}
-      </ParchmentButton>
+    <div className="flex w-full flex-col gap-y-8 animate-in fade-in duration-500">
+      <div className="flex justify-between items-center border-b-2 border-amber-900 pb-2">
+        <Typography variant="h2" parchment>
+          Aldea de {hexKey}
+        </Typography>
+        <ParchmentButton small buttonType="danger" onPress={generateNewVillageName}>
+          Regenerar Aldea
+        </ParchmentButton>
+      </div>
 
       <Parchment>
         <div>{t(villageSizeTranslationDict[village.size])}</div>
