@@ -4,11 +4,12 @@ import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
 import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
-import { selectMap, saveVillageToHex } from '../../features/map/map-slice'
+import { selectMap, saveVillageToHex, saveCastleToHex } from '../../features/map/map-slice'
 import { Hex } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 import { specialLocations } from './special-locations.data'
 import { createRandomVillage } from '../village/village-generator'
+import { createRandomCastle } from '../castle/castle-generator'
 
 export interface MapPopoverOptions {
   hex: Hex
@@ -44,9 +45,10 @@ export const MapPopover = ({
     y: initialPosition,
   })
 
-  // Comprobar si el hexágono actual ya tiene una aldea generada
+  // Comprobar si el hexágono actual ya tiene una aldea o un castillo generados
   const currentHexData = options ? hexes.find(h => h.hexKey === options.hex.hexKey) : null
   const hasVillage = !!currentHexData?.villageData
+  const hasCastle = !!currentHexData?.castleData
 
   const getX = useCallback(
     (xOptions?: MapPopoverOptions) => {
@@ -108,8 +110,8 @@ export const MapPopover = ({
   const getButtonText = () => {
     switch (terrainType) {
       case 'village': return hasVillage ? 'Ver Aldea' : 'Generar Aldea'
+      case 'castle': return hasCastle ? 'Ver Fortaleza' : 'Generar Fortaleza'
       case 'dungeon': return 'Generar Mazmorra'
-      case 'castle': return 'Generar Fortaleza'
       case 'special': return 'Ver Escenario'
       default: return 'Tirar Encuentro'
     }
@@ -166,21 +168,26 @@ export const MapPopover = ({
                   <ParchmentButton
                     onPress={() => {
                       if (terrainType === 'village') {
-                        // Si es un pueblo y no tiene datos, lo generamos y lo guardamos
                         if (!hasVillage) {
                           const newVillage = createRandomVillage()
                           dispatch(saveVillageToHex({ hexKey: options.hex.hexKey, village: newVillage }))
                         }
-                        // Hacemos scroll suave hacia abajo para ver la aldea (con un pequeño retraso para que renderice)
                         setTimeout(() => {
                           window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
                         }, 100)
-                        
-                        // Cerramos el popover para dejar la vista limpia
+                        setShow(false)
+                        onHide()
+                      } else if (terrainType === 'castle') {
+                        if (!hasCastle) {
+                          const newCastle = createRandomCastle()
+                          dispatch(saveCastleToHex({ hexKey: options.hex.hexKey, castle: newCastle }))
+                        }
+                        setTimeout(() => {
+                          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+                        }, 100)
                         setShow(false)
                         onHide()
                       } else {
-                        // Si es otra cosa, mostramos el panel del popover
                         setContentPending(true)
                       }
                     }}
