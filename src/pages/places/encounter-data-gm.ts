@@ -1,0 +1,35 @@
+export interface EncounterData {
+  book: string;
+  page: string;
+  title: string;
+  description: string;
+}
+
+export const gmGuideMatrix: Record<number, Record<string, number>> = {
+  41: { plains: 1, forest: 1, dark_forest: 1, hills: 1, mountains: 1, lake: 0, marsh: 1, quagmire: 1, ruins: 1 },
+  42: { plains: 16, forest: 16, dark_forest: 1, hills: 2, mountains: 35, lake: 0, marsh: 5, quagmire: 4, ruins: 4 },
+  43: { plains: 2, forest: 17, dark_forest: 18, hills: 31, mountains: 31, lake: 1, marsh: 9, quagmire: 5, ruins: 5 },
+  44: { plains: 3, forest: 18, dark_forest: 19, hills: 21, mountains: 21, lake: 1, marsh: 9, quagmire: 7, ruins: 6 },
+  45: { plains: 4, forest: 2, dark_forest: 20, hills: 22, mountains: 22, lake: 38, marsh: 11, quagmire: 8, ruins: 8 },
+  46: { plains: 5, forest: 28, dark_forest: 21, hills: 3, mountains: 4, lake: 38, marsh: 12, quagmire: 9, ruins: 9 },
+  51: { plains: 6, forest: 3, dark_forest: 3, hills: 4, mountains: 5, lake: 4, marsh: 12, quagmire: 10, ruins: 9 },
+  52: { plains: 7, forest: 6, dark_forest: 25, hills: 5, mountains: 23, lake: 4, marsh: 13, quagmire: 11, ruins: 9 },
+  53: { plains: 34, forest: 7, dark_forest: 24, hills: 7, mountains: 7, lake: 39, marsh: 16, quagmire: 12, ruins: 11 },
+  54: { plains: 8, forest: 34, dark_forest: 9, hills: 33, mountains: 33, lake: 39, marsh: 18, quagmire: 13, ruins: 12 },
+  55: { plains: 9, forest: 8, dark_forest: 9, hills: 34, mountains: 36, lake: 39, marsh: 21, quagmire: 14, ruins: 13 },
+  56: { plains: 10, forest: 24, dark_forest: 10, hills: 24, mountains: 24, lake: 39, marsh: 29, quagmire: 16, ruins: 21 },
+  61: { plains: 11, forest: 9, dark_forest: 11, hills: 9, mountains: 9, lake: 5, marsh: 30, quagmire: 21, ruins: 21 },
+  62: { plains: 12, forest: 10, dark_forest: 12, hills: 32, mountains: 32, lake: 5, marsh: 38, quagmire: 23, ruins: 24 },
+  63: { plains: 13, forest: 11, dark_forest: 13, hills: 11, mountains: 11, lake: 40, marsh: 40, quagmire: 29, ruins: 29 },
+  64: { plains: 14, forest: 12, dark_forest: 29, hills: 12, mountains: 12, lake: 40, marsh: 41, quagmire: 30, ruins: 30 },
+  65: { plains: 15, forest: 13, dark_forest: 27, hills: 13, mountains: 13, lake: 41, marsh: 42, quagmire: 34, ruins: 34 },
+  66: { plains: 30, forest: 26, dark_forest: 30, hills: 14, mountains: 37, lake: 41, marsh: 42, quagmire: 42, ruins: 43 }
+};
+
+export const gmGuideEncounters: Record<number, EncounterData> = {
+  1: { book: "Manual de la Directora de Juego", page: "147", title: "LA NIEBLA DE SANGRE", description: "Todo ocurre de manera casi imperceptible. Al principio, todos los sonidos se extinguen y lo único que oís es vuestra propia charla. Entonces sentís que se os eriza el pelo de la nuca, como si el aire estuviera lleno de electricidad... Un terror profundo y primigenio se apodera de vosotras. Sentís la imperiosa necesidad de huir de inmediato, sea como sea. Unos segundos después, todo ocurre de verdad. La Niebla de Sangre surge de repente de la tierra húmeda, densa y roja y bloquea toda visión. A su paso arrastra algo que hace que la sangre se os hiele en las venas... y viene a por vosotras. Tras pasar un tiempo en la Niebla de Sangre, las aventureras serán atacadas por un sanguino. Podrán darse cuenta del ataque si superan sendas tiradas de ATLETISMO (para aguantar hasta el momento del ataque) y PERSPICACIA (si no se han ocultado)." },
+  2: { book: "Manual de la Directora de Juego", page: "148", title: "DUELO EN LOS BOSQUES", description: "Oís sonido de lucha y gritos violentos mezclados con alaridos y canciones de batalla. Un poco más adelante hay un orco batiéndose en duelo con una elfa tatuada. Se lanzan el uno contra el otro y se paran los golpes sin conseguir darse. De vez en cuando se detienen para lanzarse insultos. La elfa Heldemin y el herrero orco Alakran tienen una historia trágica. El clan de orcos Urhur capturó al grupo de aventureros de Heldemin en los años que precedieron al Levantamiento de Hierro y forzó a las elfas y los humanos a ser sus esclavos. Heldemin conoció a Alakran, trabaron amistad y ambos fueron repudiados y desterrados. Si Alakran no limpiaba su honor matando a la elfa o viceversa, ninguno sería bienvenido por su pueblo, por lo que su extraño duelo ha durado semanas. Ya no se acuerdan de qué les hizo enfadar en un primer momento; ahora solo están cansados e irritados. Si las aventureras entablan conversación con la pareja es posible que dejen de pelear y ambos se unan al grupo, siempre que ninguno pierda el honor. Tienen recursos, pero se han quedado sin comida." },
+  3: { book: "Manual de la Directora de Juego", page: "149", title: "EL ORCO FUGITIVO", description: "Primero oís una canción gutural, «Msshamassh, gukkul, gukkul» y el sonido de un tambor que marca el ritmo. Entonces veis un grupo de orcos que caminan en una caótica procesión, cantando el himno. En medio del grupo, dos de los orcos llevan un enorme palo de madera del que cuelga un orco indefenso atado de pies y manos. Lo llevan de vuelta a su clan. El grupo forma parte del clan Urhur y el orco atrapado es Sargah. Intentó desertar pero lo persiguieron y ahora está siendo llevado ante el consejo de ancianos para enfrentarse al castigo. Las aventureras que puedan escabullirse del grupo podrán encontrar a Sargah abandonado y atado cerca del camino en un campamento para pasar la noche. Si lo salvan les jurará lealtad eterna, pero huirá en la primera oportunidad que tenga. En caso de que se produzca una pelea, los orcos son tres veces más que las aventureras." },
+  4: { book: "Manual de la Directora de Juego", page: "149", title: "MUERTE DESDE EL AIRE", description: "Oís un chillido que hiela la sangre que viene del cielo y, al momento siguiente, el batir de unas pesadas alas. Entonces lo veis. Un enorme pájaro demoníaco desciende desde las nubes. Os ve, vira en el aire y se lanza en picado a por vuestro grupo. Las aventureras han entrado de repente en el territorio de caza de un grifo. El grifo les advertirá mediante su grito desgarrador, pero si el grupo se mantiene firme el grifo atacará y el combate será a muerte. Si se dan la vuelta y deciden caminar en otra dirección y alejarse del nido del grifo, la fiera las dejará marchar." },
+  5: { book: "Manual de la Directora de Juego", page: "149", title: "EL BANQUETE DE LAS ARPÍAS", description: "Incluso antes de verlas, el viento os trae un fuerte hedor a muerte y podredumbre, un olor empalagoso al que se suma un sonido chirriante parecido al lloro de un recién nacido. Son arpías. Tres pesadas y sucias criaturas vuelan por encima de las copas de los árboles e inmediatamente vuelven su atención hacia vosotras. Las arpías, Krag, Mag y Serag, andan buscando el almuerzo de hoy, e irán a por las aventureras (a menos que haya algo cerca de aspecto más tentador). En combate son letales, pero muy codiciosas y fáciles de distraer si ven oro u otros tesoros que brillen en el suelo, se centrarán por completo en su hallazgo. A veces se pelean por objetos y dejan a sus víctimas escapar." }
+};
