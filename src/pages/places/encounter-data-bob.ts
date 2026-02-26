@@ -1,0 +1,42 @@
+import { EncounterData } from './encounter-data-gm';
+
+export const bookOfBeastsMatrix: Record<number, Record<string, number>> = {
+  11: { plains: 11, forest: 11, dark_forest: 11, hills: 11, mountains: 11, lake: 11, marsh: 11, quagmire: 11, ruins: 11 },
+  12: { plains: 12, forest: 12, dark_forest: 12, hills: 12, mountains: 12, lake: 12, marsh: 12, quagmire: 12, ruins: 12 },
+  13: { plains: 13, forest: 13, dark_forest: 13, hills: 13, mountains: 13, lake: 13, marsh: 13, quagmire: 13, ruins: 13 },
+  14: { plains: 14, forest: 14, dark_forest: 14, hills: 14, mountains: 14, lake: 14, marsh: 14, quagmire: 14, ruins: 14 },
+  15: { plains: 15, forest: 15, dark_forest: 15, hills: 15, mountains: 15, lake: 15, marsh: 15, quagmire: 15, ruins: 15 },
+  16: { plains: 16, forest: 16, dark_forest: 16, hills: 16, mountains: 16, lake: 16, marsh: 16, quagmire: 16, ruins: 16 },
+  21: { plains: 21, forest: 21, dark_forest: 21, hills: 21, mountains: 21, lake: 21, marsh: 21, quagmire: 21, ruins: 21 },
+  22: { plains: 22, forest: 22, dark_forest: 22, hills: 22, mountains: 22, lake: 22, marsh: 22, quagmire: 22, ruins: 22 },
+  23: { plains: 23, forest: 23, dark_forest: 23, hills: 23, mountains: 23, lake: 23, marsh: 23, quagmire: 23, ruins: 23 },
+  24: { plains: 24, forest: 24, dark_forest: 24, hills: 24, mountains: 24, lake: 24, marsh: 24, quagmire: 24, ruins: 24 },
+  25: { plains: 25, forest: 25, dark_forest: 25, hills: 25, mountains: 25, lake: 25, marsh: 25, quagmire: 25, ruins: 25 },
+  26: { plains: 26, forest: 26, dark_forest: 26, hills: 26, mountains: 26, lake: 26, marsh: 26, quagmire: 26, ruins: 26 },
+  31: { plains: 31, forest: 31, dark_forest: 31, hills: 31, mountains: 31, lake: 31, marsh: 31, quagmire: 31, ruins: 31 },
+  32: { plains: 32, forest: 32, dark_forest: 32, hills: 32, mountains: 32, lake: 32, marsh: 32, quagmire: 32, ruins: 32 },
+  33: { plains: 33, forest: 33, dark_forest: 33, hills: 33, mountains: 33, lake: 33, marsh: 33, quagmire: 33, ruins: 33 },
+  34: { plains: 34, forest: 34, dark_forest: 34, hills: 34, mountains: 34, lake: 34, marsh: 34, quagmire: 34, ruins: 34 },
+  35: { plains: 35, forest: 35, dark_forest: 35, hills: 35, mountains: 35, lake: 35, marsh: 35, quagmire: 35, ruins: 35 },
+  36: { plains: 36, forest: 36, dark_forest: 36, hills: 36, mountains: 36, lake: 36, marsh: 36, quagmire: 36, ruins: 36 },
+  41: { plains: 41, forest: 41, dark_forest: 41, hills: 41, mountains: 41, lake: 41, marsh: 41, quagmire: 41, ruins: 41 },
+  42: { plains: 42, forest: 42, dark_forest: 42, hills: 42, mountains: 42, lake: 42, marsh: 42, quagmire: 42, ruins: 42 },
+  43: { plains: 43, forest: 43, dark_forest: 43, hills: 43, mountains: 43, lake: 43, marsh: 43, quagmire: 43, ruins: 43 },
+  44: { plains: 44, forest: 44, dark_forest: 44, hills: 44, mountains: 44, lake: 44, marsh: 44, quagmire: 44, ruins: 44 },
+  45: { plains: 45, forest: 45, dark_forest: 45, hills: 45, mountains: 45, lake: 45, marsh: 45, quagmire: 45, ruins: 45 },
+  46: { plains: 46, forest: 46, dark_forest: 46, hills: 46, mountains: 46, lake: 46, marsh: 46, quagmire: 46, ruins: 46 },
+  51: { plains: 51, forest: 51, dark_forest: 51, hills: 51, mountains: 51, lake: 51, marsh: 51, quagmire: 51, ruins: 51 },
+  52: { plains: 52, forest: 52, dark_forest: 52, hills: 52, mountains: 52, lake: 52, marsh: 52, quagmire: 52, ruins: 52 },
+  53: { plains: 53, forest: 53, dark_forest: 53, hills: 53, mountains: 53, lake: 53, marsh: 53, quagmire: 53, ruins: 53 },
+  54: { plains: 54, forest: 54, dark_forest: 54, hills: 54, mountains: 54, lake: 54, marsh: 54, quagmire: 54, ruins: 54 },
+  55: { plains: 55, forest: 55, dark_forest: 55, hills: 55, mountains: 55, lake: 55, marsh: 55, quagmire: 55, ruins: 55 },
+  56: { plains: 56, forest: 56, dark_forest: 56, hills: 56, mountains: 56, lake: 56, marsh: 56, quagmire: 56, ruins: 56 },
+  61: { plains: 61, forest: 61, dark_forest: 61, hills: 61, mountains: 61, lake: 61, marsh: 61, quagmire: 61, ruins: 61 },
+  62: { plains: 62, forest: 62, dark_forest: 62, hills: 62, mountains: 62, lake: 62, marsh: 62, quagmire: 62, ruins: 62 },
+  63: { plains: 63, forest: 63, dark_forest: 63, hills: 63, mountains: 63, lake: 63, marsh: 63, quagmire: 63, ruins: 63 },
+  64: { plains: 64, forest: 64, dark_forest: 64, hills: 64, mountains: 64, lake: 64, marsh: 64, quagmire: 64, ruins: 64 },
+  65: { plains: 65, forest: 65, dark_forest: 65, hills: 65, mountains: 65, lake: 65, marsh: 65, quagmire: 65, ruins: 65 },
+  66: { plains: 66, forest: 66, dark_forest: 66, hills: 66, mountains: 66, lake: 66, marsh: 66, quagmire: 66, ruins: 66 }
+};
+
+export const bookOfBeastsEncounters: Record<number, EncounterData> = {};
