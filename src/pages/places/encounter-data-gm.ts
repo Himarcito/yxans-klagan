@@ -208,4 +208,82 @@ export const gmGuideEncounters: Record<number, EncounterData> = {
     title: "TERAMALDA", 
     description: "Un olor a carne quemada os da en la nariz y, al mismo tiempo, oís unas pesadas pisadas. Algo se acerca a través de la espesura. La criatura hace un estruendo infernal, chirriando y traqueteando. Hasta la tierra tiembla. Frente a vosotras emerge de entre la vegetación una enorme caballero, completamente cubierta por una antigua armadura negra oxidada. Tiene un símbolo grabado en la coraza. La criatura lleva una espada manchada de marrón por la sangre seca. La armadura andante es la extraña criatura no muerta Teramalda, que vaga por las Tierras Prohibidas en busca de venganza desde que los enanos la quemaran viva dentro de su armadura hace 350 años. Los Hermanos Herrumbrosos la consideran la campeona de su dios, Herrumbre, ya que su coraza lleva el símbolo de la deidad y principalmente mata enanos. Teramalda se mantiene con vida gracias a un pincho de hierro mágico que atraviesa el pecho de la ferral por dentro de la armadura. Es prácticamente invulnerable y no contestará si se le habla. Cada encuentro con Teramalda será diferente: PRIMER ENCUENTRO: Teramalda simplemente se quedará de pie mirando a las aventureras durante un rato hasta que decida que no son lo bastante interesantes. Si las aventureras la atacan, pasa directamente al tercer encuentro. SEGUNDO ENCUENTRO: Teramalda atacará a las enanas que haya en el grupo. TERCER ENCUENTRO: Teramalda clasifica a las aventureras como enemigas y las ataca. No las perseguirá si huyen. CUARTO ENCUENTRO: Teramalda considera a las aventureras enemigas juradas y las persigue. Camina lentamente y se la puede oír a cierta distancia, pero nunca se rinde. Encontrará a sus enemigas mientras estas lleven algo de hierro." 
   }
+  31: { 
+    book: "Manual de la Directora de Juego", 
+    page: "161", 
+    title: "LOS CANTORES DE PIEDRA", 
+    description: "Una pequeña nube de polvo se levanta donde os encontráis. Tres figuras bajas con túnicas grises, capuchas y el rostro envuelto en bufandas giran a vuestro alrededor cantando a una misteriosa estructura antigua de metal y piedra. Oculta bajo el polvo que levantan está la cantora Porisia Vozdeplata y dos de sus estudiantes. Su objetivo es entender y purificar la tierra para el dios enano Gran, y estarán encantados de hablar sobre su trabajo y las propiedades arcanas de la piedra que han encontrado. Si el grupo tiene un enano, los tratarán con infinito respeto." 
+  },
+  32: { 
+    book: "Manual de la Directora de Juego", 
+    page: "161", 
+    title: "RATAS", 
+    description: "El sonido de algo correteando, el corretear de miles de patas sobre el suelo, las rocas y entre las hojas secas. Un mar gris, marrón y negro se abre paso como una ola emitiendo un sonido estridente de finos chillidos de hambre. Es un enjambre de ratas (usa los atributos de Enjambre). Las ratas no atacan de inmediato a las aventureras, sino que rodean algo que hay en el suelo: una cesta. Se oyen los débiles lloros de un bebé desde su interior. La madre del bebé, una mediano llamada Belinda, fue obligada a abandonarlo aquí para huir de sus amos esclavistas. Las aventureras tienen un par de rondas para rescatar al bebé antes de que el enjambre lo devore." 
+  },
+  33: { 
+    book: "Manual de la Directora de Juego", 
+    page: "162", 
+    title: "EL LAMENTO DEL MINOTAURO", 
+    description: "Una criatura grande y peluda, con la parte superior del cuerpo de un toro y la inferior de un humanoide de fuertes patas, está en el suelo llorando y rugiendo. En sus brazos yace una criatura similar, muerta. Un poco más lejos, escondidos entre los arbustos, hay cuatro soldados humanos temblando de miedo. Los soldados atacaron a la pareja de minotauros por pura ignorancia y mataron al macho, Kaun. Ahora la hembra está ciega de dolor y busca a los asesinos. Los soldados pedirán auxilio a las aventureras en un susurro. Si la minotaura los huele, atacará con furia asesina. El grupo deberá decidir de qué lado se pone o si intenta mediar." 
+  },
+  34: { 
+    book: "Manual de la Directora de Juego", 
+    page: "162", 
+    title: "LOS MUERTOS INQUIETOS", 
+    description: "Veis acercarse a seis bufones con trajes andrajosos. No dicen ni una palabra, sino que realizan un espectáculo patético, cayéndose, tropezando y malabareando. O eso creéis, hasta que una ráfaga de viento os trae el inconfundible olor a muerte y podredumbre. Son un grupo de muertos vivientes. Los aldeanos locales sintieron pena por ellos y los vistieron de bufones para tratar de esconderlos y trasladarlos a un lugar seguro. Sin embargo, una patrulla de 5 Guardias de Hierro los persigue para quemarlos. Las aventureras quedan atrapadas en medio del conflicto: ¿protegerán a los \"inofensivos\" muertos de la inquisición o ayudarán a destruirlos?" 
+  },
+  35: { 
+    book: "Manual de la Directora de Juego", 
+    page: "163", 
+    title: "EL TROL DORMIDO", 
+    description: "Una colina boscosa se alza en medio de la llanura. Pero la colina se mueve, se levanta sobre dos patas y se gira hacia vosotras... ¡Es un trol! El enorme trol ancestral Karg, cubierto de tierra y maleza por haber dormido durante décadas, bloquea el paso. Karg es avaricioso pero vago. Exigirá un peaje para dejarlas pasar: algo brillante (oro, plata o magia), o en su defecto, algo sabroso (goblins, orcos o una de las aventureras). Si se niegan, Karg bostezará y atacará con una fuerza arrolladora." 
+  },
+  36: { 
+    book: "Manual de la Directora de Juego", 
+    page: "163", 
+    title: "LOS PELONES", 
+    description: "Oís aullidos lastimeros. Seis humanoides con cabeza de lobo pero sin un solo pelo en el cuerpo se acercan tambaleándose. Su piel está roja y cubierta de ampollas purulentas. Son lupinos (liderados por Abaken). Encontraron unos cristales mágicos cerca de una cría de dragón dormida y la radiación mágica los ha enfermado. Tienen un hambre atroz y atacarán. Cualquier daño que inflijan con sus mordiscos obliga a tirar Resistencia para no contraer la enfermedad (Pérdida de cabello y llagas, Virulencia 4)." 
+  },
+  37: { 
+    book: "Manual de la Directora de Juego", 
+    page: "164", 
+    title: "PASO CORTADO", 
+    description: "El camino se estrecha entre paredes de roca y está bloqueado por un carro volcado. Sobre él hay sentado un enano pelirrojo con una ballesta. Cuatro humanos con lanzas y escudos os apuntan desde detrás de la barricada. El enano, Guntermann, es un \"empresario\" oportunista. Exige un peaje de 3 monedas de plata por cabeza para permitirles pasar por \"su\" camino. No atacarán a menos que los ataquen primero, pero se negarán a moverse si el grupo no paga, lucha o los intimida (requiere una tirada muy exitosa de MANIPULACIÓN)." 
+  },
+  38: { 
+    book: "Manual de la Directora de Juego", 
+    page: "164", 
+    title: "LOS INFECTADOS", 
+    description: "Encontráis una barquita a la deriva o un carro varado en el fango (dependiendo del terreno). Dentro hay una persona envuelta en mantas empapadas de sudor, con la piel teñida de un azul enfermizo y respirando con mucha dificultad. Hay equipo y monedas esparcidos alrededor. Es una trampa biológica: la persona sufre la Peste Azul, una enfermedad altamente contagiosa y mortal (Virulencia 5). Saquear las pertenencias o intentar tratar a la persona sin precauciones extremas forzará una tirada de enfermedad inmediata para todos los involucrados." 
+  },
+  39: { 
+    book: "Manual de la Directora de Juego", 
+    page: "164", 
+    title: "EL POLIZÓN", 
+    description: "Una pequeña coca mercante o un carro mercante robusto se cruza en vuestro camino. El capitán Sertold os saluda animadamente y os invita a comerciar y compartir noticias. Vende provisiones, vino y algún hallazgo sencillo. Sin embargo, no sabe que lleva un polizón: el escurridizo goblin Meroggha. Mientras las aventureras charlan y comercian con Sertold, el goblin intentará saltar de la coca a las mochilas de las aventureras y robar algo de valor. Si lo descubren, Sertold se quedará perplejo y no querrá saber nada del asunto." 
+  },
+  40: { 
+    book: "Manual de la Directora de Juego", 
+    page: "165", 
+    title: "MUERTE DESDE ABAJO", 
+    description: "El agua del lago se vuelve completamente negra de repente y empieza a hervir y hacer burbujas. Una gran cantidad de espuma ensucia la superficie. Segundos después, tres gruesos tentáculos viscosos salen disparados del agua hacia vosotras. Un gigantesco calamar os ataca. Los tres tentáculos actúan como enemigos individuales (Fuerza 3, Destreza 2, Pelea 3). Si un tentáculo atrapa a un personaje, intentará arrastrarlo bajo el agua al siguiente turno para ahogarlo. Cortar un tentáculo liberará a la presa, y si el grupo destruye dos tentáculos, el monstruo se retirará a las profundidades." 
+  },
+  41: { 
+    book: "Manual de la Directora de Juego", 
+    page: "165", 
+    title: "EL MERCADER DE ALMAS", 
+    description: "Un hechicero de aspecto macabro llamado Vergevil viaja en un carruaje oscuro o una lancha (según terreno), iluminado por fanales de cristal que brillan con luz espectral. Los cristales no contienen fuego, sino almas de personas en forma de gas. Vergevil es encantador y ofrece grandes recompensas (Objetos mágicos o monedas de oro) si una de las aventureras está dispuesta a \"donar\" un trocito de su alma para un experimento. Extraer un trozo de alma inflige 1 punto de daño permanente a Empatía que no se puede curar de manera normal." 
+  },
+  42: { 
+    book: "Manual de la Directora de Juego", 
+    page: "166", 
+    title: "LOS REPTILES CAZADORES", 
+    description: "La niebla o los altos juncos ocultan el movimiento a vuestro alrededor. De repente, una red de cuero crudo vuela por el aire hacia uno de vosotros. Alisando sus escamas, seis saurios humanoides surgen de la maleza armados con tridentes y espadas cortas. El grupo ha sido emboscado por saurios esclavistas liderados por Sheeerz. Buscan prisioneros (especialmente humanos o elfos, a los que desprecian). Los saurios tiran Sigilo con ventaja para sorprender. Intentarán apresar a las aventureras con redes y huir con sus presas; si el combate se tuerce, no dudarán en retirarse y hundirse en el lodo." 
+  },
+  43: { 
+    book: "Manual de la Directora de Juego", 
+    page: "166", 
+    title: "ENTERRADOS VIVOS", 
+    description: "Oís gritos en la distancia, atormentados lamentos de agonía. Cuando os acercáis veis a siete elfos armados con espadas y arcos de pie frente a una profunda fosa en el suelo. Todos llevan plumas azules en el pelo. En la fosa hay una familia de elfos: una mujer, un hombre y dos niños. Gritan pidiendo ayuda. Dos de los elfos de arriba están echando tierra con palas para enterrarlos vivos. La líder elfa, Plumazul, es una cazarrecompensas que ha sentenciado a esta familia (los Ylendidra) por esconder a unos orcos fugitivos de la justicia élfica. Plumazul es arrogante y advertirá al grupo de que interferir en los asuntos de los elfos significará la muerte." 
+  }
 };
