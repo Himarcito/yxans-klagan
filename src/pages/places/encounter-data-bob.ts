@@ -100,5 +100,65 @@ export const bookOfBeastsEncounters: Record<number, EncounterData> = {
     page: "129", 
     title: "UNA GUARDIA DE PIEDRA", 
     description: "La silueta de una figura humanoide se puede ver en la densa vegetación. La figura no responde cuando se le habla y parece estar casi antinaturalmente quieta. Las aventureras que se aventuren en la espesa maleza pronto descubrirán que la figura es de hecho una estatua cubierta de vegetación. Quitar la densa maraña de vegetación requiere una tirada exitosa de FUERZA. Escondida debajo de la vegetación hay una estatua bien hecha de una guerrera humana. En una mano sostiene una gruesa espada corta cuya empuñadura termina en una serpiente que se come a sí misma (uróboros). En la otra lleva la cabeza cortada de un Engendro demoníaco con retorcidos cuernos de carnero y una codiciosa cara de sapo. Las aventureras que tengan éxito con una tirada de LEYENDAS reconocen la forma de la empuñadura retorcida como un símbolo de la Congregación de la Serpiente. Si la tirada resulta en al menos dos equis (éxitos), también recuerdan leyendas sobre una guardia de doncellas escuderas que protegieron al Rey Algarod contra las hordas demoníacas de Zygofer durante la huida a Alderstone al final de la cuarta Guerra Alisea." 
+  },
+  11: { 
+    book: "Book of Beasts", 
+    page: "129", 
+    title: "PIEDRA RÚNICA ENANA", 
+    description: "Una gran roca tallada con runas sobresale de la tierra en la cima de una colina cercana. Las runas están coloreadas en tonos de rojo y rodeadas de elaborados lazos que se parecen mucho a colas de dragón. Estas son runas enanas y pueden ser leídas por alguien con una tirada exitosa de LEYENDAS: «Tyrmyr hijo de Grundhir señor del Gran Salón de la Cascada de la Montaña erigió este monumento para que el mundo tema y admire por siempre su varonil matanza de la escoria de Herrumbre en la gran guerra». La piedra rúnica es un monumento de la Primera Guerra Alisea y la escoria de Herrumbre despreciada en el texto es el ejército aliseo de la Ferral Teramalda. Las aventureras enanas que se queden aquí durante un turno recuperan todos sus atributos al máximo si han sufrido algún tipo de daño. El efecto solo se aplica una vez." 
+  },
+  12: { 
+    book: "Book of Beasts", 
+    page: "130", 
+    title: "RASTROS DE BABA EN LA VEGETACIÓN", 
+    description: "Hilos brillantes de una secreción babosa se extienden por el terreno. Cubren las piedras, los mechones de hierba y el musgo, y cuelgan en racimos de los arbustos y ramas como capullos goteantes de sustancias impías. Las aventureras que examinen el rastro de baba y tengan éxito con una tirada de SUPERVIVENCIA pueden llegar a la conclusión de que proviene de un basilisco en celo. También recuerdan que la baba es venenosa y puede paralizar incluso a las aventureras más fuertes al menor contacto (veneno paralizante, Potencia 6). Con un par de guantes gruesos, el veneno se puede recolectar en botellas y, por ejemplo, aplicarse a las armas (2D6 dosis)." 
+  },
+  13: { 
+    book: "Book of Beasts", 
+    page: "130", 
+    title: "CAMPO DE BATALLA CUBIERTO DE MALEZA", 
+    description: "Un antiguo campo de batalla se abre en el paisaje como una herida de malos recuerdos. El campo está cubierto de hierba salvaje y espinas serpenteantes, con calaveras sonrientes en picas que sobresalen de la vegetación. Entre los mechones de hierba hay armas oxidadas que yacen lado a lado con huesos roídos. A juzgar por los cráneos, parece que orcos, elfos, enanos y humanos han luchado y muerto por igual en este lugar. Si las aventureras pasan un Cuarto de Día EXPLORANDO el campo de batalla, puedes tirar una vez en la tabla de Hallazgos Valiosos Transportados. También encuentran D66 monedas de varias denominaciones. Tira un D6 por cada unidad de diez monedas: 1-3 da cobre; 4-5 plata; 6 oro." 
+  },
+  14: { 
+    book: "Book of Beasts", 
+    page: "131", 
+    title: "EL ESQUELETO EN EL ÁRBOL", 
+    description: "Vuestros ojos cansados del viaje se topan con una vista siniestra: un esqueleto envuelto en harapos andrajosos y rotos que cuelga de un árbol más adelante. La cabeza está inclinada hacia adelante en un ángulo antinatural y una gruesa cadena de hierro atada a una de las ramas está envuelta como una soga alrededor del cuello del esqueleto. El esqueleto es todo lo que queda del erudito nigromante Mortelius Quidom, quien fue asesinado por aldeanos asustados después de un experimento esotérico en el cementerio local. Las aventureras que registren el esqueleto encontrarán un compendio de pergamino amarillento que contiene tres conjuros nigrománticos. El difunto no puede moverse mientras la cadena de hierro permanezca en su lugar, pero si se quita, Mortelius regresa en forma de fantasma. El nigromante no muerto es una vista aterradora y tiene una fascinación morbosa por sus propios restos, pero no tiene intenciones hostiles. No hacia las aventureras, en cualquier caso. Mientras se comporten medianamente decentes, Mortelius mostrará su gratitud por ser liberado de su prisión carnal contándoles la leyenda de las Dagas Fantasma o algún otro artefacto que creas que tiene una conexión lógica con el misterio de la muerte (para Daga Fantasma, ver el Manual de la Directora de Juego, página 137). En caso de que los personajes jugadores decidan atacar a Mortelius, él convocará todos sus poderes impíos para convertir a las aventureras en esclavos no muertos. Como fantasma es un adversario formidable, pero afortunadamente no puede alejarse de la vista del árbol donde encontró su muerte prematura. Mortelius tiene los atributos de un Fantasma (ver el Manual de la Directora de Juego, página 95), pero con Fuerza 12 e Intelecto 7." 
+  },
+  15: { 
+    book: "Book of Beasts", 
+    page: "131", 
+    title: "VIEJO POZO", 
+    description: "Un pozo antiguo y parcialmente cubierto de vegetación se vislumbra en medio de la densa vegetación. No tiene polea, pero los restos podridos de su cubierta de madera y un cubo yacen esparcidos entre los mechones de hierba que lo rodean. Las aventureras que miren hacia abajo en la oscuridad serán recibidas por un olor a humedad. Es posible bajar al fondo (cuatro metros), pero las paredes son resbaladizas y los personajes jugadores deben tener éxito con una tirada de MOVERSE para evitar perder el agarre y recibir daño por la caída (Manual del Jugador, página 113). Esparcidos en el barro en el fondo del pozo hay fragmentos de huesos de varios animales desafortunados que han caído por el profundo agujero. Si las jugadoras exploran activamente el lugar, tira una vez en la tabla de Hallazgos Sencillos en Guaridas." 
+  },
+  16: { 
+    book: "Book of Beasts", 
+    page: "132", 
+    title: "LA MESA DE PIEDRA DE LOS DIOSES", 
+    description: "Una gran mesa de piedra se alza entre unos árboles cercanos. Es una construcción impresionante de granito y mármol, cortada en bloques toscos pero simétricos. La vegetación circundante es densa y salvaje, pero la mesa en sí está notablemente intacta por los estragos del tiempo y la naturaleza. Alrededor de la superficie de la mesa se ven símbolos arcaicos que parecen indicar la disposición de los asientos. Con una tirada exitosa de LEYENDAS las aventureras reconocen un puñado de ellos como símbolos antiguos de los viejos dioses de las Tierras Prohibidas. El Caminante Nocturno está posicionado en un extremo de la mesa, pero Lamento, Flujo, Arcilla y Enorme están representados junto con varios dioses olvidados y ahora sin nombre." 
+  },
+  17: { 
+    book: "Book of Beasts", 
+    page: "132", 
+    title: "UNA DELICIA ORCA", 
+    description: "Hay setas de un metro de alto creciendo en la penumbra bajo un grupo de árboles cercanos. Sus sombreros en forma de embudo emiten una tenue luz fluorescente en un tono de verde venenoso. Las aventureras que tengan éxito con una tirada de SUPERVIVENCIA reconocen las setas como Sombreros Verdes Brillantes. En su forma sin procesar son letalmente venenosas (Potencia 7) para todos menos para los orcos, pero el veneno desaparece si se cortan en rodajas y se secan al sol. Preparado de esta manera, el Sombrero Verde Brillante es una comida excelente para viajeros: ligera, duradera y nutritiva. El Sombrero Verde Brillante sin procesar se considera una delicia por los orcos y puede ser extremadamente útil en negociaciones. Entre los orcos el precio por unidad es de D10 monedas de plata." 
+  },
+  18: { 
+    book: "Book of Beasts", 
+    page: "133", 
+    title: "EL MAESTRO CERVECERO MISERABLE", 
+    description: "El silencio es roto por un fuerte sollozo, seguido de varios estornudos húmedos que se convierten en lloriqueos. El torrente de lágrimas proviene de un señor robusto que llora junto a un carro de madera destrozado un par de cientos de metros más adelante. Aparte de su abultada boina morada, el hombre angustiado está completamente desnudo. Esparcidos a su alrededor hay jirones de ropa rasgada y pedazos de cajas y barriles rotos. El hombre miserable no es otro que el Maestro Cervecero Humla: cervecero legendario y proveedor de bebidas fermentadas a señores, héroes y gargantas sedientas por igual en castillos y cuevas. Al menos según él mismo. Pero ahora no tiene nada. Poco antes de que llegaran las aventureras, el Maestro Humla fue atacado por una banda de feroces bandidos que no solo robaron todos los barriles de su mejor cerveza rubia, sino que también se fueron con su colección de recetas y su indispensable herbario de viaje de hierbas cerveceras. Si las aventureras consuelan al Maestro Humla, él les pide que encuentren y recuperen sus mercancías robadas de los matones sin lavar. A causa de los bandidos no tiene con qué pagarles, pero promete una generosa recompensa una vez que se complete la misión. Con una tirada exitosa de SUPERVIVENCIA, las aventureras encuentran rastros de barriles arrastrados en el terreno. Los rastros conducen a una guarida subterránea en un hexágono adyacente al azar en el mapa. Aquí están los diecisiete barriles de cerveza restantes junto con una docena de bandidos roncando en un sueño inducido por la cerveza. Pero algunos todavía están despiertos y lucharán con uñas y dientes para defender su botín. A las aventureras que devuelvan los bienes robados al Maestro Humla se les ofrecerá un barril de cerveza como pago. Si se niegan, el maestro cervecero se molesta y las declara unos patanes bárbaros sin percepción de los verdaderos valores de la vida. Si lo escoltan de regreso a la seguridad de su cervecería, el Maestro Humla está dispuesto a pagarles D10 de plata y otro barril de su mejor cerveza rubia. Para las estadísticas de los bandidos, ver la página 183 del Manual de la Directora de Juego." 
+  },
+  19: { 
+    book: "Book of Beasts", 
+    page: "134", 
+    title: "VIEJA BODEGA DE RAÍCES", 
+    description: "Una bodega parcialmente subterránea se puede ver detrás de unos árboles altos. El techo está cubierto de arbustos y musgo, pero la entrada está hecha de piedra gris y una gran puerta de madera con herrajes de hierro. La puerta de madera se puede abrir con una tirada exitosa de JUEGO DE MANOS. Detrás hay un corto tramo de escaleras que bajan a una bodega fresca con grandes cajas, jarras y otras vasijas. Está mayormente vacía y cubierta de telarañas, pero unas cuantas ánforas en la parte trasera de la sala resultan contener cuatro litros de un vino maduro y excepcionalmente delicioso. Sin embargo, el vino es tan potente que se puede usar como un sedante (veneno somnífero, Potencia 6)." 
+  },
+  20: { 
+    book: "Book of Beasts", 
+    page: "134", 
+    title: "VIEJO PUENTE DE PIEDRA", 
+    description: "Un viejo puente de arco de piedra se extiende sobre un pequeño arroyo parcialmente seco. El tramo del puente descansa sobre tres pequeños arcos de granito cubierto de musgo. Una tirada exitosa de ARTESANÍA revela que la construcción es simple y definitivamente no es de fabricación enana: mampostería de piedra seca natural unida sin mortero ni magia. Cualquiera que intente cruzar el puente debe hacer una tirada de MOVERSE. Fallar significa que la persona provoca un colapso menor y cae en el arroyo de abajo (una caída de tres metros, ver página 113 en el Manual del Jugador para el daño por caída). Debajo del arco central, las aventureras encuentran huesos de una gran criatura humanoide, probablemente un ogro o un trol. Tira dos veces en la tabla de Hallazgos Sencillos en Guaridas si exploran el espacio debajo del puente." 
   }
 };
