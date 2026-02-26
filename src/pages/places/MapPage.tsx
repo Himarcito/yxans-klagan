@@ -1,6 +1,7 @@
 import {
   EyeIcon,
   EyeSlashIcon,
+  CloudIcon // <-- Añadido el icono para el clima
 } from '@heroicons/react/20/solid'
 import '@total-typescript/ts-reset'
 import { useEffect, useMemo, useRef, useState } from 'react'
@@ -8,6 +9,8 @@ import { ParchmentButton } from '../../components/ParchmentButton'
 import { Train } from '../../components/Stack'
 import { PageHeader } from '../../components/page-header'
 import { Parchment } from '../../components/parchment'
+import { Stat } from '../../components/Stat' // <-- Añadido para el panel de clima
+import { Typography } from '../../components/Typography' // <-- Añadido para el panel de clima
 import {
   selectFogOfWar,
   selectMap,
@@ -25,10 +28,13 @@ import { MapPopover, MapPopoverOptions } from './map-popover'
 import { Hex } from './map.model'
 import { Polygon } from './polygon'
 import { getTerrainForHex } from './terrain-data'
+
 // IMPORTAMOS LOS GENERADORES INCORPORADOS AL MAPA
 import { VillagePage } from '../village/village.page'
-import { CastlePage } from '../castle/castle.page' // <-- Importado nuestro flamante Castillo
+import { CastlePage } from '../castle/castle.page'
 import { DungeonPage } from '../dungeon/dungeon.page'
+import { TerrainEncounterPage } from './TerrainEncounterPage' // <-- Añadido el panel de terrenos salvajes
+import { WeatherResult, generateWeather } from './encounter-generator' // <-- Añadido el motor del clima
 
 export const MapPage = () => {
   const t = useAppSelector(selectTranslateFunction(['map', 'common']))
@@ -42,6 +48,9 @@ export const MapPage = () => {
   const [mapPopover, setMapPopover] = useState<MapPopoverOptions | undefined>(
     undefined,
   )
+  
+  // ESTADO PARA EL REPORTE DEL CLIMA
+  const [weather, setWeather] = useState<WeatherResult | null>(null)
 
   const getRect = (
     hexTarget: EventTarget & Element,
@@ -163,7 +172,30 @@ export const MapPage = () => {
           )}
           {t(fogOfWar ? 'map:fog_of_war_on' : 'map:fog_of_war_off')}
         </ParchmentButton>
+
+        {/* BOTÓN INDEPENDIENTE PARA TIRAR EL CLIMA */}
+        <ParchmentButton buttonType="ghost" onPress={() => setWeather(generateWeather())}>
+          <CloudIcon className="size-5 text-blue-800" />
+          Tirar Clima
+        </ParchmentButton>
       </Train>
+
+      {/* PANEL DE CLIMA (Solo aparece si se ha pulsado el botón) */}
+      {weather && (
+        <div className="animate-in fade-in slide-in-from-top-4 duration-500">
+          <Parchment padding="sm">
+            <Typography variant="h3" parchment>Reporte Meteorológico</Typography>
+            <div className="flex flex-wrap gap-4 mt-2">
+              <Stat flexGreedy label="Viento">{weather.wind}</Stat>
+              <Stat flexGreedy label="Precipitación">{weather.rain}</Stat>
+              <Stat flexGreedy label="Temperatura">{weather.temperature}</Stat>
+            </div>
+            <div className="flex justify-end mt-2">
+               <button onClick={() => setWeather(null)} className="text-sm font-bold text-red-800 hover:text-red-600">Ocultar</button>
+            </div>
+          </Parchment>
+        </div>
+      )}
 
       <div className="w-full">
         <Parchment padding="xs">
@@ -221,6 +253,13 @@ export const MapPage = () => {
       {currentSelectedHexKey && selectedTerrain === 'dungeon' && (
         <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
           <DungeonPage hexKey={currentSelectedHexKey} />
+        </div>
+      )}
+
+      {/* TERRENOS SALVAJES (ENCUENTROS) */}
+      {currentSelectedHexKey && ['plains', 'forest', 'dark_forest', 'hills', 'mountains', 'lake', 'marsh', 'quagmire', 'ruins'].includes(selectedTerrain || '') && (
+        <div className="mt-8 animate-in slide-in-from-bottom-8 duration-500">
+          <TerrainEncounterPage hexKey={currentSelectedHexKey} />
         </div>
       )}
 
