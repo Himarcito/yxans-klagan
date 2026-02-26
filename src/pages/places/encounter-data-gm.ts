@@ -32,4 +32,88 @@ export const gmGuideEncounters: Record<number, EncounterData> = {
   3: { book: "Manual de la Directora de Juego", page: "149", title: "EL ORCO FUGITIVO", description: "Primero oís una canción gutural, «Msshamassh, gukkul, gukkul» y el sonido de un tambor que marca el ritmo. Entonces veis un grupo de orcos que caminan en una caótica procesión, cantando el himno. En medio del grupo, dos de los orcos llevan un enorme palo de madera del que cuelga un orco indefenso atado de pies y manos. Lo llevan de vuelta a su clan. El grupo forma parte del clan Urhur y el orco atrapado es Sargah. Intentó desertar pero lo persiguieron y ahora está siendo llevado ante el consejo de ancianos para enfrentarse al castigo. Las aventureras que puedan escabullirse del grupo podrán encontrar a Sargah abandonado y atado cerca del camino en un campamento para pasar la noche. Si lo salvan les jurará lealtad eterna, pero huirá en la primera oportunidad que tenga. En caso de que se produzca una pelea, los orcos son tres veces más que las aventureras." },
   4: { book: "Manual de la Directora de Juego", page: "149", title: "MUERTE DESDE EL AIRE", description: "Oís un chillido que hiela la sangre que viene del cielo y, al momento siguiente, el batir de unas pesadas alas. Entonces lo veis. Un enorme pájaro demoníaco desciende desde las nubes. Os ve, vira en el aire y se lanza en picado a por vuestro grupo. Las aventureras han entrado de repente en el territorio de caza de un grifo. El grifo les advertirá mediante su grito desgarrador, pero si el grupo se mantiene firme el grifo atacará y el combate será a muerte. Si se dan la vuelta y deciden caminar en otra dirección y alejarse del nido del grifo, la fiera las dejará marchar." },
   5: { book: "Manual de la Directora de Juego", page: "149", title: "EL BANQUETE DE LAS ARPÍAS", description: "Incluso antes de verlas, el viento os trae un fuerte hedor a muerte y podredumbre, un olor empalagoso al que se suma un sonido chirriante parecido al lloro de un recién nacido. Son arpías. Tres pesadas y sucias criaturas vuelan por encima de las copas de los árboles e inmediatamente vuelven su atención hacia vosotras. Las arpías, Krag, Mag y Serag, andan buscando el almuerzo de hoy, e irán a por las aventureras (a menos que haya algo cerca de aspecto más tentador). En combate son letales, pero muy codiciosas y fáciles de distraer si ven oro u otros tesoros que brillen en el suelo, se centrarán por completo en su hallazgo. A veces se pelean por objetos y dejan a sus víctimas escapar." }
+  6: { 
+    book: "Manual de la Directora de Juego", 
+    page: "150", 
+    title: "EL CABALLO", 
+    description: "Oís el relincho de un caballo y de repente lo tenéis delante. Un orgulloso semental con silla, manta y alforjas. No se ve a su dueño por ninguna parte. El caballo solitario sacude la cabeza, claramente frustrado. El caballo pertenece al noble Lavide, que murió en una emboscada hace dos días. En las alforjas de su silla hay un hallazgo VALIOSO, además del sello de la casa noble del dueño, que tiene forma de rosa. El caballo está entrenado para el combate, pero no le gustan mucho los desconocidos. Sin embargo, superar una tirada de TRATO CON ANIMALES lo calmará. Si la tirada falla, las aventureras tendrán que capturarlo por la fuerza. Si devuelven el caballo y el sello a la familia de Lavide, que vive en un castillo cercano, esta les regalará el caballo, junto con un hallazgo PRECIADO." 
+  },
+  7: { 
+    book: "Manual de la Directora de Juego", 
+    page: "150", 
+    title: "LA MASACRE CEBO", 
+    description: "Frente a vosotras se extiende una escena terrible: una docena de humanos empapados en sangre, algunos arrastrándose por el suelo con las tripas fuera, aún vivos. Hay un carro de mercancías volcado. Unas pocas personas gimen, otras gritan. Una mujer con cota de malla intenta levantar una espada. Al veros, un joven comparativamente ileso grita histéricamente: —¡Ladrones! Se han llevado nuestros caballos. ¿Tenéis agua? ¿Alguna de vosotras es sanadora? ¡No, hermano, no te duermas! En realidad, todo es un montaje y nadie está herido. Un grupo de esclavistas se ha cubierto de sangre e intestinos de animales para intentar hacer que las aventureras se acerquen a ellos con las armas envainadas. El líder, Harwa, tiene un cuerno de bronce y, cuando lo toca, todo el grupo debe ponerse en pie inmediatamente y atacar a sus «salvadoras». Su objetivo no es matar, sino dejar a las aventureras fuera de combate con sus porras y luego venderlas como esclavas." 
+  },
+  8: { 
+    book: "Manual de la Directora de Juego", 
+    page: "150", 
+    title: "EL GRAN OFENSOR", 
+    description: "Una voz fuerte y agitada atraviesa el paisaje. Alguien está gritando burlas e insultos. Cuando os acercáis, veis una tambaleante estructura de madera que se eleva unos metros sobre el suelo. Sobre ella hay un pequeño orco de mirada altanera. Cuando os ve, se desabrocha los calzones y orina en vuestra dirección, sin parar de lanzar insultos. El orco Khardnal se autoproclama «el Gran Provocador» y quiere despertar a la gente de su sueño. Khardnal considera su misión personal extender su palabra y provocar a los transeúntes para hacer que liberen su rabia interior. Si las aventureras lo atacan, Khardnal utilizará un arco o un hacha y un escudo. Luchará hasta la muerte mientras provoca a sus oponentes y al mismo tiempo las elogia por estar en contacto con su rabia interior." 
+  },
+  9: { 
+    book: "Manual de la Directora de Juego", 
+    page: "151", 
+    title: "LAS RUINAS DE ANTAÑO", 
+    description: "Ante vosotras veis los fragmentados restos de lo que una vez fue un edificio, un bastión de civilización en las tierras agrestes. Ahora la naturaleza ha reclamado su lugar y no quedan más que unos restos caídos y recuerdos perdidos entre las nieblas de la historia. Las aventureras han encontrado unas ruinas adecuadas como lugar seguro para acampar. Para decidir el tipo de ruinas y quién vivió aquí, tira un D66:\n11–16: Cabaña (Pareja de ancianos)\n21–24: Molino (Molinero, enterrado atrás)\n25–32: Puesto de guardia (Explorador muerto)\n33–35: Templo (Hermanas del Cuervo asesinadas)\n36–46: Granja (Mercader rico, muerto hace mucho)\n51–54: Torre (Hechicero perdido)\n55–62: Puesto avanzado (Soldados aliseos)\n64–64: Fonda (Viajeros de antes de la Niebla)." 
+  },
+  10: { 
+    book: "Manual de la Directora de Juego", 
+    page: "151", 
+    title: "EL ZORRO", 
+    description: "Una extraña canción resuena por la tierra. Una áspera voz masculina canta sobre flores moradas y tumbas profundas allá donde el cielo y la tierra se dan encuentro. Nunca habíais oído una canción como esta. Al doblar un recodo del camino, os encontráis de repente cara a cara con un zorrito. Os mira con los ojos muy abiertos. La canción ha cesado. En realidad, el zorro es un demonio llamado Grelf y es quien estaba cantando. Sin embargo, Grelf se enorgullece de meterse en su personaje de zorro y prefiere no cantar ni hablar mientras esté cerca de las aventureras. Como es un demonio curioso, Grelf las seguirá de cerca. Grelf puede transformarse en demonio en cualquier momento (utiliza las tablas de creación de demonios)." 
+  },
+  11: { 
+    book: "Manual de la Directora de Juego", 
+    page: "152", 
+    title: "EL PRÍNCIPE OLVIDADO", 
+    description: "Una enorme pila de pesadas rocas, amontonadas unas sobre otras formando un monumento que reconocéis. Alguien ha invertido un obvio esfuerzo en construir el túmulo y bajo él hay enterrado algo o alguien. Un príncipe aliseo, cuyo nombre fue olvidado hace mucho, cayó en batalla hace cientos de años y fue enterrado aquí junto a su caballo y dos caballeros leales. La tumba contiene un collar de plata, una vieja espada ancha y un trozo de cota de malla oxidada. Si las aventureras deciden buscar tesoros, ¡el príncipe despertará de su sueño y las atacará como un caballero de la Muerte!" 
+  },
+  12: { 
+    book: "Manual de la Directora de Juego", 
+    page: "152", 
+    title: "LOS LADRONES HAMBRIENTOS", 
+    description: "Un grupo de humanos desaliñados vestidos con ropas gastadas y equipados con todo tipo de armas sencillas sale al camino. Están sucios y parece que llevan varios días sin tomar una comida decente. Un hombre grande con barba negra da un paso adelante, escupe y se lleva la mano a la espada. —¿Quién puñetas sois vosotras? ¿A qué habéis venío? ¿Ejque no sabéis quién soy yo? Un grupo de ladrones muertos de hambre, liderados por Argam Dosbarbas, está pasando una mala racha y va en busca de un botín. Los ladrones están cansados y es posible convencerlos hablando de compartir el campamento si las aventureras les ofrecen comida e historias." 
+  },
+  13: { 
+    book: "Manual de la Directora de Juego", 
+    page: "153", 
+    title: "EL HERMANO PLAGA", 
+    description: "Os encontráis frente a los restos putrefactos de un desafortunado viajero. Los cuervos y las alimañas ya han hecho su parte. El muerto era un hermano herrumbroso llamado Lagras, castigado con la Peste Demoníaca (virulencia 3). Toda aventurera que toque el cadáver quedará infectada. Durante la infección, la víctima tendrá fuertes alucinaciones en las que verá demonios retorcidos en lugar de personas. El cadáver también tiene un sencillo medallón de bronce de los Hermanos Herrumbrosos." 
+  },
+  14: { 
+    book: "Manual de la Directora de Juego", 
+    page: "153", 
+    title: "LOS FLAGELANTES", 
+    description: "Se acerca una gran procesión. Sus integrantes, vestidos de negro y envueltos en ramas de zarza, se azotan y golpean a sí mismos. Varios se han cortado la lengua o las orejas. En medio de la multitud hay una construcción de madera de donde cuelgan personas desnudas con ganchos insertos bajo la piel. La líder de los sectarios es la madre Catyala, quien predica que la única forma de salvar las Tierras Prohibidas es castigarse. Intentará convencer a las aventureras de que se despojen de equipo y ropas usando un símbolo de hierro con el conjuro ILUSIÓN. Si fallan PERSPICACIA, verán el mundo a través de los locos ojos de Catyala." 
+  },
+  15: { 
+    book: "Manual de la Directora de Juego", 
+    page: "154", 
+    title: "MENDIGOS", 
+    description: "A lo lejos veis una muchedumbre de vagabundos hambrientos y cansados vestidos con harapos. Los mendigos os rodean con las manos extendidas, sin decir nada. Esta veintena de mendigos es lo que queda del pueblo de Sotofrey, que fue quemado hasta los cimientos por unos codiciosos aventureros." 
+  },
+  16: { 
+    book: "Manual de la Directora de Juego", 
+    page: "154", 
+    title: "EL PILOTO DE GLOBO ENANO", 
+    description: "En la lejanía veis una especie de capullo verde sobre un árbol. Al acercaros veis que se trata de un globo aerostático enganchado en la copa. El enano Andred abjuró del dios Gran y juró no volver a tocar el suelo tras perder a su familia en una mina. Ahora se ha estrellado, roto una pierna y necesita ayuda para reparar el globo sin tocar el piso. Tiene tres ballestas cargadas y desconfía de que le roben sus valiosos hallazgos almacenados a bordo." 
+  },
+  17: { 
+    book: "Manual de la Directora de Juego", 
+    page: "154", 
+    title: "BODA", 
+    description: "En la lejanía se oye música y jolgorio, voces humanas y graves voces de orcos. En el borde de un claro hay una mujer orco (Tregga) y un humano (Robert) vestidos de blanco a punto de casarse. Han reunido a familiares y amigos. Sin embargo, algunos invitados racistas han decidido sabotear la boda empezando una pelea mortal durante la ceremonia. Las aventureras pueden unirse, mirar o intentar poner fin a la sangrienta reyerta." 
+  },
+  18: { 
+    book: "Manual de la Directora de Juego", 
+    page: "155", 
+    title: "EL PANADERO DEMONÍACO", 
+    description: "Una casita huele a pan recién hecho. Es el hogar de Melkar, un robusto mediano que encontró rocas demoníacas y las usa como horno para animar a criaturas de masa como sus soldados. Ofrecerá té y pastas, pero si descubren a sus 20 criaturas escondidas y le atacan, los enviará al combate. (Sus ataques tienen daño de arma 1). Si el grupo se queda o vuelve más tarde, Melkar se volverá un tirano opresor que intenta conquistar pueblos con su ejército de pan." 
+  },
+  19: { 
+    book: "Manual de la Directora de Juego", 
+    page: "156", 
+    title: "EL SANTUARIO ANIMAL", 
+    description: "Cuando la oscuridad se extiende, miles de ojos de animales rodean vuestro campamento. Ciervos, zorros, lobos, jabalíes e insectos se acercan lentamente. Las aventureras han acampado en un santuario secreto. Los animales las empujarán pacíficamente para expulsarlas. Al final llegará un colosal alce negro, el líder sagrado. Si el grupo ataca al alce, absolutamente todos los animales del bosque enfurecerán y atacarán hasta que huyan." 
+  }
 };
