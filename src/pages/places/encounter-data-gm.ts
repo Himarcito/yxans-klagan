@@ -267,5 +267,23 @@ export const gmGuideEncounters: Record<number, EncounterData> = {
     page: "165", 
     title: "MUERTE DESDE ABAJO", 
     description: "De repente, parece que el agua que rodea a vuestro barco haya empezado a hervir. Algo se mueve por debajo, algo grande. Al momento siguiente, el barco se escora por un golpe desde abajo y casi os caéis por la borda. Tras eso, todo ocurre muy rápido. Primero uno, luego dos y luego tres tentáculos gigantescos se elevan por ambos lados. Agarran la nave, preparados para arrastrarla bajo las aguas. Obviamente, el monstruo que hay debajo no quiere dejaros viajar en paz. Un calamar gigante está atacando el barco. Cuando las aventureras le hayan cortado la mitad de los tentáculos, el monstruo volverá a sumergirse en las profundidades." 
+  },
+  41: { 
+    book: "Manual de la Directora de Juego", 
+    page: "165", 
+    title: "EL MERCADER DE ALMAS", 
+    description: "Un pequeño velero se desliza lentamente sobre las aguas. Está iluminado por diez lámparas de aceite, alguien toca una lira a bordo y en lo alto del mástil ondea un colorido pendón. En la embarcación viajan tres personas. El comerciante Vergevil quiere hablar de negocios con las aventureras. Las mercancías están custodiadas por sus hermanas, Ginda y Aneta. El cargamento del barco incluye unas cuantas cosas peculiares. Recientemente, Vergevil se ha hecho con una colección de almas que tiene en botellas de cristal con el conjuro ATAR ALMA (consulta la página 139 del Manual del Jugador). Si las aventureras miran una botella, verán que dentro de ella se mueve una forma gaseosa y oirán el débil sonido de una voz o una respiración. Vergevil no tiene ni idea de qué hay en realidad en las botellas, pero sabe que son mágicas y quiere venderlas como artefactos poderosos. Quiere 10 monedas de plata por cada botella, pero también está dispuesto a intercambiarlas por otros objetos de valor. Si se abre una botella, el alma se escapa. Un druida que tenga el conjuro RESURRECCIÓN (consulta la página 124 del Manual del Jugador) puede dejar que el alma entre en un animal o incluso darle una segunda personalidad a una criatura inteligente. Tira 1D6. Con 1-3, el alma conserva su personalidad original y puede actuar racionalmente. Con 4-6, el alma se ha vuelto loca y actuará de manera irracional." 
+  },
+  42: { 
+    book: "Manual de la Directora de Juego", 
+    page: "166", 
+    title: "LOS REPTILES CAZADORES", 
+    description: "Oís un extraño cloqueo. Otros lo siguen, procedentes de otra dirección. Y de una tercera. Entre la niebla divisáis varias extrañas criaturas que avanzan hacia vosotras. Piel escamosa verde grisácea, dientes afilados y ojos amarillos. —¿Seerdooss? —sisea alguien. —Seerdiss graandess —sisea otra voz. —Seerdoss graandess y feeoss, ¿sabéiss habláss? Un grupo de saurios, tantos como aventureras más 1D6, se acercan a ellas. Están de caza, armados con lanzas y garrotes. Sheeerz, el líder, perdió a sus padres a manos de cazadores humanos y por tanto odia a todos los humanos (a los que los saurios consideran cerdos grandes, aunque no tienen claro si se comen o si sirven para alguna otra cosa), pero no son especialmente belicosos con las demás razas." 
+  },
+  43: { 
+    book: "Manual de la Directora de Juego", 
+    page: "166", 
+    title: "ENTERRADOS VIVOS", 
+    description: "Oís gritos en la distancia, atormentados lamentos de agonía. Cuando os acercáis veis una explanada entre unas casas de piedra abandonadas. Hay siete elfos armados con espadas y arcos de pie frente a una profunda fosa. Todos llevan plumas azules en el pelo. En la fosa hay una familia de elfos: una mujer, un hombre y dos niños. Gritan pidiendo ayuda, pero no intentan escalar para salir del agujero. Dos de los elfos que hay junto al hoyo están echando tierra al agujero con palas para enterrar viva a la familia. La elfa Plumazul y sus cazarrecompensas han encontrado a la familia Ylendidra, que se dio a la fuga cuando se descubrió que habían estado escondiendo a unos orcos sentenciados a muerte. Se supone que Plumazul tiene que llevar a la familia ante la justicia, pero después de que la madre la atacara con un cuchillo ha decidido tomarse la justicia por su mano." 
   }
 };
