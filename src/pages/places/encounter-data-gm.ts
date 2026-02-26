@@ -5,6 +5,7 @@ export interface EncounterData {
   description: string;
 }
 
+// Matriz oficial del Manual de la Directora (Tirada D66 cruzada con el Terreno)
 export const gmGuideMatrix: Record<number, Record<string, number>> = {
   41: { plains: 1, forest: 1, dark_forest: 1, hills: 1, mountains: 1, lake: 0, marsh: 1, quagmire: 1, ruins: 1 },
   42: { plains: 16, forest: 16, dark_forest: 1, hills: 2, mountains: 35, lake: 0, marsh: 5, quagmire: 4, ruins: 4 },
@@ -27,11 +28,36 @@ export const gmGuideMatrix: Record<number, Record<string, number>> = {
 };
 
 export const gmGuideEncounters: Record<number, EncounterData> = {
-  1: { book: "Manual de la Directora de Juego", page: "147", title: "LA NIEBLA DE SANGRE", description: "Todo ocurre de manera casi imperceptible. Al principio, todos los sonidos se extinguen y lo único que oís es vuestra propia charla. Entonces sentís que se os eriza el pelo de la nuca, como si el aire estuviera lleno de electricidad... Un terror profundo y primigenio se apodera de vosotras. Sentís la imperiosa necesidad de huir de inmediato, sea como sea. Unos segundos después, todo ocurre de verdad. La Niebla de Sangre surge de repente de la tierra húmeda, densa y roja y bloquea toda visión. A su paso arrastra algo que hace que la sangre se os hiele en las venas... y viene a por vosotras. Tras pasar un tiempo en la Niebla de Sangre, las aventureras serán atacadas por un sanguino. Podrán darse cuenta del ataque si superan sendas tiradas de ATLETISMO (para aguantar hasta el momento del ataque) y PERSPICACIA (si no se han ocultado)." },
-  2: { book: "Manual de la Directora de Juego", page: "148", title: "DUELO EN LOS BOSQUES", description: "Oís sonido de lucha y gritos violentos mezclados con alaridos y canciones de batalla. Un poco más adelante hay un orco batiéndose en duelo con una elfa tatuada. Se lanzan el uno contra el otro y se paran los golpes sin conseguir darse. De vez en cuando se detienen para lanzarse insultos. La elfa Heldemin y el herrero orco Alakran tienen una historia trágica. El clan de orcos Urhur capturó al grupo de aventureros de Heldemin en los años que precedieron al Levantamiento de Hierro y forzó a las elfas y los humanos a ser sus esclavos. Heldemin conoció a Alakran, trabaron amistad y ambos fueron repudiados y desterrados. Si Alakran no limpiaba su honor matando a la elfa o viceversa, ninguno sería bienvenido por su pueblo, por lo que su extraño duelo ha durado semanas. Ya no se acuerdan de qué les hizo enfadar en un primer momento; ahora solo están cansados e irritados. Si las aventureras entablan conversación con la pareja es posible que dejen de pelear y ambos se unan al grupo, siempre que ninguno pierda el honor. Tienen recursos, pero se han quedado sin comida." },
-  3: { book: "Manual de la Directora de Juego", page: "149", title: "EL ORCO FUGITIVO", description: "Primero oís una canción gutural, «Msshamassh, gukkul, gukkul» y el sonido de un tambor que marca el ritmo. Entonces veis un grupo de orcos que caminan en una caótica procesión, cantando el himno. En medio del grupo, dos de los orcos llevan un enorme palo de madera del que cuelga un orco indefenso atado de pies y manos. Lo llevan de vuelta a su clan. El grupo forma parte del clan Urhur y el orco atrapado es Sargah. Intentó desertar pero lo persiguieron y ahora está siendo llevado ante el consejo de ancianos para enfrentarse al castigo. Las aventureras que puedan escabullirse del grupo podrán encontrar a Sargah abandonado y atado cerca del camino en un campamento para pasar la noche. Si lo salvan les jurará lealtad eterna, pero huirá en la primera oportunidad que tenga. En caso de que se produzca una pelea, los orcos son tres veces más que las aventureras." },
-  4: { book: "Manual de la Directora de Juego", page: "149", title: "MUERTE DESDE EL AIRE", description: "Oís un chillido que hiela la sangre que viene del cielo y, al momento siguiente, el batir de unas pesadas alas. Entonces lo veis. Un enorme pájaro demoníaco desciende desde las nubes. Os ve, vira en el aire y se lanza en picado a por vuestro grupo. Las aventureras han entrado de repente en el territorio de caza de un grifo. El grifo les advertirá mediante su grito desgarrador, pero si el grupo se mantiene firme el grifo atacará y el combate será a muerte. Si se dan la vuelta y deciden caminar en otra dirección y alejarse del nido del grifo, la fiera las dejará marchar." },
-  5: { book: "Manual de la Directora de Juego", page: "149", title: "EL BANQUETE DE LAS ARPÍAS", description: "Incluso antes de verlas, el viento os trae un fuerte hedor a muerte y podredumbre, un olor empalagoso al que se suma un sonido chirriante parecido al lloro de un recién nacido. Son arpías. Tres pesadas y sucias criaturas vuelan por encima de las copas de los árboles e inmediatamente vuelven su atención hacia vosotras. Las arpías, Krag, Mag y Serag, andan buscando el almuerzo de hoy, e irán a por las aventureras (a menos que haya algo cerca de aspecto más tentador). En combate son letales, pero muy codiciosas y fáciles de distraer si ven oro u otros tesoros que brillen en el suelo, se centrarán por completo en su hallazgo. A veces se pelean por objetos y dejan a sus víctimas escapar." }
+  1: { 
+    book: "Manual de la Directora de Juego", 
+    page: "147", 
+    title: "LA NIEBLA DE SANGRE", 
+    description: "Todo ocurre de manera casi imperceptible. Al principio, todos los sonidos se extinguen y lo único que oís es vuestra propia charla. Entonces sentís que se os eriza el pelo de la nuca, como si el aire estuviera lleno de electricidad... Un terror profundo y primigenio se apodera de vosotras. Sentís la imperiosa necesidad de huir de inmediato, sea como sea. Unos segundos después, todo ocurre de verdad. La Niebla de Sangre surge de repente de la tierra húmeda, densa y roja y bloquea toda visión. A su paso arrastra algo que hace que la sangre se os hiele en las venas... y viene a por vosotras. Tras pasar un tiempo en la Niebla de Sangre, las aventureras serán atacadas por un sanguino. Podrán darse cuenta del ataque si superan sendas tiradas de ATLETISMO (para aguantar hasta el momento del ataque) y PERSPICACIA (si no se han ocultado)." 
+  },
+  2: { 
+    book: "Manual de la Directora de Juego", 
+    page: "148", 
+    title: "DUELO EN LOS BOSQUES", 
+    description: "Oís sonido de lucha y gritos violentos mezclados con alaridos y canciones de batalla. Un poco más adelante hay un orco batiéndose en duelo con una elfa tatuada. Se lanzan el uno contra el otro y se paran los golpes sin conseguir darse. De vez en cuando se detienen para lanzarse insultos. La elfa Heldemin y el herrero orco Alakran tienen una historia trágica. El clan de orcos Urhur capturó al grupo de aventureros de Heldemin en los años que precedieron al Levantamiento de Hierro y forzó a las elfas y los humanos a ser sus esclavos. Heldemin conoció a Alakran, trabaron amistad y ambos fueron repudiados y desterrados. Si Alakran no limpiaba su honor matando a la elfa o viceversa, ninguno sería bienvenido por su pueblo, por lo que su extraño duelo ha durado semanas. Ya no se acuerdan de qué les hizo enfadar en un primer momento; ahora solo están cansados e irritados. Si las aventureras entablan conversación con la pareja es posible que dejen de pelear y ambos se unan al grupo, siempre que ninguno pierda el honor. Tienen recursos, pero se han quedado sin comida." 
+  },
+  3: { 
+    book: "Manual de la Directora de Juego", 
+    page: "149", 
+    title: "EL ORCO FUGITIVO", 
+    description: "Primero oís una canción gutural, «Msshamassh, gukkul, gukkul» y el sonido de un tambor que marca el ritmo. Entonces veis un grupo de orcos que caminan en una caótica procesión, cantando el himno. En medio del grupo, dos de los orcos llevan un enorme palo de madera del que cuelga un orco indefenso atado de pies y manos. Lo llevan de vuelta a su clan. El grupo forma parte del clan Urhur y el orco atrapado es Sargah. Intentó desertar pero lo persiguieron y ahora está siendo llevado ante el consejo de ancianos para enfrentarse al castigo. Las aventureras que puedan escabullirse del grupo podrán encontrar a Sargah abandonado y atado cerca del camino en un campamento para pasar la noche. Si lo salvan les jurará lealtad eterna, pero huirá en la primera oportunidad que tenga. En caso de que se produzca una pelea, los orcos son tres veces más que las aventureras." 
+  },
+  4: { 
+    book: "Manual de la Directora de Juego", 
+    page: "149", 
+    title: "MUERTE DESDE EL AIRE", 
+    description: "Oís un chillido que hiela la sangre que viene del cielo y, al momento siguiente, el batir de unas pesadas alas. Entonces lo veis. Un enorme pájaro demoníaco desciende desde las nubes. Os ve, vira en el aire y se lanza en picado a por vuestro grupo. Las aventureras han entrado de repente en el territorio de caza de un grifo. El grifo les advertirá mediante su grito desgarrador, pero si el grupo se mantiene firme el grifo atacará y el combate será a muerte. Si se dan la vuelta y deciden caminar en otra dirección y alejarse del nido del grifo, la fiera las dejará marchar." 
+  },
+  5: { 
+    book: "Manual de la Directora de Juego", 
+    page: "149", 
+    title: "EL BANQUETE DE LAS ARPÍAS", 
+    description: "Incluso antes de verlas, el viento os trae un fuerte hedor a muerte y podredumbre, un olor empalagoso al que se suma un sonido chirriante parecido al lloro de un recién nacido. Son arpías. Tres pesadas y sucias criaturas vuelan por encima de las copas de los árboles e inmediatamente vuelven su atención hacia vosotras. Las arpías, Krag, Mag y Serag, andan buscando el almuerzo de hoy, e irán a por las aventureras (a menos que haya algo cerca de aspecto más tentador). En combate son letales, pero muy codiciosas y fáciles de distraer si ven oro u otros tesoros que brillen en el suelo, se centrarán por completo en su hallazgo. A veces se pelean por objetos y dejan a sus víctimas escapar." 
+  },
   6: { 
     book: "Manual de la Directora de Juego", 
     page: "150", 
@@ -115,5 +141,71 @@ export const gmGuideEncounters: Record<number, EncounterData> = {
     page: "156", 
     title: "EL SANTUARIO ANIMAL", 
     description: "Cuando la oscuridad se extiende, miles de ojos de animales rodean vuestro campamento. Ciervos, zorros, lobos, jabalíes e insectos se acercan lentamente. Las aventureras han acampado en un santuario secreto. Los animales las empujarán pacíficamente para expulsarlas. Al final llegará un colosal alce negro, el líder sagrado. Si el grupo ataca al alce, absolutamente todos los animales del bosque enfurecerán y atacarán hasta que huyan." 
+  },
+  20: { 
+    book: "Manual de la Directora de Juego", 
+    page: "156", 
+    title: "LA PROCESIÓN FÚNEBRE", 
+    description: "Se acerca algo muy grande que emite un sonido que nunca antes habíais oído. Unos toques de cuerno prolongados, interminables, hacen reverberar el aire. Unos crujidos y chasquidos crean un ritmo en torno a los aullidos que cortan el aire en quejumbrosas cascadas. Al cabo del rato aparecen cinco árboles andantes que llevan entre ellos a un sexto. Dan un paso, tocan el cuerno, dan unos cuantos pasos más, se detienen y luego vuelven a tocar en una lenta procesión. Los ents llevan a un pariente muerto hacia la Niebla Calma en una procesión fúnebre. El rubí del corazón de elfo del ent muerto sigue en su lugar, pero la criatura ha pedido que la liberen de su cuerpo de árbol y monten su rubí en el muro conmemorativo de Rosenstaad. Si los ents se encuentran en una localización o región extraña, quizá lleven al ent muerto a un lugar que este siempre haya querido ver. La procesión va escoltada por unos cuantos elfos, pero no se darán a conocer a menos que las aventureras molesten a los ents. Si lo hacen, los elfos exclamarán: «¡Marchaos, malditos sacos de carne!». Los elfos no son muy numerosos, pero si hay un combate, los ents dejarán su carga en el suelo y se unirán a la lucha. No matarán a nadie si pueden evitarlo, pero destrozarán el equipo y romperán unos cuantos miembros a modo de advertencia. Si las aventureras no interrumpen la procesión, las dejarán en paz. Puede incluso que un ent abandone la procesión, se incline ante las aventureras y les dé un regalo: una fruta o semilla del ent muerto o algo más útil." 
+  },
+  21: { 
+    book: "Manual de la Directora de Juego", 
+    page: "157", 
+    title: "EL ESPÍRITU VENGADOR", 
+    description: "¡Silencio! ¿Lo oís? ¿Un grito? ¿Una voz? Os miráis entre vosotras, pero el paisaje está desierto. Entonces, súbitamente, sentís un viento gélido que sopla a través de vuestra alma. Una figura gris reluciente toma forma en medio del grupo, con un rostro otrora humano distorsionado en un grito sobrenatural. Habéis oído historias junto a la hoguera otras veces. Un alma perdida, un espíritu incapaz de encontrar el descanso. Las aventureras se encuentran con el fantasma del comandante aliseo Garmagol, muerto hace mucho. Durante una campaña en la que participó hace cuatrocientos años cayó en una trampa que le tendieron sus hombres, cansados de la guerra, y fue asesinado por sus propias tropas. Desde entonces, Garmagol ha vagado por la tierra en busca de venganza. Como hace mucho que los soldados aliseos se fueron, cualquiera que tenga un arma le vale. Si las aventureras son observadoras, verán que el fantasma tiene una reluciente daga clavada entre los omóplatos. Puede que las aventureras puedan razonar con el fantasma si hablan de la daga y de cómo murió. No se puede evitar al fantasma VIGILANDO." 
+  },
+  22: { 
+    book: "Manual de la Directora de Juego", 
+    page: "157", 
+    title: "LA SOPLADORA DE VIDRIO", 
+    description: "Cada vez que el viento abraza los árboles oís un silbido en la lejanía. Suena como una enorme flauta. Una estructura de cristal se eleva sobre el paisaje: pasillos, aberturas, espirales y túneles, todo hecho de vidrio. En el centro del edificio hay una enana, iluminada por las llamas de una chimenea. La enana levanta del fuego la punta de un largo tubo de metal, cubierta por una masa de reluciente vidrio. Aplica los labios al otro extremo y, con un fuerte soplido, la masa se transforma en un largo tubo de cristal serpenteante. La enana Varamak tuvo una visión de la estructura de cristal en sueños. Cree que es posible comprender, frenar y controlar la Niebla de Sangre. Lleva varias semanas trabajando en el proyecto de su vida. Lo único que le queda es recolectar Niebla de Sangre en un tubo de cristal y verterlo en la estructura. Les pide ayuda a las aventureras. Lo que Varamak no sabe es que la visión que tuvo fue creada por un demonio. Si consigue recoger la Niebla de Sangre, se extenderá por la estructura a cada vez más velocidad, emitiendo un chillido. Al cabo de 1D6 horas, el vidrio se romperá y la niebla cubrirá los alrededores llenando todo ese hexágono del mapa (consulta el encuentro aleatorio de la Niebla de Sangre). Se dispersará tras 1D6 semanas." 
+  },
+  23: { 
+    book: "Manual de la Directora de Juego", 
+    page: "158", 
+    title: "EL CACHORRITO", 
+    description: "Oís un suave gemido y luego algo que parece un ladrido. Por debajo de un arbusto sobresale una cola. Es un cachorrito de perro que os mira con sus ojazos. Resulta que el cachorrito se ha hecho daño en una pata. Su madre y otros cinco cachorros murieron a manos de la trol Ghormald, que quería almorzárselos, pero el cachorrito consiguió escapar. Ghormald ha seguido sus huellas y entra en escena con un cachorro muerto en cada mano y la cara cubierta de sangre. Les pide a las aventureras que dejen a su presa tranquila. Está lista para luchar por él con la porra que lleva colgada del cinturón. Ghormald es una trol típica." 
+  },
+  24: { 
+    book: "Manual de la Directora de Juego", 
+    page: "158", 
+    title: "EL OGRO MALDITO", 
+    description: "—Ay-ho, ay-ho, a casa a descansar… —resuena una voz profunda y gutural. Al momento siguiente veis a un ogro enorme y musculoso arrastrando un saco. Algo se debate dentro del saco y el ogro lo golpea repetidamente. Los movimientos cesan inmediatamente—. ¡Que te calles, te he dicho! El ogro Kurge va de camino a su guarida con su última captura. En el saco se encuentra el desafortunado hermano herrumbroso Oker, que invocó la maldición del dios Herrumbre sobre Kurge. El ogro aún no ha decidido qué hacer con Oker, pero se está planteando hacer algo divertido, como practicar tiro de piedras o arrancarle las extremidades. Todo depende del humor de Kurge. Kurge tiene las estadísticas de un ogro típico." 
+  },
+  25: { 
+    book: "Manual de la Directora de Juego", 
+    page: "158", 
+    title: "LAS CANDELERAS", 
+    description: "Junto a una cabaña hay dos mujeres, una vieja y una joven, de pie junto a un caldero puesto al fuego de unos troncos. Junto a ellas hay unas velas azules colgadas de un soporte. Las mujeres parecen preocupadas y no dejan de mirar al bosque. Las aventureras se encuentran con una mujer llamada Engsle y su hija. Hacen un tipo de vela especial usado en ceremonias religiosas. El hijo de la familia desapareció hace una hora en el bosque mientras recogía centellazul, un tipo de flor que se usa para hacer las velas. La madre ofrece diez velas a las aventureras si consiguen encontrar a su hijo y traerlo de vuelta. Las velas que están haciendo no funcionarán hasta que se hayan sumergido en una tina de centellazul pulverizada. Cuando estén acabadas, al encenderlas producen el mismo efecto que el conjuro PURIFICAR ESPÍRITU de nivel de poder 1. El hijo de Engsle ha sido capturado por el ogro Gonlab, que se lo ha llevado como esclavo." 
+  },
+  26: { 
+    book: "Manual de la Directora de Juego", 
+    page: "159", 
+    title: "INCENDIO FORESTAL", 
+    description: "Percibís un olor a humo al tiempo que un ciervo pasa corriendo junto a vosotras. Veis una humareda negra sobre los árboles. El viento cambia y el fuego viene hacia aquí. Un incendio forestal ruge. Los animales tratan de escapar, las copas de los árboles se prenden y un humo sofocante se extiende por el bosque. El fuego avanza rápidamente. Las aventureras deben superar una prueba de SUPERVIVENCIA para escapar. Si la fallan, serán atacadas por las llamas, tira por el ataque contra cada aventurera con seis dados de base (daño de arma 1). Entonces las aventureras pueden volver a tirar por SUPERVIVENCIA para escapar. Si vuelven a fallar, el fuego ataca con siete dados de base. Este ciclo continúa añadiendo otro dado de base al ataque del fuego cada vez hasta que las aventureras escapen o queden Derrotadas." 
+  },
+  27: { 
+    book: "Manual de la Directora de Juego", 
+    page: "159", 
+    title: "ARENA NEGRA", 
+    description: "El bosque se abre y veis un gigantesco claro rodeado de árboles. El suelo está cubierto de arena negra. No veis ninguna planta. Hay algunas rocas que podrían ser restos de casas. En mitad del claro hay alguien sentado, una niña con la mirada fija en el suelo. El lugar apesta a azufre. La arena se agita cuando el viento sopla a través del claro. Dos hechiceros rivales se encontraron en el pueblo de Sotoagreste. Uno de ellos falló el conjuro y el percance provocó la destrucción tanto de los hechiceros como del pueblo entero. La única superviviente fue la niña, llamada Linn. Está encerrada en sí misma y no contesta a lo que le dicen, ni tampoco se mueve ni se resiste si las aventureras se la llevan con ella. Al cabo de 1D6 días, si le dan de comer, puede contarles a las aventureras lo que ocurrió. Si permanece con ellas, mostrará que el accidente le otorgó unos potentes poderes mágicos que no sabe controlar. Linn quiere aprender a lanzar conjuros. Quiere matar a todos los hechiceros de las Tierras Prohibidas." 
+  },
+  28: { 
+    book: "Manual de la Directora de Juego", 
+    page: "160", 
+    title: "LA CASA VACÍA", 
+    description: "En la lejanía se ve el humo de una chimenea. Hay una casita al abrigo de unos altos árboles. En un tendedero de palos hay una colada puesta a secar. Junto al edificio hay un pequeño corral delimitado por una valla, pero no se ve ningún animal. Hay un pequeño campo rodeado de rocas sacadas de esa misma tierra. Unos verdes tallos se alzan en derechas hileras. Oís el murmullo de un arroyo. Las aventureras han llegado a una casa de campo, pero la familia que vivía en ella acaba de ser atacada y hecha esclava. La casa está vacía. El fuego aún está encendido y sobre la mesa de la cocina hay cardadores de lana. En una cuna hay tirado un muñeco. Hay una silla volcada y la pared está decorada por una salpicadura de sangre coagulada. Ni los residentes ni los secuestradores aparecen por ninguna parte, pero afuera, en el barro, se pueden encontrar huellas de pisadas. Si las aventureras rastrean a los secuestradores (perfil de bandidos típicos), descubrirán que el señor del lugar necesita nuevos esclavos para su mina de plata." 
+  },
+  29: { 
+    book: "Manual de la Directora de Juego", 
+    page: "160", 
+    title: "CRUJIR DE HUESOS", 
+    description: "Aparecen sin previo aviso. Es un grupo de lo que en otro tiempo fueron orgullosos guerreros humanos. Ahora no son más que esqueletos a punto de desmoronarse, que por alguna razón han cobrado vida. Son totalmente silenciosos, pero cuando empiezan a moverse oís el seco sonido de huesos de siglos de antigüedad entrechocando unos con otros. Las sonrientes calaveras de los esqueletos abren las mandíbulas al atacar, emitiendo un grito inaudible. Un D6+3 esqueletos atacan a las aventureras sin previo aviso. Luchan hasta el último, pero no son especialmente rápidos y es bastante fácil huir de ellos, aunque los esqueletos perseguirán a las aventureras mientras permanezcan a la vista." 
+  },
+  30: { 
+    book: "Manual de la Directora de Juego", 
+    page: "160", 
+    title: "TERAMALDA", 
+    description: "Un olor a carne quemada os da en la nariz y, al mismo tiempo, oís unas pesadas pisadas. Algo se acerca a través de la espesura. La criatura hace un estruendo infernal, chirriando y traqueteando. Hasta la tierra tiembla. Frente a vosotras emerge de entre la vegetación una enorme caballero, completamente cubierta por una antigua armadura negra oxidada. Tiene un símbolo grabado en la coraza. La criatura lleva una espada manchada de marrón por la sangre seca. La armadura andante es la extraña criatura no muerta Teramalda, que vaga por las Tierras Prohibidas en busca de venganza desde que los enanos la quemaran viva dentro de su armadura hace 350 años. Los Hermanos Herrumbrosos la consideran la campeona de su dios, Herrumbre, ya que su coraza lleva el símbolo de la deidad y principalmente mata enanos. Teramalda se mantiene con vida gracias a un pincho de hierro mágico que atraviesa el pecho de la ferral por dentro de la armadura. Es prácticamente invulnerable y no contestará si se le habla. Cada encuentro con Teramalda será diferente: PRIMER ENCUENTRO: Teramalda simplemente se quedará de pie mirando a las aventureras durante un rato hasta que decida que no son lo bastante interesantes. Si las aventureras la atacan, pasa directamente al tercer encuentro. SEGUNDO ENCUENTRO: Teramalda atacará a las enanas que haya en el grupo. TERCER ENCUENTRO: Teramalda clasifica a las aventureras como enemigas y las ataca. No las perseguirá si huyen. CUARTO ENCUENTRO: Teramalda considera a las aventureras enemigas juradas y las persigue. Camina lentamente y se la puede oír a cierta distancia, pero nunca se rinde. Encontrará a sus enemigas mientras estas lleven algo de hierro." 
   }
 };
