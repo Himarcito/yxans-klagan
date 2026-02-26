@@ -60,10 +60,10 @@ export const TerrainEncounterPage = ({ hexKey }: TerrainEncounterPageProps) => {
                     <span className="font-bold text-amber-950">Origen: {encounter.encounter.book}</span>
                     <span className="text-sm font-semibold text-amber-800">Pág. {encounter.encounter.page}</span>
                   </div>
-                  <p className="text-gray-800 italic leading-relaxed whitespace-pre-wrap">{encounter.encounter.description}</p>
+                  <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">{encounter.encounter.description}</p>
                 </>
               ) : (
-                <p className="text-gray-800 italic text-center py-4">No hay amenazas cerca. Las aventureras disfrutan de un tramo de viaje sin incidentes.</p>
+                <p className="text-gray-800 text-center py-4">No hay amenazas cerca. Las aventureras disfrutan de un tramo de viaje sin incidentes.</p>
               )}
             </ParchmentCard>
           </div>
