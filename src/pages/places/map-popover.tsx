@@ -4,13 +4,14 @@ import { ParchmentButton } from '../../components/ParchmentButton'
 import { Parchment } from '../../components/parchment'
 import { useAppDispatch, useAppSelector } from '../../store/store.hooks'
 import { selectTranslateFunction } from '../../store/translations/translation.slice'
-import { selectMap, saveVillageToHex, saveCastleToHex, saveDungeonToHex } from '../../features/map/map-slice'
+import { selectMap, saveVillageToHex, saveCastleToHex, saveDungeonToHex, saveEncounterToHex } from '../../features/map/map-slice'
 import { Hex } from './map.model'
 import { getTerrainForHex } from './terrain-data'
 import { specialLocations } from './special-locations.data'
 import { createRandomVillage } from '../village/village-generator'
 import { createRandomCastle } from '../castle/castle-generator'
 import { createRandomDungeon } from '../dungeon/dungeon-generator'
+import { generateTerrainEncounter } from './encounter-generator'
 
 export interface MapPopoverOptions {
   hex: Hex
@@ -46,11 +47,12 @@ export const MapPopover = ({
     y: initialPosition,
   })
 
-  // Comprobar si el hexágono actual ya tiene una aldea o un castillo generados
+  // Comprobar si el hexágono actual ya tiene algo generado
   const currentHexData = options ? hexes.find(h => h.hexKey === options.hex.hexKey) : null
   const hasVillage = !!currentHexData?.villageData
   const hasCastle = !!currentHexData?.castleData
   const hasDungeon = !!currentHexData?.dungeonData
+  const hasEncounter = !!currentHexData?.encounterData
 
   const getX = useCallback(
     (xOptions?: MapPopoverOptions) => {
@@ -115,7 +117,7 @@ export const MapPopover = ({
       case 'castle': return hasCastle ? 'Ver Fortaleza' : 'Generar Fortaleza'
       case 'dungeon': return hasDungeon ? 'Ver Mazmorra' : 'Generar Mazmorra'
       case 'special': return 'Ver Escenario'
-      default: return 'Tirar Encuentro'
+      default: return hasEncounter ? 'Ver Encuentro' : 'Tirar Encuentro'
     }
   }
 
@@ -165,7 +167,7 @@ export const MapPopover = ({
                   {t('map:popover_forget')}
                 </ParchmentButton>
 
-{/* BOTÓN INTELIGENTE DE ACCIÓN */}
+                {/* BOTÓN INTELIGENTE DE ACCIÓN */}
                 <div className="w-full mt-2">
                   <ParchmentButton
                     onPress={() => {
@@ -191,7 +193,6 @@ export const MapPopover = ({
                         setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
                         setShow(false); onHide()
                       } else if (terrainType === 'special') {
-                        // AQUÍ ESTABA EL ERROR: DEBEMOS ABRIR EL PANEL, NO GENERAR UN ENCUENTRO
                         setContentPending(true)
                       } else {
                         // Terrenos salvajes
@@ -238,14 +239,7 @@ export const MapPopover = ({
                     <span>📖 Libro: {specialData.book}</span>
                     <span>📄 Página: {specialData.page}</span>
                   </div>
-                  <p className="italic text-gray-800 leading-relaxed">{specialData.description}</p>
-                </div>
-              )}
-
-              {terrainType !== 'special' && (
-                <div className="p-3 bg-black/5 rounded text-sm italic border border-black/10">
-                  <span className="font-bold not-italic">⚙️ Módulo en construcción:</span> <br/>
-                  Preparando el motor para {getButtonText().toLowerCase()} en {getTerrainTranslation(terrainType).toLowerCase()}...
+                  <p className="italic text-gray-800 leading-relaxed whitespace-pre-wrap">{specialData.description}</p>
                 </div>
               )}
             </div>
