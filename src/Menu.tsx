@@ -46,11 +46,12 @@ export const menuRoutes: MenuRoute[] = [
     label: 'core:menu.session',
     element: <SessionPage />,
   },
-  {
+{
     path: 'encounter',
     id: nanoid(),
     label: 'core:menu.encounters',
     element: <EncounterPage />,
+    showInMenu: false, // <-- AÑADE ESTO
   },
   {
     path: 'monsters',
