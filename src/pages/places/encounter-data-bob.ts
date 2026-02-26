@@ -111,5 +111,41 @@ export const bookOfBeastsEncounters: Record<number, EncounterData> = {
     page: "131", 
     title: "UN LUGAR PACÍFICO", 
     description: "Un prado cubierto de maleza ondula a través del paisaje. Coloridas cabezas de flores rojas, azules y amarillas asoman por encima de la hierba, que os llega hasta la cintura. El aire zumba con abejas bien alimentadas y mariposas. Una rara serenidad reina en este lugar. Las aventureras que superen una tirada de SUPERVIVENCIA notarán grandes cantidades de Gelipiedra creciendo en el prado: una planta cuyas esporas tienen un efecto paralizante. Con otra tirada exitosa de SUPERVIVENCIA, las plantas pueden destilarse en un veneno transportable para aplicarlo a las armas (D10 dosis). Las aventureras que se muevan a través del prado florido sin protegerse las vías respiratorias se exponen a un ataque venenoso (Veneno Paralizante, Potencia 7)." 
+  },
+  31: { 
+    book: "Book of Beasts", 
+    page: "138", 
+    title: "EL ARBUSTO ARDIENTE", 
+    description: "Un arbusto que os llega por la cintura en medio del terreno emite una extraña y reluciente luz azul. Al acercaros, veis grandes llamas de fuego azul brotando en todas direcciones desde la nudosa planta. Curiosamente, la vegetación circundante parece no verse afectada por el fuego. Las aventureras que toquen el arbusto ardiente sentirán un calor intenso, pero no sufrirán daño. Sin embargo, percibirán una fuerte presencia de otro mundo y deberán hacer una tirada de PERSPICACIA. Quien falle debe tirar en la tabla de Terror, mientras que quienes tengan éxito ganarán un Punto de Voluntad extra. Con una tirada de LEYENDAS, pueden recordar viejos mitos de dioses de la naturaleza parcialmente olvidados que se presentan en forma de arbustos en llamas o cadáveres." 
+  },
+  32: { 
+    book: "Book of Beasts", 
+    page: "138", 
+    title: "CLARO MÁGICO", 
+    description: "De repente os encontráis en un claro resplandeciente donde los árboles circundantes están adornados con plumas y campanas de viento. El tintineo débil y etéreo de las campanas es tan hermoso como inquietante, y varios de los árboles tienen símbolos arcaicos tallados en la corteza. Una tirada exitosa de LEYENDAS identifica los símbolos como runas druídicas Maha, y las aventureras hechiceras pueden sentir instintivamente la antigua magia irradiando del claro. Cada aventurera que pase la noche en el claro (haga Campamento) ganará un Punto de Voluntad extra." 
+  },
+  33: { 
+    book: "Book of Beasts", 
+    page: "138", 
+    title: "EL TRONO DE PIEDRA POSEÍDO", 
+    description: "Un antiguo pero aún majestuoso trono de piedra se alza en una pequeña elevación cercana. Está parcialmente cubierto de espesas espinas y hay una profunda grieta zigzagueando por su respaldo. Siete escalones tallados en la piedra conducen al trono, modestamente decorado. Sus reposabrazos terminan en rostros monstruosos rugientes y en la parte superior del respaldo agrietado hay dos cimitarras cruzadas bajo una corona estilizada. El trono de piedra perteneció a un señor orco que gobernó la zona hace muchas generaciones. Si un aventurero se sienta en el trono desgastado por el clima, el señor orco se materializará como un fantasma. Lleno de rabia no muerta y envidia de los vivos, ataca ferozmente a quien se atrevió a mancillar su alto asiento. Pero la ira del no muerto disminuye si se alejan del trono. Con un poco de adulación, incluso puede ser persuadido para relatar una leyenda sobre las antiguas Tierras Prohibidas, adornada con fanfarronadas orcas sobre cráneos enemigos aplastados y gloriosas borracheras (usa los atributos de Fantasma)." 
+  },
+  34: { 
+    book: "Book of Beasts", 
+    page: "139", 
+    title: "LOS SEPULTUREROS ALEGRES", 
+    description: "El viento trae una melodía alegre desde un lugar cercano. Alguien está cantando ahí fuera, con más entusiasmo que habilidad. Pronto escucháis que proviene de un pequeño coro de voces alegres pero poco musicales. Las pocas palabras que podéis distinguir tratan sobre hazañas y logros de goblins. El sonido se acerca y pronto notáis a tres alegres goblins pavoneándose por el terreno. Llevan palas grandes y mochilas a reventar, pero parecen no tener equipo de combate. Las aventureras se han topado con los hermanos goblin Plump, Kolk y Hekate, que van de camino a un pueblo cercano para buscar empleo como sepultureros. Son alegres, valientes y extrovertidos. Si son atacados se defenderán con trucos sucios, pero si todo transcurre pacíficamente, ofrecerán ardilla asada e hidromiel. Hekate afirma ser buena con los no muertos y su secreto es una reliquia familiar: un dedo de goblin momificado con una larga garra negra. Según ella, perteneció a su bisabuela nigromante. Si superan una tirada opuesta de MANIPULACIÓN frente a la PERSPICACIA de Hekate, pueden persuadirlos para que vendan el dedo por D6 monedas de oro. El dedo contiene recuerdos ectoplásmicos y otorga la habilidad nigromántica de comunicarse con los muertos (como el conjuro de Rango 1), costando un Punto de Voluntad por uso." 
+  },
+  35: { 
+    book: "Book of Beasts", 
+    page: "140", 
+    title: "LA BATALLA FEROZ", 
+    description: "Lo primero que notáis son las aves carroñeras dando vueltas con avidez en un lugar más adelante. Hay tantas que forman una pequeña nube de plumas negras y malos presagios. Entonces lo escucháis. Metal chocando contra metal, el ritmo profundo de tambores, rugidos de rabia y dolor. Pendones coloridos y estandartes de guerra ondean sobre las copas de los árboles. Las aventureras han tropezado con una feroz escaramuza entre orcos beligerantes del clan Isir y una división de enanos Meromannios del ejército del señor de la guerra Tormund (unos 50 guerreros por bando). Ambos bandos están consumidos por la sed de sangre y es extremadamente peligroso acercarse. Quienes interfieran se arriesgan a ser atacados por ambos bandos. Si registran los cadáveres en las afueras del campo de batalla, pueden tirar dos veces en la tabla de Hallazgos Valiosos Transportados, pero se arriesgan a ser capturados por prebostes de ambos bandos que patrullan buscando saqueadores." 
+  },
+  36: { 
+    book: "Book of Beasts", 
+    page: "140", 
+    title: "EL NÁUFRAGO", 
+    description: "De repente veis grandes cantidades de tablones rotos y otros escombros flotando cerca de la superficie del agua. La madera parece resistente y bellamente decorada, pero está rota en pedazos y llena de extraños cortes, posiblemente de un pico gigante. Flotando en medio del desastre hay cajas llenas de paja y grandes barriles de roble con manzanas confitadas, arenque fermentado y otras delicias. La cabeza mojada y barbuda de un hombre asoma desde uno de los barriles: «Oh, gente decente en el gran azul, ¿puedo pediros que me echéis una mano? Os pagaré generosamente por ayudarme a salir de este aprieto». El hombre es Permodius Pen, el único superviviente de una balandra noble atacada por un calamar gigante. Es el consejero del Duque Gottfried (familia real alisea). Si lo rescatan, les dejará quedarse con los barriles de comida (valorados en 4D6 monedas de plata) y prometerá hablar bien de ellas al Duque. Es muy reservado sobre su misión diplomática, pero menciona al rey enano Turik y una \"alianza contra la chusma demoníaca\"." 
   }
 };
