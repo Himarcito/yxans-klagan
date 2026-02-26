@@ -39,4 +39,77 @@ export const bookOfBeastsMatrix: Record<number, Record<string, number>> = {
   66: { plains: 66, forest: 66, dark_forest: 66, hills: 66, mountains: 66, lake: 66, marsh: 66, quagmire: 66, ruins: 66 }
 };
 
-export const bookOfBeastsEncounters: Record<number, EncounterData> = {};
+export const bookOfBeastsEncounters: Record<number, EncounterData> = {
+  11: { 
+    book: "Book of Beasts", 
+    page: "123", 
+    title: "PIEDRA RÚNICA ENANA", 
+    description: "Una gran roca tallada con runas sobresale de la tierra en una colina cercana. Las runas, de tono rojizo, están rodeadas por elaborados lazos que parecen colas de dragón. Son runas enanas que pueden ser leídas superando una tirada de LEYENDAS: «Tyrmyr hijo de Grundhir, señor del Gran Salón de la Cascada de la Montaña, erigió este monumento para que el mundo tema y admire por siempre su varonil matanza de la escoria de Herrumbre en la gran guerra». La piedra rúnica es un monumento conmemorativo de la Primera Guerra Alisea, y la \"escoria de Herrumbre\" mencionada es el ejército de la ferral Teramalda. Las aventureras enanas que descansen aquí durante un turno recuperarán todos sus atributos al máximo si han sufrido cualquier tipo de daño. Este efecto solo se aplica una vez." 
+  },
+  12: { 
+    book: "Book of Beasts", 
+    page: "124", 
+    title: "RASTROS DE BABA EN LA VEGETACIÓN", 
+    description: "Hilos brillantes de una secreción babosa se extienden por el terreno. Cubren las piedras, la hierba y el musgo, y cuelgan en racimos de los arbustos y ramas como capullos goteantes de sustancias impías. Las aventureras que examinen el rastro de baba y superen una tirada de SUPERVIVENCIA deducirán que proviene de un basilisco en celo. También recordarán que la baba es altamente venenosa y puede paralizar incluso a las aventureras más fuertes al menor contacto (Veneno Paralizante, Potencia 6). Si llevan guantes gruesos, el veneno puede ser recolectado en botellas y, por ejemplo, ser aplicado en armas (obteniendo 2D6 dosis)." 
+  },
+  13: { 
+    book: "Book of Beasts", 
+    page: "125", 
+    title: "CAMPO DE BATALLA CUBIERTO DE MALEZA", 
+    description: "Un antiguo campo de batalla se abre en el paisaje como una herida de malos recuerdos. El campo está cubierto de hierba salvaje y zarzas serpenteantes, con calaveras sonrientes empaladas en picas que sobresalen de la vegetación. Entre los matorrales hay armas oxidadas que yacen lado a lado con huesos roídos. A juzgar por los cráneos, parece que orcos, elfos, enanos y humanos lucharon y murieron por igual en este lugar. Si las aventureras pasan un Cuarto de Día EXPLORANDO el campo de batalla, puedes dejarles tirar una vez en la tabla de Hallazgos Valiosos Transportados. También encontrarán D66 monedas de varias denominaciones. Tira 1D6 por cada decena de monedas: 1-3 significa cobre; 4-5 plata; 6 oro." 
+  },
+  14: { 
+    book: "Book of Beasts", 
+    page: "126", 
+    title: "EL ESQUELETO EN EL ÁRBOL", 
+    description: "Vuestros ojos, cansados del viaje, se topan con una visión ominosa: un esqueleto vestido con ropas raídas y desgarradas cuelga de un árbol más adelante. Su cabeza está inclinada hacia adelante en un ángulo antinatural y una gruesa cadena de hierro atada a una de las ramas le rodea el cuello como si fuese una soga. El esqueleto es todo lo que queda del erudito nigromante Mortelius Quidom, asesinado por aldeanos asustados tras un oscuro experimento. Quienes registren el esqueleto encontrarán un compendio de pergaminos amarillentos que contiene 3 conjuros de nigromancia. El muerto no puede moverse mientras la cadena de hierro siga en su lugar, pero si alguien se la quita, Mortelius regresará en forma de Fantasma. Es una visión aterradora, pero no tiene intenciones hostiles (a menos que lo ataquen). Si se comportan de forma decente, mostrará su gratitud contándoles leyendas de las Tierras Prohibidas. Si deciden atacarle, usará todos sus poderes impíos para convertir al grupo en esclavos no muertos (Fuerza 12, Intelecto 7)." 
+  },
+  15: { 
+    book: "Book of Beasts", 
+    page: "126", 
+    title: "VIEJO POZO", 
+    description: "Un pozo antiguo y parcialmente cubierto de maleza se asoma entre la densa vegetación. No tiene polea, pero los restos podridos de su cubierta de madera y un cubo yacen esparcidos entre la maleza. Las aventureras que miren hacia la oscuridad del fondo serán recibidas por un fuerte olor a humedad. Es posible descender hasta el fondo (cuatro metros), pero las paredes son resbaladizas y se requiere superar una tirada de MOVERSE para no perder el agarre y sufrir daño por caída. Esparcidos en el barro del fondo hay fragmentos de huesos de varios animales desafortunados que cayeron en el profundo agujero. Si las aventureras exploran activamente el lugar, tira una vez en la tabla de Hallazgos Sencillos en Guaridas." 
+  },
+  16: { 
+    book: "Book of Beasts", 
+    page: "127", 
+    title: "LA MESA DE PIEDRA DE LOS DIOSES", 
+    description: "Una gran mesa de piedra se alza entre unos árboles cercanos. Es una construcción impresionante de granito y mármol, cortada en bloques toscos pero simétricos. La vegetación circundante es densa y salvaje, pero la mesa en sí misma se mantiene asombrosamente intacta por los estragos del tiempo y la naturaleza. Alrededor de la superficie de la mesa se aprecian símbolos arcaicos que parecen indicar los asientos de los comensales. Si superan una tirada de LEYENDAS, reconocerán un puñado de ellos como los símbolos antiguos de los viejos dioses de las Tierras Prohibidas. El Caminante Nocturno está posicionado en el extremo de la mesa, pero Lamento, Flujo, Arcilla y Enorme también están representados junto con otros dioses olvidados que ahora no tienen nombre." 
+  },
+  21: { 
+    book: "Book of Beasts", 
+    page: "128", 
+    title: "LA ROCA VIVIENTE", 
+    description: "Algo llena el silencio a vuestro alrededor. Un sonido, apenas audible, pero definitivamente presente. Un murmullo profundo. Constante, retumbante y cantarino. Al acercaros a hurtadillas a través del terreno, podéis distinguir algunas palabras, aunque nadie entiende el idioma. Pronto notáis una luz llameante y a un hombre de larga barba con una túnica de color rojo oscuro bajo la sombra de unas grandes rocas. Unas enormes grietas resplandecientes se han abierto en el suelo a los pies del hombre. Mientras levanta los brazos hacia el cielo y empieza a hablar con voz autoritaria, veis a una criatura tosca hecha de piedra y raíces emergiendo lentamente de la roca viva. El hombre es un Cantor de Piedra en proceso de crear un Gólem. Si las aventureras interfieren, el mago les azuzará a su Gólem (Nivel de Poder 4). Si en lugar de eso deciden seguir al hechicero y a su creación en secreto, los verán desaparecer en una cueva que termina en un callejón sin salida. Al examinar el muro de roca, una tirada de LEYENDAS revela runas enanas y garabatos orcos que advierten de una masacre en este lugar: la montaña está hechizada por espíritus inquietos." 
+  },
+  22: { 
+    book: "Book of Beasts", 
+    page: "128", 
+    title: "TROL PETRIFICADO", 
+    description: "Una silueta monstruosa, más alta que dos humanos juntos, se alza amenazante en el terreno más adelante. Con su maza levantada para la batalla, la figura parece decidida a aplastar a cualquiera que pase. Pronto resulta evidente para las aventureras que la sombra amenazante es inofensiva, ya que está compuesta de rocas medio desmoronadas y cubiertas de musgo y liquen. Con una tirada exitosa de LEYENDAS, se dan cuenta de que son los restos de un Trol que fue convertido en piedra por la luz del sol. Esparcidos por el suelo a su alrededor están los huesos de varios de sus desafortunados enemigos, así como sus armas oxidadas. Quienes registren la zona encontrarán D6 monedas de plata y, posiblemente, un arma de excelente calidad que haya sobrevivido ilesa al paso del tiempo." 
+  },
+  23: { 
+    book: "Book of Beasts", 
+    page: "129", 
+    title: "RESTOS DE UN CAMINO GONDIANO", 
+    description: "Secciones desmoronadas de un antiguo camino pavimentado serpentean a través del terreno, siendo un testigo mudo de un pasado glorioso y de conocimientos hace mucho olvidados. Gran parte del camino está cubierto por la maleza y las secciones visibles están llenas de grietas, pero está claro que una vez fue una impresionante obra de ingeniería. Si superan una tirada de LEYENDAS, se dan cuenta de que están mirando un fragmento del intrincado sistema de carreteras que el rey enano Gonder ordenó construir en la época anterior a las Guerras Aliseas. Si las aventureras dedican un Cuarto de Día a EXPLORAR minuciosamente entre las grietas del camino viejo, puedes permitirles tirar una vez en la tabla de Hallazgos Valiosos en Guaridas." 
+  },
+  24: { 
+    book: "Book of Beasts", 
+    page: "130", 
+    title: "EXCREMENTOS DE MONSTRUO", 
+    description: "Un hedor acre os golpea el rostro. Más adelante hay una inmensa pila de estiércol de color marrón verdoso, rodeada de insectos grandes que zumban frenéticamente. La pila es más grande que un humano adulto y aún no se ha endurecido. Con una tirada exitosa de SUPERVIVENCIA o TRATO CON ANIMALES, las aventureras deducen que los excrementos están recientes y que es muy probable que su origen no ande lejos. A juzgar por el tamaño de las heces, debe ser una bestia de tamaño colosal. Si las aventureras deciden escarbar entre el estiércol, puedes dejarles tirar una vez en la tabla de Hallazgos Valiosos Transportados (una posesión que perteneció a un desafortunado individuo que terminó siendo el desayuno de la bestia). Sin embargo, el estiércol de la bestia es altamente corrosivo y actúa como un Veneno Letal con Potencia 6 sobre quien meta las manos." 
+  },
+  25: { 
+    book: "Book of Beasts", 
+    page: "130", 
+    title: "LA GRAN SERPIENTE", 
+    description: "Un grito de ayuda hace eco a través de la niebla. Es la voz de un joven, aguda y presa del pánico. Al acercaros, veis a diez figuras de pie sobre un acantilado junto al agua, empuñando largas lanzas de púas. Un joven aterrorizado, vestido con un camisón blanco como la nieve, hace equilibrios al borde del acantilado mientras las figuras amenazantes lo acorralan hacia el agua. Entre los gritos de terror del chico, repiten un canto monótono: «Gran Serpiente, Gran Padre, Gran Amo de la Vida y la Muerte». Las ondas y olas repentinas en el agua indican que algo en las oscuras profundidades ha respondido a su llamada. Los cultistas encapuchados son pescadores locales que sacrifican a un joven cada año al \"Dios Wyrm\" para asegurarse una buena temporada de pesca. Las aventureras pueden intentar MANIPULARLOS para que perdonen la vida del muchacho a cambio de ofrecerles un objeto brillante y valioso que puedan sacrificar en su lugar. No obstante, la Serpiente Marina que acecha en las oscuras aguas ya ha sido atraída por los cánticos. Si el joven no es arrojado al agua en D10 rondas, el gigantesco monstruo emergerá e intentará atrapar a todas las personas posibles al borde del acantilado." 
+  },
+  26: { 
+    book: "Book of Beasts", 
+    page: "131", 
+    title: "UN LUGAR PACÍFICO", 
+    description: "Un prado cubierto de maleza ondula a través del paisaje. Coloridas cabezas de flores rojas, azules y amarillas asoman por encima de la hierba, que os llega hasta la cintura. El aire zumba con abejas bien alimentadas y mariposas. Una rara serenidad reina en este lugar. Las aventureras que superen una tirada de SUPERVIVENCIA notarán grandes cantidades de Gelipiedra creciendo en el prado: una planta cuyas esporas tienen un efecto paralizante. Con otra tirada exitosa de SUPERVIVENCIA, las plantas pueden destilarse en un veneno transportable para aplicarlo a las armas (D10 dosis). Las aventureras que se muevan a través del prado florido sin protegerse las vías respiratorias se exponen a un ataque venenoso (Veneno Paralizante, Potencia 7)." 
+  }
+};
