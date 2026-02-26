@@ -165,7 +165,7 @@ export const MapPopover = ({
                   {t('map:popover_forget')}
                 </ParchmentButton>
 
-                {/* BOTÓN INTELIGENTE DE ACCIÓN */}
+{/* BOTÓN INTELIGENTE DE ACCIÓN */}
                 <div className="w-full mt-2">
                   <ParchmentButton
                     onPress={() => {
@@ -174,28 +174,33 @@ export const MapPopover = ({
                           const newVillage = createRandomVillage()
                           dispatch(saveVillageToHex({ hexKey: options.hex.hexKey, village: newVillage }))
                         }
-                        setTimeout(() => {
-                          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-                        }, 100)
-                        setShow(false)
-                        onHide()
+                        setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
+                        setShow(false); onHide()
                       } else if (terrainType === 'castle') {
                         if (!hasCastle) {
                           const newCastle = createRandomCastle()
                           dispatch(saveCastleToHex({ hexKey: options.hex.hexKey, castle: newCastle }))
                         }
-                        setTimeout(() => {
-                          window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
-                        }, 100)
-                        setShow(false)
-                        onHide()
-                  } else if (terrainType === 'dungeon') {
+                        setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
+                        setShow(false); onHide()
+                      } else if (terrainType === 'dungeon') {
                         if (!hasDungeon) {
                           const newDungeon = createRandomDungeon()
                           dispatch(saveDungeonToHex({ hexKey: options.hex.hexKey, dungeon: newDungeon }))
                         }
                         setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
-                        setShow(false); onHide();
+                        setShow(false); onHide()
+                      } else if (terrainType === 'special') {
+                        // AQUÍ ESTABA EL ERROR: DEBEMOS ABRIR EL PANEL, NO GENERAR UN ENCUENTRO
+                        setContentPending(true)
+                      } else {
+                        // Terrenos salvajes
+                        if (!hasEncounter) {
+                          const newEncounter = generateTerrainEncounter(terrainType)
+                          dispatch(saveEncounterToHex({ hexKey: options.hex.hexKey, encounter: newEncounter }))
+                        }
+                        setTimeout(() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 100)
+                        setShow(false); onHide()
                       }
                     }}
                   >
