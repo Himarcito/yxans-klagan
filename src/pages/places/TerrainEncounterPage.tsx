@@ -19,55 +19,41 @@ export const TerrainEncounterPage = ({ hexKey }: TerrainEncounterPageProps) => {
   const { hexes } = useAppSelector(selectMap)
 
   const currentHex = hexes.find(h => h.hexKey === hexKey)
-  const [encounter, setEncounter] = useState<TerrainEncounterResult | undefined>(currentHex?.encounterData)
   const terrainType = getTerrainForHex(hexKey);
+  
+  // Iniciamos el estado con el encuentro existente, o null si aún no hay
+  const [encounter, setEncounter] = useState<TerrainEncounterResult | null>(currentHex?.encounterData || null)
 
+  // Magia de 1 Clic: Si abrimos la página y NO hay encuentro, lo generamos al instante
   useEffect(() => {
-    setEncounter(currentHex?.encounterData)
-  }, [hexKey, currentHex?.encounterData])
-
-  // Esta función ahora sirve tanto para la primera exploración como para regenerar
-  const handleExplore = useCallback(() => {
-    // Si ya hay un encuentro, pedimos confirmación antes de sobrescribir
-    if (encounter && !window.confirm("¿Tirar un nuevo encuentro? Sobrescribirá el actual.")) {
-      return;
+    if (!currentHex?.encounterData) {
+      const newEncounter = generateTerrainEncounter(terrainType)
+      setEncounter(newEncounter)
+      // Guardamos en Redux en segundo plano
+      dispatch(saveEncounterToHex({ hexKey, encounter: newEncounter }))
+    } else {
+      setEncounter(currentHex.encounterData)
     }
-    
-    // Generamos el encuentro
-    const newEncounter = generateTerrainEncounter(terrainType)
-    
-    // 1. Actualizamos el estado local (esto hace que la pantalla cambie AL INSTANTE sin recargar)
-    setEncounter(newEncounter)
-    
-    // 2. Guardamos en Redux en segundo plano para que persista
-    dispatch(saveEncounterToHex({ hexKey, encounter: newEncounter }))
-  }, [dispatch, hexKey, terrainType, encounter])
+  }, [hexKey, currentHex?.encounterData, dispatch, terrainType])
 
-  // ESTADO 1: EL HEXÁGONO AÚN NO HA SIDO EXPLORADO
-  if (!encounter) {
-    return (
-      <div className="flex w-full flex-col gap-y-8 animate-in fade-in duration-500">
-        <Parchment>
-          <div className="flex flex-col items-center justify-center py-10 gap-6 text-center">
-            <Typography variant="h2" parchment>Terreno Inexplorado</Typography>
-            <p className="text-gray-800 text-lg">
-              Las aventureras se adentran en el hexágono <strong>{hexKey}</strong>.
-            </p>
-            <ParchmentButton buttonType="primary" onPress={handleExplore}>
-              Explorar Hexágono
-            </ParchmentButton>
-          </div>
-        </Parchment>
-      </div>
-    )
-  }
+  // Función exclusiva para regenerar si no nos gusta la tirada
+  const handleRegenerate = useCallback(() => {
+    if (window.confirm("¿Tirar un nuevo encuentro? Sobrescribirá el actual.")) {
+      const newEncounter = generateTerrainEncounter(terrainType)
+      setEncounter(newEncounter)
+      dispatch(saveEncounterToHex({ hexKey, encounter: newEncounter }))
+    }
+  }, [dispatch, hexKey, terrainType])
 
-  // ESTADO 2: EL HEXÁGONO YA TIENE UN ENCUENTRO (Se muestra al instante tras el clic)
+  // Mientras se genera (es cuestión de milisegundos), no devolvemos nada o un loader invisible
+  if (!encounter) return null;
+
+  // Renderizamos directamente el resultado del encuentro
   return (
     <div className="flex w-full flex-col gap-y-8 animate-in fade-in duration-500">
       <div className="flex justify-between items-center border-b-2 border-amber-900 pb-2">
         <Typography variant="h2" parchment>Terreno Salvaje ({hexKey})</Typography>
-        <ParchmentButton small buttonType="danger" onPress={handleExplore}>
+        <ParchmentButton small buttonType="danger" onPress={handleRegenerate}>
           Regenerar Viaje
         </ParchmentButton>
       </div>
@@ -87,6 +73,7 @@ export const TerrainEncounterPage = ({ hexKey }: TerrainEncounterPageProps) => {
                     <span className="font-bold text-amber-950">Origen: {encounter.encounter.book}</span>
                     <span className="text-sm font-semibold text-amber-800">Pág. {encounter.encounter.page}</span>
                   </div>
+                  {/* Aquí está el salto de línea que arreglamos para la mecánica y el texto descriptivo normal (sin italic) */}
                   <p className="text-gray-800 leading-relaxed whitespace-pre-wrap">{encounter.encounter.description}</p>
                 </>
               ) : (
