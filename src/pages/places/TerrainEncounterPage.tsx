@@ -26,21 +26,48 @@ export const TerrainEncounterPage = ({ hexKey }: TerrainEncounterPageProps) => {
     setEncounter(currentHex?.encounterData)
   }, [hexKey, currentHex?.encounterData])
 
-  const generateNewEncounter = useCallback(() => {
-    if (window.confirm("¿Tirar un nuevo encuentro? Sobrescribirá el actual.")) {
-      const newEncounter = generateTerrainEncounter(terrainType)
-      setEncounter(newEncounter)
-      dispatch(saveEncounterToHex({ hexKey, encounter: newEncounter }))
+  // Esta función ahora sirve tanto para la primera exploración como para regenerar
+  const handleExplore = useCallback(() => {
+    // Si ya hay un encuentro, pedimos confirmación antes de sobrescribir
+    if (encounter && !window.confirm("¿Tirar un nuevo encuentro? Sobrescribirá el actual.")) {
+      return;
     }
-  }, [dispatch, hexKey, terrainType])
+    
+    // Generamos el encuentro
+    const newEncounter = generateTerrainEncounter(terrainType)
+    
+    // 1. Actualizamos el estado local (esto hace que la pantalla cambie AL INSTANTE sin recargar)
+    setEncounter(newEncounter)
+    
+    // 2. Guardamos en Redux en segundo plano para que persista
+    dispatch(saveEncounterToHex({ hexKey, encounter: newEncounter }))
+  }, [dispatch, hexKey, terrainType, encounter])
 
-  if (!encounter) return null;
+  // ESTADO 1: EL HEXÁGONO AÚN NO HA SIDO EXPLORADO
+  if (!encounter) {
+    return (
+      <div className="flex w-full flex-col gap-y-8 animate-in fade-in duration-500">
+        <Parchment>
+          <div className="flex flex-col items-center justify-center py-10 gap-6 text-center">
+            <Typography variant="h2" parchment>Terreno Inexplorado</Typography>
+            <p className="text-gray-800 text-lg">
+              Las aventureras se adentran en el hexágono <strong>{hexKey}</strong>.
+            </p>
+            <ParchmentButton buttonType="primary" onPress={handleExplore}>
+              Explorar Hexágono
+            </ParchmentButton>
+          </div>
+        </Parchment>
+      </div>
+    )
+  }
 
+  // ESTADO 2: EL HEXÁGONO YA TIENE UN ENCUENTRO (Se muestra al instante tras el clic)
   return (
     <div className="flex w-full flex-col gap-y-8 animate-in fade-in duration-500">
       <div className="flex justify-between items-center border-b-2 border-amber-900 pb-2">
         <Typography variant="h2" parchment>Terreno Salvaje ({hexKey})</Typography>
-        <ParchmentButton small buttonType="danger" onPress={generateNewEncounter}>
+        <ParchmentButton small buttonType="danger" onPress={handleExplore}>
           Regenerar Viaje
         </ParchmentButton>
       </div>
